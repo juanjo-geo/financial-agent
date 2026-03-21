@@ -61,7 +61,7 @@ BRAND_CSS = """
 }
 .fa-title span {
     color: #3DB860;
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: 500;
 }
 .fa-subtitle {
