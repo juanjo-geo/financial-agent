@@ -1,5 +1,6 @@
 import os
 import requests
+import xml.etree.ElementTree as ET
 from datetime import datetime
 import pandas as pd
 from dotenv import load_dotenv
@@ -24,31 +25,51 @@ def load_snapshot():
     return pd.read_csv(SNAPSHOT_FILE)
 
 
-def fetch_news(indicator, api_key, max_headlines=2):
-    """Retorna lista de titulares recientes para el indicador dado.
-    Intenta top-headlines primero; si no hay resultados usa everything.
-    """
-    if not api_key:
+def fetch_news_google_rss(query, max_headlines=2):
+    """Busca titulares via Google News RSS (sin API key, cobertura en español)."""
+    url = f"https://news.google.com/rss/search?q={requests.utils.quote(query)}&hl=es-CO&gl=CO&ceid=CO:es"
+    try:
+        resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+        root = ET.fromstring(resp.content)
+        items = root.findall(".//item")[:max_headlines]
+        results = []
+        for item in items:
+            title  = item.findtext("title", "").strip()
+            source = item.findtext("source", "Google News").strip()
+            if title:
+                results.append(f"- {title} ({source})")
+        return results
+    except Exception as e:
+        print(f"  [rss] Error Google News RSS: {e}")
         return []
 
+
+def fetch_news(indicator, api_key, max_headlines=2):
+    """Retorna titulares para el indicador.
+    - usdcop: usa Google News RSS en español (mejor cobertura Colombia).
+    - otros: NewsAPI con fallback a Google News RSS.
+    """
     query = NEWS_QUERIES.get(indicator, indicator)
 
-    attempts = [
-        ("https://newsapi.org/v2/top-headlines", {"q": query, "language": "en", "pageSize": max_headlines}),
-        ("https://newsapi.org/v2/everything",    {"q": query, "language": "en", "sortBy": "publishedAt", "pageSize": max_headlines}),
-    ]
+    if indicator == "usdcop":
+        return fetch_news_google_rss("peso colombiano dolar TRM Colombia", max_headlines)
 
-    for url, params in attempts:
-        try:
-            params["apiKey"] = api_key
-            resp     = requests.get(url, params=params, timeout=10)
-            articles = resp.json().get("articles", [])
-            if articles:
-                return [f"- {a['title']} ({a['source']['name']})" for a in articles]
-        except Exception as e:
-            print(f"  [news] Error en {url} para {indicator}: {e}")
+    if api_key:
+        for url, params in [
+            ("https://newsapi.org/v2/top-headlines", {"q": query, "language": "en", "pageSize": max_headlines}),
+            ("https://newsapi.org/v2/everything",    {"q": query, "language": "en", "sortBy": "publishedAt", "pageSize": max_headlines}),
+        ]:
+            try:
+                params["apiKey"] = api_key
+                resp     = requests.get(url, params=params, timeout=10)
+                articles = resp.json().get("articles", [])
+                if articles:
+                    return [f"- {a['title']} ({a['source']['name']})" for a in articles]
+            except Exception as e:
+                print(f"  [news] Error en {url} para {indicator}: {e}")
 
-    return []
+    # Fallback: Google News RSS en inglés
+    return fetch_news_google_rss(query, max_headlines)
 
 
 def build_market_context(df, news_api_key):

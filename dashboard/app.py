@@ -1,5 +1,6 @@
 import os
 import requests
+import xml.etree.ElementTree as ET
 import pandas as pd
 import streamlit as st
 import plotly.express as px
@@ -59,10 +60,33 @@ def format_metric_value(value, unit):
 
 
 @st.cache_data(ttl=3600)
-def fetch_headlines(indicator, query, api_key, max_results=3):
-    """Busca titulares en NewsAPI. Cache de 1 hora."""
-    if not api_key:
+def fetch_headlines_rss(query, lang="es-CO", gl="CO", ceid="CO:es", max_results=3):
+    """Titulares via Google News RSS. Sin API key. Cache 1 hora."""
+    url = (
+        f"https://news.google.com/rss/search"
+        f"?q={requests.utils.quote(query)}&hl={lang}&gl={gl}&ceid={ceid}"
+    )
+    try:
+        resp  = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+        root  = ET.fromstring(resp.content)
+        items = root.findall(".//item")[:max_results]
+        results = []
+        for item in items:
+            title   = item.findtext("title", "").strip()
+            source  = item.findtext("source", "Google News").strip()
+            link    = item.findtext("link", "").strip()
+            pubdate = item.findtext("pubDate", "")[:16]
+            if title:
+                results.append({"title": title, "source": source,
+                                 "url": link, "publishedAt": pubdate})
+        return results
+    except Exception:
         return []
+
+
+@st.cache_data(ttl=3600)
+def fetch_headlines_newsapi(query, api_key, max_results=3):
+    """Titulares via NewsAPI. Cache 1 hora."""
     for endpoint in (
         "https://newsapi.org/v2/top-headlines",
         "https://newsapi.org/v2/everything",
@@ -84,6 +108,25 @@ def fetch_headlines(indicator, query, api_key, max_results=3):
         except Exception:
             pass
     return []
+
+
+def fetch_headlines(indicator, query, api_key, max_results=3):
+    """Selector de fuente por indicador:
+    - USD/COP → Google News RSS en español (mejor cobertura Colombia)
+    - Otros   → NewsAPI con fallback a Google News RSS en inglés
+    """
+    if indicator == "USD/COP":
+        return fetch_headlines_rss(
+            "peso colombiano dolar TRM Colombia",
+            lang="es-CO", gl="CO", ceid="CO:es",
+            max_results=max_results,
+        )
+    if api_key:
+        results = fetch_headlines_newsapi(query, api_key, max_results)
+        if results:
+            return results
+    # Fallback RSS en inglés
+    return fetch_headlines_rss(query, lang="en-US", gl="US", ceid="US:en", max_results=max_results)
 
 
 # ── Encabezado ──────────────────────────────────────────────────────────────
