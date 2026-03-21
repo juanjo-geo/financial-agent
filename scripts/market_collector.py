@@ -59,10 +59,13 @@ def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
 
 def get_market_data():
     indicators = [
-        {"symbol": "BZ=F", "name": "brent", "unit": "USD/bbl"},
-        {"symbol": "BTC-USD", "name": "btc", "unit": "USD"},
-        {"symbol": "DX-Y.NYB", "name": "dxy", "unit": "index"},
-        {"symbol": "COP=X", "name": "usdcop", "unit": "COP per USD"},
+        {"symbol": "BZ=F",     "name": "brent",  "unit": "USD/bbl"},
+        {"symbol": "BTC-USD",  "name": "btc",    "unit": "USD"},
+        {"symbol": "DX-Y.NYB", "name": "dxy",    "unit": "index"},
+        {"symbol": "COP=X",    "name": "usdcop", "unit": "COP per USD"},
+        {"symbol": "GC=F",     "name": "gold",   "unit": "USD/oz"},
+        {"symbol": "^GSPC",    "name": "sp500",  "unit": "USD"},
+        {"symbol": "CL=F",     "name": "wti",    "unit": "USD/bbl"},
     ]
 
     records = []

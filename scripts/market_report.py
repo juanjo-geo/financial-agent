@@ -12,11 +12,14 @@ REPORTS_DIR    = "reports"
 REPORT_FILE    = os.path.join(REPORTS_DIR, "daily_report.txt")
 
 NEWS_QUERIES = {
-    "brent":               "brent crude oil price",
-    "btc":                 "bitcoin BTC crypto",
-    "dxy":                 "US dollar DXY index",
-    "usdcop":              "peso colombiano dolar COP Colombia",
+    "brent":                  "brent crude oil price",
+    "btc":                    "bitcoin BTC crypto",
+    "dxy":                    "US dollar DXY index",
+    "usdcop":                 "peso colombiano dolar COP Colombia",
     "global_inflation_proxy": "global inflation CPI",
+    "gold":                   "gold price XAU USD",
+    "sp500":                  "S&P 500 stock market index",
+    "wti":                    "WTI crude oil price",
 }
 
 

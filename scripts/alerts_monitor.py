@@ -11,9 +11,12 @@ from twilio.rest import Client
 from scripts.load_config import load_config
 
 SYMBOLS = {
-    "brent": {"symbol": "BZ=F",     "unit": "USD/bbl", "news_query": "oil price crude brent"},
-    "btc":   {"symbol": "BTC-USD",  "unit": "USD",     "news_query": "bitcoin BTC crypto"},
-    "usdcop":{"symbol": "COP=X",    "unit": "COP/USD", "news_query": "peso colombiano dolar COP"},
+    "brent":  {"symbol": "BZ=F",    "unit": "USD/bbl", "news_query": "oil price crude brent"},
+    "btc":    {"symbol": "BTC-USD", "unit": "USD",     "news_query": "bitcoin BTC crypto"},
+    "usdcop": {"symbol": "COP=X",   "unit": "COP/USD", "news_query": "peso colombiano dolar COP"},
+    "gold":   {"symbol": "GC=F",    "unit": "USD/oz",  "news_query": "gold price XAU"},
+    "sp500":  {"symbol": "^GSPC",   "unit": "USD",     "news_query": "S&P 500 stock market"},
+    "wti":    {"symbol": "CL=F",    "unit": "USD/bbl", "news_query": "WTI crude oil"},
 }
 
 CHECK_INTERVAL  = 30 * 60  # segundos

@@ -198,6 +198,9 @@ NEWS_QUERIES = {
     "BTC":     "bitcoin BTC crypto",
     "DXY":     "US dollar DXY index",
     "USD/COP": "peso colombiano dolar Colombia",
+    "Oro":     "gold price XAU USD",
+    "S&P 500": "S&P 500 stock market index",
+    "WTI":     "WTI crude oil price",
 }
 
 
@@ -340,7 +343,12 @@ def fetch_headlines(indicator, query, api_key, max_results=3):
         results = fetch_headlines_newsapi(query, api_key, max_results)
         if results:
             return results
+    # fallback: Google News RSS en inglés
     return fetch_headlines_rss(query, lang="en-US", gl="US", ceid="US:en", max_results=max_results)
+
+
+# Indicadores cuya fuente de noticias es RSS directamente (sin pasar por NewsAPI)
+_RSS_ONLY = {"USD/COP"}
 
 
 def _img_b64(path):
