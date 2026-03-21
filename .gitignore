@@ -16,8 +16,8 @@ __pycache__/
 *.lnk
 Thumbs.db
 
-# Datos históricos pesados (opcionales en repo)
-data/historical/
+# Datos históricos — incluir market_history.csv pero ignorar backups grandes
+data/historical/*.bak
 
 # Jupyter
 .ipynb_checkpoints/
