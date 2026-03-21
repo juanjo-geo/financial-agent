@@ -1,6 +1,8 @@
 import os
+import sys
 import json
 import base64
+import subprocess
 from pathlib import Path
 from datetime import datetime
 import requests
@@ -435,6 +437,15 @@ def run_dashboard():
                     unsafe_allow_html=True)
 
     if st.button("🔄 Actualizar datos", type="secondary"):
+        with st.spinner("Recolectando datos del mercado..."):
+            subprocess.run(
+                [sys.executable, "-m", "scripts.market_collector"],
+                cwd=str(ROOT), check=False, capture_output=True,
+            )
+            subprocess.run(
+                [sys.executable, "-m", "scripts.processor"],
+                cwd=str(ROOT), check=False, capture_output=True,
+            )
         st.cache_data.clear()
         st.rerun()
 
