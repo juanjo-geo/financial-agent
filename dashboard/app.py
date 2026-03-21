@@ -265,8 +265,17 @@ def _load_active_indicators() -> tuple:
     except Exception:
         return ("brent", "btc", "dxy", "usdcop", "gold")
 
+
+def _file_mtime(path) -> float:
+    """Retorna el timestamp de modificación de un archivo (usado como cache key)."""
+    try:
+        return float(os.path.getmtime(str(path)))
+    except Exception:
+        return 0.0
+
+
 @st.cache_data
-def load_snapshot(active: tuple):
+def load_snapshot(active: tuple, snap_mtime: float):
     if not os.path.exists(SNAPSHOT_FILE):
         return pd.DataFrame()
     df = pd.read_csv(SNAPSHOT_FILE)
@@ -337,7 +346,7 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
 
 
 @st.cache_data
-def load_historical_comparison(active: tuple):
+def load_historical_comparison(active: tuple, hist_mtime: float):
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
     df = pd.read_csv(HISTORY_FILE)
@@ -450,8 +459,10 @@ def run_dashboard():
         st.rerun()
 
     active       = _load_active_indicators()
-    snapshot_df  = load_snapshot(active)
-    hist_df      = load_historical_comparison(active)
+    snap_mtime   = _file_mtime(SNAPSHOT_FILE)
+    hist_mtime   = _file_mtime(HISTORY_FILE)
+    snapshot_df  = load_snapshot(active, snap_mtime)
+    hist_df      = load_historical_comparison(active, hist_mtime)
     report_text  = load_report()
     news_api_key = get_secret("NEWS_API_KEY")
 
@@ -578,7 +589,10 @@ def run_dashboard():
         hist_raw = hist_raw[hist_raw["indicator"].isin(active)]
 
         indicators = sorted(hist_raw["indicator"].dropna().unique().tolist())
-        selected   = st.selectbox("Selecciona un indicador", indicators)
+        selected   = st.selectbox(
+            "Selecciona un indicador", indicators,
+            key=f"chart_sel_{'_'.join(active)}",
+        )
         filtered   = hist_raw[hist_raw["indicator"] == selected].copy()
 
         if not filtered.empty:
