@@ -223,12 +223,85 @@ h2,h3 { color: #1B2A4A !important; }
     white-space: pre-wrap; font-family: Georgia,serif;
 }
 
+/* ── Signal badges strip ────────────────────────────────────────────────── */
+.sig-strip {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.sig-badge {
+    flex: 1; min-width: 120px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; padding: 14px 10px;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+    text-align: center;
+}
+.sig-badge-label {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #8A9BB0; margin-bottom: 6px;
+}
+.sig-badge-value { font-size: 0.88rem; font-weight: 800; }
+.sig-ok    { border-color: #B3EDD8 !important; }
+.sig-ok    .sig-badge-value { color: #00875A; }
+.sig-warn  { border-color: #FFE0A0 !important; }
+.sig-warn  .sig-badge-value { color: #856404; }
+.sig-alert { border-color: #F5C6C6 !important; }
+.sig-alert .sig-badge-value { color: #C0392B; }
+.sig-neu   { border-color: #D8E2EC !important; }
+.sig-neu   .sig-badge-value { color: #5A6A7E; }
+
+/* ── Agent reading card ─────────────────────────────────────────────────── */
+.agent-card {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 16px; padding: 24px 28px;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+    position: relative; overflow: hidden;
+}
+.agent-card::before {
+    content: ""; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg,#00C896,#1B2A4A);
+}
+.agent-card-header {
+    font-size: 0.85rem; font-weight: 800; color: #1B2A4A;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid #F0F4F8;
+    display: flex; align-items: center; gap: 8px;
+}
+.agent-field { margin-bottom: 14px; }
+.agent-field:last-child { margin-bottom: 0; }
+.agent-field-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #8A9BB0;
+    display: block; margin-bottom: 4px;
+}
+.agent-field-value {
+    font-size: 0.88rem; line-height: 1.6; color: #2C3E50;
+}
+.agent-drivers {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid #F0F4F8;
+}
+.agent-driver {
+    background: #F8F9FA; border-radius: 10px;
+    padding: 10px 14px; font-size: 0.82rem;
+    color: #2C3E50; line-height: 1.5;
+}
+.agent-driver-lbl {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: #8A9BB0;
+    display: block; margin-bottom: 3px;
+}
+@media(max-width:900px){ .agent-drivers { grid-template-columns: 1fr; } }
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media(max-width:768px){
     .fa-title h1 { font-size: 1.8rem; }
     .fa-header img { height: 64px; }
     .mc-value { font-size: 1.1rem; }
     .report-card { padding: 18px 16px; }
+    .sig-badge { min-width: 90px; padding: 10px 6px; }
+    .sig-badge-value { font-size: 0.78rem; }
 }
 </style>
 """
@@ -305,6 +378,17 @@ def load_report():
         return None
     with open(REPORT_FILE, "r", encoding="utf-8") as f:
         return f.read()
+
+
+def load_daily_signals() -> dict:
+    signals_file = ROOT / "data/signals/daily_signals.json"
+    if not signals_file.exists():
+        return {}
+    try:
+        with open(signals_file, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
 
 def format_metric_value(value, unit):
@@ -656,6 +740,88 @@ def run_dashboard():
                                        "change_abs","change_pct","unit","source","status"]],
                     use_container_width=True, hide_index=True,
                 )
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Señales del Agente ───────────────────────────────────────────────────
+    st.markdown('<div class="section-label">Señales del Agente</div>',
+                unsafe_allow_html=True)
+    daily_signals = load_daily_signals()
+    if not daily_signals:
+        st.info("Las señales se generan automáticamente con el pipeline diario.")
+    else:
+        _s  = daily_signals.get("senales", {})
+        _i  = daily_signals.get("interpretacion", {})
+        _gen = daily_signals.get("generado_en", "")
+
+        # Color class helpers
+        def _sig_cls(key: str, val: str) -> str:
+            _map = {
+                "riesgo_macro":          {"Bajo": "sig-ok", "Medio": "sig-warn", "Alto": "sig-alert"},
+                "sesgo_mercado":         {"Risk-on": "sig-ok", "Mixto": "sig-neu", "Risk-off": "sig-alert"},
+                "presion_inflacionaria": {"Bajista": "sig-ok", "Neutral": "sig-neu", "Alcista": "sig-warn"},
+                "presion_cop":           {"Favorable COP": "sig-ok", "Neutral": "sig-neu", "Alcista USD/COP": "sig-warn"},
+            }
+            return _map.get(key, {}).get(val, "sig-neu")
+
+        def _conv_cls(v: int) -> str:
+            return "sig-ok" if v >= 7 else ("sig-warn" if v >= 4 else "sig-alert")
+
+        conv = _s.get("conviccion", 0)
+        badges = [
+            ("Riesgo Macro",          _s.get("riesgo_macro",            "—"), _sig_cls("riesgo_macro",          _s.get("riesgo_macro", ""))),
+            ("Sesgo de Mercado",      _s.get("sesgo_mercado",           "—"), _sig_cls("sesgo_mercado",         _s.get("sesgo_mercado", ""))),
+            ("Presión Inflacionaria", _s.get("presion_inflacionaria",   "—"), _sig_cls("presion_inflacionaria", _s.get("presion_inflacionaria", ""))),
+            ("Presión COP",           _s.get("presion_cop",             "—"), _sig_cls("presion_cop",           _s.get("presion_cop", ""))),
+            ("Convicción",            f"{conv}/10",                           _conv_cls(conv)),
+        ]
+
+        strip_html = "".join(
+            f'<div class="sig-badge {cls}">'
+            f'<span class="sig-badge-label">{lbl}</span>'
+            f'<span class="sig-badge-value">{val}</span>'
+            f'</div>'
+            for lbl, val, cls in badges
+        )
+        st.markdown(
+            f'<div style="font-size:0.7rem;color:#8A9BB0;margin-bottom:10px">'
+            f'Generado: {_gen}</div>'
+            f'<div class="sig-strip">{strip_html}</div>',
+            unsafe_allow_html=True,
+        )
+
+        # Agent reading card
+        cierre   = _i.get("cierre_ejecutivo",  "")
+        cruzada  = _i.get("lectura_cruzada",   "")
+        driver1  = _i.get("driver_principal",  "")
+        driver2  = _i.get("driver_secundario", "")
+
+        def _esc(t: str) -> str:
+            return t.replace("<", "&lt;").replace(">", "&gt;")
+
+        st.markdown(f"""
+<div class="agent-card">
+  <div class="agent-card-header">🤖 Lectura del Agente</div>
+  <div class="agent-field">
+    <span class="agent-field-label">Cierre ejecutivo</span>
+    <span class="agent-field-value">{_esc(cierre)}</span>
+  </div>
+  <div class="agent-field">
+    <span class="agent-field-label">Lectura cruzada</span>
+    <span class="agent-field-value">{_esc(cruzada)}</span>
+  </div>
+  <div class="agent-drivers">
+    <div class="agent-driver">
+      <span class="agent-driver-lbl">🔷 Driver principal</span>
+      {_esc(driver1)}
+    </div>
+    <div class="agent-driver">
+      <span class="agent-driver-lbl">🔶 Driver secundario</span>
+      {_esc(driver2)}
+    </div>
+  </div>
+</div>""", unsafe_allow_html=True)
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()

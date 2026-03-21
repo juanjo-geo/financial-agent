@@ -1,3 +1,4 @@
+import json
 import os
 import requests
 import xml.etree.ElementTree as ET
@@ -10,6 +11,7 @@ SNAPSHOT_FILE  = "data/processed/latest_snapshot.csv"
 HISTORY_FILE   = "data/historical/market_history.csv"
 REPORTS_DIR    = "reports"
 REPORT_FILE    = os.path.join(REPORTS_DIR, "daily_report.txt")
+SIGNALS_FILE   = "data/signals/daily_signals.json"
 
 NEWS_QUERIES = {
     "brent":                  "brent crude oil price",
@@ -200,6 +202,51 @@ Máximo 250 palabras en total. Sin asteriscos, sin negritas, sin viñetas. Solo 
     return response.choices[0].message.content.strip()
 
 
+def build_signals_sections() -> str:
+    """Construye las secciones 5 y 6 del reporte desde daily_signals.json."""
+    if not os.path.exists(SIGNALS_FILE):
+        return ""
+    try:
+        with open(SIGNALS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return ""
+
+    s = data.get("senales", {})
+    i = data.get("interpretacion", {})
+    gen = data.get("generado_en", "")
+
+    lines = [
+        "",
+        "=" * 55,
+        "SECCIÓN 5 — SEÑALES ACCIONABLES",
+        f"Generado: {gen}",
+        "=" * 55,
+        f"  Riesgo Macro           : {s.get('riesgo_macro',            'N/A')}",
+        f"  Sesgo de Mercado       : {s.get('sesgo_mercado',           'N/A')}",
+        f"  Presión Inflacionaria  : {s.get('presion_inflacionaria',   'N/A')}",
+        f"  Presión COP            : {s.get('presion_cop',             'N/A')}",
+        f"  Convicción             : {s.get('conviccion',              'N/A')}/10",
+        "",
+        "=" * 55,
+        "SECCIÓN 6 — INTERPRETACIÓN CAUSAL",
+        "=" * 55,
+        "",
+        "Driver principal:",
+        f"  {i.get('driver_principal',  'N/A')}",
+        "",
+        "Driver secundario:",
+        f"  {i.get('driver_secundario', 'N/A')}",
+        "",
+        "Lectura cruzada:",
+        f"  {i.get('lectura_cruzada',   'N/A')}",
+        "",
+        "Cierre ejecutivo:",
+        f"  {i.get('cierre_ejecutivo',  'N/A')}",
+    ]
+    return "\n".join(lines)
+
+
 def save_report(report_text):
     os.makedirs(REPORTS_DIR, exist_ok=True)
     timestamp  = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -235,7 +282,8 @@ def main():
     print("-" * 30)
 
     report_text = generate_report_with_ai(market_context, news_context, historical_context, openai_key)
-    final_text  = save_report(report_text)
+    signals_sections = build_signals_sections()
+    final_text  = save_report(report_text + signals_sections)
 
     print("\nReporte generado correctamente:\n")
     print(final_text)
