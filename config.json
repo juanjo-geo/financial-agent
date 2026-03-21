@@ -5,5 +5,12 @@
   "whatsapp_enabled": true,
   "whatsapp_to": "573174286451",
   "alerts_enabled": true,
-  "alert_threshold": 4.0
+  "alert_threshold": 4.0,
+  "active_indicators": [
+    "brent",
+    "btc",
+    "dxy",
+    "usdcop",
+    "gold"
+  ]
 }

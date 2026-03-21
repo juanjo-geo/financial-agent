@@ -1,4 +1,5 @@
 import os
+import json
 import base64
 from pathlib import Path
 from datetime import datetime
@@ -19,6 +20,30 @@ SNAPSHOT_FILE = ROOT / "data/processed/latest_snapshot.csv"
 HISTORY_FILE  = ROOT / "data/historical/market_history.csv"
 REPORT_FILE   = ROOT / "reports/daily_report.txt"
 LOGO_FILE     = ROOT / "logo.png"
+
+# ── Catálogo de indicadores (mismo que indicators_catalog.py) ────────────────
+_CATALOG = {
+    "brent":                  {"label": "Brent",           "news": "brent crude oil price",         "usdcop_rss": False},
+    "gold":                   {"label": "Oro (XAU/USD)",   "news": "gold price XAU USD",             "usdcop_rss": False},
+    "wti":                    {"label": "WTI",             "news": "WTI crude oil price",            "usdcop_rss": False},
+    "silver":                 {"label": "Plata",           "news": "silver price XAG USD",           "usdcop_rss": False},
+    "copper":                 {"label": "Cobre",           "news": "copper price commodity",         "usdcop_rss": False},
+    "natgas":                 {"label": "Gas Natural",     "news": "natural gas price NG",           "usdcop_rss": False},
+    "btc":                    {"label": "BTC",             "news": "bitcoin BTC crypto",             "usdcop_rss": False},
+    "dxy":                    {"label": "DXY",             "news": "US dollar DXY index",            "usdcop_rss": False},
+    "usdcop":                 {"label": "USD/COP",         "news": "peso colombiano dolar Colombia", "usdcop_rss": True},
+    "eurusd":                 {"label": "EUR/USD",         "news": "euro dollar EUR USD",            "usdcop_rss": False},
+    "sp500":                  {"label": "S&P 500",         "news": "S&P 500 stock market index",     "usdcop_rss": False},
+    "nasdaq":                 {"label": "Nasdaq",          "news": "Nasdaq index stock market",      "usdcop_rss": False},
+    "aapl":                   {"label": "Apple (AAPL)",    "news": "Apple stock AAPL",               "usdcop_rss": False},
+    "msft":                   {"label": "Microsoft (MSFT)","news": "Microsoft stock MSFT",           "usdcop_rss": False},
+    "nvda":                   {"label": "Nvidia (NVDA)",   "news": "Nvidia stock NVDA",              "usdcop_rss": False},
+    "amzn":                   {"label": "Amazon (AMZN)",   "news": "Amazon stock AMZN",              "usdcop_rss": False},
+    "googl":                  {"label": "Alphabet (GOOGL)","news": "Alphabet Google stock",          "usdcop_rss": False},
+    "meta":                   {"label": "Meta (META)",     "news": "Meta Facebook stock META",       "usdcop_rss": False},
+    "tsla":                   {"label": "Tesla (TSLA)",    "news": "Tesla stock TSLA",               "usdcop_rss": False},
+    "global_inflation_proxy": {"label": "Inflación Global","news": "global inflation CPI",           "usdcop_rss": False},
+}
 
 # ── Paleta fintech profesional ────────────────────────────────────────────────
 # Azul oscuro #1B2A4A · Verde #00C896 · Rojo #FF4B4B · Acento #3DB860
@@ -204,13 +229,13 @@ hr     { border-color: #00C896 !important; opacity: 0.2; }
 </style>
 """
 
-NEWS_QUERIES = {
-    "Brent":   "brent crude oil price",
-    "BTC":     "bitcoin BTC crypto",
-    "DXY":     "US dollar DXY index",
-    "USD/COP": "peso colombiano dolar Colombia",
-    "Oro":     "gold price XAU USD",
-}
+def _build_news_queries():
+    """Construye NEWS_QUERIES dinámicamente desde active_indicators."""
+    active = _load_active_indicators()
+    return {
+        _CATALOG[k]["label"]: (_CATALOG[k]["news"], _CATALOG[k]["usdcop_rss"])
+        for k in active if k in _CATALOG
+    }
 
 
 def get_secret(key):
@@ -227,15 +252,23 @@ def get_file_mtime(path):
         return None
 
 
-# Indicadores visibles en el dashboard (excluye proxy interno)
-DISPLAY_INDICATORS = ["brent", "btc", "dxy", "usdcop", "gold"]
+def _load_active_indicators():
+    """Lee active_indicators desde config.json; fallback a los 5 por defecto."""
+    config_file = ROOT / "config.json"
+    try:
+        with open(config_file, "r", encoding="utf-8") as f:
+            return json.load(f).get("active_indicators",
+                                    ["brent", "btc", "dxy", "usdcop", "gold"])
+    except Exception:
+        return ["brent", "btc", "dxy", "usdcop", "gold"]
 
 @st.cache_data
 def load_snapshot():
+    active = _load_active_indicators()
     if not os.path.exists(SNAPSHOT_FILE):
         return pd.DataFrame()
     df = pd.read_csv(SNAPSHOT_FILE)
-    return df[df["indicator"].isin(DISPLAY_INDICATORS)].reset_index(drop=True)
+    return df[df["indicator"].isin(active)].reset_index(drop=True)
 
 
 def load_report():
@@ -303,10 +336,11 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
 
 @st.cache_data
 def load_historical_comparison():
+    active = _load_active_indicators()
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
     df = pd.read_csv(HISTORY_FILE)
-    df = df[df["indicator"].isin(DISPLAY_INDICATORS)]
+    df = df[df["indicator"].isin(active)]
     df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
     df = df.dropna(subset=["timestamp", "value"])
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
@@ -347,22 +381,16 @@ def load_historical_comparison():
     return pd.DataFrame(rows)
 
 
-def fetch_headlines(indicator, query, api_key, max_results=3):
-    if indicator == "USD/COP":
+def fetch_headlines(indicator, query, api_key, max_results=3, use_rss=False):
+    if use_rss:
         return fetch_headlines_rss(
-            "peso colombiano dolar TRM Colombia",
-            lang="es-CO", gl="CO", ceid="CO:es", max_results=max_results,
+            query, lang="es-CO", gl="CO", ceid="CO:es", max_results=max_results,
         )
     if api_key:
         results = fetch_headlines_newsapi(query, api_key, max_results)
         if results:
             return results
-    # fallback: Google News RSS en inglés
     return fetch_headlines_rss(query, lang="en-US", gl="US", ceid="US:en", max_results=max_results)
-
-
-# Indicadores cuya fuente de noticias es RSS directamente (sin pasar por NewsAPI)
-_RSS_ONLY = {"USD/COP"}
 
 
 def _img_b64(path):
@@ -504,8 +532,8 @@ def run_dashboard():
         st.warning("NEWS_API_KEY no configurada.")
     else:
         cards_html = ""
-        for label, query in NEWS_QUERIES.items():
-            headlines  = fetch_headlines(label, query, news_api_key)
+        for label, (query, use_rss) in _build_news_queries().items():
+            headlines  = fetch_headlines(label, query, news_api_key, use_rss=use_rss)
             if not headlines:
                 items_html = '<div class="news-item" style="color:#8A9BA8;font-size:0.85rem">Sin titulares disponibles.</div>'
             else:
@@ -536,7 +564,7 @@ def run_dashboard():
         hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
         hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
         hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
-        hist_raw = hist_raw[hist_raw["indicator"].isin(DISPLAY_INDICATORS)]
+        hist_raw = hist_raw[hist_raw["indicator"].isin(_load_active_indicators())]
 
         indicators = sorted(hist_raw["indicator"].dropna().unique().tolist())
         selected   = st.selectbox("Selecciona un indicador", indicators)

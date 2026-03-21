@@ -7,13 +7,14 @@ ROOT        = Path(__file__).parent.parent
 CONFIG_FILE = ROOT / "config.json"
 
 DEFAULTS = {
-    "send_hour_utc":    12,
-    "email_enabled":    True,
-    "email_to":         "",
-    "whatsapp_enabled": True,
-    "whatsapp_to":      "",
-    "alerts_enabled":   True,
-    "alert_threshold":  4.0,
+    "send_hour_utc":       12,
+    "email_enabled":       True,
+    "email_to":            "",
+    "whatsapp_enabled":    True,
+    "whatsapp_to":         "",
+    "alerts_enabled":      True,
+    "alert_threshold":     4.0,
+    "active_indicators":   ["brent", "btc", "dxy", "usdcop", "gold"],
 }
 
 

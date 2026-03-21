@@ -3,6 +3,8 @@ from datetime import datetime
 import pandas as pd
 import yfinance as yf
 import os
+from scripts.load_config import load_config
+from scripts.indicators_catalog import CATALOG
 
 def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
     try:
@@ -58,37 +60,31 @@ def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
         }
 
 def get_market_data():
-    indicators = [
-        {"symbol": "BZ=F",     "name": "brent",  "unit": "USD/bbl"},
-        {"symbol": "BTC-USD",  "name": "btc",    "unit": "USD"},
-        {"symbol": "DX-Y.NYB", "name": "dxy",    "unit": "index"},
-        {"symbol": "COP=X",    "name": "usdcop", "unit": "COP per USD"},
-        {"symbol": "GC=F",     "name": "gold",   "unit": "USD/oz"},
-    ]
+    cfg = load_config()
+    active = cfg.get("active_indicators", ["brent", "btc", "dxy", "usdcop", "gold"])
 
     records = []
+    for key in active:
+        info = CATALOG.get(key)
+        if info is None:
+            print(f"  [WARN] Indicador desconocido en config: {key}")
+            continue
 
-    for item in indicators:
-        record = fetch_ticker_data(
-            symbol=item["symbol"],
-            indicator_name=item["name"],
-            unit=item["unit"]
-        )
-        records.append(record)
-
-    inflation_proxy = {
-        "indicator": "global_inflation_proxy",
-        "timestamp": datetime.now().isoformat(),
-        "value": 3.0,
-        "open_value": 3.0,
-        "change_abs": 0.0,
-        "change_pct": 0.0,
-        "unit": "%",
-        "source": "manual_proxy",
-        "status": "ok"
-    }
-
-    records.append(inflation_proxy)
+        # Proxy manual (no yfinance)
+        if info["symbol"] is None:
+            records.append({
+                "indicator": key,
+                "timestamp": datetime.now().isoformat(),
+                "value": 3.0, "open_value": 3.0,
+                "change_abs": 0.0, "change_pct": 0.0,
+                "unit": info["unit"], "source": "manual_proxy", "status": "ok",
+            })
+        else:
+            records.append(fetch_ticker_data(
+                symbol=info["symbol"],
+                indicator_name=key,
+                unit=info["unit"],
+            ))
 
     return pd.DataFrame(records)
 
