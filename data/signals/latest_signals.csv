@@ -1,0 +1,6 @@
+timestamp_generated,indicator,value,change_pct,unit,direction,severity,message
+2026-03-21 08:49:57,brent,106.41,3.1005,USD/bbl,up,medium,Brent sube 3.10% (movimiento relevante). Valor actual: 106.41 USD/bbl
+2026-03-21 08:49:57,btc,70707.1016,0.2687,USD,up,none,Sin señal relevante en Bitcoin.
+2026-03-21 08:49:57,dxy,99.503,0.2145,index,up,none,Sin señal relevante en DXY.
+2026-03-21 08:49:57,global_inflation_proxy,3.0,0.0,%,flat,none,Sin señal relevante en inflación global proxy.
+2026-03-21 08:49:57,usdcop,3715.9099,0.0,COP per USD,flat,none,Sin señal relevante en USD/COP.

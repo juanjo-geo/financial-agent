@@ -1,0 +1,21 @@
+MARKET REGIME REPORT
+------------------------------
+Generado: 2026-03-21 08:49:59
+
+REGÍMENES DETECTADOS
+------------------------------
+- Inflation Pressure
+- Mixed Macro
+
+EXPLICACIÓN
+------------------------------
+- El petróleo sube con intensidad, aumentando presión inflacionaria energética.
+- Dólar fuerte y Bitcoin al alza sugieren un entorno macro mixto.
+
+SEÑALES BASE
+------------------------------
+- BRENT: 3.10% | up | medium
+- BTC: 0.27% | up | none
+- DXY: 0.21% | up | none
+- GLOBAL_INFLATION_PROXY: 0.00% | flat | none
+- USDCOP: 0.00% | flat | none

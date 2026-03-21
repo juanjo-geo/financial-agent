@@ -1,0 +1,9 @@
+streamlit==1.55.0
+plotly==6.6.0
+pandas==2.3.3
+numpy==2.4.3
+python-dotenv==1.2.2
+requests==2.32.5
+openai==2.28.0
+yfinance==1.2.0
+twilio==9.10.3

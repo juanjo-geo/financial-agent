@@ -1,0 +1,23 @@
+# Entorno virtual
+.venv/
+
+# Variables de entorno — NUNCA subir al repo
+.env
+
+# Logs locales
+logs/
+
+# Cache de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de Windows
+*.lnk
+Thumbs.db
+
+# Datos históricos pesados (opcionales en repo)
+data/historical/
+
+# Jupyter
+.ipynb_checkpoints/
