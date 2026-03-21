@@ -52,184 +52,211 @@ _CATALOG = {
 
 BRAND_CSS = """
 <style>
-/* ── Base ───────────────────────────────────────────────────────────────── */
-[data-testid="stAppViewContainer"] { background-color: #F0F4F8; }
-[data-testid="stSidebar"]          { background-color: #E8F1F8; }
+/* ── Reset / base ───────────────────────────────────────────────────────── */
+[data-testid="stAppViewContainer"] { background: #F8F9FA; }
+[data-testid="stSidebar"]          { background: #FFFFFF; border-right: 1px solid #E8EDF2; }
 [data-testid="stAppViewBlockContainer"],
 [data-testid="stMainBlockContainer"],
 .block-container { padding-top: 0 !important; margin-top: 0 !important; }
 
 /* ── Header ─────────────────────────────────────────────────────────────── */
 .fa-header {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 20px 0 16px 0;
-    border-bottom: 3px solid #00C896;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 24px;
+    padding: 24px 0 20px; border-bottom: 2px solid #E8EDF2;
+    margin-bottom: 32px; flex-wrap: wrap;
 }
-.fa-header img  { height: 110px; width: auto; flex-shrink: 0; }
+.fa-header img  { height: 96px; width: auto; flex-shrink: 0; border-radius: 12px; }
 .fa-title-block { flex: 1; min-width: 220px; }
-.fa-title       { line-height: 1.05; }
-.fa-title h1    { margin: 0; color: #1B2A4A; font-size: 6rem;
-                  font-weight: 800; letter-spacing: -2px; }
-.fa-title span  { color: #00C896; font-size: 3rem; font-weight: 500; }
-.fa-subtitle    { color: #6B7C93; font-size: 0.95rem;
-                  margin-top: 6px; font-style: italic; }
-.fa-badges      { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.fa-title h1 {
+    margin: 0; color: #1B2A4A; font-size: 2.6rem;
+    font-weight: 800; letter-spacing: -1px; line-height: 1.1;
+}
+.fa-title h1 span { color: #00C896; font-weight: 500; }
+.fa-subtitle { color: #8A9BB0; font-size: 0.88rem; margin-top: 4px; }
+.fa-badges   { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 .fa-badge {
     display: inline-flex; align-items: center; gap: 5px;
-    font-size: 0.78rem; font-weight: 600;
-    padding: 4px 12px; border-radius: 20px; white-space: nowrap;
+    font-size: 0.75rem; font-weight: 600;
+    padding: 3px 11px; border-radius: 20px; white-space: nowrap;
 }
-.badge-update { background: #E8F1F8; color: #1B2A4A; border: 1px solid #C8D8E8; }
-.badge-ok     { background: #E0FAF3; color: #008A68; border: 1px solid #A0E8D0; }
-.badge-dot    { width: 7px; height: 7px; border-radius: 50%; }
-.badge-dot.ok  { background: #00C896;
-                 box-shadow: 0 0 0 2px rgba(0,200,150,0.3);
-                 animation: pulse 2s ease-in-out infinite; }
+.badge-update { background: #F0F4F8; color: #5A6A7E; border: 1px solid #D8E2EC; }
+.badge-ok     { background: #E6FBF4; color: #00875A; border: 1px solid #B3EDD8; }
+.badge-dot    { width: 6px; height: 6px; border-radius: 50%; background: #00C896;
+                box-shadow: 0 0 0 2px rgba(0,200,150,.25);
+                animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 2px rgba(0,200,150,0.3); }
-    50%       { box-shadow: 0 0 0 5px rgba(0,200,150,0.1); }
+    0%,100% { box-shadow: 0 0 0 2px rgba(0,200,150,.25); }
+    50%      { box-shadow: 0 0 0 5px rgba(0,200,150,.08); }
 }
 
-/* ── Section headings ───────────────────────────────────────────────────── */
-h2, h3 { color: #1B2A4A !important; }
-hr     { border-color: #00C896 !important; opacity: 0.2; }
+/* ── Section labels ─────────────────────────────────────────────────────── */
 .section-label {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #6B7C93;
-    margin-bottom: 14px; margin-top: 4px;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: #8A9BB0;
+    margin-bottom: 16px; margin-top: 8px;
+    display: flex; align-items: center; gap: 8px;
 }
+.section-label::after {
+    content: ""; flex: 1; height: 1px; background: #E8EDF2;
+}
+h2,h3 { color: #1B2A4A !important; }
 
 /* ── Snapshot metric cards ──────────────────────────────────────────────── */
 .metric-card {
     background: #FFFFFF;
-    border: 1px solid #E2EAF0;
-    border-radius: 14px;
-    padding: 22px 18px 18px 18px;
+    border: 1px solid #EAF0F6;
+    border-radius: 16px;
+    padding: 20px 16px 16px;
     text-align: center;
-    box-shadow: 0 2px 12px rgba(27,42,74,0.07);
-    transition: box-shadow 0.2s;
+    min-height: 130px;
+    display: flex; flex-direction: column;
+    justify-content: space-between; align-items: center;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05), 0 4px 16px rgba(27,42,74,.04);
+    transition: box-shadow .2s ease, transform .2s ease;
+    position: relative; overflow: hidden;
 }
-.metric-card:hover { box-shadow: 0 6px 20px rgba(27,42,74,0.12); }
+.metric-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; border-radius: 16px 16px 0 0;
+    background: linear-gradient(90deg,#00C896,#3DB8A0);
+    opacity: 0; transition: opacity .2s;
+}
+.metric-card:hover {
+    box-shadow: 0 8px 32px rgba(27,42,74,.12);
+    transform: translateY(-3px);
+}
+.metric-card:hover::before { opacity: 1; }
 .mc-label {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #6B7C93; margin-bottom: 10px;
+    font-size: 0.67rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #8A9BB0;
 }
 .mc-value {
-    font-size: 1.4rem; font-weight: 800; color: #1B2A4A;
-    word-break: break-word; line-height: 1.2; margin-bottom: 8px;
+    font-size: 1.35rem; font-weight: 800; color: #1B2A4A;
+    word-break: break-word; line-height: 1.2;
 }
 .mc-delta {
-    font-size: 0.88rem; font-weight: 700;
-    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.82rem; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 3px;
     padding: 3px 10px; border-radius: 20px;
 }
-.mc-delta.pos { background: #E0FAF3; color: #008A68; }
-.mc-delta.neg { background: #FFF0F0; color: #CC3333; }
-.mc-delta.neu { background: #F0F4F6; color: #8A9BA8; }
-.mc-arrow { display: inline-block; }
-.mc-arrow.up   { animation: bounce-up   1.4s ease-in-out infinite; }
-.mc-arrow.down { animation: bounce-down 1.4s ease-in-out infinite; }
-@keyframes bounce-up {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-4px); }
-}
-@keyframes bounce-down {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(4px); }
-}
+.mc-delta.pos { background: #E6FBF4; color: #00875A; }
+.mc-delta.neg { background: #FFF0F0; color: #C0392B; }
+.mc-delta.neu { background: #F0F4F8; color: #8A9BB0; }
+.mc-arrow.up   { animation: up-bounce   1.6s ease-in-out infinite; display:inline-block; }
+.mc-arrow.down { animation: down-bounce 1.6s ease-in-out infinite; display:inline-block; }
+@keyframes up-bounce   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+@keyframes down-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
 
-/* ── Historical variation cards ─────────────────────────────────────────── */
+/* ── Historical variation ────────────────────────────────────────────────── */
 .hist-card {
-    background: #FFFFFF; border: 1px solid #E2EAF0;
-    border-radius: 14px; padding: 18px;
-    box-shadow: 0 2px 12px rgba(27,42,74,0.07);
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; padding: 16px 18px;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
 }
-.hc-title {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #1B2A4A;
-    margin-bottom: 12px; padding-bottom: 8px;
-    border-bottom: 2px solid #F0F4F8;
-    display: flex; justify-content: space-between; align-items: baseline;
-}
-.hc-unit { font-size: 0.7rem; font-weight: 400;
-           text-transform: none; color: #6B7C93; }
-.hist-row {
+.hc-header {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 7px 0; border-bottom: 1px solid #F5F8FA; font-size: 0.9rem;
+    margin-bottom: 14px; padding-bottom: 10px;
+    border-bottom: 1px solid #F0F4F8;
+}
+.hc-name  { font-size: 0.75rem; font-weight: 700; letter-spacing: .08em;
+            text-transform: uppercase; color: #1B2A4A; }
+.hc-unit  { font-size: 0.68rem; color: #8A9BB0; font-weight: 500; }
+.hist-row {
+    display: grid; grid-template-columns: 4rem 1fr auto;
+    align-items: center; gap: 6px;
+    padding: 5px 0; font-size: 0.85rem;
+    border-bottom: 1px solid #F8FAFB;
 }
 .hist-row:last-child { border-bottom: none; }
-.hr-period { color: #6B7C93; font-weight: 500; }
-.hr-value  { color: #1B2A4A; font-weight: 700; }
-.hr-delta  { font-weight: 700; font-size: 0.8rem;
-             padding: 2px 8px; border-radius: 20px; }
-.hr-delta.pos { background: #E0FAF3; color: #008A68; }
-.hr-delta.neg { background: #FFF0F0; color: #CC3333; }
-.hr-delta.neu { background: #F0F4F6; color: #8A9BA8; }
+.hr-period { color: #8A9BB0; font-size: 0.78rem; font-weight: 500; }
+.hr-value  { color: #1B2A4A; font-weight: 700; text-align: right; }
+.hr-delta  { font-weight: 700; font-size: 0.74rem;
+             padding: 2px 7px; border-radius: 20px; white-space: nowrap; }
+.hr-delta.pos { background: #E6FBF4; color: #00875A; }
+.hr-delta.neg { background: #FFF0F0; color: #C0392B; }
+.hr-delta.neu { background: #F0F4F8; color: #8A9BB0; }
 
 /* ── News ───────────────────────────────────────────────────────────────── */
-.news-col-wrap {
-    background: #FFFFFF; border: 1px solid #E2EAF0;
-    border-radius: 14px; padding: 16px 16px 10px 16px;
-    box-shadow: 0 2px 12px rgba(27,42,74,0.07);
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px; margin-top: 4px;
 }
-.news-col-title {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #1B2A4A;
-    padding-bottom: 8px; margin-bottom: 8px;
+@media(max-width:1100px){ .news-grid{grid-template-columns:repeat(3,1fr);} }
+@media(max-width:768px) { .news-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:480px) { .news-grid{grid-template-columns:1fr;} }
+.news-block { background:#FFFFFF; border:1px solid #EAF0F6; border-radius:14px;
+              padding:16px; box-shadow:0 1px 4px rgba(27,42,74,.05); }
+.news-block-title {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #00875A;
+    padding-bottom: 10px; margin-bottom: 8px;
     border-bottom: 2px solid #00C896;
 }
-.news-item { padding: 8px 0; border-bottom: 1px solid #F0F4F8; line-height: 1.4; }
+.news-item { padding: 7px 0; border-bottom: 1px solid #F5F7FA; }
 .news-item:last-child { border-bottom: none; }
-.news-item a { font-size: 0.86rem; font-weight: 600; color: #1B2A4A;
-               text-decoration: none; }
+.news-item a {
+    font-size: 0.83rem; font-weight: 600; color: #1B2A4A;
+    text-decoration: none; line-height: 1.35; display: block;
+}
 .news-item a:hover { color: #00C896; }
-.news-meta { font-size: 0.73rem; color: #8A9BA8; margin-top: 2px; }
+.news-meta { font-size: 0.7rem; color: #A0ADB8; margin-top: 2px; }
 
 /* ── Report card ────────────────────────────────────────────────────────── */
 .report-card {
-    background: #FFFFFF; border: 1px solid #E2EAF0;
+    background: #FFFFFF; border: 1px solid #EAF0F6;
     border-radius: 14px; padding: 28px 32px;
-    box-shadow: 0 2px 12px rgba(27,42,74,0.07);
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
     position: relative; overflow: hidden;
 }
 .report-card::before {
     content: ""; position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%; background: linear-gradient(180deg, #00C896, #3DB860);
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg,#00C896,#1B2A4A);
 }
 .report-date {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #6B7C93; margin-bottom: 16px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #8A9BB0; margin-bottom: 16px;
 }
 .report-body {
-    font-size: 1.02rem; line-height: 1.8; color: #2C3E50;
-    white-space: pre-wrap; font-family: Georgia, serif;
+    font-size: 1rem; line-height: 1.85; color: #2C3E50;
+    white-space: pre-wrap; font-family: Georgia,serif;
 }
-
-/* ── News grid (4 + 3 layout) ───────────────────────────────────────────── */
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-top: 4px;
-}
-@media (max-width: 1100px) { .news-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px)  { .news-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px)  { .news-grid { grid-template-columns: 1fr; } }
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-    .fa-title h1 { font-size: 3rem; }
-    .fa-title span { font-size: 1.6rem; }
-    .fa-header img { height: 72px; }
+@media(max-width:768px){
+    .fa-title h1 { font-size: 1.8rem; }
+    .fa-header img { height: 64px; }
     .mc-value { font-size: 1.1rem; }
     .report-card { padding: 18px 16px; }
 }
 </style>
 """
+
+# Per-indicator color palette for charts: (line_color, fill_rgba)
+_IND_COLORS = {
+    "brent":  ("#E65C00", "rgba(230,92,0,0.08)"),
+    "wti":    ("#CC4400", "rgba(204,68,0,0.08)"),
+    "gold":   ("#C8940A", "rgba(200,148,10,0.08)"),
+    "silver": ("#7B8FA0", "rgba(123,143,160,0.08)"),
+    "copper": ("#B87333", "rgba(184,115,51,0.08)"),
+    "natgas": ("#FF8C00", "rgba(255,140,0,0.08)"),
+    "btc":    ("#F7931A", "rgba(247,147,26,0.08)"),
+    "dxy":    ("#1B2A4A", "rgba(27,42,74,0.10)"),
+    "usdcop": ("#FF4B4B", "rgba(255,75,75,0.08)"),
+    "eurusd": ("#0066CC", "rgba(0,102,204,0.08)"),
+    "sp500":  ("#00C896", "rgba(0,200,150,0.08)"),
+    "nasdaq": ("#00875A", "rgba(0,135,90,0.08)"),
+    "aapl":   ("#555555", "rgba(85,85,85,0.08)"),
+    "msft":   ("#00A4EF", "rgba(0,164,239,0.08)"),
+    "nvda":   ("#76B900", "rgba(118,185,0,0.08)"),
+    "amzn":   ("#FF9900", "rgba(255,153,0,0.08)"),
+    "googl":  ("#4285F4", "rgba(66,133,244,0.08)"),
+    "meta":   ("#0668E1", "rgba(6,104,225,0.08)"),
+    "tsla":   ("#CC0000", "rgba(204,0,0,0.08)"),
+    "global_inflation_proxy": ("#9B59B6", "rgba(155,89,182,0.08)"),
+}
+_DEFAULT_COLOR = ("#1B2A4A", "rgba(27,42,74,0.08)")
 
 def _build_news_queries():
     """Construye NEWS_QUERIES dinámicamente desde active_indicators."""
@@ -562,8 +589,8 @@ def run_dashboard():
                     linked = f'<a href="{l}" target="_blank">{t}</a>' if l else t
                     items_html += f'<div class="news-item">{linked}<div class="news-meta">{m}</div></div>'
             cards_html += (
-                f'<div class="news-col-wrap">'
-                f'<div class="news-col-title">{label}</div>'
+                f'<div class="news-block">'
+                f'<div class="news-block-title">{label}</div>'
                 f'{items_html}</div>'
             )
         st.markdown(f'<div class="news-grid">{cards_html}</div>', unsafe_allow_html=True)
@@ -588,41 +615,49 @@ def run_dashboard():
             "Selecciona un indicador", indicators,
             key=f"chart_sel_{'_'.join(active)}",
         )
-        filtered   = hist_raw[hist_raw["indicator"] == selected].copy()
+        filtered = hist_raw[hist_raw["indicator"] == selected].copy()
 
         if not filtered.empty:
+            line_color, fill_color = _IND_COLORS.get(selected, _DEFAULT_COLOR)
             single_point = len(filtered) == 1
-            fig = px.scatter(filtered, x="timestamp", y="value",
-                             title=f"Histórico de {selected.upper()}",
-                             color_discrete_sequence=["#1B2A4A"]) \
-                  if single_point else \
-                  px.line(filtered, x="timestamp", y="value",
-                          title=f"Histórico de {selected.upper()}",
-                          color_discrete_sequence=["#1B2A4A"],
-                          markers=True)
-            if not single_point:
-                fig.update_traces(line_width=2, marker_size=5)
+
+            if single_point:
+                fig = px.scatter(filtered, x="timestamp", y="value",
+                                 title=f"Histórico — {selected.upper()}")
+                fig.update_traces(marker=dict(size=14, color=line_color))
+                st.info("Solo 1 día de datos. La gráfica crecerá con el pipeline diario.")
             else:
-                fig.update_traces(marker_size=12)
-                st.info("Este indicador tiene solo 1 día de datos. La gráfica se completará a medida que el pipeline acumule histórico.")
+                fig = px.area(filtered, x="timestamp", y="value",
+                              title=f"Histórico — {selected.upper()}")
+                fig.update_traces(
+                    line=dict(color=line_color, width=2),
+                    fillcolor=fill_color,
+                    marker=dict(size=4, color=line_color),
+                    hovertemplate="<b>%{x|%d %b %Y}</b><br>%{y:,.4f}<extra></extra>",
+                )
+
+            label = _CATALOG.get(selected, {}).get("label", selected.upper())
+            unit  = filtered["unit"].iloc[-1] if "unit" in filtered.columns else ""
             fig.update_layout(
-                xaxis_title="Fecha", yaxis_title="Valor",
+                title=dict(text=f"<b>{label}</b>  <span style='font-size:13px;color:#8A9BB0'>({unit})</span>",
+                           font=dict(size=16, color="#1B2A4A"), x=0),
+                xaxis_title="", yaxis_title=unit,
                 hovermode="x unified",
                 plot_bgcolor="#FFFFFF", paper_bgcolor="#FFFFFF",
-                font_color="#1B2A4A",
-                xaxis=dict(gridcolor="#F0F4F8"),
-                yaxis=dict(gridcolor="#F0F4F8"),
-                title_font_size=15,
-                margin=dict(t=48, b=32),
+                font=dict(color="#1B2A4A", size=12),
+                xaxis=dict(gridcolor="#F0F4F8", showline=False, zeroline=False),
+                yaxis=dict(gridcolor="#F0F4F8", showline=False, zeroline=False),
+                margin=dict(t=52, b=24, l=60, r=20),
+                legend=dict(visible=False),
             )
             st.plotly_chart(fig, use_container_width=True)
 
-            st.markdown("**Últimos 20 registros**")
-            st.dataframe(
-                filtered.tail(20)[["timestamp", "indicator", "value", "open_value",
-                                    "change_abs", "change_pct", "unit", "source", "status"]],
-                use_container_width=True, hide_index=True,
-            )
+            with st.expander("Ver últimos 20 registros"):
+                st.dataframe(
+                    filtered.tail(20)[["timestamp","indicator","value","open_value",
+                                       "change_abs","change_pct","unit","source","status"]],
+                    use_container_width=True, hide_index=True,
+                )
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
