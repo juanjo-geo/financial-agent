@@ -1,0 +1,49 @@
+name: Daily Market Pipeline
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 12:00 UTC = 7:00 AM Colombia
+  workflow_dispatch:        # permite correrlo manualmente desde GitHub
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run daily pipeline
+        env:
+          OPENAI_API_KEY:       ${{ secrets.OPENAI_API_KEY }}
+          NEWS_API_KEY:         ${{ secrets.NEWS_API_KEY }}
+          EMAIL_USER:           ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD:       ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO:             ${{ secrets.EMAIL_TO }}
+          WHATSAPP_TO:          ${{ secrets.WHATSAPP_TO }}
+          TWILIO_ACCOUNT_SID:   ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN:    ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_WHATSAPP_FROM: "+14155238886"
+        run: python scripts/run_daily.py
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/processed/ \
+            data/signals/ \
+            reports/
+          git diff --cached --quiet || git commit -m "chore: update market data $(date -u '+%Y-%m-%d')"
+          git push
