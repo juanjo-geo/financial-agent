@@ -27,27 +27,41 @@ BRAND_CSS = """
 [data-testid="stAppViewContainer"] { background-color: #FFFFFF; }
 [data-testid="stSidebar"]          { background-color: #EBF7F8; }
 
+/* Eliminar padding superior de Streamlit */
+[data-testid="stAppViewBlockContainer"],
+.block-container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+[data-testid="stMainBlockContainer"] {
+    padding-top: 0 !important;
+}
+
 /* Header bar */
 .fa-header {
     display: flex;
     align-items: center;
-    gap: 28px;
-    padding: 16px 0 8px 0;
+    gap: 32px;
+    padding: 20px 0 12px 0;
     border-bottom: 4px solid #3DB860;
     margin-bottom: 24px;
 }
-.fa-header img { height: 110px; width: auto; }
-.fa-title      { line-height: 1.15; }
+.fa-header img {
+    height: 120px;
+    width: auto;
+    flex-shrink: 0;
+}
+.fa-title      { line-height: 1.1; }
 .fa-title h1   {
     margin: 0;
     color: #1E7A8C;
-    font-size: 6rem;
+    font-size: 12rem;
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
 }
 .fa-title span {
     color: #3DB860;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 500;
 }
 .fa-subtitle {
