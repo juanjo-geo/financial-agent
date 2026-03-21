@@ -23,62 +23,153 @@ LOGO_FILE     = ROOT / "logo.png"
 
 BRAND_CSS = """
 <style>
-/* Colores del logo: teal #1E7A8C + verde #3DB860 */
-[data-testid="stAppViewContainer"] { background-color: #FFFFFF; }
+/* ── Base ───────────────────────────────────────────────────────────────── */
+[data-testid="stAppViewContainer"] { background-color: #F7FAFB; }
 [data-testid="stSidebar"]          { background-color: #EBF7F8; }
 
-/* Eliminar padding superior de Streamlit */
+/* Remove Streamlit top padding */
 [data-testid="stAppViewBlockContainer"],
+[data-testid="stMainBlockContainer"],
 .block-container {
     padding-top: 0 !important;
     margin-top: 0 !important;
 }
-[data-testid="stMainBlockContainer"] {
-    padding-top: 0 !important;
-}
 
-/* Header bar */
+/* ── Header ─────────────────────────────────────────────────────────────── */
 .fa-header {
     display: flex;
     align-items: center;
     gap: 32px;
-    padding: 20px 0 12px 0;
+    padding: 20px 0 16px 0;
     border-bottom: 4px solid #3DB860;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
-.fa-header img {
-    height: 120px;
-    width: auto;
-    flex-shrink: 0;
+.fa-header img  { height: 120px; width: auto; flex-shrink: 0; }
+.fa-title       { line-height: 1.1; }
+.fa-title h1    {
+    margin: 0; color: #1E7A8C;
+    font-size: 6rem; font-weight: 800; letter-spacing: -2px;
 }
-.fa-title      { line-height: 1.1; }
-.fa-title h1   {
-    margin: 0;
-    color: #1E7A8C;
-    font-size: 6rem;
-    font-weight: 800;
-    letter-spacing: -2px;
-}
-.fa-title span {
-    color: #3DB860;
-    font-size: 3rem;
-    font-weight: 500;
-}
-.fa-subtitle {
-    color: #5A8A95;
-    font-size: 1rem;
-    margin-top: 4px;
-    font-style: italic;
+.fa-title span  { color: #3DB860; font-size: 3rem; font-weight: 500; }
+.fa-subtitle    {
+    color: #5A8A95; font-size: 1rem;
+    margin-top: 6px; font-style: italic;
 }
 
-/* Subheadings */
+/* ── Section titles ─────────────────────────────────────────────────────── */
 h2, h3 { color: #1E7A8C !important; }
+hr     { border-color: #3DB860 !important; opacity: 0.25; }
 
-/* Divider color */
-hr { border-color: #3DB860 !important; opacity: 0.3; }
+/* ── Snapshot metric cards ──────────────────────────────────────────────── */
+.metric-card {
+    background: #FFFFFF;
+    border: 1px solid #D9EEF1;
+    border-radius: 12px;
+    padding: 20px 16px 16px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(30,122,140,0.07);
+    height: 100%;
+}
+.metric-card .mc-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5A8A95;
+    margin-bottom: 8px;
+}
+.metric-card .mc-value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1E7A8C;
+    word-break: break-word;
+    line-height: 1.2;
+}
+.metric-card .mc-delta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+.mc-delta.pos { color: #1A9E50; }
+.mc-delta.neg { color: #D94040; }
+.mc-delta.neu { color: #8A9BA8; }
 
-/* st.metric delta */
+/* ── Historical variation cards ─────────────────────────────────────────── */
+.hist-card {
+    background: #FFFFFF;
+    border: 1px solid #D9EEF1;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(30,122,140,0.07);
+    height: 100%;
+}
+.hist-card .hc-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5A8A95;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #EBF7F8;
+    padding-bottom: 6px;
+}
+.hist-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #F0F6F7;
+    font-size: 0.9rem;
+}
+.hist-row:last-child { border-bottom: none; }
+.hist-row .hr-period { color: #8A9BA8; font-weight: 500; }
+.hist-row .hr-value  { color: #1E2B36; font-weight: 700; }
+.hist-row .hr-delta  { font-weight: 700; font-size: 0.82rem; padding: 2px 7px;
+                       border-radius: 20px; }
+.hr-delta.pos { background: #E6F9EE; color: #1A9E50; }
+.hr-delta.neg { background: #FDECEC; color: #D94040; }
+.hr-delta.neu { background: #F0F4F6; color: #8A9BA8; }
+
+/* ── News cards ─────────────────────────────────────────────────────────── */
+.news-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1E7A8C;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #3DB860;
+}
+.news-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #EEF3F4;
+    line-height: 1.4;
+}
+.news-item:last-child { border-bottom: none; }
+.news-item a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1E2B36;
+    text-decoration: none;
+}
+.news-item a:hover { color: #1E7A8C; }
+.news-meta {
+    font-size: 0.75rem;
+    color: #8A9BA8;
+    margin-top: 2px;
+}
+
+/* ── st.metric delta icon hide ──────────────────────────────────────────── */
 [data-testid="stMetricDelta"] svg { display: none; }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .fa-title h1 { font-size: 3rem; }
+    .fa-title span { font-size: 1.6rem; }
+    .fa-header img { height: 72px; }
+    .metric-card .mc-value { font-size: 1.1rem; }
+}
 </style>
 """
 
@@ -273,20 +364,21 @@ def run_dashboard():
         cols = st.columns(len(snapshot_df))
         for i, (_, row) in enumerate(snapshot_df.iterrows()):
             indicator  = str(row["indicator"]).upper()
-            value      = row["value"]
-            unit       = row["unit"]
-            change_pct = row["change_pct"]
-            delta_text = "N/A"
+            value_str  = format_metric_value(row["value"], row["unit"])
             try:
-                delta_text = f"{float(change_pct):.2f}%"
+                chg = float(row["change_pct"])
+                delta_str   = f"{'▲' if chg >= 0 else '▼'} {chg:+.2f}%"
+                delta_class = "pos" if chg >= 0 else "neg"
             except Exception:
-                pass
-            cols[i].metric(
-                label=indicator,
-                value=format_metric_value(value, unit),
-                delta=delta_text,
-            )
+                delta_str, delta_class = "N/A", "neu"
+            cols[i].markdown(f"""
+<div class="metric-card">
+  <div class="mc-label">{indicator}</div>
+  <div class="mc-value">{value_str}</div>
+  <div class="mc-delta {delta_class}">{delta_str}</div>
+</div>""", unsafe_allow_html=True)
 
+    st.markdown("<div style='margin-top:32px'></div>", unsafe_allow_html=True)
     st.divider()
 
     # ── Variación histórica ──────────────────────────────────────────────────
@@ -297,19 +389,37 @@ def run_dashboard():
     else:
         hist_cols = st.columns(len(hist_df))
         for col, (_, row) in zip(hist_cols, hist_df.iterrows()):
-            d7_val  = row["Δ 7d (%)"]
-            d30_val = row["Δ 30d (%)"]
-            with col:
-                st.markdown(f"**{row['Indicador']}** `{row['Unidad']}`")
-                v_now = f"{row['Hoy']:,.2f}" if pd.notna(row["Hoy"]) else "N/A"
-                v7    = f"{row['Hace 7d']:,.2f}" if pd.notna(row["Hace 7d"]) else "N/A"
-                v30   = f"{row['Hace 30d']:,.2f}" if pd.notna(row["Hace 30d"]) else "N/A"
-                d7s   = f"{d7_val:+.2f}%" if pd.notna(d7_val)  else "N/A"
-                d30s  = f"{d30_val:+.2f}%" if pd.notna(d30_val) else "N/A"
-                st.metric("Hoy",     v_now)
-                st.metric("Hace 7d", v7,  delta=d7s)
-                st.metric("Hace 30d",v30, delta=d30s)
+            def fmt_val(v):
+                return f"{v:,.2f}" if pd.notna(v) else "—"
+            def fmt_delta(d):
+                if not pd.notna(d):
+                    return "—", "neu"
+                cls = "pos" if d >= 0 else "neg"
+                return f"{'▲' if d >= 0 else '▼'} {d:+.2f}%", cls
 
+            d7s,  d7cls  = fmt_delta(row["Δ 7d (%)"])
+            d30s, d30cls = fmt_delta(row["Δ 30d (%)"])
+            with col:
+                st.markdown(f"""
+<div class="hist-card">
+  <div class="hc-title">{row['Indicador']} <span style="font-weight:400;text-transform:none;font-size:0.72rem">{row['Unidad']}</span></div>
+  <div class="hist-row">
+    <span class="hr-period">Hoy</span>
+    <span class="hr-value">{fmt_val(row['Hoy'])}</span>
+  </div>
+  <div class="hist-row">
+    <span class="hr-period">Hace 7d</span>
+    <span class="hr-value">{fmt_val(row['Hace 7d'])}</span>
+    <span class="hr-delta {d7cls}">{d7s}</span>
+  </div>
+  <div class="hist-row">
+    <span class="hr-period">Hace 30d</span>
+    <span class="hr-value">{fmt_val(row['Hace 30d'])}</span>
+    <span class="hr-delta {d30cls}">{d30s}</span>
+  </div>
+</div>""", unsafe_allow_html=True)
+
+    st.markdown("<div style='margin-top:32px'></div>", unsafe_allow_html=True)
     st.divider()
 
     # ── Titulares de noticias ────────────────────────────────────────────────
@@ -322,18 +432,20 @@ def run_dashboard():
         for col, (label, query) in zip(indicator_cols, NEWS_QUERIES.items()):
             headlines = fetch_headlines(label, query, news_api_key)
             with col:
-                st.markdown(f"**{label}**")
+                st.markdown(f'<div class="news-section-title">{label}</div>', unsafe_allow_html=True)
                 if not headlines:
                     st.caption("Sin titulares disponibles.")
                 else:
+                    items_html = ""
                     for h in headlines:
-                        with st.container(border=True):
-                            if h["url"]:
-                                st.markdown(f"[{h['title']}]({h['url']})")
-                            else:
-                                st.markdown(h["title"])
-                            st.caption(f"{h['source']}  ·  {h['publishedAt']}")
+                        title = h["title"].replace("<", "&lt;").replace(">", "&gt;")
+                        link  = h.get("url", "")
+                        meta  = f"{h['source']}  ·  {h['publishedAt']}"
+                        linked = f'<a href="{link}" target="_blank">{title}</a>' if link else title
+                        items_html += f'<div class="news-item">{linked}<div class="news-meta">{meta}</div></div>'
+                    st.markdown(items_html, unsafe_allow_html=True)
 
+    st.markdown("<div style='margin-top:32px'></div>", unsafe_allow_html=True)
     st.divider()
 
     # ── Gráficas históricas ──────────────────────────────────────────────────
