@@ -25,22 +25,23 @@ def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
             }
 
         latest_close = hist["Close"].iloc[-1]
-        latest_open = hist["Open"].iloc[-1]
+        latest_open  = hist["Open"].iloc[-1]
+
+        # Guard against NaN open (futures off-hours) — fall back to previous close
+        if pd.isna(latest_open) or latest_open == 0:
+            prev_rows = hist[hist["Open"].notna() & (hist["Open"] != 0)]
+            latest_open = prev_rows["Open"].iloc[-1] if not prev_rows.empty else latest_close
 
         change_abs = latest_close - latest_open
-
-        if latest_open != 0:
-            change_pct = (change_abs / latest_open) * 100
-        else:
-            change_pct = None
+        change_pct = (change_abs / latest_open) * 100 if latest_open != 0 else None
 
         return {
             "indicator": indicator_name,
             "timestamp": datetime.now().isoformat(),
-            "value": round(float(latest_close), 4),
-            "open_value": round(float(latest_open), 4),
-            "change_abs": round(float(change_abs), 4),
-            "change_pct": round(float(change_pct), 4) if change_pct is not None else None,
+            "value":      round(float(latest_close), 4),
+            "open_value": round(float(latest_open),  4),
+            "change_abs": round(float(change_abs),   4),
+            "change_pct": round(float(change_pct),   4) if change_pct is not None else None,
             "unit": unit,
             "source": source,
             "status": "ok"

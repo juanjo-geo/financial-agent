@@ -42,6 +42,21 @@ def clean_market_data(df):
     clean_df = clean_df.drop_duplicates(subset=["indicator", "timestamp"], keep="last")
     clean_df = clean_df.reset_index(drop=True)
 
+    # Recalculate change_abs/change_pct for rows where they are NaN
+    # but value and open_value are valid (e.g. NaN open from yfinance off-hours)
+    mask = (
+        clean_df["change_pct"].isna()
+        & clean_df["value"].notna()
+        & clean_df["open_value"].notna()
+        & (clean_df["open_value"] != 0)
+    )
+    clean_df.loc[mask, "change_abs"] = (
+        clean_df.loc[mask, "value"] - clean_df.loc[mask, "open_value"]
+    )
+    clean_df.loc[mask, "change_pct"] = (
+        clean_df.loc[mask, "change_abs"] / clean_df.loc[mask, "open_value"] * 100
+    )
+
     return clean_df
 
 
