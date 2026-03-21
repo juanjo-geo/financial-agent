@@ -43,7 +43,7 @@ def format_metric_value(value, unit):
         return f"{value} {unit}"
 
 
-st.title("Financial Agent Dashboard")
+st.markdown("# Financial Agent Dashboard <span style='font-size:0.5em; font-weight:400;'>Juanjo</span>", unsafe_allow_html=True)
 st.caption("Monitoreo de indicadores financieros del MVP")
 
 snapshot_df = load_snapshot()
