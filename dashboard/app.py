@@ -494,26 +494,24 @@ def run_dashboard():
         st.warning("No hay datos en latest_snapshot.csv")
     else:
         rows_data = list(snapshot_df.iterrows())
-        # Display in rows of 4
-        for row_start in range(0, len(rows_data), 4):
-            chunk = rows_data[row_start:row_start + 4]
-            cols  = st.columns(len(chunk))
-            for col, (_, row) in zip(cols, chunk):
-                indicator = str(row["indicator"]).upper()
-                value_str = format_metric_value(row["value"], row["unit"])
-                try:
-                    chg = float(row["change_pct"])
-                    arrow_cls   = "up" if chg >= 0 else "down"
-                    arrow_sym   = "▲" if chg >= 0 else "▼"
-                    delta_class = "pos" if chg >= 0 else "neg"
-                    delta_html  = (
-                        f'<span class="mc-delta {delta_class}">'
-                        f'<span class="mc-arrow {arrow_cls}">{arrow_sym}</span>'
-                        f' {chg:+.2f}%</span>'
-                    )
-                except Exception:
-                    delta_html = '<span class="mc-delta neu">N/A</span>'
-                col.markdown(f"""
+        # All cards in one row with equal-width columns (config limits to max 5)
+        cols = st.columns(len(rows_data))
+        for col, (_, row) in zip(cols, rows_data):
+            indicator = str(row["indicator"]).upper()
+            value_str = format_metric_value(row["value"], row["unit"])
+            try:
+                chg = float(row["change_pct"])
+                arrow_cls   = "up" if chg >= 0 else "down"
+                arrow_sym   = "▲" if chg >= 0 else "▼"
+                delta_class = "pos" if chg >= 0 else "neg"
+                delta_html  = (
+                    f'<span class="mc-delta {delta_class}">'
+                    f'<span class="mc-arrow {arrow_cls}">{arrow_sym}</span>'
+                    f' {chg:+.2f}%</span>'
+                )
+            except Exception:
+                delta_html = '<span class="mc-delta neu">N/A</span>'
+            col.markdown(f"""
 <div class="metric-card">
   <div class="mc-label">{indicator}</div>
   <div class="mc-value">{value_str}</div>
@@ -537,14 +535,13 @@ def run_dashboard():
             return (f"{'▲' if d >= 0 else '▼'} {d:+.2f}%", "pos" if d >= 0 else "neg")
 
         hist_rows_data = list(hist_df.iterrows())
-        for row_start in range(0, len(hist_rows_data), 4):
-            chunk     = hist_rows_data[row_start:row_start + 4]
-            hist_cols = st.columns(len(chunk))
-            for col, (_, row) in zip(hist_cols, chunk):
-                d7s,  d7c  = fmt_d(row["Δ 7d (%)"])
-                d30s, d30c = fmt_d(row["Δ 30d (%)"])
-                with col:
-                    st.markdown(f"""
+        # Equal-width columns for all cards in one row (max 5 per config)
+        hist_cols = st.columns(len(hist_rows_data))
+        for col, (_, row) in zip(hist_cols, hist_rows_data):
+            d7s,  d7c  = fmt_d(row["Δ 7d (%)"])
+            d30s, d30c = fmt_d(row["Δ 30d (%)"])
+            with col:
+                st.markdown(f"""
 <div class="hist-card">
   <div class="hc-title">
     {row['Indicador']}
@@ -565,6 +562,7 @@ def run_dashboard():
     <span class="hr-delta {d30c}">{d30s}</span>
   </div>
 </div>""", unsafe_allow_html=True)
+
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()

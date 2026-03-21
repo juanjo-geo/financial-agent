@@ -1,11 +1,13 @@
 import json
 import os
+import re
 from pathlib import Path
 import streamlit as st
 
 # ── Rutas ─────────────────────────────────────────────────────────────────────
-ROOT        = Path(__file__).parent.parent.parent
-CONFIG_FILE = ROOT / "config.json"
+ROOT          = Path(__file__).parent.parent.parent
+CONFIG_FILE   = ROOT / "config.json"
+WORKFLOW_FILE = ROOT / ".github" / "workflows" / "daily_pipeline.yml"
 
 DEFAULTS = {
     "send_hour_utc":     12,
@@ -32,6 +34,23 @@ def save_config(cfg: dict) -> None:
     CONFIG_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(cfg, f, indent=2, ensure_ascii=False)
+
+
+def update_workflow_cron(hora_utc: int, hora_colombia: int) -> bool:
+    """Reemplaza el horario cron en daily_pipeline.yml con la nueva hora UTC."""
+    if not WORKFLOW_FILE.exists():
+        return False
+    try:
+        content = WORKFLOW_FILE.read_text(encoding="utf-8")
+        new_line = (
+            f'    - cron: "0 {hora_utc} * * *"'
+            f"   # {hora_utc:02d}:00 UTC = {hora_colombia:02d}:00 Colombia"
+        )
+        content = re.sub(r'    - cron: ".*".*', new_line, content)
+        WORKFLOW_FILE.write_text(content, encoding="utf-8")
+        return True
+    except Exception:
+        return False
 
 # ── Catálogo de indicadores ───────────────────────────────────────────────────
 MAX_ACTIVE = 5
@@ -79,7 +98,7 @@ ADMIN_CSS = """
 [data-testid="stAppViewContainer"] { background: #F8F9FA; }
 [data-testid="stAppViewBlockContainer"],
 [data-testid="stMainBlockContainer"],
-.block-container { padding-top: 8px !important; }
+.block-container { padding-top: 2rem !important; }
 
 /* ── Section cards ───────────────────────────────────────────────────────── */
 .adm-card {
@@ -280,10 +299,13 @@ with col2:
     hora_utc = (hora_colombia + 5) % 24
     st.metric("Equivalente UTC", f"{hora_utc:02d}:00")
 
-st.markdown("""
+st.markdown(f"""
   <div class="adm-notice">
-    El cron del workflow está fijo en <code>0 12 * * *</code> (12:00 UTC = 7:00 AM Colombia).
-    Si cambias la hora, actualiza también <code>.github/workflows/daily_pipeline.yml</code>.
+    Al guardar, se actualizará automáticamente el cron de
+    <code>.github/workflows/daily_pipeline.yml</code>
+    a <code>0 {hora_utc} * * *</code>.
+    Recuerda hacer <strong>commit y push</strong> del archivo para que el cambio
+    se aplique en GitHub Actions.
   </div>
 </div>""", unsafe_allow_html=True)
 
@@ -355,7 +377,14 @@ if st.button("💾 Guardar configuración", type="primary", use_container_width=
         "active_indicators": sorted(selected),
     }
     save_config(new_cfg)
+    cron_updated = update_workflow_cron(hora_utc, hora_colombia)
     st.success("Configuracion guardada correctamente en config.json")
+    if cron_updated:
+        st.success(
+            f"Workflow actualizado: cron `0 {hora_utc} * * *` "
+            f"({hora_utc:02d}:00 UTC = {hora_colombia:02d}:00 Colombia). "
+            "Haz commit y push de `.github/workflows/daily_pipeline.yml` para aplicarlo."
+        )
     st.info(
         "Para que los cambios se reflejen en el dashboard, ve al Dashboard y haz clic en Actualizar datos.",
         icon="ℹ️",
