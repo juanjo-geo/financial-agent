@@ -210,8 +210,6 @@ NEWS_QUERIES = {
     "DXY":     "US dollar DXY index",
     "USD/COP": "peso colombiano dolar Colombia",
     "Oro":     "gold price XAU USD",
-    "S&P 500": "S&P 500 stock market index",
-    "WTI":     "WTI crude oil price",
 }
 
 
@@ -230,7 +228,7 @@ def get_file_mtime(path):
 
 
 # Indicadores visibles en el dashboard (excluye proxy interno)
-DISPLAY_INDICATORS = ["brent", "btc", "dxy", "usdcop", "gold", "sp500", "wti"]
+DISPLAY_INDICATORS = ["brent", "btc", "dxy", "usdcop", "gold"]
 
 @st.cache_data
 def load_snapshot():

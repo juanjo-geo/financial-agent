@@ -64,8 +64,6 @@ def main():
         {"symbol": "DX-Y.NYB", "name": "dxy",    "unit": "index"},
         {"symbol": "COP=X",    "name": "usdcop", "unit": "COP per USD"},
         {"symbol": "GC=F",     "name": "gold",   "unit": "USD/oz"},
-        {"symbol": "^GSPC",    "name": "sp500",  "unit": "USD"},
-        {"symbol": "CL=F",     "name": "wti",    "unit": "USD/bbl"},
     ]
 
     all_data = []

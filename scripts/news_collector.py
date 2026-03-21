@@ -12,8 +12,6 @@ NEWS_QUERIES = {
     "usdcop":                 "peso colombiano dolar TRM Colombia",
     "global_inflation_proxy": "global inflation CPI",
     "gold":                   "gold price XAU USD",
-    "sp500":                  "S&P 500 stock market index",
-    "wti":                    "WTI crude oil price",
 }
 
 # Indicadores que usan Google News RSS en español (mejor cobertura local)

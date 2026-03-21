@@ -31,8 +31,6 @@ def classify_signal(indicator, change_pct):
         "usdcop":                 {"low": 0.5, "medium": 1.0, "high": 2.0},
         "global_inflation_proxy": {"low": 0.1, "medium": 0.2, "high": 0.5},
         "gold":                   {"low": 0.5, "medium": 1.5, "high": 3.0},
-        "sp500":                  {"low": 0.5, "medium": 1.5, "high": 3.0},
-        "wti":                    {"low": 1.0, "medium": 2.5, "high": 4.0},
     }
 
     t = thresholds.get(indicator, {"low": 1.0, "medium": 2.0, "high": 4.0})
@@ -64,8 +62,6 @@ def build_signal_message(indicator, direction, severity, change_pct, value, unit
         "usdcop":                 "USD/COP",
         "global_inflation_proxy": "inflación global proxy",
         "gold":                   "Oro (XAU/USD)",
-        "sp500":                  "S&P 500",
-        "wti":                    "WTI",
     }
 
     display_name = indicator_name_map.get(indicator, indicator.upper())
