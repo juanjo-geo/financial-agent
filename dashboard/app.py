@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
@@ -7,10 +8,12 @@ import plotly.express as px
 
 st.set_page_config(page_title="Financial Agent Dashboard", layout="wide")
 
-CLEAN_FILE    = "data/processed/market_clean.csv"
-SNAPSHOT_FILE = "data/processed/latest_snapshot.csv"
-HISTORY_FILE  = "data/historical/market_history.csv"
-REPORT_FILE   = "reports/daily_report.txt"
+# Rutas absolutas desde la raíz del repo — funciona local y en Streamlit Cloud
+ROOT          = Path(__file__).parent.parent
+CLEAN_FILE    = ROOT / "data/processed/market_clean.csv"
+SNAPSHOT_FILE = ROOT / "data/processed/latest_snapshot.csv"
+HISTORY_FILE  = ROOT / "data/historical/market_history.csv"
+REPORT_FILE   = ROOT / "reports/daily_report.txt"
 
 NEWS_QUERIES = {
     "Brent":   "brent crude oil price",
