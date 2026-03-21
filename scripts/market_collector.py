@@ -6,6 +6,13 @@ import os
 from scripts.load_config import load_config
 from scripts.indicators_catalog import CATALOG
 
+# Use date-only format to keep timestamps consistent with backfill data.
+# Mixed formats (ISO vs YYYY-MM-DD) cause pd.to_datetime to silently
+# return NaT for the ISO rows, making newly added indicators disappear
+# from the historical sections.
+_TODAY = lambda: datetime.now().strftime("%Y-%m-%d")
+
+
 def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
     try:
         ticker = yf.Ticker(symbol)
@@ -14,7 +21,7 @@ def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
         if hist.empty:
             return {
                 "indicator": indicator_name,
-                "timestamp": datetime.now().isoformat(),
+                "timestamp": _TODAY(),
                 "value": None,
                 "open_value": None,
                 "change_abs": None,
@@ -37,7 +44,7 @@ def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
 
         return {
             "indicator": indicator_name,
-            "timestamp": datetime.now().isoformat(),
+            "timestamp": _TODAY(),
             "value":      round(float(latest_close), 4),
             "open_value": round(float(latest_open),  4),
             "change_abs": round(float(change_abs),   4),
@@ -50,7 +57,7 @@ def fetch_ticker_data(symbol, indicator_name, unit, source="yfinance"):
     except Exception as e:
         return {
             "indicator": indicator_name,
-            "timestamp": datetime.now().isoformat(),
+            "timestamp": _TODAY(),
             "value": None,
             "open_value": None,
             "change_abs": None,
@@ -75,7 +82,7 @@ def get_market_data():
         if info["symbol"] is None:
             records.append({
                 "indicator": key,
-                "timestamp": datetime.now().isoformat(),
+                "timestamp": _TODAY(),
                 "value": 3.0, "open_value": 3.0,
                 "change_abs": 0.0, "change_pct": 0.0,
                 "unit": info["unit"], "source": "manual_proxy", "status": "ok",

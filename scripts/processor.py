@@ -61,8 +61,11 @@ def clean_market_data(df):
 
 
 def build_latest_snapshot(clean_df):
+    # Only consider rows with a valid value so a failed fetch
+    # never overwrites a previously good entry in the snapshot.
+    valid = clean_df[clean_df["value"].notna()]
     snapshot_df = (
-        clean_df.sort_values("timestamp")
+        valid.sort_values("timestamp")
         .groupby("indicator", as_index=False)
         .tail(1)
         .sort_values("indicator")

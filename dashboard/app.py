@@ -266,16 +266,7 @@ def _load_active_indicators() -> tuple:
         return ("brent", "btc", "dxy", "usdcop", "gold")
 
 
-def _file_mtime(path) -> float:
-    """Retorna el timestamp de modificación de un archivo (usado como cache key)."""
-    try:
-        return float(os.path.getmtime(str(path)))
-    except Exception:
-        return 0.0
-
-
-@st.cache_data
-def load_snapshot(active: tuple, snap_mtime: float):
+def load_snapshot(active: tuple):
     if not os.path.exists(SNAPSHOT_FILE):
         return pd.DataFrame()
     df = pd.read_csv(SNAPSHOT_FILE)
@@ -345,13 +336,12 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
     return []
 
 
-@st.cache_data
-def load_historical_comparison(active: tuple, hist_mtime: float):
+def load_historical_comparison(active: tuple):
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
     df = pd.read_csv(HISTORY_FILE)
     df = df[df["indicator"].isin(active)]
-    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce", format="mixed")
     df = df.dropna(subset=["timestamp", "value"])
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
     df = df.dropna(subset=["value"])
@@ -459,10 +449,8 @@ def run_dashboard():
         st.rerun()
 
     active       = _load_active_indicators()
-    snap_mtime   = _file_mtime(SNAPSHOT_FILE)
-    hist_mtime   = _file_mtime(HISTORY_FILE)
-    snapshot_df  = load_snapshot(active, snap_mtime)
-    hist_df      = load_historical_comparison(active, hist_mtime)
+    snapshot_df  = load_snapshot(active)
+    hist_df      = load_historical_comparison(active)
     report_text  = load_report()
     news_api_key = get_secret("NEWS_API_KEY")
 
@@ -583,7 +571,7 @@ def run_dashboard():
         st.warning("No hay datos en market_history.csv")
     else:
         hist_raw = pd.read_csv(HISTORY_FILE)
-        hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
+        hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce", format="mixed")
         hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
         hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
         hist_raw = hist_raw[hist_raw["indicator"].isin(active)]
