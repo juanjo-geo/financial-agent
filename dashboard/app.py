@@ -23,29 +23,47 @@ LOGO_FILE = ROOT / "logo.png"
 
 BRAND_CSS = """
 <style>
-/* Colores del logo: azul marino #1C2E5E + verde #2DBD6E */
+/* Colores del logo: teal #1E7A8C + verde #3DB860 */
 [data-testid="stAppViewContainer"] { background-color: #FFFFFF; }
-[data-testid="stSidebar"]          { background-color: #EDF1FA; }
+[data-testid="stSidebar"]          { background-color: #EBF7F8; }
 
 /* Header bar */
 .fa-header {
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 12px 0 4px 0;
-    border-bottom: 3px solid #2DBD6E;
-    margin-bottom: 18px;
+    gap: 28px;
+    padding: 16px 0 8px 0;
+    border-bottom: 4px solid #3DB860;
+    margin-bottom: 24px;
 }
-.fa-header img  { height: 72px; width: auto; }
-.fa-title       { line-height: 1.1; }
-.fa-title h1    { margin: 0; color: #1C2E5E; font-size: 2rem; font-weight: 700; }
-.fa-title span  { color: #2DBD6E; font-size: 1rem; font-weight: 400; }
-.fa-subtitle    { color: #6B7A99; font-size: 0.85rem; margin-top: 2px; }
+.fa-header img { height: 110px; width: auto; }
+.fa-title      { line-height: 1.15; }
+.fa-title h1   {
+    margin: 0;
+    color: #1E7A8C;
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+.fa-title span {
+    color: #3DB860;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.fa-subtitle {
+    color: #5A8A95;
+    font-size: 1rem;
+    margin-top: 4px;
+    font-style: italic;
+}
 
 /* Subheadings */
-h2, h3 { color: #1C2E5E !important; }
+h2, h3 { color: #1E7A8C !important; }
 
-/* st.metric delta positivo/negativo */
+/* Divider color */
+hr { border-color: #3DB860 !important; opacity: 0.3; }
+
+/* st.metric delta */
 [data-testid="stMetricDelta"] svg { display: none; }
 </style>
 """

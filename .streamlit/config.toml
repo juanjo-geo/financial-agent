@@ -4,10 +4,10 @@ enableCORS = false
 
 [theme]
 base = "light"
-primaryColor = "#2DBD6E"
+primaryColor = "#3DB860"
 backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#EDF1FA"
-textColor = "#1C2E5E"
+secondaryBackgroundColor = "#EBF7F8"
+textColor = "#1E7A8C"
 font = "sans serif"
 
 [browser]
