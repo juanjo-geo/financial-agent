@@ -252,19 +252,19 @@ def get_file_mtime(path):
         return None
 
 
-def _load_active_indicators():
-    """Lee active_indicators desde config.json; fallback a los 5 por defecto."""
+def _load_active_indicators() -> tuple:
+    """Lee active_indicators desde config.json. Retorna tuple para poder usarlo como cache key."""
     config_file = ROOT / "config.json"
     try:
         with open(config_file, "r", encoding="utf-8") as f:
-            return json.load(f).get("active_indicators",
-                                    ["brent", "btc", "dxy", "usdcop", "gold"])
+            lst = json.load(f).get("active_indicators",
+                                   ["brent", "btc", "dxy", "usdcop", "gold"])
+        return tuple(lst)
     except Exception:
-        return ["brent", "btc", "dxy", "usdcop", "gold"]
+        return ("brent", "btc", "dxy", "usdcop", "gold")
 
 @st.cache_data
-def load_snapshot():
-    active = _load_active_indicators()
+def load_snapshot(active: tuple):
     if not os.path.exists(SNAPSHOT_FILE):
         return pd.DataFrame()
     df = pd.read_csv(SNAPSHOT_FILE)
@@ -335,8 +335,7 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
 
 
 @st.cache_data
-def load_historical_comparison():
-    active = _load_active_indicators()
+def load_historical_comparison(active: tuple):
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
     df = pd.read_csv(HISTORY_FILE)
@@ -439,8 +438,9 @@ def run_dashboard():
         st.cache_data.clear()
         st.rerun()
 
-    snapshot_df  = load_snapshot()
-    hist_df      = load_historical_comparison()
+    active       = _load_active_indicators()
+    snapshot_df  = load_snapshot(active)
+    hist_df      = load_historical_comparison(active)
     report_text  = load_report()
     news_api_key = get_secret("NEWS_API_KEY")
 
@@ -564,7 +564,7 @@ def run_dashboard():
         hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
         hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
         hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
-        hist_raw = hist_raw[hist_raw["indicator"].isin(_load_active_indicators())]
+        hist_raw = hist_raw[hist_raw["indicator"].isin(active)]
 
         indicators = sorted(hist_raw["indicator"].dropna().unique().tolist())
         selected   = st.selectbox("Selecciona un indicador", indicators)
