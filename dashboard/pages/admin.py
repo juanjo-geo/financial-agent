@@ -1,5 +1,4 @@
 import json
-import sys
 import os
 from pathlib import Path
 import streamlit as st
@@ -7,8 +6,31 @@ import streamlit as st
 # ── Rutas ────────────────────────────────────────────────────────────────────
 ROOT        = Path(__file__).parent.parent.parent
 CONFIG_FILE = ROOT / "config.json"
-sys.path.insert(0, str(ROOT))
-from scripts.load_config import load_config, save_config
+
+DEFAULTS = {
+    "send_hour_utc":    12,
+    "email_enabled":    True,
+    "email_to":         "",
+    "whatsapp_enabled": True,
+    "whatsapp_to":      "",
+    "alerts_enabled":   True,
+    "alert_threshold":  4.0,
+}
+
+def load_config() -> dict:
+    if CONFIG_FILE.exists():
+        try:
+            with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            return {**DEFAULTS, **data}
+        except Exception:
+            pass
+    return dict(DEFAULTS)
+
+def save_config(cfg: dict) -> None:
+    CONFIG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+        json.dump(cfg, f, indent=2, ensure_ascii=False)
 
 st.set_page_config(page_title="Panel de Control", page_icon="⚙️", layout="centered")
 
