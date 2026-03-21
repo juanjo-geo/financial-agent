@@ -232,7 +232,7 @@ def get_file_mtime(path):
 # Indicadores visibles en el dashboard (excluye proxy interno)
 DISPLAY_INDICATORS = ["brent", "btc", "dxy", "usdcop", "gold", "sp500", "wti"]
 
-@st.cache_data(ttl=300)
+@st.cache_data
 def load_snapshot():
     if not os.path.exists(SNAPSHOT_FILE):
         return pd.DataFrame()
@@ -303,7 +303,7 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
     return []
 
 
-@st.cache_data(ttl=300)
+@st.cache_data
 def load_historical_comparison():
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
@@ -408,6 +408,10 @@ def run_dashboard():
         )
         st.markdown(f'<div class="fa-badges">{badge_update}{badge_pipeline}</div>',
                     unsafe_allow_html=True)
+
+    if st.button("🔄 Actualizar datos", type="secondary"):
+        st.cache_data.clear()
+        st.rerun()
 
     snapshot_df  = load_snapshot()
     hist_df      = load_historical_comparison()
