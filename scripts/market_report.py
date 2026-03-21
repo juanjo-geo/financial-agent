@@ -6,9 +6,10 @@ import pandas as pd
 from dotenv import load_dotenv
 from openai import OpenAI
 
-SNAPSHOT_FILE = "data/processed/latest_snapshot.csv"
-REPORTS_DIR   = "reports"
-REPORT_FILE   = os.path.join(REPORTS_DIR, "daily_report.txt")
+SNAPSHOT_FILE  = "data/processed/latest_snapshot.csv"
+HISTORY_FILE   = "data/historical/market_history.csv"
+REPORTS_DIR    = "reports"
+REPORT_FILE    = os.path.join(REPORTS_DIR, "daily_report.txt")
 
 NEWS_QUERIES = {
     "brent":               "brent crude oil price",
@@ -23,6 +24,54 @@ def load_snapshot():
     if not os.path.exists(SNAPSHOT_FILE):
         raise FileNotFoundError(f"No existe el archivo snapshot: {SNAPSHOT_FILE}")
     return pd.read_csv(SNAPSHOT_FILE)
+
+
+def build_historical_context():
+    """Compara el valor de cierre más reciente vs hace 7 y 30 días."""
+    if not os.path.exists(HISTORY_FILE):
+        return ""
+
+    df = pd.read_csv(HISTORY_FILE)
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+    df = df.dropna(subset=["timestamp", "value"])
+    df["value"] = pd.to_numeric(df["value"], errors="coerce")
+    df = df.dropna(subset=["value"])
+
+    today    = df["timestamp"].max().normalize()
+    d7       = today - pd.Timedelta(days=7)
+    d30      = today - pd.Timedelta(days=30)
+
+    def closest_value(indicator_df, target_date):
+        subset = indicator_df[indicator_df["timestamp"].dt.normalize() <= target_date]
+        if subset.empty:
+            return None
+        return subset.sort_values("timestamp").iloc[-1]["value"]
+
+    lines = ["COMPARACION HISTORICA (valor de cierre):"]
+    lines.append(f"{'Indicador':<25} {'Hoy':>12} {'Hace 7d':>12} {'Var7d%':>8} {'Hace 30d':>12} {'Var30d%':>8} {'Unidad'}")
+    lines.append("-" * 85)
+
+    for indicator, grp in df.groupby("indicator"):
+        unit    = grp["unit"].iloc[-1]
+        v_today = closest_value(grp, today)
+        v7      = closest_value(grp, d7)
+        v30     = closest_value(grp, d30)
+
+        def pct(a, b):
+            if a is None or b is None or b == 0:
+                return "N/A"
+            return f"{((a - b) / b) * 100:+.2f}%"
+
+        v_today_s = f"{v_today:,.2f}" if v_today is not None else "N/A"
+        v7_s      = f"{v7:,.2f}"      if v7      is not None else "N/A"
+        v30_s     = f"{v30:,.2f}"     if v30     is not None else "N/A"
+
+        lines.append(
+            f"{indicator:<25} {v_today_s:>12} {v7_s:>12} {pct(v_today, v7):>8} "
+            f"{v30_s:>12} {pct(v_today, v30):>8}  {unit}"
+        )
+
+    return "\n".join(lines)
 
 
 def fetch_news_google_rss(query, max_headlines=2):
@@ -108,30 +157,34 @@ def build_market_context(df, news_api_key):
     return market_context, news_context
 
 
-def generate_report_with_ai(market_context, news_context, openai_key):
+def generate_report_with_ai(market_context, news_context, historical_context, openai_key):
     client = OpenAI(api_key=openai_key)
 
     prompt = f"""
 Actúa como un analista financiero ejecutivo.
 
-Tienes dos fuentes de información:
+Tienes tres fuentes de información:
 
-1. DATOS DE MERCADO:
+1. DATOS DE MERCADO HOY:
 {market_context}
 
-2. TITULARES DE NOTICIAS DE LAS ÚLTIMAS 24 HORAS:
+2. COMPARACIÓN HISTÓRICA (hoy vs 7 días vs 30 días):
+{historical_context}
+
+3. TITULARES DE NOTICIAS DE LAS ÚLTIMAS 24 HORAS:
 {news_context}
 
-Redacta un reporte financiero diario en español con DOS secciones claramente separadas:
+Redacta un reporte financiero diario en español con TRES secciones claramente separadas:
 
 SECCIÓN 1 — ANÁLISIS DE MERCADO:
-Resume el comportamiento de los indicadores. Máximo 200 palabras.
-Solo comenta lo que se observa en los datos. No inventes causas que no estén en las noticias.
+Resume el comportamiento de los indicadores hoy. Máximo 150 palabras.
 
-SECCIÓN 2 — NOTICIAS RELEVANTES:
-Lista los titulares más importantes del día relacionados con los indicadores.
-Si un titular es relevante para explicar el movimiento de un indicador, indícalo brevemente.
-Máximo 200 palabras.
+SECCIÓN 2 — PERSPECTIVA HISTÓRICA:
+Comenta qué indicadores muestran tendencia sostenida en 7 y 30 días vs movimiento puntual de hoy.
+Máximo 100 palabras.
+
+SECCIÓN 3 — NOTICIAS RELEVANTES:
+Lista los titulares más importantes y su relación con los indicadores. Máximo 150 palabras.
 
 Total máximo: 400 palabras.
 """
@@ -173,12 +226,16 @@ def main():
 
     df = load_snapshot()
     market_context, news_context = build_market_context(df, news_api_key)
+    historical_context = build_historical_context()
 
     print("\n--- Titulares obtenidos ---")
     print(news_context)
     print("-" * 30)
+    print("\n--- Contexto histórico ---")
+    print(historical_context)
+    print("-" * 30)
 
-    report_text = generate_report_with_ai(market_context, news_context, openai_key)
+    report_text = generate_report_with_ai(market_context, news_context, historical_context, openai_key)
     final_text  = save_report(report_text)
 
     print("\nReporte generado correctamente:\n")

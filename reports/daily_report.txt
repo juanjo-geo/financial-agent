@@ -1,24 +1,12 @@
 REPORTE DIARIO DE MERCADO
-Generado: 2026-03-21 17:19:47
+Generado: 2026-03-21 12:32:58
 --------------------------------------------------
 
-### SECCIÓN 1 — ANÁLISIS DE MERCADO:
-En el mercado de materias primas, el precio del petróleo Brent experimentó un aumento significativo, alcanzando un valor actual de 106.41 USD/bbl, lo que representa un cambio absoluto de 3.2 USD y un incremento porcentual del 3.10% desde su apertura de 103.21 USD/bbl. Estos datos indican una tendencia alcista que podría estar relacionada con esfuerzos para asegurar el suministro, reflejados en la noticia sobre la intervención de EE. UU. en el mercado petrolero.
+**SECCIÓN 1 — ANÁLISIS DE MERCADO:**
+Hoy, el precio del petróleo Brent se encuentra en 106.41 USD/bbl, marcando un incremento de 3.2 USD, equivalente a un 3.1%. Este aumento se da en un contexto de esfuerzos por asegurar el suministro energético. En contraste, Bitcoin muestra una caída de 247.59 USD, situándose en 70,270.02 USD, con una disminución del -0.35%, lo que refleja incertidumbre en el mercado de criptomonedas. El índice DXY presenta una ligera subida de 0.21%, alcanzando 99.50, indicando una leve fortaleza del dólar. Por otro lado, la inflación global permanece estable en 3.0%, al igual que el valor del dólar COP, que se mantiene en 3,715.91.
 
-Por otro lado, el Bitcoin muestra una ligera caída, cotizando a 70,270.02 USD luego de abrir en 70,517.62 USD. El cambio absoluto negativo de 247.59 USD equivale a un descenso del 0.35%. Esto puede ser de interés para los inversores, especialmente considerando que analistas del mercado señalan niveles críticos de soporte, como los 60,000 USD.
+**SECCIÓN 2 — PERSPECTIVA HISTÓRICA:**
+En comparación a la semana pasada, el Brent ha crecido un 0.24%, mostrando una tendencia positiva notable en los últimos 30 días, donde su aumento es del 46.42%. Bitcoin, sin embargo, presenta una tendencia más variable, con un aumento del 6.63% en 7 días, pero solo un 4.54% en 30 días. El DXY ha tenido un comportamiento similar, con un incremento constante del 1.37% en 7 días y del 3.83% en 30 días, lo que sugiere estabilidad en la apreciación del dólar.
 
-El índice DXY, que mide el valor del dólar estadounidense, subió ligeramente a 99.503, con un aumento del 0.2145%. Por su parte, la proxy de inflación global se mantiene estable en 3.0%, indicando una falta de cambios significativos. El tipo de cambio USD/COP se ha mantenido en 3,715.91 sin variaciones.
-
-### SECCIÓN 2 — NOTICIAS RELEVANTES:
-**BRENT:**
-- "Oil Prices Ease As US Pulls Out All Stops To Secure Supply" (OilPrice.com): Este titular puede explicar el aumento en el precio del Brent, apuntando a las acciones de EE. UU. para asegurar el suministro de petróleo.
-
-**BTC:**
-- "Market analyst sees further Bitcoin downside, flags $60K as key level" (Cointelegraph): La advertencia de superar el umbral de 60,000 USD indica un posible camino negativo para Bitcoin, alineándose con su reciente descenso.
-- "What Happens to Bitcoin if Bank of America's 'Three Conditions' for Fed Rate Hikes Hit?" (Decrypt): Este análisis podría tener implicaciones futuras para el valor de Bitcoin dependiendo de las decisiones de política monetaria.
-
-**DXY:**
-- "Gold just lost its shine. Here's what is driving the sudden drop" (Motley Fool Australia): Aunque no se relaciona directamente con el DXY, la caída en el precio del oro puede tener efectos sobre la percepción del valor del dólar. 
-- "Retail tripled gold buying in last 6 months as Wall Street sells" (Cointelegraph): Esto revela un cambio en la inversión a activos seguros, lo cual podría impactar el dólar.
-
-**USDCOP:** Sin titulares disponibles que lo aborden.
+**SECCIÓN 3 — NOTICIAS RELEVANTES:**
+Entre los titulares más destacados, se informa que los precios del petróleo están siendo influenciados por los esfuerzos de Estados Unidos para asegurar el suministro, lo que correlaciona con el aumento reciente del Brent. En el mercado de criptomonedas, algunos analistas advierten sobre la posibilidad de una caída adicional en el precio de Bitcoin, identificando el nivel de 60,000 USD como crucial. Por otro lado, hay un enfoque en el comportamiento del oro, que ha perdido atractivo, lo que podría estar relacionado con la fortaleza del dólar (DXY) y su impacto en los activos refugio. Finalmente, el dólar colombiano se mantiene estable, sin variaciones significativas en la TRM.

@@ -9,6 +9,7 @@ st.set_page_config(page_title="Financial Agent Dashboard", layout="wide")
 
 CLEAN_FILE    = "data/processed/market_clean.csv"
 SNAPSHOT_FILE = "data/processed/latest_snapshot.csv"
+HISTORY_FILE  = "data/historical/market_history.csv"
 REPORT_FILE   = "reports/daily_report.txt"
 
 NEWS_QUERIES = {
@@ -110,6 +111,58 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
     return []
 
 
+@st.cache_data(ttl=3600)
+def load_historical_comparison():
+    """Retorna DataFrame con hoy, 7d y 30d por indicador."""
+    if not os.path.exists(HISTORY_FILE):
+        return pd.DataFrame()
+
+    df = pd.read_csv(HISTORY_FILE)
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+    df = df.dropna(subset=["timestamp", "value"])
+    df["value"] = pd.to_numeric(df["value"], errors="coerce")
+    df = df.dropna(subset=["value"])
+
+    today = df["timestamp"].max().normalize()
+    d7    = today - pd.Timedelta(days=7)
+    d30   = today - pd.Timedelta(days=30)
+
+    def closest(grp, target):
+        sub = grp[grp["timestamp"].dt.normalize() <= target]
+        if sub.empty:
+            return None
+        return sub.sort_values("timestamp").iloc[-1]
+
+    rows = []
+    for indicator, grp in df.groupby("indicator"):
+        unit  = grp["unit"].iloc[-1]
+        r_now = closest(grp, today)
+        r7    = closest(grp, d7)
+        r30   = closest(grp, d30)
+
+        v_now = r_now["value"] if r_now is not None else None
+        v7    = r7["value"]    if r7    is not None else None
+        v30   = r30["value"]   if r30   is not None else None
+
+        def chg(a, b):
+            if a is None or b is None or b == 0:
+                return None
+            return ((a - b) / b) * 100
+
+        rows.append({
+            "Indicador": indicator.upper(),
+            "Hoy":       v_now,
+            "Hace 7d":   v7,
+            "Δ 7d (%)":  chg(v_now, v7),
+            "Hace 30d":  v30,
+            "Δ 30d (%)": chg(v_now, v30),
+            "Unidad":    unit,
+            "fecha_hoy": r_now["timestamp"].date() if r_now is not None else None,
+        })
+
+    return pd.DataFrame(rows)
+
+
 def fetch_headlines(indicator, query, api_key, max_results=3):
     """Selector de fuente por indicador:
     - USD/COP → Google News RSS en español (mejor cobertura Colombia)
@@ -136,9 +189,10 @@ st.markdown(
 )
 st.caption("Monitoreo de indicadores financieros del MVP")
 
-snapshot_df = load_snapshot()
-clean_df    = load_clean_data()
-report_text = load_report()
+snapshot_df  = load_snapshot()
+clean_df     = load_clean_data()
+report_text  = load_report()
+hist_df      = load_historical_comparison()
 news_api_key = get_secret("NEWS_API_KEY")
 
 # ── Snapshot ─────────────────────────────────────────────────────────────────
@@ -162,6 +216,64 @@ else:
             value=format_metric_value(value, unit),
             delta=delta_text,
         )
+
+st.divider()
+
+# ── Variación histórica ──────────────────────────────────────────────────────
+st.subheader("Variación histórica — Hoy vs 7d vs 30d")
+
+if hist_df.empty:
+    st.warning("No hay datos en market_history.csv")
+else:
+    # Tarjetas por indicador
+    hist_cols = st.columns(len(hist_df))
+    for col, (_, row) in zip(hist_cols, hist_df.iterrows()):
+        d7_val  = row["Δ 7d (%)"]
+        d30_val = row["Δ 30d (%)"]
+        with col:
+            st.markdown(f"**{row['Indicador']}** `{row['Unidad']}`")
+            v_now = f"{row['Hoy']:,.2f}" if pd.notna(row["Hoy"]) else "N/A"
+            v7    = f"{row['Hace 7d']:,.2f}" if pd.notna(row["Hace 7d"]) else "N/A"
+            v30   = f"{row['Hace 30d']:,.2f}" if pd.notna(row["Hace 30d"]) else "N/A"
+            d7s   = f"{d7_val:+.2f}%" if pd.notna(d7_val)  else "N/A"
+            d30s  = f"{d30_val:+.2f}%" if pd.notna(d30_val) else "N/A"
+            st.metric("Hoy",     v_now)
+            st.metric("Hace 7d", v7,  delta=d7s)
+            st.metric("Hace 30d",v30, delta=d30s)
+
+    st.markdown("#### Tabla comparativa")
+    display_df = hist_df.copy()
+    for col_name in ("Hoy", "Hace 7d", "Hace 30d"):
+        display_df[col_name] = display_df.apply(
+            lambda r: f"{r[col_name]:,.2f} {r['Unidad']}" if pd.notna(r[col_name]) else "N/A",
+            axis=1,
+        )
+    for col_name in ("Δ 7d (%)", "Δ 30d (%)"):
+        display_df[col_name] = display_df[col_name].apply(
+            lambda v: f"{v:+.2f}%" if pd.notna(v) else "N/A"
+        )
+    st.dataframe(
+        display_df[["Indicador", "Hoy", "Hace 7d", "Δ 7d (%)", "Hace 30d", "Δ 30d (%)"]],
+        use_container_width=True, hide_index=True,
+    )
+
+    st.markdown("#### Evolución 30 días por indicador")
+    history_raw = pd.read_csv(HISTORY_FILE)
+    history_raw["timestamp"] = pd.to_datetime(history_raw["timestamp"], errors="coerce")
+    history_raw["value"]     = pd.to_numeric(history_raw["value"], errors="coerce")
+    cutoff = history_raw["timestamp"].max() - pd.Timedelta(days=30)
+    history_30d = history_raw[history_raw["timestamp"] >= cutoff].dropna(subset=["value"])
+
+    if not history_30d.empty:
+        fig = px.line(
+            history_30d, x="timestamp", y="value",
+            color="indicator", facet_col="indicator",
+            facet_col_wrap=3, markers=False,
+            title="Últimos 30 días por indicador",
+        )
+        fig.update_yaxes(matches=None, showticklabels=True)
+        fig.update_layout(showlegend=False, hovermode="x unified")
+        st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
