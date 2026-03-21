@@ -1,12 +1,9 @@
 REPORTE DIARIO DE MERCADO
-Generado: 2026-03-21 12:32:58
+Generado: 2026-03-21 13:38:51
 --------------------------------------------------
 
-**SECCIÓN 1 — ANÁLISIS DE MERCADO:**
-Hoy, el precio del petróleo Brent se encuentra en 106.41 USD/bbl, marcando un incremento de 3.2 USD, equivalente a un 3.1%. Este aumento se da en un contexto de esfuerzos por asegurar el suministro energético. En contraste, Bitcoin muestra una caída de 247.59 USD, situándose en 70,270.02 USD, con una disminución del -0.35%, lo que refleja incertidumbre en el mercado de criptomonedas. El índice DXY presenta una ligera subida de 0.21%, alcanzando 99.50, indicando una leve fortaleza del dólar. Por otro lado, la inflación global permanece estable en 3.0%, al igual que el valor del dólar COP, que se mantiene en 3,715.91.
+Hoy, el petróleo Brent subió con fuerza, alcanzando los 106.41 USD por barril. Esta alza podría impactar los costos de importación en Colombia, afectando el bolsillo de los consumidores. El bitcoin, por su parte, perdió impulso, cerrando en 70,270 USD, mientras que el dólar se mantuvo quieto en 3,715.91 COP, lo que significa estabilidad en el tipo de cambio. La inflación global sigue en 3%, sin cambios, lo que indica un entorno controlado por ahora.
 
-**SECCIÓN 2 — PERSPECTIVA HISTÓRICA:**
-En comparación a la semana pasada, el Brent ha crecido un 0.24%, mostrando una tendencia positiva notable en los últimos 30 días, donde su aumento es del 46.42%. Bitcoin, sin embargo, presenta una tendencia más variable, con un aumento del 6.63% en 7 días, pero solo un 4.54% en 30 días. El DXY ha tenido un comportamiento similar, con un incremento constante del 1.37% en 7 días y del 3.83% en 30 días, lo que sugiere estabilidad en la apreciación del dólar.
+Los movimientos de hoy parecen ser parte de una tendencia más amplia, especialmente con el petróleo que ha mostrado un crecimiento significativo en el último mes. El bitcoin ha estado más volátil, pero la caída de hoy no es aislada, ya que ha estado fluctuando en las últimas semanas.
 
-**SECCIÓN 3 — NOTICIAS RELEVANTES:**
-Entre los titulares más destacados, se informa que los precios del petróleo están siendo influenciados por los esfuerzos de Estados Unidos para asegurar el suministro, lo que correlaciona con el aumento reciente del Brent. En el mercado de criptomonedas, algunos analistas advierten sobre la posibilidad de una caída adicional en el precio de Bitcoin, identificando el nivel de 60,000 USD como crucial. Por otro lado, hay un enfoque en el comportamiento del oro, que ha perdido atractivo, lo que podría estar relacionado con la fortaleza del dólar (DXY) y su impacto en los activos refugio. Finalmente, el dólar colombiano se mantiene estable, sin variaciones significativas en la TRM.
+En general, el ambiente de mercado está marcado por la incertidumbre, sobre todo en el sector energético, donde el aumento del petróleo podría traer de nuevo presiones inflacionarias. Mantengámonos alertas a los próximos movimientos.

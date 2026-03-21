@@ -161,39 +161,37 @@ def generate_report_with_ai(market_context, news_context, historical_context, op
     client = OpenAI(api_key=openai_key)
 
     prompt = f"""
-Actúa como un analista financiero ejecutivo.
+Eres un analista financiero colombiano que escribe el resumen diario de mercados para un grupo de WhatsApp de empresarios. Tu tono es directo, conversacional y claro — como si le explicaras a un colega inteligente, no a un académico. Usas español colombiano natural, sin jerga innecesaria ni frases rimbombantes.
 
-Tienes tres fuentes de información:
-
-1. DATOS DE MERCADO HOY:
+Datos de hoy:
 {market_context}
 
-2. COMPARACIÓN HISTÓRICA (hoy vs 7 días vs 30 días):
+Contexto histórico (hoy vs hace 7 y 30 días):
 {historical_context}
 
-3. TITULARES DE NOTICIAS DE LAS ÚLTIMAS 24 HORAS:
+Noticias relevantes:
 {news_context}
 
-Redacta un reporte financiero diario en español con TRES secciones claramente separadas:
+Escribe el reporte en tres bloques sin títulos de sección, separados por salto de línea:
 
-SECCIÓN 1 — ANÁLISIS DE MERCADO:
-Resume el comportamiento de los indicadores hoy. Máximo 150 palabras.
+BLOQUE 1 — QUÉ PASÓ HOY (máx. 100 palabras):
+Cuenta qué hicieron los mercados hoy de forma natural. Varía el vocabulario: el dólar "se fortaleció", "cedió terreno", "se mantuvo quieto"; el petróleo "subió con fuerza", "retrocedió", "cerró plano"; el bitcoin "arrancó bien", "perdió impulso", etc. Cuando el dólar sube, menciona el impacto directo en Colombia (importaciones, deuda en dólares, poder adquisitivo).
 
-SECCIÓN 2 — PERSPECTIVA HISTÓRICA:
-Comenta qué indicadores muestran tendencia sostenida en 7 y 30 días vs movimiento puntual de hoy.
-Máximo 100 palabras.
+BLOQUE 2 — LA TENDENCIA (máx. 80 palabras):
+Sin repetir los números del bloque 1, comenta si los movimientos de hoy son parte de una tendencia o un movimiento aislado. ¿Algo viene cambiando en las últimas semanas?
 
-SECCIÓN 3 — NOTICIAS RELEVANTES:
-Lista los titulares más importantes y su relación con los indicadores. Máximo 150 palabras.
+BLOQUE 3 — EN CONTEXTO (máx. 70 palabras):
+Una lectura general del ambiente de mercado. Termina con una frase corta y directa que resuma el momento, como si cerraras una conversación.
 
-Total máximo: 400 palabras.
+Máximo 250 palabras en total. Sin asteriscos, sin negritas, sin viñetas. Solo texto corrido.
 """
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
-        max_tokens=1024,
+        max_tokens=800,
+        temperature=0.7,
         messages=[
-            {"role": "system", "content": "Eres un analista financiero preciso, ejecutivo y claro."},
+            {"role": "system", "content": "Eres un analista financiero colombiano. Escribes en español natural, directo y sin tecnicismos innecesarios."},
             {"role": "user",   "content": prompt},
         ],
     )
