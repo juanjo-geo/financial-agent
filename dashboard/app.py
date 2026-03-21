@@ -437,10 +437,17 @@ def run_dashboard():
 
     if st.button("🔄 Actualizar datos", type="secondary"):
         with st.spinner("Recolectando datos del mercado..."):
+            # 1. Backfill historical data for any newly activated indicators
+            subprocess.run(
+                [sys.executable, "-m", "scripts.backfill_history"],
+                cwd=str(ROOT), check=False, capture_output=True,
+            )
+            # 2. Collect today's prices
             subprocess.run(
                 [sys.executable, "-m", "scripts.market_collector"],
                 cwd=str(ROOT), check=False, capture_output=True,
             )
+            # 3. Rebuild snapshot
             subprocess.run(
                 [sys.executable, "-m", "scripts.processor"],
                 cwd=str(ROOT), check=False, capture_output=True,

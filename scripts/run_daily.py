@@ -3,6 +3,7 @@ import sys
 from datetime import datetime
 
 steps = [
+    "scripts.backfill_history",    # rellena histórico de indicadores nuevos
     "scripts.market_collector",
     "scripts.processor",
     "scripts.market_signals",
