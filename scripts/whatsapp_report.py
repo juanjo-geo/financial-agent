@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 from twilio.rest import Client
+from scripts.load_config import load_config
 
 REPORT_FILE = "reports/daily_report.txt"
 
@@ -52,15 +53,20 @@ def send_whatsapp(message, account_sid, auth_token, from_number, to_number):
 
 def main():
     load_dotenv()
+    cfg = load_config()
 
-    openai_key = os.getenv("OPENAI_API_KEY")
+    if not cfg.get("whatsapp_enabled", True):
+        print("WhatsApp desactivado en config.json — omitiendo.")
+        return
+
+    openai_key  = os.getenv("OPENAI_API_KEY")
     account_sid = os.getenv("TWILIO_ACCOUNT_SID")
-    auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+    auth_token  = os.getenv("TWILIO_AUTH_TOKEN")
     from_number = os.getenv("TWILIO_WHATSAPP_FROM")
-    to_number = os.getenv("WHATSAPP_TO")
+    to_number   = cfg.get("whatsapp_to") or os.getenv("WHATSAPP_TO")
 
     if not all([account_sid, auth_token, from_number, to_number]):
-        raise ValueError("Faltan credenciales Twilio en .env (TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_WHATSAPP_FROM)")
+        raise ValueError("Faltan credenciales Twilio o whatsapp_to en config.json")
 
     print("Cargando reporte...")
     report_text = load_report()

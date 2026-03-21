@@ -8,6 +8,7 @@ from datetime import datetime, date
 from dotenv import load_dotenv
 import yfinance as yf
 from twilio.rest import Client
+from scripts.load_config import load_config
 
 SYMBOLS = {
     "brent": {"symbol": "BZ=F",     "unit": "USD/bbl", "news_query": "oil price crude brent"},
@@ -15,7 +16,6 @@ SYMBOLS = {
     "usdcop":{"symbol": "COP=X",    "unit": "COP/USD", "news_query": "peso colombiano dolar COP"},
 }
 
-ALERT_THRESHOLD = 4.0   # % vs apertura del día
 CHECK_INTERVAL  = 30 * 60  # segundos
 
 SMTP_HOST = "smtp.gmail.com"
@@ -137,6 +137,13 @@ def load_env():
 
 def main():
     env = load_env()
+    cfg = load_config()
+
+    if not cfg.get("alerts_enabled", True):
+        print("Alertas desactivadas en config.json — monitor no iniciado.")
+        return
+
+    alert_threshold = cfg.get("alert_threshold", 4.0)
 
     # indicator -> fecha en que se envió la última alerta (1 alerta por indicador por día)
     alerted_today: dict[str, date] = {}
@@ -145,7 +152,7 @@ def main():
     print("FINANCIAL AGENT — MONITOR DE ALERTAS EN TIEMPO REAL")
     print("=" * 50)
     print(f"Indicadores : {', '.join(SYMBOLS.keys())}")
-    print(f"Umbral      : +/- {ALERT_THRESHOLD}%")
+    print(f"Umbral      : +/- {alert_threshold}%")
     print(f"Intervalo   : cada 30 minutos")
     print(f"Inicio      : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 50 + "\n")
@@ -173,7 +180,7 @@ def main():
                 sign = "+" if change_pct >= 0 else ""
                 print(f"  {indicator:8s}: {current:>12,.2f} {config['unit']}  |  {sign}{change_pct:.2f}% vs apertura")
 
-                if abs(change_pct) >= ALERT_THRESHOLD:
+                if abs(change_pct) >= alert_threshold:
                     print(f"  {'':8s}  *** ALERTA DETECTADA — despachando notificaciones ***")
                     dispatch_alert(indicator, current, open_price, change_pct, config, env)
                     alerted_today[indicator] = today

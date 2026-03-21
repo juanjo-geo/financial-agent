@@ -1,0 +1,9 @@
+{
+  "send_hour_utc": 12,
+  "email_enabled": true,
+  "email_to": "jjgrillom98@gmail.com",
+  "whatsapp_enabled": true,
+  "whatsapp_to": "573174286451",
+  "alerts_enabled": true,
+  "alert_threshold": 4.0
+}

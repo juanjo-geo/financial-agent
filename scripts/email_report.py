@@ -4,6 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 from dotenv import load_dotenv
+from scripts.load_config import load_config
 
 REPORT_FILE = "reports/daily_report.txt"
 SMTP_HOST = "smtp.gmail.com"
@@ -34,22 +35,24 @@ def send_email(subject, body, email_user, email_password, email_to):
 
 def main():
     load_dotenv()
+    cfg = load_config()
 
-    email_user = os.getenv("EMAIL_USER")
+    if not cfg.get("email_enabled", True):
+        print("Email desactivado en config.json — omitiendo.")
+        return
+
+    email_user     = os.getenv("EMAIL_USER")
     email_password = os.getenv("EMAIL_PASSWORD")
-    email_to = os.getenv("EMAIL_TO")
+    email_to       = cfg.get("email_to") or os.getenv("EMAIL_TO")
 
     if not all([email_user, email_password, email_to]):
-        raise ValueError("Faltan credenciales en .env (EMAIL_USER, EMAIL_PASSWORD, EMAIL_TO)")
+        raise ValueError("Faltan credenciales (EMAIL_USER, EMAIL_PASSWORD) o email_to en config.json")
 
     print(f"Enviando reporte a: {email_to}")
-
     report_body = load_report()
-    date_str = datetime.now().strftime("%Y-%m-%d")
-    subject = f"Reporte Diario de Mercado — {date_str}"
-
+    date_str    = datetime.now().strftime("%Y-%m-%d")
+    subject     = f"Reporte Diario de Mercado — {date_str}"
     send_email(subject, report_body, email_user, email_password, email_to)
-
     print("Email enviado correctamente.")
 
 
