@@ -182,6 +182,17 @@ hr     { border-color: #00C896 !important; opacity: 0.2; }
     white-space: pre-wrap; font-family: Georgia, serif;
 }
 
+/* ── News grid (4 + 3 layout) ───────────────────────────────────────────── */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 4px;
+}
+@media (max-width: 1100px) { .news-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px)  { .news-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .news-grid { grid-template-columns: 1fr; } }
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
     .fa-title h1 { font-size: 3rem; }
@@ -218,11 +229,15 @@ def get_file_mtime(path):
         return None
 
 
-@st.cache_data
+# Indicadores visibles en el dashboard (excluye proxy interno)
+DISPLAY_INDICATORS = ["brent", "btc", "dxy", "usdcop", "gold", "sp500", "wti"]
+
+@st.cache_data(ttl=300)
 def load_snapshot():
     if not os.path.exists(SNAPSHOT_FILE):
         return pd.DataFrame()
-    return pd.read_csv(SNAPSHOT_FILE)
+    df = pd.read_csv(SNAPSHOT_FILE)
+    return df[df["indicator"].isin(DISPLAY_INDICATORS)].reset_index(drop=True)
 
 
 def load_report():
@@ -288,11 +303,12 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
     return []
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=300)
 def load_historical_comparison():
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
     df = pd.read_csv(HISTORY_FILE)
+    df = df[df["indicator"].isin(DISPLAY_INDICATORS)]
     df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
     df = df.dropna(subset=["timestamp", "value"])
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
@@ -403,23 +419,27 @@ def run_dashboard():
     if snapshot_df.empty:
         st.warning("No hay datos en latest_snapshot.csv")
     else:
-        cols = st.columns(len(snapshot_df))
-        for i, (_, row) in enumerate(snapshot_df.iterrows()):
-            indicator = str(row["indicator"]).upper()
-            value_str = format_metric_value(row["value"], row["unit"])
-            try:
-                chg = float(row["change_pct"])
-                arrow_cls   = "up" if chg >= 0 else "down"
-                arrow_sym   = "▲" if chg >= 0 else "▼"
-                delta_class = "pos" if chg >= 0 else "neg"
-                delta_html  = (
-                    f'<span class="mc-delta {delta_class}">'
-                    f'<span class="mc-arrow {arrow_cls}">{arrow_sym}</span>'
-                    f' {chg:+.2f}%</span>'
-                )
-            except Exception:
-                delta_html = '<span class="mc-delta neu">N/A</span>'
-            cols[i].markdown(f"""
+        rows_data = list(snapshot_df.iterrows())
+        # Display in rows of 4
+        for row_start in range(0, len(rows_data), 4):
+            chunk = rows_data[row_start:row_start + 4]
+            cols  = st.columns(len(chunk))
+            for col, (_, row) in zip(cols, chunk):
+                indicator = str(row["indicator"]).upper()
+                value_str = format_metric_value(row["value"], row["unit"])
+                try:
+                    chg = float(row["change_pct"])
+                    arrow_cls   = "up" if chg >= 0 else "down"
+                    arrow_sym   = "▲" if chg >= 0 else "▼"
+                    delta_class = "pos" if chg >= 0 else "neg"
+                    delta_html  = (
+                        f'<span class="mc-delta {delta_class}">'
+                        f'<span class="mc-arrow {arrow_cls}">{arrow_sym}</span>'
+                        f' {chg:+.2f}%</span>'
+                    )
+                except Exception:
+                    delta_html = '<span class="mc-delta neu">N/A</span>'
+                col.markdown(f"""
 <div class="metric-card">
   <div class="mc-label">{indicator}</div>
   <div class="mc-value">{value_str}</div>
@@ -442,12 +462,15 @@ def run_dashboard():
                 return "—", "neu"
             return (f"{'▲' if d >= 0 else '▼'} {d:+.2f}%", "pos" if d >= 0 else "neg")
 
-        hist_cols = st.columns(len(hist_df))
-        for col, (_, row) in zip(hist_cols, hist_df.iterrows()):
-            d7s,  d7c  = fmt_d(row["Δ 7d (%)"])
-            d30s, d30c = fmt_d(row["Δ 30d (%)"])
-            with col:
-                st.markdown(f"""
+        hist_rows_data = list(hist_df.iterrows())
+        for row_start in range(0, len(hist_rows_data), 4):
+            chunk     = hist_rows_data[row_start:row_start + 4]
+            hist_cols = st.columns(len(chunk))
+            for col, (_, row) in zip(hist_cols, chunk):
+                d7s,  d7c  = fmt_d(row["Δ 7d (%)"])
+                d30s, d30c = fmt_d(row["Δ 30d (%)"])
+                with col:
+                    st.markdown(f"""
 <div class="hist-card">
   <div class="hc-title">
     {row['Indicador']}
@@ -478,26 +501,25 @@ def run_dashboard():
     if not news_api_key:
         st.warning("NEWS_API_KEY no configurada.")
     else:
-        news_cols = st.columns(len(NEWS_QUERIES))
-        for col, (label, query) in zip(news_cols, NEWS_QUERIES.items()):
-            headlines = fetch_headlines(label, query, news_api_key)
-            with col:
+        cards_html = ""
+        for label, query in NEWS_QUERIES.items():
+            headlines  = fetch_headlines(label, query, news_api_key)
+            if not headlines:
+                items_html = '<div class="news-item" style="color:#8A9BA8;font-size:0.85rem">Sin titulares disponibles.</div>'
+            else:
                 items_html = ""
-                if not headlines:
-                    items_html = '<div class="news-item" style="color:#8A9BA8;font-size:0.85rem">Sin titulares disponibles.</div>'
-                else:
-                    for h in headlines:
-                        t = h["title"].replace("<", "&lt;").replace(">", "&gt;")
-                        l = h.get("url", "")
-                        m = f"{h['source']} · {h['publishedAt']}"
-                        linked = f'<a href="{l}" target="_blank">{t}</a>' if l else t
-                        items_html += f'<div class="news-item">{linked}<div class="news-meta">{m}</div></div>'
-                st.markdown(
-                    f'<div class="news-col-wrap">'
-                    f'<div class="news-col-title">{label}</div>'
-                    f'{items_html}</div>',
-                    unsafe_allow_html=True,
-                )
+                for h in headlines:
+                    t      = h["title"].replace("<", "&lt;").replace(">", "&gt;")
+                    l      = h.get("url", "")
+                    m      = f"{h['source']} · {h['publishedAt']}"
+                    linked = f'<a href="{l}" target="_blank">{t}</a>' if l else t
+                    items_html += f'<div class="news-item">{linked}<div class="news-meta">{m}</div></div>'
+            cards_html += (
+                f'<div class="news-col-wrap">'
+                f'<div class="news-col-title">{label}</div>'
+                f'{items_html}</div>'
+            )
+        st.markdown(f'<div class="news-grid">{cards_html}</div>', unsafe_allow_html=True)
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
@@ -512,23 +534,31 @@ def run_dashboard():
         hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
         hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
         hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
+        hist_raw = hist_raw[hist_raw["indicator"].isin(DISPLAY_INDICATORS)]
 
-        indicators = hist_raw["indicator"].dropna().unique().tolist()
+        indicators = sorted(hist_raw["indicator"].dropna().unique().tolist())
         selected   = st.selectbox("Selecciona un indicador", indicators)
         filtered   = hist_raw[hist_raw["indicator"] == selected].copy()
 
         if not filtered.empty:
-            fig = px.line(
-                filtered, x="timestamp", y="value",
-                title=f"Histórico de {selected.upper()}",
-                color_discrete_sequence=["#1B2A4A"],
-            )
-            fig.update_traces(line_width=2)
+            single_point = len(filtered) == 1
+            fig = px.scatter(filtered, x="timestamp", y="value",
+                             title=f"Histórico de {selected.upper()}",
+                             color_discrete_sequence=["#1B2A4A"]) \
+                  if single_point else \
+                  px.line(filtered, x="timestamp", y="value",
+                          title=f"Histórico de {selected.upper()}",
+                          color_discrete_sequence=["#1B2A4A"],
+                          markers=True)
+            if not single_point:
+                fig.update_traces(line_width=2, marker_size=5)
+            else:
+                fig.update_traces(marker_size=12)
+                st.info("Este indicador tiene solo 1 día de datos. La gráfica se completará a medida que el pipeline acumule histórico.")
             fig.update_layout(
                 xaxis_title="Fecha", yaxis_title="Valor",
                 hovermode="x unified",
-                plot_bgcolor="#FFFFFF",
-                paper_bgcolor="#FFFFFF",
+                plot_bgcolor="#FFFFFF", paper_bgcolor="#FFFFFF",
                 font_color="#1B2A4A",
                 xaxis=dict(gridcolor="#F0F4F8"),
                 yaxis=dict(gridcolor="#F0F4F8"),
