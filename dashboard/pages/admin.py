@@ -32,8 +32,6 @@ def save_config(cfg: dict) -> None:
     with open(CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(cfg, f, indent=2, ensure_ascii=False)
 
-st.set_page_config(page_title="Panel de Control", page_icon="⚙️", layout="centered")
-
 # ── Autenticación ─────────────────────────────────────────────────────────────
 def get_admin_password():
     try:

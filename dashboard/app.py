@@ -1,4 +1,5 @@
 import os
+import base64
 from pathlib import Path
 import requests
 import xml.etree.ElementTree as ET
@@ -18,8 +19,7 @@ CLEAN_FILE    = ROOT / "data/processed/market_clean.csv"
 SNAPSHOT_FILE = ROOT / "data/processed/latest_snapshot.csv"
 HISTORY_FILE  = ROOT / "data/historical/market_history.csv"
 REPORT_FILE   = ROOT / "reports/daily_report.txt"
-
-LOGO_FILE = ROOT / "logo.png"
+LOGO_FILE     = ROOT / "logo.png"
 
 BRAND_CSS = """
 <style>
@@ -91,21 +91,10 @@ NEWS_QUERIES = {
 
 
 def get_secret(key):
-    """Lee desde st.secrets (Streamlit Cloud) o variables de entorno (local)."""
     try:
         return st.secrets[key]
     except Exception:
         return os.getenv(key)
-
-
-@st.cache_data
-def load_clean_data():
-    if not os.path.exists(CLEAN_FILE):
-        return pd.DataFrame()
-    df = pd.read_csv(CLEAN_FILE)
-    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
-    df = df.sort_values(["indicator", "timestamp"]).reset_index(drop=True)
-    return df
 
 
 @st.cache_data
@@ -132,7 +121,6 @@ def format_metric_value(value, unit):
 
 @st.cache_data(ttl=3600)
 def fetch_headlines_rss(query, lang="es-CO", gl="CO", ceid="CO:es", max_results=3):
-    """Titulares via Google News RSS. Sin API key. Cache 1 hora."""
     url = (
         f"https://news.google.com/rss/search"
         f"?q={requests.utils.quote(query)}&hl={lang}&gl={gl}&ceid={ceid}"
@@ -157,7 +145,6 @@ def fetch_headlines_rss(query, lang="es-CO", gl="CO", ceid="CO:es", max_results=
 
 @st.cache_data(ttl=3600)
 def fetch_headlines_newsapi(query, api_key, max_results=3):
-    """Titulares via NewsAPI. Cache 1 hora."""
     for endpoint in (
         "https://newsapi.org/v2/top-headlines",
         "https://newsapi.org/v2/everything",
@@ -183,7 +170,6 @@ def fetch_headlines_newsapi(query, api_key, max_results=3):
 
 @st.cache_data(ttl=3600)
 def load_historical_comparison():
-    """Retorna DataFrame con hoy, 7d y 30d por indicador."""
     if not os.path.exists(HISTORY_FILE):
         return pd.DataFrame()
 
@@ -234,10 +220,6 @@ def load_historical_comparison():
 
 
 def fetch_headlines(indicator, query, api_key, max_results=3):
-    """Selector de fuente por indicador:
-    - USD/COP → Google News RSS en español (mejor cobertura Colombia)
-    - Otros   → NewsAPI con fallback a Google News RSS en inglés
-    """
     if indicator == "USD/COP":
         return fetch_headlines_rss(
             "peso colombiano dolar TRM Colombia",
@@ -248,21 +230,21 @@ def fetch_headlines(indicator, query, api_key, max_results=3):
         results = fetch_headlines_newsapi(query, api_key, max_results)
         if results:
             return results
-    # Fallback RSS en inglés
     return fetch_headlines_rss(query, lang="en-US", gl="US", ceid="US:en", max_results=max_results)
 
 
-# ── Encabezado ──────────────────────────────────────────────────────────────
-st.markdown(BRAND_CSS, unsafe_allow_html=True)
-
-import base64
 def _img_b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-if LOGO_FILE.exists():
-    logo_b64 = _img_b64(LOGO_FILE)
-    st.markdown(f"""
+
+# ── Página principal del dashboard ───────────────────────────────────────────
+def run_dashboard():
+    st.markdown(BRAND_CSS, unsafe_allow_html=True)
+
+    if LOGO_FILE.exists():
+        logo_b64 = _img_b64(LOGO_FILE)
+        st.markdown(f"""
 <div class="fa-header">
   <img src="data:image/png;base64,{logo_b64}" />
   <div class="fa-title">
@@ -271,125 +253,131 @@ if LOGO_FILE.exists():
   </div>
 </div>
 """, unsafe_allow_html=True)
-else:
-    st.markdown(
-        "# Agente Financiero Autónomo <span style='font-size:0.5em;color:#2DBD6E;'>· Juanjo</span>",
-        unsafe_allow_html=True,
-    )
-    st.caption("Monitoreo de indicadores financieros en tiempo real")
-
-snapshot_df  = load_snapshot()
-report_text  = load_report()
-hist_df      = load_historical_comparison()
-news_api_key = get_secret("NEWS_API_KEY")
-
-# ── Snapshot ─────────────────────────────────────────────────────────────────
-st.subheader("Último snapshot")
-if snapshot_df.empty:
-    st.warning("No hay datos en latest_snapshot.csv")
-else:
-    cols = st.columns(len(snapshot_df))
-    for i, (_, row) in enumerate(snapshot_df.iterrows()):
-        indicator  = str(row["indicator"]).upper()
-        value      = row["value"]
-        unit       = row["unit"]
-        change_pct = row["change_pct"]
-        delta_text = "N/A"
-        try:
-            delta_text = f"{float(change_pct):.2f}%"
-        except Exception:
-            pass
-        cols[i].metric(
-            label=indicator,
-            value=format_metric_value(value, unit),
-            delta=delta_text,
-        )
-
-st.divider()
-
-# ── Variación histórica ──────────────────────────────────────────────────────
-st.subheader("Variación histórica — Hoy vs 7d vs 30d")
-
-if hist_df.empty:
-    st.warning("No hay datos en market_history.csv")
-else:
-    # Tarjetas por indicador
-    hist_cols = st.columns(len(hist_df))
-    for col, (_, row) in zip(hist_cols, hist_df.iterrows()):
-        d7_val  = row["Δ 7d (%)"]
-        d30_val = row["Δ 30d (%)"]
-        with col:
-            st.markdown(f"**{row['Indicador']}** `{row['Unidad']}`")
-            v_now = f"{row['Hoy']:,.2f}" if pd.notna(row["Hoy"]) else "N/A"
-            v7    = f"{row['Hace 7d']:,.2f}" if pd.notna(row["Hace 7d"]) else "N/A"
-            v30   = f"{row['Hace 30d']:,.2f}" if pd.notna(row["Hace 30d"]) else "N/A"
-            d7s   = f"{d7_val:+.2f}%" if pd.notna(d7_val)  else "N/A"
-            d30s  = f"{d30_val:+.2f}%" if pd.notna(d30_val) else "N/A"
-            st.metric("Hoy",     v_now)
-            st.metric("Hace 7d", v7,  delta=d7s)
-            st.metric("Hace 30d",v30, delta=d30s)
-
-
-st.divider()
-
-# ── Titulares de noticias ────────────────────────────────────────────────────
-st.subheader("Titulares recientes por indicador")
-
-if not news_api_key:
-    st.warning("NEWS_API_KEY no configurada. Agrega la clave en Streamlit Secrets o en .env")
-else:
-    indicator_cols = st.columns(len(NEWS_QUERIES))
-    for col, (label, query) in zip(indicator_cols, NEWS_QUERIES.items()):
-        headlines = fetch_headlines(label, query, news_api_key)
-        with col:
-            st.markdown(f"**{label}**")
-            if not headlines:
-                st.caption("Sin titulares disponibles.")
-            else:
-                for h in headlines:
-                    with st.container(border=True):
-                        if h["url"]:
-                            st.markdown(f"[{h['title']}]({h['url']})")
-                        else:
-                            st.markdown(h["title"])
-                        st.caption(f"{h['source']}  ·  {h['publishedAt']}")
-
-st.divider()
-
-# ── Gráficas históricas ──────────────────────────────────────────────────────
-st.subheader("Gráficas históricas")
-if not HISTORY_FILE.exists():
-    st.warning("No hay datos en market_history.csv")
-else:
-    hist_raw = pd.read_csv(HISTORY_FILE)
-    hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
-    hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
-    hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
-
-    indicators = hist_raw["indicator"].dropna().unique().tolist()
-    selected   = st.selectbox("Selecciona un indicador", indicators)
-    filtered   = hist_raw[hist_raw["indicator"] == selected].copy()
-
-    if filtered.empty:
-        st.warning("No hay datos para el indicador seleccionado.")
     else:
-        st.write(f"Registros disponibles para **{selected.upper()}**: {len(filtered)}")
-        fig = px.line(filtered, x="timestamp", y="value",
-                      title=f"Histórico de {selected.upper()}", markers=True,
-                      color_discrete_sequence=["#1E7A8C"])
-        fig.update_layout(xaxis_title="Fecha", yaxis_title="Valor",
-                          hovermode="x unified")
-        st.plotly_chart(fig, use_container_width=True)
-
-        st.markdown("**Últimos 20 registros**")
-        st.dataframe(
-            filtered.tail(20)[["timestamp", "indicator", "value", "open_value",
-                                "change_abs", "change_pct", "unit", "source", "status"]],
-            use_container_width=True, hide_index=True,
+        st.markdown(
+            "# Agente Financiero Autónomo <span style='font-size:0.5em;color:#2DBD6E;'>· Juanjo</span>",
+            unsafe_allow_html=True,
         )
+        st.caption("Monitoreo de indicadores financieros en tiempo real")
 
-st.divider()
+    snapshot_df  = load_snapshot()
+    report_text  = load_report()
+    hist_df      = load_historical_comparison()
+    news_api_key = get_secret("NEWS_API_KEY")
 
-# ── Reporte IA ───────────────────────────────────────────────────────────────
-st.subheader("Reporte diario generado por IA")
-st.text(report_text)
+    # ── Snapshot ─────────────────────────────────────────────────────────────
+    st.subheader("Último snapshot")
+    if snapshot_df.empty:
+        st.warning("No hay datos en latest_snapshot.csv")
+    else:
+        cols = st.columns(len(snapshot_df))
+        for i, (_, row) in enumerate(snapshot_df.iterrows()):
+            indicator  = str(row["indicator"]).upper()
+            value      = row["value"]
+            unit       = row["unit"]
+            change_pct = row["change_pct"]
+            delta_text = "N/A"
+            try:
+                delta_text = f"{float(change_pct):.2f}%"
+            except Exception:
+                pass
+            cols[i].metric(
+                label=indicator,
+                value=format_metric_value(value, unit),
+                delta=delta_text,
+            )
+
+    st.divider()
+
+    # ── Variación histórica ──────────────────────────────────────────────────
+    st.subheader("Variación histórica — Hoy vs 7d vs 30d")
+
+    if hist_df.empty:
+        st.warning("No hay datos en market_history.csv")
+    else:
+        hist_cols = st.columns(len(hist_df))
+        for col, (_, row) in zip(hist_cols, hist_df.iterrows()):
+            d7_val  = row["Δ 7d (%)"]
+            d30_val = row["Δ 30d (%)"]
+            with col:
+                st.markdown(f"**{row['Indicador']}** `{row['Unidad']}`")
+                v_now = f"{row['Hoy']:,.2f}" if pd.notna(row["Hoy"]) else "N/A"
+                v7    = f"{row['Hace 7d']:,.2f}" if pd.notna(row["Hace 7d"]) else "N/A"
+                v30   = f"{row['Hace 30d']:,.2f}" if pd.notna(row["Hace 30d"]) else "N/A"
+                d7s   = f"{d7_val:+.2f}%" if pd.notna(d7_val)  else "N/A"
+                d30s  = f"{d30_val:+.2f}%" if pd.notna(d30_val) else "N/A"
+                st.metric("Hoy",     v_now)
+                st.metric("Hace 7d", v7,  delta=d7s)
+                st.metric("Hace 30d",v30, delta=d30s)
+
+    st.divider()
+
+    # ── Titulares de noticias ────────────────────────────────────────────────
+    st.subheader("Titulares recientes por indicador")
+
+    if not news_api_key:
+        st.warning("NEWS_API_KEY no configurada.")
+    else:
+        indicator_cols = st.columns(len(NEWS_QUERIES))
+        for col, (label, query) in zip(indicator_cols, NEWS_QUERIES.items()):
+            headlines = fetch_headlines(label, query, news_api_key)
+            with col:
+                st.markdown(f"**{label}**")
+                if not headlines:
+                    st.caption("Sin titulares disponibles.")
+                else:
+                    for h in headlines:
+                        with st.container(border=True):
+                            if h["url"]:
+                                st.markdown(f"[{h['title']}]({h['url']})")
+                            else:
+                                st.markdown(h["title"])
+                            st.caption(f"{h['source']}  ·  {h['publishedAt']}")
+
+    st.divider()
+
+    # ── Gráficas históricas ──────────────────────────────────────────────────
+    st.subheader("Gráficas históricas")
+    if not HISTORY_FILE.exists():
+        st.warning("No hay datos en market_history.csv")
+    else:
+        hist_raw = pd.read_csv(HISTORY_FILE)
+        hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
+        hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
+        hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
+
+        indicators = hist_raw["indicator"].dropna().unique().tolist()
+        selected   = st.selectbox("Selecciona un indicador", indicators)
+        filtered   = hist_raw[hist_raw["indicator"] == selected].copy()
+
+        if filtered.empty:
+            st.warning("No hay datos para el indicador seleccionado.")
+        else:
+            st.write(f"Registros disponibles para **{selected.upper()}**: {len(filtered)}")
+            fig = px.line(filtered, x="timestamp", y="value",
+                          title=f"Histórico de {selected.upper()}", markers=True,
+                          color_discrete_sequence=["#1E7A8C"])
+            fig.update_layout(xaxis_title="Fecha", yaxis_title="Valor",
+                              hovermode="x unified")
+            st.plotly_chart(fig, use_container_width=True)
+
+            st.markdown("**Últimos 20 registros**")
+            st.dataframe(
+                filtered.tail(20)[["timestamp", "indicator", "value", "open_value",
+                                    "change_abs", "change_pct", "unit", "source", "status"]],
+                use_container_width=True, hide_index=True,
+            )
+
+    st.divider()
+
+    # ── Reporte IA ───────────────────────────────────────────────────────────
+    st.subheader("Reporte diario generado por IA")
+    st.text(report_text)
+
+
+# ── Navegación ───────────────────────────────────────────────────────────────
+pg = st.navigation([
+    st.Page(run_dashboard, title="Dashboard", icon="📊", default=True),
+    st.Page("pages/admin.py", title="Panel de Control", icon="⚙️"),
+])
+pg.run()
