@@ -265,7 +265,6 @@ else:
     st.caption("Monitoreo de indicadores financieros en tiempo real")
 
 snapshot_df  = load_snapshot()
-clean_df     = load_clean_data()
 report_text  = load_report()
 hist_df      = load_historical_comparison()
 news_api_key = get_secret("NEWS_API_KEY")
@@ -316,39 +315,6 @@ else:
             st.metric("Hace 7d", v7,  delta=d7s)
             st.metric("Hace 30d",v30, delta=d30s)
 
-    st.markdown("#### Tabla comparativa")
-    display_df = hist_df.copy()
-    for col_name in ("Hoy", "Hace 7d", "Hace 30d"):
-        display_df[col_name] = display_df.apply(
-            lambda r: f"{r[col_name]:,.2f} {r['Unidad']}" if pd.notna(r[col_name]) else "N/A",
-            axis=1,
-        )
-    for col_name in ("Δ 7d (%)", "Δ 30d (%)"):
-        display_df[col_name] = display_df[col_name].apply(
-            lambda v: f"{v:+.2f}%" if pd.notna(v) else "N/A"
-        )
-    st.dataframe(
-        display_df[["Indicador", "Hoy", "Hace 7d", "Δ 7d (%)", "Hace 30d", "Δ 30d (%)"]],
-        use_container_width=True, hide_index=True,
-    )
-
-    st.markdown("#### Evolución 30 días por indicador")
-    history_raw = pd.read_csv(HISTORY_FILE)
-    history_raw["timestamp"] = pd.to_datetime(history_raw["timestamp"], errors="coerce")
-    history_raw["value"]     = pd.to_numeric(history_raw["value"], errors="coerce")
-    cutoff = history_raw["timestamp"].max() - pd.Timedelta(days=30)
-    history_30d = history_raw[history_raw["timestamp"] >= cutoff].dropna(subset=["value"])
-
-    if not history_30d.empty:
-        fig = px.line(
-            history_30d, x="timestamp", y="value",
-            color="indicator", facet_col="indicator",
-            facet_col_wrap=3, markers=False,
-            title="Últimos 30 días por indicador",
-        )
-        fig.update_yaxes(matches=None, showticklabels=True)
-        fig.update_layout(showlegend=False, hovermode="x unified")
-        st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
@@ -378,28 +344,34 @@ st.divider()
 
 # ── Gráficas históricas ──────────────────────────────────────────────────────
 st.subheader("Gráficas históricas")
-if clean_df.empty:
-    st.warning("No hay datos en market_clean.csv")
+if not HISTORY_FILE.exists():
+    st.warning("No hay datos en market_history.csv")
 else:
-    indicators = clean_df["indicator"].dropna().unique().tolist()
+    hist_raw = pd.read_csv(HISTORY_FILE)
+    hist_raw["timestamp"] = pd.to_datetime(hist_raw["timestamp"], errors="coerce")
+    hist_raw["value"]     = pd.to_numeric(hist_raw["value"], errors="coerce")
+    hist_raw = hist_raw.dropna(subset=["timestamp", "value"]).sort_values(["indicator", "timestamp"])
+
+    indicators = hist_raw["indicator"].dropna().unique().tolist()
     selected   = st.selectbox("Selecciona un indicador", indicators)
-    filtered   = clean_df[clean_df["indicator"] == selected].copy().sort_values("timestamp")
+    filtered   = hist_raw[hist_raw["indicator"] == selected].copy()
 
     if filtered.empty:
         st.warning("No hay datos para el indicador seleccionado.")
     else:
         st.write(f"Registros disponibles para **{selected.upper()}**: {len(filtered)}")
         fig = px.line(filtered, x="timestamp", y="value",
-                      title=f"Histórico de {selected.upper()}", markers=True)
-        fig.update_layout(xaxis_title="Fecha y hora", yaxis_title="Valor",
+                      title=f"Histórico de {selected.upper()}", markers=True,
+                      color_discrete_sequence=["#1E7A8C"])
+        fig.update_layout(xaxis_title="Fecha", yaxis_title="Valor",
                           hovermode="x unified")
-        st.plotly_chart(fig, width="stretch")
+        st.plotly_chart(fig, use_container_width=True)
 
-        st.markdown("**Últimos registros del indicador seleccionado**")
+        st.markdown("**Últimos 20 registros**")
         st.dataframe(
             filtered.tail(20)[["timestamp", "indicator", "value", "open_value",
                                 "change_abs", "change_pct", "unit", "source", "status"]],
-            width="stretch",
+            use_container_width=True, hide_index=True,
         )
 
 st.divider()

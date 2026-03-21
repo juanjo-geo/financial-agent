@@ -61,7 +61,7 @@ def main():
     indicators = [
         {"symbol": "BZ=F", "name": "brent", "unit": "USD/bbl"},
         {"symbol": "BTC-USD", "name": "btc", "unit": "USD"},
-        {"symbol": "DX=F", "name": "dxy", "unit": "index"},
+        {"symbol": "DX-Y.NYB", "name": "dxy", "unit": "index"},
         {"symbol": "COP=X", "name": "usdcop", "unit": "COP per USD"},
     ]
 
