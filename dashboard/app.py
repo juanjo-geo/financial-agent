@@ -55,13 +55,13 @@ BRAND_CSS = """
 .fa-title h1   {
     margin: 0;
     color: #1E7A8C;
-    font-size: 12rem;
+    font-size: 6rem;
     font-weight: 800;
     letter-spacing: -2px;
 }
 .fa-title span {
     color: #3DB860;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 500;
 }
 .fa-subtitle {
