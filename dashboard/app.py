@@ -6,7 +6,11 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-st.set_page_config(page_title="Financial Agent Dashboard", layout="wide")
+st.set_page_config(
+    page_title="Agente Financiero Autónomo",
+    page_icon=str(Path(__file__).parent.parent / "logo.png"),
+    layout="wide",
+)
 
 # Rutas absolutas desde la raíz del repo — funciona local y en Streamlit Cloud
 ROOT          = Path(__file__).parent.parent
@@ -14,6 +18,37 @@ CLEAN_FILE    = ROOT / "data/processed/market_clean.csv"
 SNAPSHOT_FILE = ROOT / "data/processed/latest_snapshot.csv"
 HISTORY_FILE  = ROOT / "data/historical/market_history.csv"
 REPORT_FILE   = ROOT / "reports/daily_report.txt"
+
+LOGO_FILE = ROOT / "logo.png"
+
+BRAND_CSS = """
+<style>
+/* Colores del logo: azul marino #1C2E5E + verde #2DBD6E */
+[data-testid="stAppViewContainer"] { background-color: #FFFFFF; }
+[data-testid="stSidebar"]          { background-color: #EDF1FA; }
+
+/* Header bar */
+.fa-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px 0 4px 0;
+    border-bottom: 3px solid #2DBD6E;
+    margin-bottom: 18px;
+}
+.fa-header img  { height: 72px; width: auto; }
+.fa-title       { line-height: 1.1; }
+.fa-title h1    { margin: 0; color: #1C2E5E; font-size: 2rem; font-weight: 700; }
+.fa-title span  { color: #2DBD6E; font-size: 1rem; font-weight: 400; }
+.fa-subtitle    { color: #6B7A99; font-size: 0.85rem; margin-top: 2px; }
+
+/* Subheadings */
+h2, h3 { color: #1C2E5E !important; }
+
+/* st.metric delta positivo/negativo */
+[data-testid="stMetricDelta"] svg { display: none; }
+</style>
+"""
 
 NEWS_QUERIES = {
     "Brent":   "brent crude oil price",
@@ -186,11 +221,30 @@ def fetch_headlines(indicator, query, api_key, max_results=3):
 
 
 # ── Encabezado ──────────────────────────────────────────────────────────────
-st.markdown(
-    "# Financial Agent Dashboard <span style='font-size:0.5em; font-weight:400;'>Juanjo</span>",
-    unsafe_allow_html=True,
-)
-st.caption("Monitoreo de indicadores financieros del MVP")
+st.markdown(BRAND_CSS, unsafe_allow_html=True)
+
+import base64
+def _img_b64(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+if LOGO_FILE.exists():
+    logo_b64 = _img_b64(LOGO_FILE)
+    st.markdown(f"""
+<div class="fa-header">
+  <img src="data:image/png;base64,{logo_b64}" />
+  <div class="fa-title">
+    <h1>Agente Financiero Autónomo <span>· Juanjo</span></h1>
+    <div class="fa-subtitle">Monitoreo de indicadores financieros en tiempo real</div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+else:
+    st.markdown(
+        "# Agente Financiero Autónomo <span style='font-size:0.5em;color:#2DBD6E;'>· Juanjo</span>",
+        unsafe_allow_html=True,
+    )
+    st.caption("Monitoreo de indicadores financieros en tiempo real")
 
 snapshot_df  = load_snapshot()
 clean_df     = load_clean_data()
