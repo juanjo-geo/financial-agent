@@ -1,9 +1,9 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-03-21 08:49:58.583737
+Generado: 2026-03-21 17:19:35.260000
 
 BRENT | 3.10% | up | medium
-BTC | 0.27% | up | none
+BTC | -0.35% | down | none
 DXY | 0.21% | up | none
 GLOBAL_INFLATION_PROXY | 0.00% | flat | none
 USDCOP | 0.00% | flat | none
@@ -11,3 +11,4 @@ USDCOP | 0.00% | flat | none
 INTERPRETACIÓN MACRO
 -------------------------
 - El petróleo sube, lo que puede aumentar presiones inflacionarias globales.
+- Bitcoin cae, indicando menor apetito por riesgo.

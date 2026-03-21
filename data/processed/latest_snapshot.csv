@@ -1,6 +1,6 @@
 indicator,timestamp,value,open_value,change_abs,change_pct,unit,source,status
 brent,2026-03-21,106.41,103.21,3.2,3.1005,USD/bbl,yfinance,ok
-btc,2026-03-21,70707.1016,70517.6172,189.4844,0.2687,USD,yfinance,ok
+btc,2026-03-21,70270.0234,70517.6172,-247.5938,-0.3511,USD,yfinance,ok
 dxy,2026-03-21,99.503,99.29,0.213,0.2145,index,yfinance,ok
 global_inflation_proxy,2026-03-21,3.0,3.0,0.0,0.0,%,manual_proxy,ok
 usdcop,2026-03-21,3715.9099,3715.9099,0.0,0.0,COP per USD,yfinance,ok
