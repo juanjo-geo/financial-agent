@@ -15,6 +15,9 @@ steps = [
     "intelligence.signals_engine",      # genera 5 señales compuestas (reglas determinísticas)
     "intelligence.causal_interpreter",        # genera interpretación narrativa → daily_signals.json
     "intelligence.regime_change_detector",    # detecta cambio de régimen → regime_change.json
+    "intelligence.regime_classifier",         # clasifica régimen v2 (INFLACIONARIO/RISK-ON/CRISIS/LATERAL)
+    "intelligence.correlation_tracker",       # correlaciones dinámicas + detección de ruptura
+    "intelligence.composite_signals",         # señales compuestas entre pares de activos
     "intelligence.confidence_calibrator",     # calibra factores por banda de confianza
     "intelligence.rules_optimizer",           # optimiza pesos trend/momentum/signals
     "intelligence.predictor_24h",             # predicción determinística 24h por indicador

@@ -488,6 +488,69 @@ h2,h3 { color: #1B2A4A !important; }
 .hc-neu    { color: #5A6A7E; }
 .hc-conv   { font-weight: 700; color: #1B2A4A; }
 
+/* ── Regime badge ───────────────────────────────────────────────────────── */
+.regime-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 18px; border-radius: 20px;
+    font-size: 0.82rem; font-weight: 800; letter-spacing: .04em;
+    margin: 10px 0 4px; border: 1.5px solid transparent;
+}
+.regime-inflacionario { background: #FFF3E0; color: #E65100; border-color: #FFCC80; }
+.regime-risk-on       { background: #E3F2FD; color: #1565C0; border-color: #90CAF9; }
+.regime-crisis        { background: #FFEBEE; color: #C62828; border-color: #EF9A9A; }
+.regime-lateral       { background: #F4F6F9; color: #5A6A7E; border-color: #CFD8DC; }
+.regime-conf          { font-size: 0.67rem; font-weight: 600; opacity: 0.7; margin-left: 4px; }
+
+/* ── Composite signals ──────────────────────────────────────────────────── */
+.cs-card {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-left: 4px solid #ccc; border-radius: 10px;
+    padding: 12px 16px; margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(27,42,74,.04);
+}
+.cs-high { border-left-color: #C0392B; }
+.cs-med  { border-left-color: #E65100; }
+.cs-low  { border-left-color: #856404; }
+.cs-title { font-size: 0.85rem; font-weight: 800; color: #1B2A4A; }
+.cs-desc  { font-size: 0.76rem; color: #5A6A7E; margin-top: 3px; }
+.cs-icon  {
+    display: inline-block; width: 22px; height: 22px; border-radius: 50%;
+    text-align: center; line-height: 22px;
+    font-size: 0.72rem; font-weight: 800; margin-right: 6px;
+}
+.cs-icon-high { background: #FFEBEE; color: #C0392B; }
+.cs-icon-med  { background: #FFF3E0; color: #E65100; }
+.cs-icon-low  { background: #FFFBEA; color: #856404; }
+
+/* ── Correlation table ──────────────────────────────────────────────────── */
+.corr-table {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+}
+.corr-row {
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr 0.7fr 0.6fr 1fr;
+    align-items: center; padding: 9px 18px;
+    border-bottom: 1px solid #F0F4F8; font-size: 0.79rem;
+}
+.corr-row:last-child { border-bottom: none; }
+.corr-row:not(.corr-header):hover { background: #FAFBFC; }
+.corr-header {
+    background: #F4F6F9; font-size: 0.56rem; font-weight: 700;
+    letter-spacing: .11em; text-transform: uppercase; color: #8A9BB0;
+    padding: 8px 18px;
+}
+.corr-pos   { color: #00875A; font-weight: 700; }
+.corr-neg   { color: #C0392B; font-weight: 700; }
+.corr-zero  { color: #8A9BB0; }
+.corr-rota  { background: #FFF3E0; color: #E65100; font-size: 0.72rem;
+              font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.corr-alerta{ background: #FFEBEE; color: #C0392B; font-size: 0.72rem;
+              font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.corr-normal{ background: #E8F5EF; color: #00875A; font-size: 0.72rem;
+              padding: 2px 8px; border-radius: 10px; }
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media(max-width:768px){
     .fa-title h1 { font-size: 1.8rem; }
@@ -629,6 +692,42 @@ def load_regime_change() -> dict:
     try:
         with open(rc_file, encoding="utf-8") as f:
             return json.load(f)
+    except Exception:
+        return {}
+
+
+def load_market_regime_v2() -> dict:
+    """Carga market_regime_v2.json (clasificador v2)."""
+    f = ROOT / "data/signals/market_regime_v2.json"
+    if not f.exists():
+        return {}
+    try:
+        with open(f, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
+def load_composite_signals() -> dict:
+    """Carga composite_signals.json."""
+    f = ROOT / "data/signals/composite_signals.json"
+    if not f.exists():
+        return {}
+    try:
+        with open(f, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
+def load_correlations() -> dict:
+    """Carga correlations.json."""
+    f = ROOT / "data/signals/correlations.json"
+    if not f.exists():
+        return {}
+    try:
+        with open(f, encoding="utf-8") as fh:
+            return json.load(fh)
     except Exception:
         return {}
 
@@ -1062,10 +1161,47 @@ def run_dashboard():
             f'</div>'
             for lbl, val, cls in badges
         )
+        # Regime v2 badge
+        rv2 = load_market_regime_v2()
+        _REGIME_CSS = {
+            "INFLACIONARIO": "regime-inflacionario",
+            "RISK-ON":       "regime-risk-on",
+            "CRISIS":        "regime-crisis",
+            "LATERAL":       "regime-lateral",
+        }
+        _REGIME_ICON = {
+            "INFLACIONARIO": "INF",
+            "RISK-ON":       "RON",
+            "CRISIS":        "CRI",
+            "LATERAL":       "LAT",
+        }
+        if rv2:
+            rv2_regime  = rv2.get("regime", "LATERAL")
+            rv2_conf    = rv2.get("confianza", 0)
+            rv2_drivers = rv2.get("drivers", [])
+            rv2_css     = _REGIME_CSS.get(rv2_regime, "regime-lateral")
+            rv2_icon    = _REGIME_ICON.get(rv2_regime, "---")
+            rv2_drv_str = " · ".join(rv2_drivers[:2]) if rv2_drivers else ""
+            regime_badge_html = (
+                f'<div style="margin-bottom:6px">'
+                f'  <div style="font-size:0.65rem;color:#8A9BB0;margin-bottom:4px">'
+                f'    Régimen v2 · {rv2.get("generado_en","")[:10]}</div>'
+                f'  <span class="regime-badge {rv2_css}">'
+                f'    [{rv2_icon}] {rv2_regime}'
+                f'    <span class="regime-conf">+{rv2_conf}pts</span>'
+                f'  </span>'
+                + (f'<div style="font-size:0.68rem;color:#8A9BB0;margin-top:4px">'
+                   f'{_esc(rv2_drv_str)}</div>' if rv2_drv_str else "")
+                + f'</div>'
+            )
+        else:
+            regime_badge_html = ""
+
         st.markdown(
             f'<div style="font-size:0.7rem;color:#8A9BB0;margin-bottom:10px">'
             f'Generado: {_gen}</div>'
-            f'<div class="sig-strip">{strip_html}</div>',
+            f'<div class="sig-strip">{strip_html}</div>'
+            + regime_badge_html,
             unsafe_allow_html=True,
         )
 
@@ -1194,6 +1330,112 @@ def run_dashboard():
     </div>
   </div>
 </div>""", unsafe_allow_html=True)
+
+    st.markdown("<div style='margin:18px 0 4px'></div>", unsafe_allow_html=True)
+
+    # ── Señales Compuestas + Correlaciones ────────────────────────────────────
+    st.markdown('<div class="section-label">Señales Compuestas & Correlaciones</div>',
+                unsafe_allow_html=True)
+
+    col_cs, col_corr = st.columns([1, 1])
+
+    with col_cs:
+        st.markdown(
+            '<div style="font-size:0.78rem;font-weight:700;color:#1B2A4A;margin-bottom:8px">'
+            'Señales activas del día</div>',
+            unsafe_allow_html=True,
+        )
+        cs_data = load_composite_signals()
+        activas = cs_data.get("activas", []) if cs_data else []
+        if not cs_data:
+            st.info("Sin datos de señales compuestas.")
+        elif not activas:
+            variaciones = cs_data.get("variaciones", {})
+            var_str = "  ".join(
+                f"{k.upper()} {'+' if v>=0 else ''}{v:.1f}%"
+                for k, v in sorted(variaciones.items())
+            )
+            st.markdown(
+                f'<div style="font-size:0.78rem;color:#5A6A7E;padding:12px 0">'
+                f'Ninguna señal compuesta activa hoy.<br>'
+                f'<span style="font-size:0.68rem;color:#8A9BB0">{_esc(var_str)}</span>'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+        else:
+            _CS_SEV_CSS = {"HIGH": "cs-high", "MED": "cs-med", "LOW": "cs-low"}
+            _CS_ICON_CSS = {"HIGH": "cs-icon-high", "MED": "cs-icon-med", "LOW": "cs-icon-low"}
+            cards_html = ""
+            for sig in activas:
+                sev  = sig.get("severidad", "LOW")
+                icon = sig.get("icono", "!")
+                cards_html += (
+                    f'<div class="cs-card {_CS_SEV_CSS.get(sev,"cs-low")}">'
+                    f'<div class="cs-title">'
+                    f'  <span class="cs-icon {_CS_ICON_CSS.get(sev,"cs-icon-low")}">{icon}</span>'
+                    f'  {_esc(sig["nombre"])}'
+                    f'</div>'
+                    f'<div class="cs-desc">{_esc(sig["descripcion"])}</div>'
+                    f'</div>'
+                )
+            st.markdown(cards_html, unsafe_allow_html=True)
+
+    with col_corr:
+        st.markdown(
+            '<div style="font-size:0.78rem;font-weight:700;color:#1B2A4A;margin-bottom:8px">'
+            'Correlaciones dinámicas (30d)</div>',
+            unsafe_allow_html=True,
+        )
+        corr_data = load_correlations()
+        pares = corr_data.get("pares", []) if corr_data else []
+        if not corr_data or not pares:
+            st.info("Sin datos de correlaciones.")
+        else:
+            def _corr_fmt(v) -> tuple[str, str]:
+                if v is None:
+                    return "N/A", "corr-zero"
+                cls = "corr-pos" if v >= 0.1 else ("corr-neg" if v <= -0.1 else "corr-zero")
+                return f"{v:+.2f}", cls
+
+            tbl = (
+                '<div class="corr-table">'
+                '<div class="corr-row corr-header">'
+                '<span>Par</span><span>Actual</span><span>Baseline</span>'
+                '<span>Delta</span><span>Estado</span>'
+                '</div>'
+            )
+            for p in pares:
+                cur_s,  cur_c  = _corr_fmt(p.get("corr_actual"))
+                base_s, base_c = _corr_fmt(p.get("corr_baseline"))
+                dlt = f"{p['delta']:.2f}" if p.get("delta") is not None else "N/A"
+                if p.get("alerta"):
+                    est_cls, est_lbl = "corr-alerta", "ALERTA"
+                elif p.get("rota"):
+                    est_cls, est_lbl = "corr-rota",   "Rota"
+                else:
+                    est_cls, est_lbl = "corr-normal",  "Normal"
+                tbl += (
+                    f'<div class="corr-row">'
+                    f'<span style="font-size:0.74rem;font-weight:600">{p["par"]}</span>'
+                    f'<span class="{cur_c}">{cur_s}</span>'
+                    f'<span class="{base_c}">{base_s}</span>'
+                    f'<span style="color:#5A6A7E">{dlt}</span>'
+                    f'<span><span class="{est_cls}">{est_lbl}</span></span>'
+                    f'</div>'
+                )
+            tbl += '</div>'
+            st.markdown(tbl, unsafe_allow_html=True)
+
+            alertas = corr_data.get("alertas", [])
+            if alertas:
+                st.markdown("<div style='margin-top:8px'></div>", unsafe_allow_html=True)
+                for a in alertas:
+                    st.markdown(
+                        f'<div style="font-size:0.72rem;color:#E65100;background:#FFF3E0;'
+                        f'border-radius:8px;padding:6px 12px;margin-bottom:4px">'
+                        f'{_esc(a)}</div>',
+                        unsafe_allow_html=True,
+                    )
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
