@@ -13,8 +13,9 @@ steps = [
     "intelligence.backfill_signals_history",  # rellena historial de señales si < 7 filas
     "intelligence.news_classifier",     # clasifica noticias/reportes por categoría temática
     "intelligence.signals_engine",      # genera 5 señales compuestas (reglas determinísticas)
-    "intelligence.causal_interpreter",  # genera interpretación narrativa → daily_signals.json
-    "intelligence.predictor_24h",       # predicción determinística 24h por indicador
+    "intelligence.causal_interpreter",        # genera interpretación narrativa → daily_signals.json
+    "intelligence.regime_change_detector",    # detecta cambio de régimen → regime_change.json
+    "intelligence.predictor_24h",             # predicción determinística 24h por indicador
     "scripts.market_report",
     "scripts.email_report",
     "scripts.whatsapp_report",

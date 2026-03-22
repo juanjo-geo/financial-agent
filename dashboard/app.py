@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="Agente Financiero Autónomo",
@@ -335,6 +336,45 @@ h2,h3 { color: #1B2A4A !important; }
 }
 .pred-reason { font-size: 0.74rem; color: #5A6A7E; line-height: 1.45; }
 
+/* ── Regime change gauge ────────────────────────────────────────────────── */
+.rc-panel {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; padding: 18px 22px;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+    display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;
+}
+.rc-panel.rc-alert { border-left: 4px solid #FF4B4B; }
+.rc-panel.rc-warn  { border-left: 4px solid #FFC107; }
+.rc-panel.rc-ok    { border-left: 4px solid #00C896; }
+.rc-meta { flex: 1; min-width: 200px; }
+.rc-nivel {
+    display: inline-block; font-size: 0.7rem; font-weight: 800;
+    letter-spacing: .1em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 10px; margin-bottom: 10px;
+}
+.rc-nivel-critico   { background: #FFCDD2; color: #B71C1C; }
+.rc-nivel-signif    { background: #FFE0B2; color: #E65100; }
+.rc-nivel-transicion{ background: #FFF9C4; color: #856404; }
+.rc-nivel-estable   { background: #E8F5EF; color: #00875A; }
+.rc-tipo {
+    font-size: 0.75rem; font-weight: 700; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+}
+.rc-desc  { font-size: 0.78rem; color: #5A6A7E; line-height: 1.55; }
+.rc-transitions { margin-top: 12px; }
+.rc-tr-row {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; color: #5A6A7E; margin-bottom: 5px;
+}
+.rc-tr-label { font-weight: 700; color: #1B2A4A; min-width: 140px; }
+.rc-tr-arrow { color: #FF4B4B; font-weight: 700; }
+.rc-tr-bar {
+    flex: 1; max-width: 80px; height: 4px;
+    background: #EAF0F6; border-radius: 2px; overflow: hidden;
+}
+.rc-tr-fill { height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, #FFC107, #FF4B4B); }
+
 /* ── Precision / evaluation ─────────────────────────────────────────────── */
 .prec-kpi-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .prec-kpi {
@@ -580,6 +620,17 @@ def load_alerts_log(n: int = 5) -> list[dict]:
         return log[-n:] if isinstance(log, list) else []
     except Exception:
         return []
+
+
+def load_regime_change() -> dict:
+    rc_file = ROOT / "data/signals/regime_change.json"
+    if not rc_file.exists():
+        return {}
+    try:
+        with open(rc_file, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
 
 def load_evaluation_log() -> pd.DataFrame:
@@ -1005,6 +1056,103 @@ def run_dashboard():
             f'<div class="sig-strip">{strip_html}</div>',
             unsafe_allow_html=True,
         )
+
+        # ── Regime Change Score gauge ──────────────────────────────────────
+        rc = load_regime_change()
+        if rc:
+            rc_score  = float(rc.get("score", 0))
+            rc_nivel  = rc.get("nivel",       "Estable")
+            rc_tipo   = rc.get("tipo_cambio", "Gradual")
+            rc_alerta = rc.get("alerta",      False)
+            rc_direc  = rc.get("direccion",   "Mixto")
+            rc_desc   = rc.get("descripcion", "")
+            rc_trans  = rc.get("transiciones", [])
+            rc_gen    = rc.get("generado_en",  "")
+
+            # Gauge (plotly Indicator)
+            _GAUGE_COLOR = "#C0392B" if rc_score >= 70 else (
+                "#E65100" if rc_score >= 50 else (
+                "#856404" if rc_score >= 30 else "#00875A"))
+
+            fig_gauge = go.Figure(go.Indicator(
+                mode  = "gauge+number",
+                value = rc_score,
+                number = {"font": {"size": 36, "color": _GAUGE_COLOR}, "suffix": ""},
+                gauge = {
+                    "axis": {"range": [0, 100], "tickwidth": 1,
+                             "tickfont": {"size": 9}, "tickcolor": "#B0BEC5"},
+                    "bar":   {"color": _GAUGE_COLOR, "thickness": 0.25},
+                    "bgcolor": "white",
+                    "borderwidth": 0,
+                    "steps": [
+                        {"range": [0,  30], "color": "#E8F5EF"},
+                        {"range": [30, 60], "color": "#FFF9C4"},
+                        {"range": [60, 80], "color": "#FFE0B2"},
+                        {"range": [80,100], "color": "#FFCDD2"},
+                    ],
+                    "threshold": {
+                        "line":      {"color": "#C0392B", "width": 3},
+                        "thickness": 0.8,
+                        "value":     70,
+                    },
+                },
+            ))
+            fig_gauge.update_layout(
+                height=180, margin=dict(l=10, r=10, t=20, b=0),
+                paper_bgcolor="white", font={"family": "sans-serif"},
+            )
+
+            _NIVEL_CLS = {
+                "Critico":     "rc-nivel-critico",
+                "Significativo": "rc-nivel-signif",
+                "Transicion":  "rc-nivel-transicion",
+                "Estable":     "rc-nivel-estable",
+            }
+            _PANEL_CLS = "rc-alert" if rc_alerta else ("rc-warn" if rc_score >= 40 else "rc-ok")
+            _DIR_ICON  = {"Deterioro": "↑ Deterioro", "Mejora": "↓ Mejora", "Mixto": "↔ Mixto"}
+
+            # Transitions HTML
+            tr_html = ""
+            for t in rc_trans:
+                pct_bar = int(min(100, t.get("score_parcial", 0) / t.get("peso_dimension", 30) * 100))
+                de_v, a_v = t.get("de", ""), t.get("a", "")
+                arrow_part = f'<span class="rc-tr-arrow">{de_v} → {a_v}</span>' if de_v != a_v else f'<span>{de_v}</span>'
+                tr_html += (
+                    f'<div class="rc-tr-row">'
+                    f'<span class="rc-tr-label">{t.get("dimension_label","")}</span>'
+                    f'{arrow_part}'
+                    f'<div class="rc-tr-bar"><div class="rc-tr-fill" style="width:{pct_bar}%"></div></div>'
+                    f'<span style="font-size:0.68rem;color:#8A9BB0">+{t.get("score_parcial",0):.0f}pts</span>'
+                    f'</div>'
+                )
+
+            col_gauge, col_meta = st.columns([1, 2])
+            with col_gauge:
+                st.plotly_chart(fig_gauge, use_container_width=True,
+                                config={"displayModeBar": False})
+                st.markdown(
+                    f'<div style="text-align:center;font-size:0.65rem;color:#8A9BB0;margin-top:-14px">'
+                    f'Regime Change Score · {rc_gen[:10]}</div>',
+                    unsafe_allow_html=True,
+                )
+            with col_meta:
+                st.markdown(
+                    f'<div class="rc-panel {_PANEL_CLS}">'
+                    f'  <div class="rc-meta">'
+                    f'    <span class="rc-nivel {_NIVEL_CLS.get(rc_nivel,"rc-nivel-estable")}">'
+                    f'      {rc_nivel}</span>'
+                    f'    <div class="rc-tipo">'
+                    f'      <span>{rc_tipo}</span>'
+                    f'      <span style="color:#8A9BB0">·</span>'
+                    f'      <span>{_DIR_ICON.get(rc_direc, rc_direc)}</span>'
+                    f'      {"<span style=\"color:#C0392B;font-weight:800\">⚠ ALERTA</span>" if rc_alerta else ""}'
+                    f'    </div>'
+                    f'    <div class="rc-desc">{_esc(rc_desc)}</div>'
+                    f'    {"<div class=rc-transitions>" + tr_html + "</div>" if tr_html else ""}'
+                    f'  </div>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
 
         # Agent reading card
         cierre   = _i.get("cierre_ejecutivo",  "")
