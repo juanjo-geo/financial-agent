@@ -3,6 +3,7 @@ import sys
 from datetime import datetime
 
 steps = [
+    "intelligence.evaluator",           # evalúa predicciones de ayer vs actuals de hoy
     "scripts.backfill_history",         # rellena histórico de indicadores nuevos
     "scripts.market_collector",
     "scripts.processor",

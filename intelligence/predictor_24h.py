@@ -426,6 +426,12 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
+    # Copia fechada para evaluacion ex-post del dia siguiente
+    dated_file = OUTPUT_FILE.parent / f"predictions_24h_{result['fecha']}.json"
+    with open(dated_file, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+    print(f"  Copia fechada: {dated_file.name}")
+
     print(f"\n{'Indicador':<28} {'Dir':^10} {'Magnitud':^14} {'Conf':^6}  Razon")
     print("-" * 90)
     for ind, p in result["predicciones"].items():

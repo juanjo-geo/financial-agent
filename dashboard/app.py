@@ -335,6 +335,57 @@ h2,h3 { color: #1B2A4A !important; }
 }
 .pred-reason { font-size: 0.74rem; color: #5A6A7E; line-height: 1.45; }
 
+/* ── Precision / evaluation ─────────────────────────────────────────────── */
+.prec-kpi-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.prec-kpi {
+    flex: 1; min-width: 140px;
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 12px; padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(27,42,74,.04); text-align: center;
+}
+.prec-kpi-label { font-size: 0.65rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #8A9BB0; margin-bottom: 6px; }
+.prec-kpi-value { font-size: 2rem; font-weight: 900; line-height: 1; }
+.prec-kpi-sub   { font-size: 0.7rem; color: #8A9BB0; margin-top: 4px; }
+.prec-green { color: #00875A; }
+.prec-yellow{ color: #856404; }
+.prec-red   { color: #C0392B; }
+.calib-badge {
+    display: inline-block; padding: 6px 14px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 700; margin-top: 8px;
+}
+.calib-good { background: #E8F5EF; color: #00875A; }
+.calib-ok   { background: #FFFBEA; color: #856404; }
+.calib-bad  { background: #FFF0F0; color: #C0392B; }
+.calib-na   { background: #F4F6F9; color: #8A9BB0; }
+.eval-table {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+}
+.eval-row {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 1fr 0.9fr 0.6fr 0.8fr;
+    align-items: center; gap: 0;
+    padding: 9px 18px; border-bottom: 1px solid #F0F4F8;
+    font-size: 0.79rem;
+}
+.eval-row:last-child { border-bottom: none; }
+.eval-row:not(.eval-header):hover { background: #FAFBFC; }
+.eval-header {
+    background: #F4F6F9;
+    font-size: 0.56rem; font-weight: 700;
+    letter-spacing: .11em; text-transform: uppercase; color: #8A9BB0;
+    padding: 8px 18px;
+}
+.eval-date  { font-weight: 700; color: #1B2A4A; }
+.eval-ind   { font-weight: 700; color: #3D5A80; }
+.eval-hit   { font-size: 0.85rem; }
+.eval-chg-up   { color: #00875A; font-weight: 700; }
+.eval-chg-down { color: #C0392B; font-weight: 700; }
+.eval-chg-flat { color: #5A6A7E; }
+.eval-conf  { font-size: 0.74rem; color: #5A6A7E; }
+
 /* ── Alert cards ────────────────────────────────────────────────────────── */
 .alert-card {
     background: #FFFFFF; border: 1px solid #EAF0F6;
@@ -529,6 +580,22 @@ def load_alerts_log(n: int = 5) -> list[dict]:
         return log[-n:] if isinstance(log, list) else []
     except Exception:
         return []
+
+
+def load_evaluation_log() -> pd.DataFrame:
+    """Carga evaluation_log.csv con columnas estandarizadas."""
+    eval_file = ROOT / "data/signals/evaluation_log.csv"
+    if not eval_file.exists():
+        return pd.DataFrame()
+    try:
+        df = pd.read_csv(eval_file)
+        df["fecha"]  = pd.to_datetime(df["fecha"], errors="coerce")
+        df["acerto"] = pd.to_numeric(df["acerto"], errors="coerce").fillna(0).astype(int)
+        df["cambio_real"]        = pd.to_numeric(df["cambio_real"],        errors="coerce")
+        df["confianza_predicha"] = pd.to_numeric(df["confianza_predicha"], errors="coerce")
+        return df.dropna(subset=["fecha"]).sort_values("fecha")
+    except Exception:
+        return pd.DataFrame()
 
 
 def format_metric_value(value, unit):
@@ -1030,6 +1097,116 @@ def run_dashboard():
             + header + rows_html + '</div>',
             unsafe_allow_html=True,
         )
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Precisión del Agente ──────────────────────────────────────────────────
+    st.markdown('<div class="section-label">Precisión del Agente — evaluación ex-post</div>',
+                unsafe_allow_html=True)
+    eval_df = load_evaluation_log()
+    if eval_df.empty:
+        st.info("La evaluación ex-post se genera automáticamente a partir del segundo día de pipeline.")
+    else:
+        from datetime import timedelta
+        today_dt = pd.Timestamp.now().normalize()
+        df7  = eval_df[eval_df["fecha"] >= today_dt - timedelta(days=7)]
+        df30 = eval_df[eval_df["fecha"] >= today_dt - timedelta(days=30)]
+
+        acc7   = df7["acerto"].mean()  * 100 if len(df7)  > 0 else None
+        acc30  = df30["acerto"].mean() * 100 if len(df30) > 0 else None
+        n7, n30 = len(df7), len(df30)
+
+        # Calibración: predicciones con confianza >= 8
+        hc_df  = eval_df[eval_df["confianza_predicha"] >= 8]
+        hc_acc = hc_df["acerto"].mean() * 100 if len(hc_df) >= 5 else None
+        n_hc   = len(hc_df)
+
+        def _pct_color(pct):
+            if pct is None:   return "prec-yellow"
+            if pct >= 65:     return "prec-green"
+            if pct >= 50:     return "prec-yellow"
+            return "prec-red"
+
+        def _pct_str(pct, n):
+            if pct is None:   return "N/A", "—"
+            return f"{pct:.0f}%", f"{int(round(pct/100*n))}/{n} predicciones"
+
+        v7,  s7  = _pct_str(acc7,  n7)
+        v30, s30 = _pct_str(acc30, n30)
+
+        if hc_acc is None:
+            calib_lbl, calib_cls = "Sin datos (conf ≥8)", "calib-na"
+        elif hc_acc >= 80:
+            calib_lbl, calib_cls = f"Bien calibrado ({hc_acc:.0f}%)", "calib-good"
+        elif hc_acc >= 60:
+            calib_lbl, calib_cls = f"Calibración aceptable ({hc_acc:.0f}%)", "calib-ok"
+        else:
+            calib_lbl, calib_cls = f"Sobreconfiado ({hc_acc:.0f}%)", "calib-bad"
+
+        st.markdown(
+            f'<div class="prec-kpi-row">'
+            f'  <div class="prec-kpi">'
+            f'    <div class="prec-kpi-label">Últimos 7 días</div>'
+            f'    <div class="prec-kpi-value {_pct_color(acc7)}">{v7}</div>'
+            f'    <div class="prec-kpi-sub">{s7}</div>'
+            f'  </div>'
+            f'  <div class="prec-kpi">'
+            f'    <div class="prec-kpi-label">Últimos 30 días</div>'
+            f'    <div class="prec-kpi-value {_pct_color(acc30)}">{v30}</div>'
+            f'    <div class="prec-kpi-sub">{s30}</div>'
+            f'  </div>'
+            f'  <div class="prec-kpi">'
+            f'    <div class="prec-kpi-label">Calibración confianza ≥8</div>'
+            f'    <div class="prec-kpi-value {_pct_color(hc_acc)}">'
+            f'      {f"{hc_acc:.0f}%" if hc_acc is not None else "—"}</div>'
+            f'    <div class="prec-kpi-sub">{n_hc} predicciones evaluadas</div>'
+            f'    <span class="calib-badge {calib_cls}">{calib_lbl}</span>'
+            f'  </div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+        # Tabla de últimas evaluaciones
+        _DIR_ICON = {"Alcista": "↑", "Bajista": "↓", "Lateral": "→"}
+
+        with st.expander("Ver tabla de predicciones vs resultado real", expanded=False):
+            show_df = eval_df.sort_values("fecha", ascending=False).head(30)
+            header  = (
+                '<div class="eval-table">'
+                '<div class="eval-row eval-header">'
+                '<span>Fecha</span><span>Indicador</span>'
+                '<span>Predicción</span><span>Cambio Real</span>'
+                '<span>Acierto</span><span>Confianza</span>'
+                '</div>'
+            )
+            rows_html = ""
+            for _, r in show_df.iterrows():
+                ind       = str(r.get("indicador", "")).upper()
+                label     = _CATALOG.get(str(r.get("indicador", "")).lower(), {}).get("label", ind)
+                dir_pred  = str(r.get("direccion_predicha", ""))
+                chg       = r.get("cambio_real", 0.0)
+                acerto    = int(r.get("acerto", 0))
+                conf      = r.get("confianza_predicha", 0)
+                fecha_lbl = r["fecha"].strftime("%d/%m/%Y")
+                dir_icon  = _DIR_ICON.get(dir_pred, "→")
+
+                chg_sign = "+" if chg > 0 else ""
+                if chg > 0.1:   chg_cls = "eval-chg-up"
+                elif chg < -0.1: chg_cls = "eval-chg-down"
+                else:            chg_cls = "eval-chg-flat"
+
+                rows_html += (
+                    f'<div class="eval-row">'
+                    f'<span class="eval-date">{fecha_lbl}</span>'
+                    f'<span class="eval-ind">{label}</span>'
+                    f'<span>{dir_icon} {dir_pred}</span>'
+                    f'<span class="{chg_cls}">{chg_sign}{chg:.2f}%</span>'
+                    f'<span class="eval-hit">{"✅" if acerto else "❌"}</span>'
+                    f'<span class="eval-conf">{int(conf)}/10</span>'
+                    f'</div>'
+                )
+            st.markdown(header + rows_html + "</div>", unsafe_allow_html=True)
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
