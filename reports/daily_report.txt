@@ -1,9 +1,34 @@
 REPORTE DIARIO DE MERCADO
-Generado: 2026-03-21 16:03:53
+Generado: 2026-03-22 13:57:24
 --------------------------------------------------
 
-Hoy, el petróleo Brent subió con fuerza, cerrando en 106.41 USD por barril, impulsado por la incertidumbre en torno a la guerra en Irán. El bitcoin, por su parte, perdió impulso y se ubicó en 70,454.39 USD, aunque todavía mantiene un buen nivel comparado con semanas anteriores. El dólar se mantuvo quieto en 3,715.91 COP, lo que significa que no hubo cambios significativos en el costo de las importaciones ni en el poder adquisitivo de los colombianos.
+Hoy, el petróleo Brent subió con fuerza, cerrando en 106.41 USD/bbl, impulsado por la relajación de sanciones sobre Irán, lo que podría afectar los precios energéticos globalmente. El dólar cedió terreno a 3,694.49 COP/USD, lo que mejora ligeramente el poder adquisitivo en Colombia, aunque sigue siendo un reto por la inflación. Bitcoin perdió impulso, mientras que los índices de acciones, como el S&P 500, también retrocedieron, reflejando un ambiente cauteloso entre los inversionistas.
 
-Los movimientos de hoy parecen más bien parte de una tendencia en la que el petróleo continúa al alza, mientras que el bitcoin muestra cierta inestabilidad. En general, los precios del oro y el S&P 500 también han dado señales de debilidad, lo que podría indicar una mayor cautela en los mercados.
+Los movimientos de hoy parecen ser parte de una tendencia más amplia. El Brent sigue mostrando fortaleza, mientras que el dólar ha tenido fluctuaciones menores en la última semana. Sin embargo, los activos como el oro y la plata están en baja, lo que podría indicar una corrección en el mercado tras las altas recientes.
 
-En el contexto actual, la incertidumbre geopolítica sigue afectando a los mercados, especialmente en el sector energético. A medida que los precios del petróleo siguen subiendo, la presión inflacionaria podría reactivarse. Mantengamos la atención en cómo se desarrollan estos eventos.
+El ambiente de mercado se siente tenso, con incertidumbres en torno a la inflación global y las políticas monetarias. La volatilidad sigue siendo la norma, y es importante mantenerse alerta ante posibles cambios. Hay que estar preparados para lo que venga.
+=======================================================
+SECCIÓN 5 — SEÑALES ACCIONABLES
+Generado: 2026-03-22 13:57:11
+=======================================================
+  Riesgo Macro           : Medio
+  Sesgo de Mercado       : Mixto
+  Presión Inflacionaria  : Alcista
+  Presión COP            : Neutral
+  Convicción             : 7/10
+
+=======================================================
+SECCIÓN 6 — INTERPRETACIÓN CAUSAL
+=======================================================
+
+Driver principal:
+  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.
+
+Driver secundario:
+  El petroleo Brent registro un avance pronunciado (+3.1%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.
+
+Lectura cruzada:
+  Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La caida simultanea de oro y renta variable es inusual: podria estar reflejando presion de liquidez o ajuste tecnico mas que una tendencia fundamental sostenida.
+
+Cierre ejecutivo:
+  El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 7/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy.

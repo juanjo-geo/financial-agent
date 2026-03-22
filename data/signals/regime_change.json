@@ -1,35 +1,51 @@
 {
-  "fecha": "2026-03-21",
-  "generado_en": "2026-03-21 22:22:45",
-  "score": 2.4,
+  "fecha": "2026-03-22",
+  "generado_en": "2026-03-22 13:57:11",
+  "score": 12.7,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mixto",
-  "transiciones": [],
+  "direccion": "Deterioro",
+  "transiciones": [
+    {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Alcista",
+      "a": "Alcista",
+      "score_parcial": 8.18,
+      "peso_dimension": 20
+    },
+    {
+      "dimension": "riesgo_macro",
+      "dimension_label": "Riesgo Macro",
+      "de": "Bajo",
+      "a": "Medio",
+      "score_parcial": 4.55,
+      "peso_dimension": 30
+    }
+  ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
-    "sesgo_mercado": 1.36,
-    "riesgo_macro": 0.45,
-    "presion_inflacionaria": 0.61,
+    "sesgo_mercado": 0.0,
+    "riesgo_macro": 4.55,
+    "presion_inflacionaria": 8.18,
     "presion_cop": 0.0
   },
   "recientes": {
     "sesgo_mercado": 0.0,
-    "riesgo_macro": 0.333,
-    "presion_inflacionaria": 0.333,
+    "riesgo_macro": 0.667,
+    "presion_inflacionaria": 1.0,
     "presion_cop": 0.0
   },
   "baselines": {
-    "sesgo_mercado": -0.091,
+    "sesgo_mercado": 0.0,
     "riesgo_macro": 0.364,
-    "presion_inflacionaria": 0.273,
+    "presion_inflacionaria": 0.182,
     "presion_cop": 0.0
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Risk-on",
       "Mixto",
       "Risk-off",
       "Risk-on",
@@ -40,12 +56,12 @@
       "Risk-on",
       "Mixto",
       "Risk-off",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Medio",
       "Medio",
       "Bajo",
@@ -58,10 +74,10 @@
       "Medio",
       "Bajo",
       "Bajo",
+      "Medio",
       "Medio"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Alcista",
       "Alcista",
       "Neutral",
@@ -73,6 +89,7 @@
       "Alcista",
       "Alcista",
       "Bajista",
+      "Alcista",
       "Alcista",
       "Alcista"
     ],

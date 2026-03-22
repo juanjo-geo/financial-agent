@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-03-21",
-  "generado_en": "2026-03-21 18:27:28",
+  "fecha": "2026-03-22",
+  "generado_en": "2026-03-22 13:57:11",
   "senales": {
     "riesgo_macro": "Medio",
     "sesgo_mercado": "Mixto",
@@ -51,18 +51,18 @@
     "petroleo": 3,
     "inflacion": 3,
     "dolar": 3,
-    "cripto": 3,
     "colombia": 3,
+    "cripto": 3,
     "geopolitica": 3
   },
   "variaciones_mercado": {
     "brent": 3.1005,
-    "btc": -0.2693,
-    "dxy": 0.2145,
+    "btc": -0.3237,
+    "dxy": 0.3626,
     "global_inflation_proxy": 0.0,
     "gold": -1.6975,
     "silver": -4.3471,
     "sp500": -1.3371,
-    "usdcop": 0.0
+    "usdcop": -0.5764
   }
 }
