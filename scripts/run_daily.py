@@ -12,6 +12,7 @@ steps = [
     "intelligence.news_classifier",     # clasifica noticias/reportes por categoría temática
     "intelligence.signals_engine",      # genera 5 señales compuestas (reglas determinísticas)
     "intelligence.causal_interpreter",  # genera interpretación narrativa → daily_signals.json
+    "intelligence.predictor_24h",       # predicción determinística 24h por indicador
     "scripts.market_report",
     "scripts.email_report",
     "scripts.whatsapp_report",

@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-03-21",
+  "generado_en": "2026-03-21 19:05:29",
+  "predicciones": {
+    "brent": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Significativa",
+      "confianza": 9,
+      "razon": "La tendencia de 7d (+1.12%/dia) es positiva y apunta a continuacion alcista.",
+      "_slope_pct_dia": 1.1178,
+      "_momentum_pct": 3.1005,
+      "_trend_score": 2.236,
+      "_momentum_score": 1.55,
+      "_signal_score": 1.2,
+      "_total_score": 1.823,
+      "_n_puntos_7d": 6
+    },
+    "btc": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 5,
+      "razon": "La tendencia de 7d (-0.58%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -0.581,
+      "_momentum_pct": -0.2693,
+      "_trend_score": -1.162,
+      "_momentum_score": -0.135,
+      "_signal_score": -0.3,
+      "_total_score": -0.681,
+      "_n_puntos_7d": 8
+    },
+    "dxy": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 3,
+      "razon": "Las senales del dia (sesgo Mixto, riesgo Medio) podrian reflejar movimiento lateral o consolidacion.",
+      "_slope_pct_dia": -0.061,
+      "_momentum_pct": 0.2145,
+      "_trend_score": -0.122,
+      "_momentum_score": 0.107,
+      "_signal_score": 0.3,
+      "_total_score": 0.031,
+      "_n_puntos_7d": 6
+    },
+    "usdcop": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "razon": "La tendencia de 7d (+0.28%/dia) es positiva y apunta a movimiento lateral o consolidacion.",
+      "_slope_pct_dia": 0.2767,
+      "_momentum_pct": 0.0,
+      "_trend_score": 0.553,
+      "_momentum_score": 0.0,
+      "_signal_score": 0.0,
+      "_total_score": 0.277,
+      "_n_puntos_7d": 6
+    },
+    "gold": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Significativa",
+      "confianza": 7,
+      "razon": "La tendencia de 7d (-2.19%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -2.1929,
+      "_momentum_pct": -1.6975,
+      "_trend_score": -3.0,
+      "_momentum_score": -0.849,
+      "_signal_score": 0.5,
+      "_total_score": -1.655,
+      "_n_puntos_7d": 6
+    }
+  }
+}

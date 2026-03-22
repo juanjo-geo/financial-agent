@@ -294,6 +294,47 @@ h2,h3 { color: #1B2A4A !important; }
 }
 @media(max-width:900px){ .agent-drivers { grid-template-columns: 1fr; } }
 
+/* ── Prediction table ───────────────────────────────────────────────────── */
+.pred-table {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+}
+.pred-row {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr 0.9fr 3fr;
+    align-items: center; gap: 0;
+    padding: 11px 20px;
+    border-bottom: 1px solid #F0F4F8;
+    transition: background .15s ease;
+}
+.pred-row:last-child  { border-bottom: none; }
+.pred-row:not(.pred-header):hover { background: #FAFBFC; }
+.pred-header {
+    background: #F4F6F9;
+    font-size: 0.58rem; font-weight: 700;
+    letter-spacing: .11em; text-transform: uppercase; color: #8A9BB0;
+    padding: 9px 20px;
+}
+.pred-ind  { font-size: 0.82rem; font-weight: 800; color: #1B2A4A; }
+.pred-dir  { font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 5px; }
+.dir-up    { color: #00875A; }
+.dir-down  { color: #C0392B; }
+.dir-flat  { color: #5A6A7E; }
+.dir-arrow { font-size: 1rem; line-height: 1; }
+.pred-mag  { font-size: 0.76rem; color: #5A6A7E; }
+.pred-conf-wrap { display: flex; align-items: center; gap: 6px; }
+.pred-conf-num { font-size: 0.76rem; font-weight: 700; color: #1B2A4A; white-space: nowrap; }
+.pred-conf-bar {
+    flex: 1; height: 4px; background: #EAF0F6;
+    border-radius: 2px; overflow: hidden; min-width: 30px;
+}
+.pred-conf-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg,#00C896,#1B6A4A);
+}
+.pred-reason { font-size: 0.74rem; color: #5A6A7E; line-height: 1.45; }
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media(max-width:768px){
     .fa-title h1 { font-size: 1.8rem; }
@@ -386,6 +427,17 @@ def load_daily_signals() -> dict:
         return {}
     try:
         with open(signals_file, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def load_predictions_24h() -> dict:
+    pred_file = ROOT / "data/signals/predictions_24h.json"
+    if not pred_file.exists():
+        return {}
+    try:
+        with open(pred_file, encoding="utf-8") as f:
             return json.load(f)
     except Exception:
         return {}
@@ -507,6 +559,14 @@ def fetch_headlines(indicator, query, api_key, max_results=3, use_rss=False):
 def _img_b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
+
+
+_TREND_DAYS = 7  # must match predictor_24h.TREND_DAYS
+
+
+def _esc(t: str) -> str:
+    """Escapa caracteres HTML para embeber texto en markdown."""
+    return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 # ── Dashboard ─────────────────────────────────────────────────────────────────
@@ -797,9 +857,6 @@ def run_dashboard():
         driver1  = _i.get("driver_principal",  "")
         driver2  = _i.get("driver_secundario", "")
 
-        def _esc(t: str) -> str:
-            return t.replace("<", "&lt;").replace(">", "&gt;")
-
         st.markdown(f"""
 <div class="agent-card">
   <div class="agent-card-header">🤖 Lectura del Agente</div>
@@ -822,6 +879,69 @@ def run_dashboard():
     </div>
   </div>
 </div>""", unsafe_allow_html=True)
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Proyección 24h ────────────────────────────────────────────────────────
+    st.markdown('<div class="section-label">Proyección 24h — reglas determinísticas</div>',
+                unsafe_allow_html=True)
+    preds = load_predictions_24h()
+    if not preds or not preds.get("predicciones"):
+        st.info("Las predicciones se generan automáticamente con el pipeline diario.")
+    else:
+        p_gen  = preds.get("generado_en", "")
+        pred_d = preds["predicciones"]
+
+        _DIR_ICON  = {"Alcista": "↑", "Bajista": "↓", "Lateral": "→"}
+        _DIR_CLASS = {"Alcista": "dir-up", "Bajista": "dir-down", "Lateral": "dir-flat"}
+        _MAG_COLOR = {"Significativa": "#C0392B", "Moderada": "#856404", "Leve": "#5A6A7E"}
+
+        header = (
+            '<div class="pred-table">'
+            '<div class="pred-row pred-header">'
+            '<span>Indicador</span>'
+            '<span>Dirección 24h</span>'
+            '<span>Magnitud</span>'
+            '<span>Confianza</span>'
+            '<span>Razón</span>'
+            '</div>'
+        )
+
+        rows_html = ""
+        for ind, p in pred_d.items():
+            direction = p.get("direccion_24h", "Lateral")
+            magnitude = p.get("magnitud_esperada", "Leve")
+            confidence = int(p.get("confianza", 5))
+            reason    = _esc(p.get("razon", ""))
+            label     = _CATALOG.get(ind, {}).get("label", ind.upper())
+
+            dir_icon  = _DIR_ICON.get(direction, "→")
+            dir_cls   = _DIR_CLASS.get(direction, "dir-flat")
+            mag_color = _MAG_COLOR.get(magnitude, "#5A6A7E")
+            bar_width = int(confidence / 9 * 100)
+
+            rows_html += (
+                f'<div class="pred-row">'
+                f'<span class="pred-ind">{label}</span>'
+                f'<span class="pred-dir {dir_cls}">'
+                f'<span class="dir-arrow">{dir_icon}</span>{direction}</span>'
+                f'<span class="pred-mag" style="color:{mag_color}">{magnitude}</span>'
+                f'<span class="pred-conf-wrap">'
+                f'<span class="pred-conf-num">{confidence}/10</span>'
+                f'<span class="pred-conf-bar">'
+                f'<span class="pred-conf-fill" style="width:{bar_width}%"></span>'
+                f'</span></span>'
+                f'<span class="pred-reason">{reason}</span>'
+                f'</div>'
+            )
+
+        st.markdown(
+            f'<div style="font-size:0.7rem;color:#8A9BB0;margin-bottom:10px">'
+            f'Generado: {p_gen} · Tendencia {_TREND_DAYS}d + momentum + señales</div>'
+            + header + rows_html + '</div>',
+            unsafe_allow_html=True,
+        )
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
