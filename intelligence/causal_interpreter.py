@@ -21,6 +21,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+from intelligence.signals_engine import append_signals_history
+
 ROOT          = Path(__file__).parent.parent
 ENGINE_FILE   = ROOT / "data/signals/signals_engine_output.json"
 DAILY_SIGNALS = ROOT / "data/signals/daily_signals.json"
@@ -354,6 +356,13 @@ def main():
     print(f"\n  Cierre ejecutivo:")
     print(f"    {interp['cierre_ejecutivo']}")
     print(f"\n  Guardado en: {DAILY_SIGNALS}")
+
+    # Actualiza historial con drivers completos
+    append_signals_history(
+        result["senales"],
+        driver_principal=interp["driver_principal"],
+        driver_secundario=interp["driver_secundario"],
+    )
 
 
 if __name__ == "__main__":

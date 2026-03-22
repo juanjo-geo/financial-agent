@@ -16,14 +16,21 @@ Salida: data/signals/signals_engine_output.json
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
 
-ROOT          = Path(__file__).parent.parent
-SNAPSHOT_FILE = ROOT / "data/processed/latest_snapshot.csv"
-WEIGHTS_FILE  = ROOT / "data/signals/news_weights.json"
-OUTPUT_FILE   = ROOT / "data/signals/signals_engine_output.json"
+ROOT                 = Path(__file__).parent.parent
+SNAPSHOT_FILE        = ROOT / "data/processed/latest_snapshot.csv"
+WEIGHTS_FILE         = ROOT / "data/signals/news_weights.json"
+OUTPUT_FILE          = ROOT / "data/signals/signals_engine_output.json"
+SIGNALS_HISTORY_FILE = ROOT / "data/signals/signals_history.csv"
+
+HISTORY_COLS = [
+    "fecha", "riesgo_macro", "sesgo_mercado", "presion_inflacionaria",
+    "presion_cop", "conviccion", "driver_principal", "driver_secundario",
+]
 
 
 # ── Loaders ───────────────────────────────────────────────────────────────────
@@ -434,6 +441,36 @@ def compute_conviccion(
     return conv, razon
 
 
+# ── History persistence ───────────────────────────────────────────────────────
+
+def append_signals_history(
+    signals: dict,
+    driver_principal: str = "",
+    driver_secundario: str = "",
+) -> None:
+    """Agrega (o actualiza) la fila del dia en signals_history.csv."""
+    fecha = datetime.now().strftime("%Y-%m-%d")
+    new_row = {
+        "fecha":                 fecha,
+        "riesgo_macro":          signals.get("riesgo_macro",           ""),
+        "sesgo_mercado":         signals.get("sesgo_mercado",          ""),
+        "presion_inflacionaria": signals.get("presion_inflacionaria",  ""),
+        "presion_cop":           signals.get("presion_cop",            ""),
+        "conviccion":            signals.get("conviccion",             0),
+        "driver_principal":      driver_principal,
+        "driver_secundario":     driver_secundario,
+    }
+    SIGNALS_HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    if SIGNALS_HISTORY_FILE.exists():
+        df = pd.read_csv(SIGNALS_HISTORY_FILE)
+        df = df[df["fecha"] != fecha]
+        df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+    else:
+        df = pd.DataFrame([new_row], columns=HISTORY_COLS)
+    df.to_csv(SIGNALS_HISTORY_FILE, index=False)
+    print(f"  Historial actualizado: {SIGNALS_HISTORY_FILE} ({len(df)} filas)")
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run_signals_engine() -> dict:
@@ -496,6 +533,8 @@ def main():
     print(f"  presion_cop            : {s['presion_cop']}")
     print(f"  conviccion             : {s['conviccion']}/10")
     print(f"\n  Guardado en: {OUTPUT_FILE}")
+    # Historial: los drivers se llenaran cuando causal_interpreter lo llame
+    append_signals_history(s)
 
 
 if __name__ == "__main__":

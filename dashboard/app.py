@@ -335,6 +335,39 @@ h2,h3 { color: #1B2A4A !important; }
 }
 .pred-reason { font-size: 0.74rem; color: #5A6A7E; line-height: 1.45; }
 
+/* ── Signals history ────────────────────────────────────────────────────── */
+.hist-sig-table {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05); margin-top: 16px;
+}
+.hist-sig-row {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1.1fr 1.1fr 1.1fr 0.7fr;
+    align-items: center; gap: 0;
+    padding: 9px 18px; border-bottom: 1px solid #F0F4F8;
+    font-size: 0.79rem;
+}
+.hist-sig-row:last-child { border-bottom: none; }
+.hist-sig-row:not(.hist-sig-header):hover { background: #FAFBFC; }
+.hist-sig-header {
+    background: #F4F6F9;
+    font-size: 0.56rem; font-weight: 700;
+    letter-spacing: .11em; text-transform: uppercase; color: #8A9BB0;
+    padding: 8px 18px;
+}
+.hist-sig-date { font-weight: 700; color: #1B2A4A; }
+.hc-alto   { color: #C0392B; font-weight: 700; }
+.hc-medio  { color: #856404; font-weight: 700; }
+.hc-bajo   { color: #00875A; font-weight: 700; }
+.hc-on     { color: #00875A; }
+.hc-off    { color: #C0392B; }
+.hc-mixto  { color: #5A6A7E; }
+.hc-alc    { color: #C0392B; }
+.hc-baj    { color: #00875A; }
+.hc-neu    { color: #5A6A7E; }
+.hc-conv   { font-weight: 700; color: #1B2A4A; }
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media(max-width:768px){
     .fa-title h1 { font-size: 1.8rem; }
@@ -441,6 +474,19 @@ def load_predictions_24h() -> dict:
             return json.load(f)
     except Exception:
         return {}
+
+
+def load_signals_history() -> pd.DataFrame:
+    hist_file = ROOT / "data/signals/signals_history.csv"
+    if not hist_file.exists():
+        return pd.DataFrame()
+    try:
+        df = pd.read_csv(hist_file)
+        df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce")
+        df = df.dropna(subset=["fecha"]).sort_values("fecha")
+        return df
+    except Exception:
+        return pd.DataFrame()
 
 
 def format_metric_value(value, unit):
@@ -942,6 +988,120 @@ def run_dashboard():
             + header + rows_html + '</div>',
             unsafe_allow_html=True,
         )
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Histórico de Señales ─────────────────────────────────────────────────
+    st.markdown('<div class="section-label">Histórico de Señales — últimos 30 días</div>',
+                unsafe_allow_html=True)
+    hist_df = load_signals_history()
+    if hist_df.empty:
+        st.info("El histórico de señales se construye automáticamente con el pipeline diario.")
+    elif len(hist_df) < 7:
+        st.info(f"Historial insuficiente ({len(hist_df)} días). Se necesitan al menos 7 días para mostrar gráficas.")
+    else:
+        hist_30 = hist_df.tail(30).copy()
+        hist_30["fecha_str"] = hist_30["fecha"].dt.strftime("%d/%m")
+
+        col_chart, col_heat = st.columns([3, 2])
+
+        with col_chart:
+            st.markdown("<div style='font-size:0.78rem;font-weight:700;color:#1B2A4A;margin-bottom:6px'>Convicción diaria</div>",
+                        unsafe_allow_html=True)
+            fig_conv = px.area(
+                hist_30, x="fecha_str", y="conviccion",
+                range_y=[0, 10],
+                color_discrete_sequence=["#00C896"],
+            )
+            fig_conv.update_traces(line_width=2, fillcolor="rgba(0,200,150,0.12)")
+            fig_conv.update_layout(
+                height=200, margin=dict(l=0, r=0, t=6, b=0),
+                paper_bgcolor="white", plot_bgcolor="white",
+                xaxis=dict(showgrid=False, tickfont=dict(size=9), title=None),
+                yaxis=dict(showgrid=True, gridcolor="#F0F4F8", tickfont=dict(size=9),
+                           title=None, dtick=2),
+                showlegend=False,
+            )
+            st.plotly_chart(fig_conv, use_container_width=True, config={"displayModeBar": False})
+
+        with col_heat:
+            _SIG_ORDER = ["riesgo_macro", "sesgo_mercado", "presion_inflacionaria", "presion_cop"]
+            _SIG_LABELS = {
+                "riesgo_macro":           "Riesgo",
+                "sesgo_mercado":          "Sesgo",
+                "presion_inflacionaria":  "Inflación",
+                "presion_cop":            "COP",
+            }
+            _VAL_NUM = {
+                # riesgo_macro
+                "Bajo": 1, "Medio": 2, "Alto": 3,
+                # sesgo_mercado
+                "Risk-on": 1, "Mixto": 2, "Risk-off": 3,
+                # presion_inflacionaria
+                "Bajista": 1, "Neutral": 2, "Alcista": 3,
+                # presion_cop
+                "Favorable COP": 1, "Alcista USD/COP": 3,
+            }
+            heat_data = []
+            for sig in _SIG_ORDER:
+                row_vals = []
+                for _, r in hist_30.tail(14).iterrows():
+                    row_vals.append(_VAL_NUM.get(str(r.get(sig, "Neutral")), 2))
+                heat_data.append(row_vals)
+
+            heat_labels = [_SIG_LABELS[s] for s in _SIG_ORDER]
+            x_labels = list(hist_30.tail(14)["fecha_str"])
+
+            fig_heat = px.imshow(
+                heat_data,
+                x=x_labels, y=heat_labels,
+                color_continuous_scale=[[0, "#00C896"], [0.5, "#FFC107"], [1, "#FF4B4B"]],
+                zmin=1, zmax=3,
+                aspect="auto",
+            )
+            fig_heat.update_layout(
+                height=200, margin=dict(l=0, r=0, t=6, b=0),
+                paper_bgcolor="white",
+                xaxis=dict(tickfont=dict(size=8), title=None),
+                yaxis=dict(tickfont=dict(size=9), title=None),
+                coloraxis_showscale=False,
+            )
+            st.plotly_chart(fig_heat, use_container_width=True, config={"displayModeBar": False})
+
+        # Tabla expandible
+        _RIESGO_CLS = {"Alto": "hc-alto", "Medio": "hc-medio", "Bajo": "hc-bajo"}
+        _SESGO_CLS  = {"Risk-on": "hc-on", "Risk-off": "hc-off", "Mixto": "hc-mixto"}
+        _INF_CLS    = {"Alcista": "hc-alc", "Bajista": "hc-baj", "Neutral": "hc-neu"}
+        _COP_CLS    = {"Alcista USD/COP": "hc-alc", "Favorable COP": "hc-baj", "Neutral": "hc-neu"}
+
+        with st.expander("Ver tabla completa (últimos 30 días)", expanded=False):
+            header = (
+                '<div class="hist-sig-table">'
+                '<div class="hist-sig-row hist-sig-header">'
+                '<span>Fecha</span><span>Riesgo</span><span>Sesgo</span>'
+                '<span>Inflación</span><span>COP</span><span>Conv.</span>'
+                '</div>'
+            )
+            rows_html = ""
+            for _, r in hist_30.sort_values("fecha", ascending=False).iterrows():
+                riesgo_v  = str(r.get("riesgo_macro",           ""))
+                sesgo_v   = str(r.get("sesgo_mercado",          ""))
+                infl_v    = str(r.get("presion_inflacionaria",  ""))
+                cop_v     = str(r.get("presion_cop",            ""))
+                conv_v    = r.get("conviccion", "")
+                fecha_lbl = r["fecha"].strftime("%d/%m/%Y")
+                rows_html += (
+                    f'<div class="hist-sig-row">'
+                    f'<span class="hist-sig-date">{fecha_lbl}</span>'
+                    f'<span class="{_RIESGO_CLS.get(riesgo_v, "hc-neu")}">{riesgo_v}</span>'
+                    f'<span class="{_SESGO_CLS.get(sesgo_v,   "hc-mixto")}">{sesgo_v}</span>'
+                    f'<span class="{_INF_CLS.get(infl_v,      "hc-neu")}">{infl_v}</span>'
+                    f'<span class="{_COP_CLS.get(cop_v,       "hc-neu")}">{cop_v}</span>'
+                    f'<span class="hc-conv">{conv_v}/10</span>'
+                    f'</div>'
+                )
+            st.markdown(header + rows_html + "</div>", unsafe_allow_html=True)
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()

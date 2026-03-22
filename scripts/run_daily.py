@@ -9,6 +9,7 @@ steps = [
     "scripts.market_signals",
     "scripts.macro_interpreter",
     "scripts.market_regime",
+    "intelligence.backfill_signals_history",  # rellena historial de señales si < 7 filas
     "intelligence.news_classifier",     # clasifica noticias/reportes por categoría temática
     "intelligence.signals_engine",      # genera 5 señales compuestas (reglas determinísticas)
     "intelligence.causal_interpreter",  # genera interpretación narrativa → daily_signals.json
