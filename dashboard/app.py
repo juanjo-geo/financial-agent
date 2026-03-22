@@ -649,6 +649,18 @@ def load_evaluation_log() -> pd.DataFrame:
         return pd.DataFrame()
 
 
+def load_calibration_factors() -> dict:
+    """Carga calibration_factors.json."""
+    cal_file = ROOT / "data/signals/calibration_factors.json"
+    if not cal_file.exists():
+        return {}
+    try:
+        with open(cal_file, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
 def format_metric_value(value, unit):
     try:
         return f"{float(value):,.2f} {unit}"
@@ -1355,6 +1367,101 @@ def run_dashboard():
                     f'</div>'
                 )
             st.markdown(header + rows_html + "</div>", unsafe_allow_html=True)
+
+        # ── Calibración por banda de confianza ────────────────────────────────
+        st.markdown("<div style='margin:18px 0 8px'></div>", unsafe_allow_html=True)
+        st.markdown(
+            '<div style="font-size:0.82rem;font-weight:700;color:#1B2A4A;margin-bottom:8px">'
+            'Calibración por banda de confianza</div>',
+            unsafe_allow_html=True,
+        )
+        cal_data = load_calibration_factors()
+        if not cal_data or "bandas" not in cal_data:
+            st.info("Los factores de calibración se generan después de acumular predicciones.")
+        else:
+            bandas = cal_data["bandas"]
+            _STATUS_BADGE = {
+                "Bien calibrado":      ("calib-good", "Bien calibrado"),
+                "Sobreconfiado":       ("calib-bad",  "Sobreconfiado"),
+                "Subconfiado":         ("calib-ok",   "Subconfiado"),
+                "Sin datos suficientes": ("calib-na", "Sin datos"),
+            }
+
+            # Tabla HTML de calibración
+            tbl_header = (
+                '<div class="eval-table">'
+                '<div class="eval-row eval-header">'
+                '<span>Banda</span><span>N preds</span>'
+                '<span>Conf. declarada</span><span>Acierto real</span>'
+                '<span>Factor</span><span>Estado</span>'
+                '</div>'
+            )
+            _BAND_EXPECTED = {"1-3": 0.45, "4-6": 0.55, "7-8": 0.70, "9-10": 0.87}
+            tbl_rows = ""
+            for bname, bdata in bandas.items():
+                n       = bdata.get("n", 0)
+                real    = bdata.get("acierto_real", 0.0)
+                exp     = _BAND_EXPECTED.get(bname, bdata.get("acierto_esperado", 0.0))
+                factor  = bdata.get("factor", 1.0)
+                status  = bdata.get("status", "")
+                badge_cls, badge_lbl = _STATUS_BADGE.get(status, ("calib-na", status))
+                tbl_rows += (
+                    f'<div class="eval-row">'
+                    f'<span style="font-weight:600">{bname}</span>'
+                    f'<span>{n}</span>'
+                    f'<span>{exp:.0%}</span>'
+                    f'<span>{real:.1%}</span>'
+                    f'<span>{factor:.2f}x</span>'
+                    f'<span><span class="calib-badge {badge_cls}">{badge_lbl}</span></span>'
+                    f'</div>'
+                )
+            st.markdown(tbl_header + tbl_rows + "</div>", unsafe_allow_html=True)
+
+            # Gráfica de calibración (reliability diagram)
+            st.markdown("<div style='margin:14px 0 4px'></div>", unsafe_allow_html=True)
+            _bands_ordered = ["1-3", "4-6", "7-8", "9-10"]
+            _expected_vals  = [_BAND_EXPECTED[b] for b in _bands_ordered]
+            _real_vals      = [bandas[b]["acierto_real"] if b in bandas else 0.0
+                               for b in _bands_ordered]
+            _band_labels    = [
+                f"{b}<br>({bandas[b]['n']} preds)" if b in bandas else b
+                for b in _bands_ordered
+            ]
+
+            fig_cal = go.Figure()
+            # Línea perfecta (diagonal)
+            fig_cal.add_trace(go.Scatter(
+                x=[0, 1], y=[0, 1],
+                mode="lines",
+                name="Calibración perfecta",
+                line=dict(color="#aaa", dash="dash", width=1.5),
+                hoverinfo="skip",
+            ))
+            # Puntos reales
+            fig_cal.add_trace(go.Scatter(
+                x=_expected_vals,
+                y=_real_vals,
+                mode="markers+lines+text",
+                name="Acierto real",
+                text=_band_labels,
+                textposition="top center",
+                textfont=dict(size=10),
+                marker=dict(size=10, color="#2563EB"),
+                line=dict(color="#2563EB", width=2),
+                hovertemplate="Esperado: %{x:.0%}<br>Real: %{y:.0%}<extra></extra>",
+            ))
+            fig_cal.update_layout(
+                height=280,
+                margin=dict(l=40, r=20, t=10, b=40),
+                xaxis=dict(title="Confianza declarada (esperado)", tickformat=".0%",
+                           range=[-0.05, 1.05]),
+                yaxis=dict(title="Acierto real", tickformat=".0%",
+                           range=[-0.05, 1.05]),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
+                plot_bgcolor="#F8FAFC",
+                paper_bgcolor="rgba(0,0,0,0)",
+            )
+            st.plotly_chart(fig_cal, use_container_width=True)
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()

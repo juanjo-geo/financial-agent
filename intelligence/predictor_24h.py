@@ -23,12 +23,14 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT          = Path(__file__).parent.parent
-HISTORY_FILE  = ROOT / "data/historical/market_history.csv"
-SNAPSHOT_FILE = ROOT / "data/processed/latest_snapshot.csv"
-SIGNALS_FILE  = ROOT / "data/signals/daily_signals.json"
-CONFIG_FILE   = ROOT / "config.json"
-OUTPUT_FILE   = ROOT / "data/signals/predictions_24h.json"
+ROOT                  = Path(__file__).parent.parent
+HISTORY_FILE          = ROOT / "data/historical/market_history.csv"
+SNAPSHOT_FILE         = ROOT / "data/processed/latest_snapshot.csv"
+SIGNALS_FILE          = ROOT / "data/signals/daily_signals.json"
+CONFIG_FILE           = ROOT / "config.json"
+OUTPUT_FILE           = ROOT / "data/signals/predictions_24h.json"
+CALIBRATION_FILE      = ROOT / "data/signals/calibration_factors.json"
+OPTIMIZED_WEIGHTS_FILE= ROOT / "data/signals/optimized_weights.json"
 
 TREND_DAYS = 7
 
@@ -321,6 +323,56 @@ def _load_signals() -> dict:
     return {}
 
 
+def _load_optimized_weights() -> dict[str, float]:
+    """Lee pesos optimizados si existen; si no, usa defaults."""
+    if OPTIMIZED_WEIGHTS_FILE.exists():
+        try:
+            with open(OPTIMIZED_WEIGHTS_FILE, encoding="utf-8") as f:
+                d = json.load(f)
+            w = d.get("weights", {})
+            if all(k in w for k in ("trend", "momentum", "signals")):
+                return {k: float(w[k]) for k in ("trend", "momentum", "signals")}
+        except Exception:
+            pass
+    return {"trend": 0.50, "momentum": 0.30, "signals": 0.20}
+
+
+def _load_calibration_factors() -> dict[str, dict]:
+    """Lee factores de calibracion por banda de confianza."""
+    if CALIBRATION_FILE.exists():
+        try:
+            with open(CALIBRATION_FILE, encoding="utf-8") as f:
+                d = json.load(f)
+            return d.get("bandas", {})
+        except Exception:
+            pass
+    return {}
+
+
+def _calibrated_confidence(raw: int, bandas: dict[str, dict]) -> tuple[int, float]:
+    """
+    Retorna (confianza_calibrada, factor_usado).
+    Determina la banda del score raw y aplica el factor de calibracion.
+    Si la banda no tiene datos suficientes, factor=1.0.
+    """
+    if raw <= 3:
+        band_key = "1-3"
+    elif raw <= 6:
+        band_key = "4-6"
+    elif raw <= 8:
+        band_key = "7-8"
+    else:
+        band_key = "9-10"
+
+    banda = bandas.get(band_key, {})
+    if not banda.get("suficientes_datos", False):
+        return raw, 1.0
+
+    factor = float(banda.get("factor", 1.0))
+    calibrated = max(1, min(10, round(raw * factor)))
+    return calibrated, round(factor, 4)
+
+
 # ── Core predictor ────────────────────────────────────────────────────────────
 
 def predict_indicator(
@@ -328,8 +380,14 @@ def predict_indicator(
     hist_df: pd.DataFrame,
     momentum_pct: float,
     signals: dict,
+    weights: dict[str, float] | None = None,
+    calibration_bandas: dict[str, dict] | None = None,
 ) -> dict:
     """Genera prediccion para un indicador usando tendencia + momentum + senales."""
+    if weights is None:
+        weights = {"trend": 0.50, "momentum": 0.30, "signals": 0.20}
+    if calibration_bandas is None:
+        calibration_bandas = {}
 
     # ── 1. Tendencia lineal (últimos TREND_DAYS dias) ──────────────────────────
     today   = hist_df["timestamp"].max().normalize()
@@ -362,7 +420,9 @@ def predict_indicator(
     signal_score = max(-3.0, min(3.0, signal_score))
 
     # ── 4. Score compuesto ────────────────────────────────────────────────────
-    total = 0.5 * trend_score + 0.3 * momentum_score + 0.2 * signal_score
+    total = (weights["trend"]    * trend_score
+           + weights["momentum"] * momentum_score
+           + weights["signals"]  * signal_score)
 
     # ── 5. Clasificacion ──────────────────────────────────────────────────────
     # Threshold reduced for proxy indicators (always 0 change)
@@ -378,6 +438,9 @@ def predict_indicator(
     signal_dir   = _dir_from_score(signal_score)
     confidence   = _confidence(trend_dir, momentum_dir, signal_dir, n_points, total)
 
+    # Calibrated confidence
+    confianza_calibrada, cal_factor = _calibrated_confidence(confidence, calibration_bandas)
+
     reason = _reason(indicator, direction, trend_score, momentum_score,
                      signal_score, slope_pct, momentum_pct, s)
 
@@ -385,6 +448,7 @@ def predict_indicator(
         "direccion_24h":     direction,
         "magnitud_esperada": magnitude,
         "confianza":         confidence,
+        "confianza_calibrada": confianza_calibrada,
         "razon":             reason,
         # Debug / transparency fields
         "_slope_pct_dia":    round(slope_pct, 4),
@@ -394,21 +458,28 @@ def predict_indicator(
         "_signal_score":     round(signal_score, 3),
         "_total_score":      round(total, 3),
         "_n_puntos_7d":      n_points,
+        "_calibration_factor": cal_factor,
+        "_weights_used":     weights,
     }
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run_predictor() -> dict:
-    active   = _load_active_indicators()
-    hist_df  = _load_history()
-    snapshot = _load_snapshot()
-    signals  = _load_signals()
+    active    = _load_active_indicators()
+    hist_df   = _load_history()
+    snapshot  = _load_snapshot()
+    signals   = _load_signals()
+    weights   = _load_optimized_weights()
+    cal_bandas = _load_calibration_factors()
 
     predictions: dict[str, dict] = {}
     for ind in active:
         momentum_pct = snapshot.get(ind, 0.0)
-        predictions[ind] = predict_indicator(ind, hist_df, momentum_pct, signals)
+        predictions[ind] = predict_indicator(
+            ind, hist_df, momentum_pct, signals,
+            weights=weights, calibration_bandas=cal_bandas,
+        )
 
     result = {
         "fecha":        datetime.now().strftime("%Y-%m-%d"),
@@ -432,13 +503,13 @@ def main():
         json.dump(result, f, indent=2, ensure_ascii=False)
     print(f"  Copia fechada: {dated_file.name}")
 
-    print(f"\n{'Indicador':<28} {'Dir':^10} {'Magnitud':^14} {'Conf':^6}  Razon")
-    print("-" * 90)
+    print(f"\n{'Indicador':<28} {'Dir':^10} {'Magnitud':^14} {'Conf':^6} {'Cal':^5}  Razon")
+    print("-" * 96)
     for ind, p in result["predicciones"].items():
         arrow = {"Alcista": "^", "Bajista": "v", "Lateral": "-"}.get(p["direccion_24h"], "?")
         print(
             f"  {ind:<26} {arrow} {p['direccion_24h']:<8}  {p['magnitud_esperada']:<12}  "
-            f"{p['confianza']}/10   {p['razon']}"
+            f"{p['confianza']}/10  {p['confianza_calibrada']}/10  {p['razon']}"
         )
 
     print(f"\n  Guardado en: {OUTPUT_FILE}")
