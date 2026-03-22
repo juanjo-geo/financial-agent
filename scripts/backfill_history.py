@@ -1,13 +1,14 @@
 """
-Descarga los últimos 90 días de datos históricos para cualquier indicador
-activo que tenga menos de MIN_HISTORY_DAYS entradas en market_history.csv.
+Descarga datos históricos para indicadores activos en market_history.csv.
 
-Se ejecuta automáticamente como primer paso del pipeline (run_daily.py)
-para que los indicadores recién activados desde el panel admin aparezcan
-de inmediato en todas las secciones del dashboard.
+Modo normal   : rellena indicadores con < MIN_HISTORY_DAYS entradas (~30 dias).
+Modo completo : --full  → descarga 6 meses para TODOS los activos (fuerza 90+ dias).
+
+Se ejecuta automáticamente como primer paso del pipeline (run_daily.py).
 """
 
 import os
+import sys
 import pandas as pd
 import yfinance as yf
 from datetime import datetime
@@ -16,8 +17,9 @@ from pathlib import Path
 from scripts.load_config import load_config
 from scripts.indicators_catalog import CATALOG
 
-HISTORY_FILE  = "data/historical/market_history.csv"
+HISTORY_FILE     = "data/historical/market_history.csv"
 MIN_HISTORY_DAYS = 30   # si tiene menos filas que esto, se hace backfill
+FULL_PERIOD      = "6mo"  # ~130 dias calendario = ~90 dias de mercado
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -40,12 +42,13 @@ def _days_in_history(indicator: str, hist_df: pd.DataFrame) -> int:
     return ts.dt.normalize().dropna().nunique()
 
 
-def _fetch_90d(key: str, symbol: str, unit: str) -> pd.DataFrame | None:
-    """Descarga hasta 90 días de historial diario para un símbolo yfinance."""
+def _fetch_history(key: str, symbol: str, unit: str,
+                   period: str = "3mo") -> pd.DataFrame | None:
+    """Descarga historial diario para un símbolo yfinance."""
     try:
-        print(f"  Descargando 90d para {key} ({symbol})...")
+        print(f"  Descargando {period} para {key} ({symbol})...")
         ticker = yf.Ticker(symbol)
-        hist   = ticker.history(period="3mo", interval="1d")
+        hist   = ticker.history(period=period, interval="1d")
 
         if hist.empty:
             print(f"  [WARN] Sin datos para {key}")
@@ -72,6 +75,11 @@ def _fetch_90d(key: str, symbol: str, unit: str) -> pd.DataFrame | None:
     except Exception as e:
         print(f"  [ERROR] {key}: {e}")
         return None
+
+
+# Keep old name for backward compatibility
+def _fetch_90d(key: str, symbol: str, unit: str) -> pd.DataFrame | None:
+    return _fetch_history(key, symbol, unit, period="3mo")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -101,10 +109,11 @@ def run_backfill(force: bool = False) -> None:
 
     print(f"Backfill necesario para: {[k for k,_,_ in indicators_to_fill]}")
 
+    period = FULL_PERIOD if force else "3mo"
     new_frames = []
     for key, info, days in indicators_to_fill:
-        print(f"  {key}: {days} dias actuales -> descargando 90d...")
-        df = _fetch_90d(key, info["symbol"], info["unit"])
+        print(f"  {key}: {days} dias actuales -> descargando {period}...")
+        df = _fetch_history(key, info["symbol"], info["unit"], period=period)
         if df is not None:
             new_frames.append(df)
 
@@ -127,7 +136,12 @@ def run_backfill(force: bool = False) -> None:
 
 
 def main():
-    run_backfill()
+    full_mode = "--full" in sys.argv
+    if full_mode:
+        print("Modo completo: descargando 6 meses para todos los indicadores activos...")
+        run_backfill(force=True)
+    else:
+        run_backfill()
 
 
 if __name__ == "__main__":

@@ -1,37 +1,37 @@
 {
   "fecha": "2026-03-22",
-  "generado_en": "2026-03-22 10:13:06",
-  "total_predicciones": 147,
+  "generado_en": "2026-03-22 11:13:51",
+  "total_predicciones": 451,
   "bandas": {
     "1-3": {
-      "n": 20,
-      "acierto_real": 0.85,
+      "n": 103,
+      "acierto_real": 0.8155,
       "acierto_esperado": 0.45,
-      "factor": 1.8889,
+      "factor": 1.8123,
       "status": "Subconfiado",
       "suficientes_datos": true
     },
     "4-6": {
-      "n": 89,
-      "acierto_real": 0.6067,
+      "n": 266,
+      "acierto_real": 0.5602,
       "acierto_esperado": 0.55,
-      "factor": 1.1032,
+      "factor": 1.0185,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
     "7-8": {
-      "n": 20,
-      "acierto_real": 0.55,
+      "n": 63,
+      "acierto_real": 0.5079,
       "acierto_esperado": 0.7,
-      "factor": 0.7857,
+      "factor": 0.7256,
       "status": "Sobreconfiado",
       "suficientes_datos": true
     },
     "9-10": {
-      "n": 18,
-      "acierto_real": 0.5,
+      "n": 19,
+      "acierto_real": 0.5263,
       "acierto_esperado": 0.87,
-      "factor": 0.5747,
+      "factor": 0.605,
       "status": "Sobreconfiado",
       "suficientes_datos": true
     }
