@@ -1,6 +1,8 @@
 import os
 import sys
 import json
+import re
+import html as _html
 import base64
 import subprocess
 from pathlib import Path
@@ -220,9 +222,32 @@ h2,h3 { color: #1B2A4A !important; }
     text-transform: uppercase; color: #8A9BB0; margin-bottom: 16px;
 }
 .report-body {
-    font-size: 1rem; line-height: 1.85; color: #2C3E50;
-    white-space: pre-wrap; font-family: Georgia,serif;
+    font-size: 0.88rem; line-height: 1.80; color: #2C3E50;
+    font-family: Georgia, serif;
 }
+.rpt-title {
+    font-size: 1.05rem; font-weight: 800; color: #1B2A4A;
+    letter-spacing: .02em; margin: 0 0 4px;
+    font-family: sans-serif;
+}
+.rpt-section {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: .10em;
+    text-transform: uppercase; color: #00C896;
+    margin: 18px 0 6px; font-family: sans-serif;
+}
+.rpt-subsection {
+    font-size: 0.78rem; font-weight: 700; color: #1B2A4A;
+    margin: 14px 0 4px; font-family: sans-serif;
+}
+.rpt-label {
+    font-size: 0.78rem; font-weight: 700; color: #3D5A80;
+    font-family: sans-serif;
+}
+.rpt-divider {
+    border: none; border-top: 1px solid #EAF0F6;
+    margin: 10px 0;
+}
+.rpt-line { display: block; }
 
 /* ── Signal badges strip ────────────────────────────────────────────────── */
 .sig-strip {
@@ -635,6 +660,104 @@ def load_report():
         return None
     with open(REPORT_FILE, "r", encoding="utf-8") as f:
         return f.read()
+
+
+def _format_report_body(text: str) -> str:
+    """
+    Convierte el texto plano del reporte a HTML con tipografía consistente.
+
+    Problemas que resuelve:
+      - Setext headings: lineas seguidas de === o --- que markdown convierte
+        en h1/h2 gigantes.
+      - ATX headings: # Titulo que markdown convierte en h1/h2.
+      - Dividers: lineas de solo = o - que quedan como texto crudo.
+
+    Produce bloques <div> con clases CSS del dashboard en lugar de h1/h2.
+    """
+    _SEP_EQ   = re.compile(r'^={3,}\s*$')
+    _SEP_DA   = re.compile(r'^-{3,}\s*$')
+    _ATX      = re.compile(r'^(#{1,6})\s+(.*)')
+    # Etiquetas de campo como "Driver principal:", "Lectura cruzada:", etc.
+    _LABEL    = re.compile(r'^([A-ZÁÉÍÓÚÑa-záéíóúñ][^:\n]{2,40}):\s*$')
+
+    lines      = text.split('\n')
+    n          = len(lines)
+    out        = []
+    i          = 0
+    first_seen = False   # first non-empty visible line → report title
+
+    while i < n:
+        line    = lines[i]
+        next_ln = lines[i + 1] if i + 1 < n else ''
+
+        # ── Setext h1: text line followed by === ──────────────────────────
+        # Only treat as heading if the line is short (< 90 chars).
+        # Long lines are body paragraphs that happen to precede a divider.
+        if _SEP_EQ.match(next_ln) and line.strip():
+            if len(line) < 90:
+                cls = 'rpt-title' if i == 0 else 'rpt-section'
+                out.append(f'<div class="{cls}">{_html.escape(line)}</div>')
+            else:
+                # Body paragraph followed by divider — render both normally
+                out.append(f'<span class="rpt-line">{_html.escape(line)}</span><br>')
+                out.append('<hr class="rpt-divider">')
+            i += 2   # consume the === line
+            continue
+
+        # ── Setext h2: text line followed by --- ──────────────────────────
+        if _SEP_DA.match(next_ln) and line.strip():
+            if len(line) < 90:
+                out.append(f'<div class="rpt-subsection">{_html.escape(line)}</div>')
+            else:
+                out.append(f'<span class="rpt-line">{_html.escape(line)}</span><br>')
+                out.append('<hr class="rpt-divider">')
+            i += 2   # consume the --- line
+            continue
+
+        # ── Standalone divider (=== or ---) ───────────────────────────────
+        if (_SEP_EQ.match(line) or _SEP_DA.match(line)):
+            out.append('<hr class="rpt-divider">')
+            i += 1
+            continue
+
+        # ── ATX headings (# Title) ────────────────────────────────────────
+        m = _ATX.match(line)
+        if m:
+            level  = len(m.group(1))
+            txt    = _html.escape(m.group(2))
+            cls    = 'rpt-title' if level == 1 else ('rpt-section' if level == 2 else 'rpt-subsection')
+            out.append(f'<div class="{cls}">{txt}</div>')
+            i += 1
+            continue
+
+        # ── Field labels like "Driver principal:" on its own line ─────────
+        if _LABEL.match(line) and not line.startswith(' '):
+            out.append(f'<div class="rpt-label">{_html.escape(line)}</div>')
+            i += 1
+            continue
+
+        # ── First non-empty line in report → report title ─────────────────
+        stripped = line.strip()
+        if stripped and not first_seen:
+            first_seen = True
+            out.append(f'<div class="rpt-title">{_html.escape(line)}</div>')
+            i += 1
+            continue
+
+        # ── All-caps short line (section header without underline) ────────
+        if (stripped and not line.startswith(' ')
+                and 5 <= len(stripped) <= 80
+                and stripped == stripped.upper()
+                and not stripped.replace(' ', '').replace('—', '').replace('-', '').isdigit()):
+            out.append(f'<div class="rpt-section">{_html.escape(line)}</div>')
+            i += 1
+            continue
+
+        # ── Normal line ───────────────────────────────────────────────────
+        out.append(f'<span class="rpt-line">{_html.escape(line)}</span><br>')
+        i += 1
+
+    return '\n'.join(out)
 
 
 def load_daily_signals() -> dict:
@@ -1889,12 +2012,14 @@ def run_dashboard():
                 unsafe_allow_html=True)
     if report_text:
         date_label = f"Generado el {report_time}" if report_time else ""
-        body = report_text.replace("<", "&lt;").replace(">", "&gt;")
-        st.markdown(f"""
-<div class="report-card">
-  <div class="report-date">📄 {date_label}</div>
-  <div class="report-body">{body}</div>
-</div>""", unsafe_allow_html=True)
+        body_html  = _format_report_body(report_text)
+        st.markdown(
+            f'<div class="report-card">'
+            f'  <div class="report-date">📄 {date_label}</div>'
+            f'  <div class="report-body">{body_html}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
     else:
         st.info("El reporte se genera automáticamente cada día a las 7:00 AM (Colombia).")
 
