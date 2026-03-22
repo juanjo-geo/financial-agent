@@ -18,6 +18,8 @@ steps = [
     "intelligence.regime_classifier",         # clasifica régimen v2 (INFLACIONARIO/RISK-ON/CRISIS/LATERAL)
     "intelligence.correlation_tracker",       # correlaciones dinámicas + detección de ruptura
     "intelligence.composite_signals",         # señales compuestas entre pares de activos
+    "intelligence.market_score",              # score de inteligencia de mercado (0-100)
+    "intelligence.asset_ranker",              # rankea activos por conviccion + regimen
     "intelligence.confidence_calibrator",     # calibra factores por banda de confianza
     "intelligence.rules_optimizer",           # optimiza pesos trend/momentum/signals
     "intelligence.predictor_24h",             # predicción determinística 24h por indicador

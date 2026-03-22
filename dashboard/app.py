@@ -576,6 +576,79 @@ h2,h3 { color: #1B2A4A !important; }
 .corr-normal{ background: #E8F5EF; color: #00875A; font-size: 0.72rem;
               padding: 2px 8px; border-radius: 10px; }
 
+/* ── Market Intelligence ────────────────────────────────────────────────── */
+.mi-score-wrap {
+    background: #FFFFFF; border: 1px solid #EAF0F6; border-radius: 14px;
+    padding: 20px 24px; margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+}
+.mi-score-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 10px;
+}
+.mi-score-number {
+    font-size: 2.8rem; font-weight: 900; line-height: 1;
+    font-family: sans-serif;
+}
+.mi-score-label {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: #5A6A7E;
+    margin-left: 10px;
+}
+.mi-score-bar-track {
+    background: #F0F4F8; border-radius: 8px; height: 10px;
+    overflow: hidden; margin-bottom: 8px;
+}
+.mi-score-bar-fill {
+    height: 100%; border-radius: 8px;
+    transition: width .4s ease;
+}
+.mi-score-narrative {
+    font-size: 0.78rem; color: #5A6A7E; line-height: 1.55; margin-top: 6px;
+}
+.mi-comp-row {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; color: #5A6A7E; margin-bottom: 5px;
+}
+.mi-comp-label { min-width: 140px; color: #1B2A4A; font-weight: 600; }
+.mi-comp-track {
+    flex: 1; background: #F0F4F8; border-radius: 4px; height: 6px;
+    overflow: hidden;
+}
+.mi-comp-fill { height: 100%; border-radius: 4px; background: #2563EB; }
+.mi-comp-pts { min-width: 32px; text-align: right; font-weight: 700; color: #1B2A4A; }
+.rank-table {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(27,42,74,.05);
+}
+.rank-row {
+    display: grid;
+    grid-template-columns: 0.4fr 1.4fr 0.9fr 0.6fr 0.8fr 1.2fr;
+    align-items: center; padding: 9px 16px;
+    border-bottom: 1px solid #F0F4F8; font-size: 0.78rem;
+}
+.rank-row:last-child { border-bottom: none; }
+.rank-row:not(.rank-header):hover { background: #FAFBFC; }
+.rank-header {
+    background: #F4F6F9; font-size: 0.55rem; font-weight: 700;
+    letter-spacing: .11em; text-transform: uppercase; color: #8A9BB0;
+    padding: 7px 16px;
+}
+.rank-num   { font-weight: 800; color: #1B2A4A; font-size: 0.9rem; }
+.rank-dir-up   { color: #00875A; font-weight: 700; }
+.rank-dir-dn   { color: #C0392B; font-weight: 700; }
+.rank-dir-lat  { color: #8A9BB0; }
+.align-ok  { background:#E8F5EF; color:#00875A; font-size:0.68rem; font-weight:700;
+             padding:2px 7px; border-radius:8px; }
+.align-bad { background:#FFF0F0; color:#C0392B; font-size:0.68rem; font-weight:700;
+             padding:2px 7px; border-radius:8px; }
+.align-neu { background:#F4F6F9; color:#5A6A7E; font-size:0.68rem;
+             padding:2px 7px; border-radius:8px; }
+.outlook-up  { color: #00875A; font-size:0.74rem; font-weight:700; }
+.outlook-dn  { color: #C0392B; font-size:0.74rem; font-weight:700; }
+.outlook-lat { color: #8A9BB0; font-size:0.74rem; }
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media(max-width:768px){
     .fa-title h1 { font-size: 1.8rem; }
@@ -846,6 +919,28 @@ def load_composite_signals() -> dict:
 def load_correlations() -> dict:
     """Carga correlations.json."""
     f = ROOT / "data/signals/correlations.json"
+    if not f.exists():
+        return {}
+    try:
+        with open(f, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
+def load_market_score() -> dict:
+    f = ROOT / "data/signals/market_score.json"
+    if not f.exists():
+        return {}
+    try:
+        with open(f, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
+def load_asset_ranking() -> dict:
+    f = ROOT / "data/signals/asset_ranking.json"
     if not f.exists():
         return {}
     try:
@@ -1559,6 +1654,144 @@ def run_dashboard():
                         f'{_esc(a)}</div>',
                         unsafe_allow_html=True,
                     )
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Market Intelligence ───────────────────────────────────────────────────
+    st.markdown('<div class="section-label">Market Intelligence</div>',
+                unsafe_allow_html=True)
+
+    ms   = load_market_score()
+    rank = load_asset_ranking()
+
+    if not ms and not rank:
+        st.info("Market Intelligence se genera con el pipeline diario.")
+    else:
+        col_score, col_rank = st.columns([1, 1.6])
+
+        with col_score:
+            if ms:
+                score   = ms.get("score", 0)
+                label   = ms.get("label", "")
+                color   = ms.get("color", "#2563EB")
+                narr    = ms.get("narrative", "")
+                comps   = ms.get("componentes", {})
+                gen_lbl = ms.get("generado_en", "")[:10]
+
+                # Score bar
+                st.markdown(
+                    f'<div class="mi-score-wrap">'
+                    f'  <div style="font-size:0.65rem;color:#8A9BB0;margin-bottom:4px">'
+                    f'    Market Score · {gen_lbl}</div>'
+                    f'  <div class="mi-score-header">'
+                    f'    <span class="mi-score-number" style="color:{color}">{score}</span>'
+                    f'    <span class="mi-score-label">{label}</span>'
+                    f'  </div>'
+                    f'  <div class="mi-score-bar-track">'
+                    f'    <div class="mi-score-bar-fill" '
+                    f'         style="width:{score}%;background:{color}"></div>'
+                    f'  </div>'
+                    f'  <div class="mi-score-narrative">{_esc(narr)}</div>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+                # Component breakdown
+                st.markdown(
+                    '<div style="font-size:0.7rem;font-weight:700;color:#1B2A4A;'
+                    'margin:0 0 6px">Componentes del score</div>',
+                    unsafe_allow_html=True,
+                )
+                _COMP_LABELS = {
+                    "claridad_regimen":   "Claridad régimen",
+                    "conviccion_senales": "Convicción señales",
+                    "coherencia_pred":    "Coherencia pred.",
+                    "senales_compuestas": "Señales compuestas",
+                    "estabilidad_macro":  "Estabilidad macro",
+                }
+                comp_html = ""
+                for k, v in comps.items():
+                    lbl   = _COMP_LABELS.get(k, k)
+                    pts   = v["pts"]
+                    maxi  = v["max"]
+                    pct   = int(pts / maxi * 100) if maxi > 0 else 0
+                    desc  = v.get("desc", "")
+                    comp_html += (
+                        f'<div class="mi-comp-row" title="{_esc(desc)}">'
+                        f'  <span class="mi-comp-label">{lbl}</span>'
+                        f'  <div class="mi-comp-track">'
+                        f'    <div class="mi-comp-fill" style="width:{pct}%"></div>'
+                        f'  </div>'
+                        f'  <span class="mi-comp-pts">{pts:.0f}/{maxi}</span>'
+                        f'</div>'
+                    )
+                st.markdown(comp_html, unsafe_allow_html=True)
+
+        with col_rank:
+            if rank and rank.get("assets"):
+                assets  = rank["assets"]
+                regime  = rank.get("regime", "")
+                n_al    = rank.get("n_alcistas", 0)
+                n_ba    = rank.get("n_bajistas", 0)
+                n_la    = rank.get("n_laterales", 0)
+                n_alin  = rank.get("n_alineados", 0)
+                n_cont  = rank.get("n_contrarios", 0)
+
+                st.markdown(
+                    f'<div style="font-size:0.7rem;color:#8A9BB0;margin-bottom:8px">'
+                    f'Régimen: <b style="color:#1B2A4A">{regime}</b> · '
+                    f'<span style="color:#00875A">▲{n_al}</span> '
+                    f'<span style="color:#C0392B">▼{n_ba}</span> '
+                    f'<span style="color:#8A9BB0">–{n_la}</span> · '
+                    f'Alineados: {n_alin} · Contrarios: {n_cont}'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+                _DIR_CLS = {
+                    "Alcista": "rank-dir-up",
+                    "Bajista": "rank-dir-dn",
+                    "Lateral": "rank-dir-lat",
+                }
+                _DIR_ARROW = {"Alcista": "▲", "Bajista": "▼", "Lateral": "–"}
+                _ALIN_CLS  = {
+                    "Alineado": "align-ok",
+                    "Contrario": "align-bad",
+                    "Neutral": "align-neu",
+                }
+                _OUT_CLS = lambda o: (
+                    "outlook-up"  if "alcista" in o.lower() else
+                    "outlook-dn"  if "bajista" in o.lower() else
+                    "outlook-lat"
+                )
+
+                tbl = (
+                    '<div class="rank-table">'
+                    '<div class="rank-row rank-header">'
+                    '<span>#</span><span>Activo</span><span>Dirección</span>'
+                    '<span>Conf</span><span>Régimen</span><span>Outlook</span>'
+                    '</div>'
+                )
+                for a in assets:
+                    d   = a["direccion"]
+                    dcl = _DIR_CLS.get(d, "rank-dir-lat")
+                    arr = _DIR_ARROW.get(d, "–")
+                    acl = _ALIN_CLS.get(a["alineacion"], "align-neu")
+                    ocl = _OUT_CLS(a["outlook"])
+                    tbl += (
+                        f'<div class="rank-row">'
+                        f'<span class="rank-num">{a["rank"]}</span>'
+                        f'<span style="font-weight:600;color:#1B2A4A">'
+                        f'  {a["label"]}</span>'
+                        f'<span class="{dcl}">{arr} {d}</span>'
+                        f'<span style="color:#5A6A7E">{a["confianza_calibrada"]}/10</span>'
+                        f'<span><span class="{acl}">{a["alineacion"]}</span></span>'
+                        f'<span class="{ocl}">{a["outlook"]}</span>'
+                        f'</div>'
+                    )
+                tbl += '</div>'
+                st.markdown(tbl, unsafe_allow_html=True)
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
