@@ -1,0 +1,40 @@
+[
+  {
+    "timestamp": "2026-03-21 20:17:49",
+    "indicator": "brent",
+    "change_pct": 4.23,
+    "current": 85.3,
+    "open_price": 81.84,
+    "unit": "USD/bbl",
+    "riesgo_macro": "Medio",
+    "sesgo_mercado": "Mixto",
+    "presion_inflacionaria": "Alcista",
+    "presion_cop": "Neutral",
+    "conviccion": 7,
+    "driver_principal": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
+    "cierre_ejecutivo": "El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 7/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy.",
+    "news": "Oil prices surge as OPEC+ signals deeper supply cuts (Reuters)",
+    "channels": [
+      "simulacion"
+    ]
+  },
+  {
+    "timestamp": "2026-03-21 20:20:24",
+    "indicator": "brent",
+    "change_pct": 4.23,
+    "current": 85.3,
+    "open_price": 81.84,
+    "unit": "USD/bbl",
+    "riesgo_macro": "Medio",
+    "sesgo_mercado": "Mixto",
+    "presion_inflacionaria": "Alcista",
+    "presion_cop": "Neutral",
+    "conviccion": 7,
+    "driver_principal": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
+    "cierre_ejecutivo": "El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 7/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy.",
+    "news": "Oil prices surge as OPEC+ signals deeper supply cuts (Reuters)",
+    "channels": [
+      "simulacion"
+    ]
+  }
+]

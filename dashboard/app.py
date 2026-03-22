@@ -335,6 +335,35 @@ h2,h3 { color: #1B2A4A !important; }
 }
 .pred-reason { font-size: 0.74rem; color: #5A6A7E; line-height: 1.45; }
 
+/* ── Alert cards ────────────────────────────────────────────────────────── */
+.alert-card {
+    background: #FFFFFF; border: 1px solid #EAF0F6;
+    border-left: 4px solid #FF4B4B;
+    border-radius: 10px; padding: 14px 18px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(27,42,74,.04);
+}
+.alert-card.alert-low  { border-left-color: #00C896; }
+.alert-card.alert-med  { border-left-color: #FFC107; }
+.alert-card.alert-high { border-left-color: #FF4B4B; }
+.alert-header {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 6px; margin-bottom: 6px;
+}
+.alert-title  { font-size: 0.9rem; font-weight: 800; color: #1B2A4A; }
+.alert-ts     { font-size: 0.7rem; color: #8A9BB0; }
+.alert-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.alert-badge  {
+    font-size: 0.68rem; font-weight: 700; padding: 2px 8px;
+    border-radius: 10px; background: #F4F6F9; color: #5A6A7E;
+}
+.alert-badge.ab-high { background: #FFF0F0; color: #C0392B; }
+.alert-badge.ab-med  { background: #FFFBEA; color: #856404; }
+.alert-badge.ab-low  { background: #F0FFF8; color: #00875A; }
+.alert-driver { font-size: 0.76rem; color: #5A6A7E; margin-bottom: 4px; }
+.alert-driver strong { color: #1B2A4A; }
+.alert-news   { font-size: 0.71rem; color: #8A9BB0; font-style: italic; margin-top: 4px; }
+.alert-ch     { font-size: 0.67rem; color: #B0BEC5; margin-top: 4px; }
+
 /* ── Signals history ────────────────────────────────────────────────────── */
 .hist-sig-table {
     background: #FFFFFF; border: 1px solid #EAF0F6;
@@ -487,6 +516,19 @@ def load_signals_history() -> pd.DataFrame:
         return df
     except Exception:
         return pd.DataFrame()
+
+
+def load_alerts_log(n: int = 5) -> list[dict]:
+    """Retorna las últimas n alertas desde alerts_log.json."""
+    alerts_file = ROOT / "data/signals/alerts_log.json"
+    if not alerts_file.exists():
+        return []
+    try:
+        with open(alerts_file, encoding="utf-8") as f:
+            log = json.load(f)
+        return log[-n:] if isinstance(log, list) else []
+    except Exception:
+        return []
 
 
 def format_metric_value(value, unit):
@@ -1102,6 +1144,68 @@ def run_dashboard():
                     f'</div>'
                 )
             st.markdown(header + rows_html + "</div>", unsafe_allow_html=True)
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Últimas Alertas ───────────────────────────────────────────────────────
+    st.markdown('<div class="section-label">Últimas Alertas — monitor en tiempo real</div>',
+                unsafe_allow_html=True)
+    alerts = load_alerts_log(5)
+    if not alerts:
+        st.info("Las alertas se generan automáticamente cuando un indicador supera el umbral configurado.")
+    else:
+        _RIESGO_CARD = {"Alto": "alert-high", "Medio": "alert-med", "Bajo": "alert-low"}
+        _RIESGO_BADGE = {"Alto": "ab-high", "Medio": "ab-med", "Bajo": "ab-low"}
+        _SESGO_BADGE  = {"Risk-off": "ab-high", "Mixto": "ab-med", "Risk-on": "ab-low"}
+
+        for alert in reversed(alerts):
+            ts        = alert.get("timestamp", "")
+            ind       = alert.get("indicator", "").upper()
+            chg       = alert.get("change_pct", 0.0)
+            unit      = alert.get("unit", "")
+            current   = alert.get("current", 0.0)
+            riesgo    = alert.get("riesgo_macro",  "")
+            sesgo     = alert.get("sesgo_mercado", "")
+            inflacion = alert.get("presion_inflacionaria", "")
+            conv      = alert.get("conviccion", "")
+            driver    = _esc(alert.get("driver_principal", ""))
+            news      = _esc(alert.get("news", ""))
+            channels  = ", ".join(alert.get("channels", []))
+            sign      = "+" if chg >= 0 else ""
+
+            label     = _CATALOG.get(alert.get("indicator", "").lower(), {}).get("label", ind)
+            card_cls  = _RIESGO_CARD.get(riesgo, "alert-med")
+            r_cls     = _RIESGO_BADGE.get(riesgo, "")
+            s_cls     = _SESGO_BADGE.get(sesgo, "")
+
+            badges_html = ""
+            if riesgo:
+                badges_html += f'<span class="alert-badge {r_cls}">Riesgo: {riesgo}</span>'
+            if sesgo:
+                badges_html += f'<span class="alert-badge {s_cls}">Sesgo: {sesgo}</span>'
+            if inflacion:
+                badges_html += f'<span class="alert-badge">Inflación: {inflacion}</span>'
+            if conv:
+                badges_html += f'<span class="alert-badge">Conv: {conv}/10</span>'
+
+            driver_html = f'<div class="alert-driver"><strong>Driver:</strong> {driver}</div>' if driver else ""
+            news_html   = f'<div class="alert-news">Noticia: {news}</div>' if news else ""
+            ch_html     = f'<div class="alert-ch">Enviado por: {channels}</div>' if channels else ""
+
+            st.markdown(
+                f'<div class="alert-card {card_cls}">'
+                f'  <div class="alert-header">'
+                f'    <span class="alert-title">{ind} {sign}{chg:.1f}% — {label}: {current:,.2f} {unit}</span>'
+                f'    <span class="alert-ts">{ts}</span>'
+                f'  </div>'
+                f'  <div class="alert-badges">{badges_html}</div>'
+                f'  {driver_html}'
+                f'  {news_html}'
+                f'  {ch_html}'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
