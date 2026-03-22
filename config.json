@@ -12,5 +12,35 @@
     "dxy",
     "usdcop",
     "gold"
-  ]
+  ],
+  "tiers": {
+    "nivel_basico": {
+      "nombre": "Plan Básico",
+      "precio": "Gratis",
+      "features": [
+        "Precios en tiempo real (5 activos)",
+        "Variación histórica 7d / 30d",
+        "Titulares recientes por indicador",
+        "Gráficas históricas de precios",
+        "Reporte diario análisis IA"
+      ]
+    },
+    "nivel_premium": {
+      "nombre": "Plan Premium",
+      "precio": "$29 USD/mes",
+      "features": [
+        "Todo lo del Plan Básico",
+        "Señales del Agente (sesgo, riesgo, convicción)",
+        "Detector de cambio de régimen",
+        "Señales compuestas entre activos",
+        "Correlaciones dinámicas + ruptura",
+        "Market Intelligence Score (0-100)",
+        "Ranking de activos por convicción",
+        "Proyecciones 24h determinísticas",
+        "Precisión histórica del agente",
+        "Histórico de señales 30 días",
+        "Alertas inteligentes en tiempo real"
+      ]
+    }
+  }
 }

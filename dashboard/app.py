@@ -658,6 +658,48 @@ h2,h3 { color: #1B2A4A !important; }
     .sig-badge { min-width: 90px; padding: 10px 6px; }
     .sig-badge-value { font-size: 0.78rem; }
 }
+
+/* ── Premium gate ────────────────────────────────────────────────────────── */
+.premium-gate {
+    background: linear-gradient(135deg, #1B2A4A 0%, #0F1D35 100%);
+    border-radius: 16px; padding: 48px 40px; text-align: center;
+    margin: 32px 0; position: relative; overflow: hidden;
+}
+.premium-gate::before {
+    content: ""; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(0,200,150,0.08);
+}
+.premium-gate-icon { font-size: 2.8rem; margin-bottom: 16px; }
+.premium-gate-title {
+    font-size: 1.6rem; font-weight: 800; color: #FFFFFF;
+    margin-bottom: 10px; letter-spacing: -0.5px;
+}
+.premium-gate-subtitle {
+    font-size: 0.95rem; color: #8A9BB0; margin-bottom: 28px; max-width: 520px;
+    margin-left: auto; margin-right: auto; line-height: 1.5;
+}
+.premium-features {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    margin-bottom: 32px;
+}
+.premium-feat-chip {
+    background: rgba(0,200,150,0.12); border: 1px solid rgba(0,200,150,0.25);
+    color: #00C896; font-size: 0.75rem; font-weight: 600;
+    padding: 5px 14px; border-radius: 20px;
+}
+.premium-unlock-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #8A9BB0; margin-bottom: 8px;
+}
+.premium-logged-in {
+    background: rgba(0,200,150,0.08); border: 1px solid rgba(0,200,150,0.2);
+    border-radius: 10px; padding: 12px 20px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+}
+.premium-logged-label {
+    font-size: 0.82rem; font-weight: 600; color: #00C896;
+}
 </style>
 """
 
@@ -1104,6 +1146,72 @@ def _esc(t: str) -> str:
     return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+# ── Premium helpers ────────────────────────────────────────────────────────────
+
+def _get_premium_password() -> str:
+    try:
+        return st.secrets["ADMIN_PASSWORD"]
+    except Exception:
+        return os.getenv("ADMIN_PASSWORD", "admin1234")
+
+
+def _is_premium() -> bool:
+    return st.session_state.get("premium_unlocked", False)
+
+
+def _render_premium_gate():
+    """Renderiza el bloque de desbloqueo premium en el dashboard."""
+    _PREMIUM_FEATURES = [
+        "Señales del Agente",
+        "Detector de régimen",
+        "Señales compuestas",
+        "Correlaciones dinámicas",
+        "Market Score 0-100",
+        "Ranking de activos",
+        "Proyecciones 24h",
+        "Precisión histórica",
+        "Últimas Alertas",
+    ]
+    chips = "".join(
+        f'<span class="premium-feat-chip">{f}</span>' for f in _PREMIUM_FEATURES
+    )
+    st.markdown(
+        f"""
+<div class="premium-gate">
+  <div class="premium-gate-icon">🔒</div>
+  <div class="premium-gate-title">Contenido Premium</div>
+  <div class="premium-gate-subtitle">
+    Desbloquea señales avanzadas, predicciones 24h, análisis de régimen
+    y toda la inteligencia de mercado del agente.
+  </div>
+  <div class="premium-features">{chips}</div>
+  <div class="premium-unlock-label">Ingresa tu contraseña de acceso</div>
+</div>""",
+        unsafe_allow_html=True,
+    )
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        pwd = st.text_input(
+            "Contraseña premium", type="password",
+            placeholder="••••••••••••",
+            label_visibility="collapsed",
+            key="premium_pwd_input",
+        )
+        if st.button("Desbloquear acceso premium", use_container_width=True, type="primary"):
+            if pwd == _get_premium_password():
+                st.session_state["premium_unlocked"] = True
+                st.rerun()
+            else:
+                st.error("Contraseña incorrecta.")
+        st.markdown(
+            '<div style="text-align:center;margin-top:10px">'
+            '<a href="pricing" style="font-size:0.8rem;color:#00C896;text-decoration:none">'
+            '¿No tienes acceso? Ver planes →</a></div>',
+            unsafe_allow_html=True,
+        )
+
+
 # ── Dashboard ─────────────────────────────────────────────────────────────────
 def run_dashboard():
     st.markdown(BRAND_CSS, unsafe_allow_html=True)
@@ -1338,6 +1446,39 @@ def run_dashboard():
 
     st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
     st.divider()
+
+    # ── Reporte del día (nivel básico) ───────────────────────────────────────
+    st.markdown('<div class="section-label">Reporte del día — análisis IA</div>',
+                unsafe_allow_html=True)
+    if report_text:
+        date_label = f"Generado el {report_time}" if report_time else ""
+        body_html  = _format_report_body(report_text)
+        st.markdown(
+            f'<div class="report-card">'
+            f'  <div class="report-date">📄 {date_label}</div>'
+            f'  <div class="report-body">{body_html}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        st.info("El reporte se genera automáticamente cada día a las 7:00 AM (Colombia).")
+
+    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
+    st.divider()
+
+    # ── Premium gate ──────────────────────────────────────────────────────────
+    if not _is_premium():
+        _render_premium_gate()
+        return
+
+    # Botón para cerrar sesión premium
+    col_logout, _ = st.columns([1, 5])
+    with col_logout:
+        if st.button("🔓 Cerrar sesión premium", type="secondary"):
+            st.session_state["premium_unlocked"] = False
+            st.rerun()
+
+    st.markdown("<div style='margin:8px 0'></div>", unsafe_allow_html=True)
 
     # ── Señales del Agente ───────────────────────────────────────────────────
     st.markdown('<div class="section-label">Señales del Agente</div>',
@@ -2237,29 +2378,11 @@ def run_dashboard():
                 unsafe_allow_html=True,
             )
 
-    st.markdown("<div style='margin:28px 0 4px'></div>", unsafe_allow_html=True)
-    st.divider()
-
-    # ── Reporte del día ──────────────────────────────────────────────────────
-    st.markdown('<div class="section-label">Reporte del día — análisis IA</div>',
-                unsafe_allow_html=True)
-    if report_text:
-        date_label = f"Generado el {report_time}" if report_time else ""
-        body_html  = _format_report_body(report_text)
-        st.markdown(
-            f'<div class="report-card">'
-            f'  <div class="report-date">📄 {date_label}</div>'
-            f'  <div class="report-body">{body_html}</div>'
-            f'</div>',
-            unsafe_allow_html=True,
-        )
-    else:
-        st.info("El reporte se genera automáticamente cada día a las 7:00 AM (Colombia).")
-
 
 # ── Navegación ────────────────────────────────────────────────────────────────
 pg = st.navigation([
     st.Page(run_dashboard, title="Dashboard", icon="📊", default=True),
+    st.Page("pages/pricing.py", title="Planes y Precios", icon="💎"),
     st.Page("pages/admin.py", title="Panel de Control", icon="⚙️"),
 ])
 pg.run()
