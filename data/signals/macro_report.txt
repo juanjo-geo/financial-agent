@@ -1,18 +1,18 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-03-23 15:41:26.157692
+Generado: 2026-03-24 15:47:52.297531
 
-BRENT | -9.08% | down | high
-BTC | 4.40% | up | medium
-DXY | -0.54% | down | low
+BRENT | 2.19% | up | low
+BTC | -1.23% | down | none
+DXY | 0.21% | up | none
 GLOBAL_INFLATION_PROXY | 0.00% | flat | none
-GOLD | 0.05% | up | none
+GOLD | 0.13% | up | none
 SILVER | -4.35% | down | high
 SP500 | -1.34% | down | low
-USDCOP | -0.23% | down | none
+USDCOP | -0.08% | down | none
 
 INTERPRETACIÓN MACRO
 -------------------------
-- El petróleo cae, reduciendo presiones inflacionarias energéticas.
-- Bitcoin muestra demanda especulativa positiva.
+- El petróleo sube, lo que puede aumentar presiones inflacionarias globales.
+- Bitcoin cae, indicando menor apetito por riesgo.
 - El peso colombiano muestra fortaleza relativa.

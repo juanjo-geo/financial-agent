@@ -1,49 +1,48 @@
 {
-  "fecha": "2026-03-23",
-  "generado_en": "2026-03-23 15:41:28",
-  "regime": "CRISIS",
+  "fecha": "2026-03-24",
+  "generado_en": "2026-03-24 15:47:54",
+  "regime": "LATERAL",
   "scores": {
-    "INFLACIONARIO": 30,
+    "INFLACIONARIO": 50,
     "RISK-ON": 10,
     "CRISIS": 44,
-    "LATERAL": 40
+    "LATERAL": 60
   },
-  "confianza": 4,
+  "confianza": 10,
   "drivers": [
-    "GOLD en caida",
-    "Volatilidad alta en BRENT, BTC"
+    "3 activos laterales"
   ],
-  "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
+  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": 0.37,
-      "volatilidad": 4.412,
+      "avg_pct_dia": 0.971,
+      "volatilidad": 4.117,
       "n_dias": 12
     },
     "btc": {
-      "avg_pct_dia": 0.351,
-      "volatilidad": 2.106,
+      "avg_pct_dia": 0.105,
+      "volatilidad": 2.074,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.019,
-      "volatilidad": 0.508,
+      "avg_pct_dia": 0.034,
+      "volatilidad": 0.511,
       "n_dias": 12
     },
     "global_inflation_proxy": {
       "avg_pct_dia": 0.0,
       "volatilidad": 0.0,
-      "n_dias": 12
+      "n_dias": 11
     },
     "gold": {
-      "avg_pct_dia": -0.942,
-      "volatilidad": 1.479,
+      "avg_pct_dia": -1.079,
+      "volatilidad": 1.284,
       "n_dias": 12
     },
     "silver": {
-      "avg_pct_dia": -1.878,
-      "volatilidad": 2.731,
-      "n_dias": 10
+      "avg_pct_dia": -2.338,
+      "volatilidad": 2.486,
+      "n_dias": 9
     },
     "sp500": {
       "avg_pct_dia": -1.337,
@@ -51,8 +50,8 @@
       "n_dias": 1
     },
     "usdcop": {
-      "avg_pct_dia": -0.146,
-      "volatilidad": 0.427,
+      "avg_pct_dia": -0.152,
+      "volatilidad": 0.425,
       "n_dias": 12
     }
   },

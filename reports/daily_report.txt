@@ -1,19 +1,19 @@
 REPORTE DIARIO DE MERCADO
-Generado: 2026-03-23 15:41:41
+Generado: 2026-03-24 15:48:07
 --------------------------------------------------
 
-Hoy, el petróleo cerró con una caída significativa, retrocediendo casi 10 dólares por barril. Esto puede aliviar un poco la presión sobre la inflación, pero el impacto en la economía local dependerá de cómo se mantenga el precio. El bitcoin tuvo un buen desempeño, aumentando más de 4%, lo que muestra un renovado interés en las criptomonedas. El dólar cedió terreno, lo que beneficia las importaciones y podría mejorar el poder adquisitivo de algunos sectores en Colombia.
+Hoy, el petróleo Brent subió con fuerza, cerrando en 102.7 USD/bbl, impulsado por noticias sobre tensiones en Irán que generaron un rally en la bolsa. El bitcoin, sin embargo, perdió impulso y terminó en 70,029.72 USD, a pesar de un flujo positivo hacia activos digitales. El dólar cedió terreno, ubicándose a 3,704.29 COP/USD, lo que podría aliviar un poco las importaciones y el costo de la deuda en dólares para las empresas colombianas.
 
-Los movimientos de hoy parecen ser parte de una tendencia más amplia. La caída del petróleo y el aumento del bitcoin reflejan cambios en la percepción del riesgo y la confianza de los inversores. Sin embargo, las fluctuaciones en los mercados son comunes y es importante seguir de cerca cómo evolucionan en las próximas semanas.
+Los movimientos de hoy parecen ser parte de una tendencia más amplia. El Brent ha mostrado una gran volatilidad en las últimas semanas, mientras que el bitcoin ha estado fluctuando sin un rumbo claro, reflejando preocupaciones en el mercado de criptomonedas tras noticias contradictorias sobre la situación en Irán.
 
-El ambiente de mercado sigue siendo volátil, con tensiones geopolíticas que afectan a los precios y la confianza global. La incertidumbre persiste, y es crucial estar atentos a los desarrollos. Mantengamos la calma y sigamos monitoreando las oportunidades.
+El ambiente de mercado sigue marcado por la incertidumbre geopolítica y la respuesta de los inversores a las fluctuaciones de los activos. A medida que las tensiones internacionales se desarrollan, es crucial mantenerse informado y preparado.
 =======================================================
 SECCIÓN 5 — SEÑALES ACCIONABLES
-Generado: 2026-03-23 15:41:27
+Generado: 2026-03-24 15:47:53
 =======================================================
-  Riesgo Macro           : Bajo
-  Sesgo de Mercado       : Mixto
-  Presión Inflacionaria  : Bajista
+  Riesgo Macro           : Medio
+  Sesgo de Mercado       : Risk-off
+  Presión Inflacionaria  : Alcista
   Presión COP            : Neutral
   Convicción             : 6/10
 
@@ -22,13 +22,13 @@ SECCIÓN 6 — INTERPRETACIÓN CAUSAL
 =======================================================
 
 Driver principal:
-  El petroleo Brent cedio con fuerza (-9.1%), lo que podria estar reflejando menor demanda o aumento de oferta.
+  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.
 
 Driver secundario:
-  Bitcoin registro un avance significativo (+4.4%), lo que parece indicar mayor apetito de riesgo en activos especulativos.
+  El Brent subio moderadamente (+2.2%), sugiriendo cierta presion al alza en precios energeticos.
 
 Lectura cruzada:
-  Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante.
+  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos.
 
 Cierre ejecutivo:
-  El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La desinflacion energetica ofrece cierto alivio para la politica monetaria, aunque no garantiza un ciclo de recortes inmediato. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis.
+  El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis.
