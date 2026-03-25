@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-03-24",
-  "generado_en": "2026-03-24 15:47:54",
-  "score": 13.8,
+  "fecha": "2026-03-25",
+  "generado_en": "2026-03-25 15:53:49",
+  "score": 23.9,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -12,41 +12,56 @@
       "dimension_label": "Sesgo de Mercado",
       "de": "Mixto",
       "a": "Risk-off",
-      "score_parcial": 6.36,
+      "score_parcial": 10.0,
       "peso_dimension": 30
+    },
+    {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Alcista",
+      "a": "Bajista",
+      "score_parcial": 6.06,
+      "peso_dimension": 20
     },
     {
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
       "a": "Medio",
-      "score_parcial": 5.91,
+      "score_parcial": 4.55,
       "peso_dimension": 30
+    },
+    {
+      "dimension": "presion_cop",
+      "dimension_label": "Presion COP",
+      "de": "Neutral",
+      "a": "Alcista USD/COP",
+      "score_parcial": 3.33,
+      "peso_dimension": 20
     }
   ],
-  "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
+  "descripcion": "Se observa una transicion gradual en el regimen macro: Sesgo de Mercado transita de Mixto hacia Risk-off. El entorno de riesgo parece estar deteriorandose. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
   "scores_por_dim": {
-    "sesgo_mercado": 6.36,
-    "riesgo_macro": 5.91,
-    "presion_inflacionaria": 1.52,
-    "presion_cop": 0.0
+    "sesgo_mercado": 10.0,
+    "riesgo_macro": 4.55,
+    "presion_inflacionaria": 6.06,
+    "presion_cop": 3.33
   },
   "recientes": {
-    "sesgo_mercado": 0.333,
+    "sesgo_mercado": 0.667,
     "riesgo_macro": 0.667,
-    "presion_inflacionaria": 0.333,
-    "presion_cop": 0.0
+    "presion_inflacionaria": -0.333,
+    "presion_cop": 0.333
   },
   "baselines": {
-    "sesgo_mercado": -0.091,
-    "riesgo_macro": 0.273,
-    "presion_inflacionaria": 0.182,
+    "sesgo_mercado": 0.0,
+    "riesgo_macro": 0.364,
+    "presion_inflacionaria": 0.273,
     "presion_cop": 0.0
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Risk-on",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -59,12 +74,12 @@
       "Mixto",
       "Mixto",
       "Mixto",
+      "Risk-off",
       "Risk-off"
     ],
     "riesgo_macro": [
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
       "Bajo",
       "Bajo",
@@ -75,10 +90,10 @@
       "Medio",
       "Medio",
       "Bajo",
+      "Medio",
       "Medio"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Bajista",
       "Neutral",
       "Alcista",
@@ -91,7 +106,8 @@
       "Alcista",
       "Alcista",
       "Bajista",
-      "Alcista"
+      "Alcista",
+      "Bajista"
     ],
     "presion_cop": [
       "Neutral",
@@ -107,7 +123,7 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral"
+      "Alcista USD/COP"
     ]
   }
 }

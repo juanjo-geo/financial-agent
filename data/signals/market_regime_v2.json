@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-03-24",
-  "generado_en": "2026-03-24 15:47:54",
+  "fecha": "2026-03-25",
+  "generado_en": "2026-03-25 15:53:49",
   "regime": "LATERAL",
   "scores": {
     "INFLACIONARIO": 50,
@@ -15,34 +15,34 @@
   "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": 0.971,
-      "volatilidad": 4.117,
+      "avg_pct_dia": 0.636,
+      "volatilidad": 4.283,
       "n_dias": 12
     },
     "btc": {
-      "avg_pct_dia": 0.105,
-      "volatilidad": 2.074,
+      "avg_pct_dia": 0.116,
+      "volatilidad": 2.076,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.034,
-      "volatilidad": 0.511,
+      "avg_pct_dia": 0.041,
+      "volatilidad": 0.515,
       "n_dias": 12
     },
     "global_inflation_proxy": {
       "avg_pct_dia": 0.0,
       "volatilidad": 0.0,
-      "n_dias": 11
+      "n_dias": 10
     },
     "gold": {
-      "avg_pct_dia": -1.079,
-      "volatilidad": 1.284,
+      "avg_pct_dia": -0.889,
+      "volatilidad": 1.512,
       "n_dias": 12
     },
     "silver": {
-      "avg_pct_dia": -2.338,
-      "volatilidad": 2.486,
-      "n_dias": 9
+      "avg_pct_dia": -2.138,
+      "volatilidad": 2.568,
+      "n_dias": 8
     },
     "sp500": {
       "avg_pct_dia": -1.337,
@@ -50,8 +50,8 @@
       "n_dias": 1
     },
     "usdcop": {
-      "avg_pct_dia": -0.152,
-      "volatilidad": 0.425,
+      "avg_pct_dia": -0.176,
+      "volatilidad": 0.424,
       "n_dias": 12
     }
   },

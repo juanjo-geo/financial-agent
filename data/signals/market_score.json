@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-03-24",
-  "generado_en": "2026-03-24 15:47:55",
-  "score": 42,
+  "fecha": "2026-03-25",
+  "generado_en": "2026-03-25 15:53:50",
+  "score": 40,
   "label": "Visibilidad moderada",
   "color": "#E65100",
   "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Risk-off, riesgo Medio). Se recomienda cautela.",
@@ -12,13 +12,13 @@
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 12.0,
-      "desc": "Conviccion 6/10",
+      "pts": 14.0,
+      "desc": "Conviccion 7/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 14.2,
-      "desc": "Conf. calibrada media 5.7/10 (3 activos)",
+      "pts": 12.5,
+      "desc": "Conf. calibrada media 5.0/10 (2 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.9,
-      "desc": "Regime change 14/100 (Estable)",
+      "pts": 11.4,
+      "desc": "Regime change 24/100 (Estable)",
       "max": 15
     }
   }
