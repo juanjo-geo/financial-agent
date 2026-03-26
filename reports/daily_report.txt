@@ -1,21 +1,21 @@
 REPORTE DIARIO DE MERCADO
-Generado: 2026-03-25 15:54:02
+Generado: 2026-03-26 13:26:52
 --------------------------------------------------
 
-Hoy, los mercados mostraron un comportamiento mixto. El petróleo retrocedió notablemente, cerrando casi tres dólares por debajo de su apertura. El bitcoin, sin embargo, logró mantener un leve crecimiento, superando los 70,000 dólares. El dólar cedió terreno frente al peso colombiano, lo que podría beneficiar a las importaciones. Sin embargo, un dólar más fuerte en el contexto global sigue generando presión sobre la deuda externa y el poder adquisitivo de los colombianos.
+Hoy, el petróleo Brent subió con fuerza, cerrando en 100.82 USD/bbl, mientras que el bitcoin perdió impulso y terminó en 69,410 USD, tras abrir más alto. El dólar se mantuvo quieto, cotizando a 3,695.76 COP. Este leve fortalecimiento del dólar implica un impacto en las importaciones, encareciendo productos y afectando el poder adquisitivo de los colombianos. Los metales preciosos, como el oro y la plata, también retrocedieron, siguiendo la tendencia del bitcoin.
 
-Estos movimientos parecen más bien un ajuste dentro de una tendencia que ha estado fluctuando en las últimas semanas. El petróleo ha estado en descenso desde su pico, mientras que el bitcoin se mantiene en un rango estable, con ligeros altibajos. El dólar ha mostrado cierta debilidad, pero aún está bajo vigilancia por las tensiones globales.
+Los movimientos de hoy parecen ser parte de una tendencia más amplia. El Brent ha bajado en comparación con hace una semana, aunque sigue muy por encima de niveles anteriores de 30 días. El bitcoin ha mostrado cierta estabilidad después de un mes de altibajos, y el dólar ha fluctuado levemente.
 
-El ambiente de mercado se siente incierto, con los inversores atentos a las noticias sobre inflación y posibles conflictos geopolíticos. La volatilidad sigue siendo la norma, y muchos están esperando señales más claras antes de tomar decisiones. En resumen, es un momento de cautela y observación.
+En general, el ambiente de mercado está marcado por la incertidumbre, especialmente en torno a los activos digitales y las materias primas. Las tensiones geopolíticas y su efecto en los precios del petróleo también son un factor a considerar. La volatilidad sigue siendo la norma.
 =======================================================
 SECCIÓN 5 — SEÑALES ACCIONABLES
-Generado: 2026-03-25 15:53:48
+Generado: 2026-03-26 13:26:36
 =======================================================
   Riesgo Macro           : Medio
   Sesgo de Mercado       : Risk-off
-  Presión Inflacionaria  : Bajista
-  Presión COP            : Alcista USD/COP
-  Convicción             : 7/10
+  Presión Inflacionaria  : Alcista
+  Presión COP            : Neutral
+  Convicción             : 8/10
 
 =======================================================
 SECCIÓN 6 — INTERPRETACIÓN CAUSAL
@@ -25,10 +25,10 @@ Driver principal:
   La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.
 
 Driver secundario:
-  El petroleo Brent cedio con fuerza (-3.3%), lo que podria estar reflejando menor demanda o aumento de oferta.
+  El petroleo Brent registro un avance pronunciado (+3.0%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.
 
 Lectura cruzada:
-  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La fortaleza del dolar a nivel global parece trasladarse al tipo de cambio colombiano, lo que podria presionar la inflacion importada en Colombia.
+  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La caida simultanea de oro y renta variable es inusual: podria estar reflejando presion de liquidez o ajuste tecnico mas que una tendencia fundamental sostenida.
 
 Cierre ejecutivo:
-  El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La apreciacion del dolar frente al peso podria generar presion adicional sobre importaciones y deuda externa colombiana. Las senales presentan una conviccion 7/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy.
+  El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy.
