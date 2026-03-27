@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-03-26",
-  "generado_en": "2026-03-26 13:26:38",
-  "score": 50,
+  "fecha": "2026-03-27",
+  "generado_en": "2026-03-27 13:15:39",
+  "score": 49,
   "label": "Visibilidad moderada",
   "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Risk-off, riesgo Medio). Se recomienda cautela.",
+  "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Risk-off, riesgo Alto). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 9.0,
-      "desc": "Regimen LATERAL (confianza +36pts)",
+      "pts": 8.0,
+      "desc": "Regimen CRISIS (confianza +32pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 10.7,
-      "desc": "Regime change 28/100 (Estable)",
+      "pts": 10.4,
+      "desc": "Regime change 30/100 (Transicion)",
       "max": 15
     }
   }

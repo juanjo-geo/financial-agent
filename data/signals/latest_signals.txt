@@ -1,9 +1,9 @@
 SEÑALES DE MERCADO
-Generado: 2026-03-26 13:26:34
+Generado: 2026-03-27 13:15:35
 --------------------------------------------------
 
-- Brent sube 2.95% (movimiento relevante). Valor actual: 100.82 USD/bbl
-- Bitcoin cae 2.67% (movimiento leve relevante). Valor actual: 69,410.15 USD
-- Oro (XAU/USD) cae 1.59% (movimiento relevante). Valor actual: 4,437.20 USD/oz
+- Brent sube 3.38% (movimiento relevante). Valor actual: 104.06 USD/bbl
+- Bitcoin cae 3.31% (movimiento relevante). Valor actual: 66,504.62 USD
+- Oro (XAU/USD) sube 2.07% (movimiento relevante). Valor actual: 4,462.40 USD/oz
 - SILVER cae 4.35% (movimiento fuerte). Valor actual: 69.66 USD/oz
 - SP500 cae 1.34% (movimiento leve relevante). Valor actual: 6,506.48 USD

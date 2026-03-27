@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-03-26",
-  "generado_en": "2026-03-26 13:26:36",
+  "fecha": "2026-03-27",
+  "generado_en": "2026-03-27 13:15:37",
   "senales": {
-    "riesgo_macro": "Medio",
+    "riesgo_macro": "Alto",
     "sesgo_mercado": "Risk-off",
     "presion_inflacionaria": "Alcista",
     "presion_cop": "Neutral",
@@ -10,42 +10,41 @@
   },
   "interpretacion": {
     "driver_principal": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
-    "driver_secundario": "El petroleo Brent registro un avance pronunciado (+3.0%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.",
-    "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La caida simultanea de oro y renta variable es inusual: podria estar reflejando presion de liquidez o ajuste tecnico mas que una tendencia fundamental sostenida.",
-    "cierre_ejecutivo": "El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
+    "driver_secundario": "El petroleo Brent registro un avance pronunciado (+3.4%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.",
+    "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La preferencia por oro sobre Bitcoin podria estar indicando busqueda de refugio en activos mas tradicionales frente a mayor percepcion de incertidumbre. La confluencia de presion inflacionaria y riesgo macro elevado sugiere un entorno de estanflacion potencial que podria complicar las decisiones de politica monetaria.",
+    "cierre_ejecutivo": "La sesion registra un entorno de riesgo macro elevado, con senales que sugieren cautela en la exposicion a activos de mayor riesgo. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
   },
   "scores_internos": {
-    "riesgo_score": 3.7,
-    "sesgo_risk_on": 0.5,
-    "sesgo_risk_off": 3.0,
-    "inflacion_score": 3.7,
-    "cop_score": 0.7,
+    "riesgo_score": 5.0,
+    "sesgo_risk_on": 0.0,
+    "sesgo_risk_off": 5.5,
+    "inflacion_score": 5.0,
+    "cop_score": 0.0,
     "conviccion_razon": "4 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_up": 1.0,
-      "gold_down": -0.5,
+      "gold_safe_haven": 1.5,
       "btc_drop": 1.0,
-      "sp500_down": 1.5,
-      "news_geopolitica_med": 0.7
+      "sp500_down": 1.5
     },
     "inflacion": {
       "brent_up": 3.0,
-      "gold_down": -0.5,
+      "gold_hedge": 0.8,
       "silver_down": -0.3,
       "news_inflacion_alta": 1.0,
       "news_petroleo_alta": 0.5
     },
     "cop": {
-      "brent_mild_cop": -0.8,
+      "brent_cop_positive": -1.5,
       "sp500_weak": 0.5,
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -2.7%)",
+      "btc": "Risk-off +2 (BTC -3.3%)",
       "sp500": "Risk-off +1.5 (SP500 -1.3%)",
-      "gold": "Risk-on +0.5 (Oro -1.6%)",
+      "gold": "Risk-off +1.5 (Oro +2.1%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -55,17 +54,16 @@
     "dolar": 3,
     "cripto": 3,
     "colombia": 3,
-    "geopolitica": 2,
     "apetito_riesgo": 3
   },
   "variaciones_mercado": {
-    "brent": 2.9511,
-    "btc": -2.6665,
-    "dxy": 0.1445,
+    "brent": 3.3777,
+    "btc": -3.3064,
+    "dxy": 0.1993,
     "global_inflation_proxy": 0.0,
-    "gold": -1.5902,
+    "gold": 2.0724,
     "silver": -4.3471,
     "sp500": -1.3371,
-    "usdcop": 0.0114
+    "usdcop": -0.0562
   }
 }
