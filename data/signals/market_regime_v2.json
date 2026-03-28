@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-03-27",
-  "generado_en": "2026-03-27 13:15:38",
+  "fecha": "2026-03-28",
+  "generado_en": "2026-03-28 13:03:21",
   "regime": "CRISIS",
   "scores": {
-    "INFLACIONARIO": 30,
+    "INFLACIONARIO": 50,
     "RISK-ON": 10,
     "CRISIS": 72,
     "LATERAL": 40
   },
-  "confianza": 32,
+  "confianza": 22,
   "drivers": [
     "BTC, GOLD en caida",
     "Volatilidad alta en BRENT, BTC, GOLD"
@@ -16,29 +16,29 @@
   "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": 0.445,
-      "volatilidad": 3.971,
-      "n_dias": 12
+      "avg_pct_dia": 0.87,
+      "volatilidad": 4.09,
+      "n_dias": 13
     },
     "btc": {
-      "avg_pct_dia": -0.387,
-      "volatilidad": 2.328,
+      "avg_pct_dia": -0.408,
+      "volatilidad": 2.322,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": -0.011,
-      "volatilidad": 0.476,
-      "n_dias": 12
+      "avg_pct_dia": 0.011,
+      "volatilidad": 0.464,
+      "n_dias": 13
     },
     "global_inflation_proxy": {
       "avg_pct_dia": 0.0,
       "volatilidad": 0.0,
-      "n_dias": 8
+      "n_dias": 7
     },
     "gold": {
-      "avg_pct_dia": -0.753,
-      "volatilidad": 1.738,
-      "n_dias": 12
+      "avg_pct_dia": -0.695,
+      "volatilidad": 1.681,
+      "n_dias": 13
     },
     "silver": {
       "avg_pct_dia": -2.266,
@@ -51,9 +51,9 @@
       "n_dias": 1
     },
     "usdcop": {
-      "avg_pct_dia": -0.18,
-      "volatilidad": 0.423,
-      "n_dias": 12
+      "avg_pct_dia": -0.166,
+      "volatilidad": 0.409,
+      "n_dias": 13
     }
   },
   "window_dias": 14,

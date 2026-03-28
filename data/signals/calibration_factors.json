@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-03-27",
-  "generado_en": "2026-03-27 13:15:39",
-  "total_predicciones": 476,
+  "fecha": "2026-03-28",
+  "generado_en": "2026-03-28 13:03:22",
+  "total_predicciones": 481,
   "bandas": {
     "1-3": {
       "n": 105,
@@ -12,10 +12,10 @@
       "suficientes_datos": true
     },
     "4-6": {
-      "n": 282,
-      "acierto_real": 0.5638,
+      "n": 286,
+      "acierto_real": 0.5664,
       "acierto_esperado": 0.55,
-      "factor": 1.0251,
+      "factor": 1.0299,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
@@ -28,10 +28,10 @@
       "suficientes_datos": true
     },
     "9-10": {
-      "n": 22,
-      "acierto_real": 0.5909,
+      "n": 23,
+      "acierto_real": 0.6087,
       "acierto_esperado": 0.87,
-      "factor": 0.6792,
+      "factor": 0.6997,
       "status": "Sobreconfiado",
       "suficientes_datos": true
     }

@@ -1,9 +1,9 @@
 timestamp_generated,indicator,value,change_pct,unit,direction,severity,message
-2026-03-27 13:15:35,brent,104.06,3.3777,USD/bbl,up,medium,Brent sube 3.38% (movimiento relevante). Valor actual: 104.06 USD/bbl
-2026-03-27 13:15:35,btc,66504.625,-3.3064,USD,down,medium,"Bitcoin cae 3.31% (movimiento relevante). Valor actual: 66,504.62 USD"
-2026-03-27 13:15:35,dxy,100.07,0.1993,index,up,none,Sin señal relevante en DXY.
-2026-03-27 13:15:35,global_inflation_proxy,3.0,0.0,%,flat,none,Sin señal relevante en inflación global proxy.
-2026-03-27 13:15:35,gold,4462.3999,2.0724,USD/oz,up,medium,"Oro (XAU/USD) sube 2.07% (movimiento relevante). Valor actual: 4,462.40 USD/oz"
-2026-03-27 13:15:35,silver,69.664,-4.3471,USD/oz,down,high,SILVER cae 4.35% (movimiento fuerte). Valor actual: 69.66 USD/oz
-2026-03-27 13:15:35,sp500,6506.48,-1.3371,USD,down,low,"SP500 cae 1.34% (movimiento leve relevante). Valor actual: 6,506.48 USD"
-2026-03-27 13:15:35,usdcop,3679.45,-0.0562,COP/USD,down,none,Sin señal relevante en USD/COP.
+2026-03-28 13:03:18,brent,112.57,5.9782,USD/bbl,up,high,Brent sube 5.98% (movimiento fuerte). Valor actual: 112.57 USD/bbl
+2026-03-28 13:03:18,btc,66407.6406,0.0666,USD,up,none,Sin señal relevante en Bitcoin.
+2026-03-28 13:03:18,dxy,100.15,0.2804,index,up,none,Sin señal relevante en DXY.
+2026-03-28 13:03:18,global_inflation_proxy,3.0,0.0,%,flat,none,Sin señal relevante en inflación global proxy.
+2026-03-28 13:03:18,gold,4492.0,0.0,USD/oz,flat,none,Sin señal relevante en Oro (XAU/USD).
+2026-03-28 13:03:18,silver,69.664,-4.3471,USD/oz,down,high,SILVER cae 4.35% (movimiento fuerte). Valor actual: 69.66 USD/oz
+2026-03-28 13:03:18,sp500,6506.48,-1.3371,USD,down,low,"SP500 cae 1.34% (movimiento leve relevante). Valor actual: 6,506.48 USD"
+2026-03-28 13:03:18,usdcop,3671.78,0.0,COP/USD,flat,none,Sin señal relevante en USD/COP.
