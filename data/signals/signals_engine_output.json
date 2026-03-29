@@ -1,26 +1,29 @@
 {
   "senales": {
-    "riesgo_macro": "Medio",
+    "riesgo_macro": "Alto",
     "sesgo_mercado": "Risk-off",
     "presion_inflacionaria": "Alcista",
     "presion_cop": "Neutral",
-    "conviccion": 6
+    "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": 3.5,
+    "riesgo_score": 5.7,
     "sesgo_risk_on": 0.0,
-    "sesgo_risk_off": 2.0,
-    "inflacion_score": 5.2,
+    "sesgo_risk_off": 3.5,
+    "inflacion_score": 6.0,
     "cop_score": 0.5,
-    "conviccion_razon": "2 indicador(es) con movimiento significativo"
+    "conviccion_razon": "3 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_surge": 2.0,
-      "sp500_down": 1.5
+      "gold_safe_haven": 1.5,
+      "sp500_down": 1.5,
+      "news_geopolitica_med": 0.7
     },
     "inflacion": {
       "brent_surge": 4.0,
+      "gold_hedge": 0.8,
       "silver_down": -0.3,
       "news_inflacion_alta": 1.0,
       "news_petroleo_alta": 0.5
@@ -33,6 +36,7 @@
     },
     "sesgo": {
       "sp500": "Risk-off +1.5 (SP500 -1.3%)",
+      "gold": "Risk-off +1.5 (Oro +3.5%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -42,14 +46,15 @@
     "dolar": 3,
     "cripto": 3,
     "colombia": 3,
+    "geopolitica": 2,
     "apetito_riesgo": 3
   },
   "variaciones_mercado": {
-    "brent": 5.9782,
-    "btc": 0.0666,
+    "brent": 4.6294,
+    "btc": 0.6882,
     "dxy": 0.2804,
     "global_inflation_proxy": 0.0,
-    "gold": 0.0,
+    "gold": 3.4883,
     "silver": -4.3471,
     "sp500": -1.3371,
     "usdcop": 0.0
