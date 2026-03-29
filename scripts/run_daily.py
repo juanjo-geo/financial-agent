@@ -23,9 +23,9 @@ steps = [
     "intelligence.confidence_calibrator",     # calibra factores por banda de confianza
     "intelligence.rules_optimizer",           # optimiza pesos trend/momentum/signals
     "intelligence.predictor_24h",             # predicción determinística 24h por indicador
-    "scripts.market_report",
-    "scripts.email_report",
-    "scripts.whatsapp_report",
+    "scripts.market_report",                  # prepara report_context.json para Claude (Cowork)
+    # scripts.email_report y scripts.whatsapp_report son ejecutados por Claude
+    # via tarea programada en Cowork (claude-daily-report) — no requieren API key
 ]
 
 

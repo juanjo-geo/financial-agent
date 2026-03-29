@@ -5,13 +5,13 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 import pandas as pd
 from dotenv import load_dotenv
-from openai import OpenAI
 
 SNAPSHOT_FILE  = "data/processed/latest_snapshot.csv"
 HISTORY_FILE   = "data/historical/market_history.csv"
 REPORTS_DIR    = "reports"
 REPORT_FILE    = os.path.join(REPORTS_DIR, "daily_report.txt")
 SIGNALS_FILE   = "data/signals/daily_signals.json"
+CONTEXT_FILE   = "data/processed/report_context.json"
 
 NEWS_QUERIES = {
     "brent":                  "brent crude oil price",
@@ -40,9 +40,9 @@ def build_historical_context():
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
     df = df.dropna(subset=["value"])
 
-    today    = df["timestamp"].max().normalize()
-    d7       = today - pd.Timedelta(days=7)
-    d30      = today - pd.Timedelta(days=30)
+    today = df["timestamp"].max().normalize()
+    d7    = today - pd.Timedelta(days=7)
+    d30   = today - pd.Timedelta(days=30)
 
     def closest_value(indicator_df, target_date):
         subset = indicator_df[indicator_df["timestamp"].dt.normalize() <= target_date]
@@ -78,7 +78,7 @@ def build_historical_context():
 
 
 def fetch_news_google_rss(query, max_headlines=2):
-    """Busca titulares via Google News RSS (sin API key, cobertura en español)."""
+    """Busca titulares via Google News RSS (sin API key)."""
     url = f"https://news.google.com/rss/search?q={requests.utils.quote(query)}&hl=es-CO&gl=CO&ceid=CO:es"
     try:
         resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
@@ -97,10 +97,7 @@ def fetch_news_google_rss(query, max_headlines=2):
 
 
 def fetch_news(indicator, api_key, max_headlines=2):
-    """Retorna titulares para el indicador.
-    - usdcop: usa Google News RSS en español (mejor cobertura Colombia).
-    - otros: NewsAPI con fallback a Google News RSS.
-    """
+    """Retorna titulares para el indicador."""
     query = NEWS_QUERIES.get(indicator, indicator)
 
     if indicator == "usdcop":
@@ -120,14 +117,14 @@ def fetch_news(indicator, api_key, max_headlines=2):
             except Exception as e:
                 print(f"  [news] Error en {url} para {indicator}: {e}")
 
-    # Fallback: Google News RSS en inglés
     return fetch_news_google_rss(query, max_headlines)
 
 
 def build_market_context(df, news_api_key):
     """Construye el contexto de mercado + titulares de noticias por indicador."""
-    market_lines = []
-    news_lines   = []
+    market_lines      = []
+    news_lines        = []
+    news_by_indicator = {}
 
     for _, row in df.iterrows():
         indicator  = row.get("indicator", "unknown")
@@ -148,58 +145,14 @@ def build_market_context(df, news_api_key):
         )
 
         headlines = fetch_news(indicator, news_api_key)
+        news_by_indicator[indicator] = headlines
         if headlines:
             news_lines.append(f"{indicator.upper()}:")
             news_lines.extend(headlines)
         else:
             news_lines.append(f"{indicator.upper()}: sin titulares disponibles")
 
-    market_context = "\n".join(market_lines)
-    news_context   = "\n".join(news_lines)
-
-    return market_context, news_context
-
-
-def generate_report_with_ai(market_context, news_context, historical_context, openai_key):
-    client = OpenAI(api_key=openai_key)
-
-    prompt = f"""
-Eres un analista financiero colombiano que escribe el resumen diario de mercados para un grupo de WhatsApp de empresarios. Tu tono es directo, conversacional y claro — como si le explicaras a un colega inteligente, no a un académico. Usas español colombiano natural, sin jerga innecesaria ni frases rimbombantes.
-
-Datos de hoy:
-{market_context}
-
-Contexto histórico (hoy vs hace 7 y 30 días):
-{historical_context}
-
-Noticias relevantes:
-{news_context}
-
-Escribe el reporte en tres bloques sin títulos de sección, separados por salto de línea:
-
-BLOQUE 1 — QUÉ PASÓ HOY (máx. 100 palabras):
-Cuenta qué hicieron los mercados hoy de forma natural. Varía el vocabulario: el dólar "se fortaleció", "cedió terreno", "se mantuvo quieto"; el petróleo "subió con fuerza", "retrocedió", "cerró plano"; el bitcoin "arrancó bien", "perdió impulso", etc. Cuando el dólar sube, menciona el impacto directo en Colombia (importaciones, deuda en dólares, poder adquisitivo).
-
-BLOQUE 2 — LA TENDENCIA (máx. 80 palabras):
-Sin repetir los números del bloque 1, comenta si los movimientos de hoy son parte de una tendencia o un movimiento aislado. ¿Algo viene cambiando en las últimas semanas?
-
-BLOQUE 3 — EN CONTEXTO (máx. 70 palabras):
-Una lectura general del ambiente de mercado. Termina con una frase corta y directa que resuma el momento, como si cerraras una conversación.
-
-Máximo 250 palabras en total. Sin asteriscos, sin negritas, sin viñetas. Solo texto corrido.
-"""
-
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        max_tokens=800,
-        temperature=0.7,
-        messages=[
-            {"role": "system", "content": "Eres un analista financiero colombiano. Escribes en español natural, directo y sin tecnicismos innecesarios."},
-            {"role": "user",   "content": prompt},
-        ],
-    )
-
-    return response.choices[0].message.content.strip()
+    return "\n".join(market_lines), "\n".join(news_lines), news_by_indicator
 
 
 def build_signals_sections() -> str:
@@ -212,8 +165,8 @@ def build_signals_sections() -> str:
     except Exception:
         return ""
 
-    s = data.get("senales", {})
-    i = data.get("interpretacion", {})
+    s   = data.get("senales", {})
+    i   = data.get("interpretacion", {})
     gen = data.get("generado_en", "")
 
     lines = [
@@ -247,6 +200,39 @@ def build_signals_sections() -> str:
     return "\n".join(lines)
 
 
+def save_report_context(market_context, news_context, historical_context, news_by_indicator):
+    """
+    Guarda todo el contexto necesario para que Claude genere el reporte.
+    Este archivo es leído por la tarea programada de Cowork (claude-daily-report).
+    """
+    os.makedirs("data/processed", exist_ok=True)
+
+    signals_data = {}
+    if os.path.exists(SIGNALS_FILE):
+        try:
+            with open(SIGNALS_FILE, encoding="utf-8") as f:
+                signals_data = json.load(f)
+        except Exception:
+            pass
+
+    context = {
+        "generado_en":          datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "fecha":                datetime.now().strftime("%Y-%m-%d"),
+        "market_context":       market_context,
+        "historical_context":   historical_context,
+        "news_context":         news_context,
+        "news_by_indicator":    news_by_indicator,
+        "signals":              signals_data,
+        "signals_sections_text": build_signals_sections(),
+    }
+
+    with open(CONTEXT_FILE, "w", encoding="utf-8") as f:
+        json.dump(context, f, ensure_ascii=False, indent=2)
+
+    print(f"Contexto guardado en: {CONTEXT_FILE}")
+    return context
+
+
 def save_report(report_text):
     os.makedirs(REPORTS_DIR, exist_ok=True)
     timestamp  = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -264,14 +250,12 @@ def save_report(report_text):
 def main():
     load_dotenv()
 
-    openai_key  = os.getenv("OPENAI_API_KEY")
     news_api_key = os.getenv("NEWS_API_KEY")
 
-    print("Key OpenAI termina en:", openai_key[-6:] if openai_key else "None")
-    print("Buscando noticias y generando reporte...")
+    print("Recolectando datos de mercado y noticias...")
 
     df = load_snapshot()
-    market_context, news_context = build_market_context(df, news_api_key)
+    market_context, news_context, news_by_indicator = build_market_context(df, news_api_key)
     historical_context = build_historical_context()
 
     print("\n--- Titulares obtenidos ---")
@@ -281,13 +265,9 @@ def main():
     print(historical_context)
     print("-" * 30)
 
-    report_text = generate_report_with_ai(market_context, news_context, historical_context, openai_key)
-    signals_sections = build_signals_sections()
-    final_text  = save_report(report_text + signals_sections)
+    save_report_context(market_context, news_context, historical_context, news_by_indicator)
 
-    print("\nReporte generado correctamente:\n")
-    print(final_text)
-    print(f"\nArchivo guardado en: {REPORT_FILE}")
+    print("\nContexto listo. El reporte será generado por Claude (tarea programada de Cowork).")
 
 
 if __name__ == "__main__":
