@@ -1,0 +1,106 @@
+{
+  "fecha": "2026-03-27",
+  "generado_en": "2026-03-27 13:15:41",
+  "predicciones": {
+    "brent": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Leve",
+      "confianza": 4,
+      "confianza_calibrada": 4,
+      "razon": "La tendencia de 7d (-0.81%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -0.8074,
+      "_momentum_pct": 3.3777,
+      "_trend_score": -1.615,
+      "_momentum_score": 1.689,
+      "_signal_score": 0.3,
+      "_total_score": -0.343,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0251,
+      "_weights_used": {
+        "trend": 0.5418,
+        "momentum": 0.2837,
+        "signals": 0.1745
+      }
+    },
+    "btc": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 9,
+      "confianza_calibrada": 6,
+      "razon": "El sesgo de mercado (Risk-off) y el riesgo macro (Alto) sugieren presion bajista para activos especulativos.",
+      "_slope_pct_dia": -0.3287,
+      "_momentum_pct": -3.3064,
+      "_trend_score": -0.657,
+      "_momentum_score": -1.653,
+      "_signal_score": -3.0,
+      "_total_score": -1.349,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 0.6792,
+      "_weights_used": {
+        "trend": 0.5418,
+        "momentum": 0.2837,
+        "signals": 0.1745
+      }
+    },
+    "dxy": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "confianza_calibrada": 5,
+      "razon": "Las senales del dia (sesgo Risk-off, riesgo Alto) podrian reflejar continuacion alcista.",
+      "_slope_pct_dia": 0.0507,
+      "_momentum_pct": 0.1993,
+      "_trend_score": 0.101,
+      "_momentum_score": 0.1,
+      "_signal_score": 1.8,
+      "_total_score": 0.397,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0251,
+      "_weights_used": {
+        "trend": 0.5418,
+        "momentum": 0.2837,
+        "signals": 0.1745
+      }
+    },
+    "usdcop": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "confianza_calibrada": 5,
+      "razon": "La presion COP (Neutral) junto al sesgo (Risk-off) sugieren movimiento lateral o consolidacion en el par.",
+      "_slope_pct_dia": -0.0846,
+      "_momentum_pct": -0.0562,
+      "_trend_score": -0.169,
+      "_momentum_score": -0.028,
+      "_signal_score": 1.3,
+      "_total_score": 0.127,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0251,
+      "_weights_used": {
+        "trend": 0.5418,
+        "momentum": 0.2837,
+        "signals": 0.1745
+      }
+    },
+    "gold": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Leve",
+      "confianza": 6,
+      "confianza_calibrada": 6,
+      "razon": "Las condiciones macro (riesgo Alto, inflacion Alcista) podrian respaldar continuacion alcista en metales preciosos.",
+      "_slope_pct_dia": -0.4135,
+      "_momentum_pct": 2.0724,
+      "_trend_score": -0.827,
+      "_momentum_score": 1.036,
+      "_signal_score": 3.0,
+      "_total_score": 0.369,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0251,
+      "_weights_used": {
+        "trend": 0.5418,
+        "momentum": 0.2837,
+        "signals": 0.1745
+      }
+    }
+  }
+}
