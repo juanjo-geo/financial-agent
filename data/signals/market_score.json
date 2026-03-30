@@ -1,24 +1,24 @@
 {
-  "fecha": "2026-03-29",
-  "generado_en": "2026-03-29 13:04:38",
-  "score": 44,
+  "fecha": "2026-03-30",
+  "generado_en": "2026-03-30 13:42:34",
+  "score": 37,
   "label": "Visibilidad moderada",
   "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Risk-off, riesgo Alto). Se recomienda cautela.",
+  "narrative": "Visibilidad parcial. Regimen INFLACIONARIO pero con senales mixtas (sesgo Risk-off, riesgo Alto). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 5.5,
-      "desc": "Regimen CRISIS (confianza +22pts)",
+      "pts": 1.2,
+      "desc": "Regimen INFLACIONARIO (confianza +5pts)",
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 16.0,
-      "desc": "Conviccion 8/10",
+      "pts": 12.0,
+      "desc": "Conviccion 6/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 13.3,
-      "desc": "Conf. calibrada media 5.3/10 (3 activos)",
+      "pts": 13.1,
+      "desc": "Conf. calibrada media 5.2/10 (4 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 9.6,
-      "desc": "Regime change 36/100 (Transicion)",
+      "pts": 10.7,
+      "desc": "Regime change 29/100 (Estable)",
       "max": 15
     }
   }

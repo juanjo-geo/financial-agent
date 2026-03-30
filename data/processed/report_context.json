@@ -1,0 +1,110 @@
+{
+  "generado_en": "2026-03-30 13:42:39",
+  "fecha": "2026-03-30",
+  "market_context": "Indicador: brent | Valor actual: 107.67 USD/bbl | Apertura: 108.5 USD/bbl | Cambio absoluto: -0.83 | Cambio porcentual: -0.765% | Estado: ok\nIndicador: btc | Valor actual: 67830.0703 USD | Apertura: 65957.6016 USD | Cambio absoluto: 1872.4688 | Cambio porcentual: 2.8389% | Estado: ok\nIndicador: dxy | Valor actual: 100.347 index | Apertura: 100.217 index | Cambio absoluto: 0.13 | Cambio porcentual: 0.1297% | Estado: ok\nIndicador: global_inflation_proxy | Valor actual: 3.0 % | Apertura: 3.0 % | Cambio absoluto: 0.0 | Cambio porcentual: 0.0% | Estado: ok\nIndicador: gold | Valor actual: 4597.1001 USD/oz | Apertura: 4520.0 USD/oz | Cambio absoluto: 77.1001 | Cambio porcentual: 1.7058% | Estado: ok\nIndicador: silver | Valor actual: 69.664 USD/oz | Apertura: 72.83 USD/oz | Cambio absoluto: -3.166 | Cambio porcentual: -4.3471% | Estado: ok\nIndicador: sp500 | Valor actual: 6506.48 USD | Apertura: 6594.6602 USD | Cambio absoluto: -88.1802 | Cambio porcentual: -1.3371% | Estado: ok\nIndicador: usdcop | Valor actual: 3666.48 COP/USD | Apertura: 3671.78 COP/USD | Cambio absoluto: -5.3 | Cambio porcentual: -0.1443% | Estado: ok",
+  "historical_context": "COMPARACION HISTORICA (valor de cierre):\nIndicador                          Hoy      Hace 7d   Var7d%     Hace 30d  Var30d% Unidad\n-------------------------------------------------------------------------------------\nbrent                           107.67        98.92   +8.85%        72.48  +48.55%  USD/bbl\nbtc                          67,830.07    70,840.31   -4.25%    66,995.86   +1.25%  USD\ndxy                             100.35        99.14   +1.22%        97.61   +2.80%  index\nglobal_inflation_proxy            3.00         3.00   +0.00%         3.00   +0.00%  %\ngold                          4,597.10     4,452.10   +3.26%     5,230.50  -12.11%  USD/oz\nsilver                           69.66        69.66   +0.00%        92.68  -24.84%  USD/oz\nsp500                         6,506.48     6,506.48   +0.00%          N/A      N/A  USD\nusdcop                        3,666.48     3,707.54   -1.11%     3,764.29   -2.60%  COP/USD",
+  "news_context": "BRENT:\n- Onchain commodity trading is here to stay, but liquidity remains an issue (Cointelegraph)\n- Some trades ahead of Trump policy moves raise questions (The Times of India)\nBTC:\n- Bitcoin Price Holds Above STH Realized Price As Selling Pressure Thins Out – Details (newsBTC)\n- Ethereum 'flippening' odds rise, but it won't involve Bitcoin (Cointelegraph)\nDXY:\n- Rubino: Fiat Currencies Are In A Death Spiral (Realinvestmentadvice.com)\n- Rupee under pressure: Macro headwinds signal further weakness ahead, says Navneet Damani (The Times of India)\nGLOBAL_INFLATION_PROXY:\n- What smart people are saying about the market sell-off (Business Insider)\n- Dollar Advances as Iran War Rages (Barchart.com)\nGOLD:\n- Bitcoin bounces from 50-day trend line with $72K BTC price now key focus (Cointelegraph)\n- Gold bear market and sub-$50K BTC: Five things to know in Bitcoin this week (Cointelegraph)\nSILVER:\n- 1960 Heinkel Tourist 103 A1 at No Reserve (Bringatrailer.com)\n- SurvivalBlog Graphic of the Week (Survivalblog.com)\nSP500:\n- Momentum Investing Enhanced by Microsoft Foundry-Hosted Large Language Model (R-bloggers.com)\n- jaymd96-index-inclusion added to PyPI (Pypi.org)\nUSDCOP:\n- Precio del dólar en Colombia hoy martes 3 de marzo: TRM y cotización en ciudades - Noticias Caracol (Noticias Caracol)\n- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)",
+  "news_by_indicator": {
+    "brent": [
+      "- Onchain commodity trading is here to stay, but liquidity remains an issue (Cointelegraph)",
+      "- Some trades ahead of Trump policy moves raise questions (The Times of India)"
+    ],
+    "btc": [
+      "- Bitcoin Price Holds Above STH Realized Price As Selling Pressure Thins Out – Details (newsBTC)",
+      "- Ethereum 'flippening' odds rise, but it won't involve Bitcoin (Cointelegraph)"
+    ],
+    "dxy": [
+      "- Rubino: Fiat Currencies Are In A Death Spiral (Realinvestmentadvice.com)",
+      "- Rupee under pressure: Macro headwinds signal further weakness ahead, says Navneet Damani (The Times of India)"
+    ],
+    "global_inflation_proxy": [
+      "- What smart people are saying about the market sell-off (Business Insider)",
+      "- Dollar Advances as Iran War Rages (Barchart.com)"
+    ],
+    "gold": [
+      "- Bitcoin bounces from 50-day trend line with $72K BTC price now key focus (Cointelegraph)",
+      "- Gold bear market and sub-$50K BTC: Five things to know in Bitcoin this week (Cointelegraph)"
+    ],
+    "silver": [
+      "- 1960 Heinkel Tourist 103 A1 at No Reserve (Bringatrailer.com)",
+      "- SurvivalBlog Graphic of the Week (Survivalblog.com)"
+    ],
+    "sp500": [
+      "- Momentum Investing Enhanced by Microsoft Foundry-Hosted Large Language Model (R-bloggers.com)",
+      "- jaymd96-index-inclusion added to PyPI (Pypi.org)"
+    ],
+    "usdcop": [
+      "- Precio del dólar en Colombia hoy martes 3 de marzo: TRM y cotización en ciudades - Noticias Caracol (Noticias Caracol)",
+      "- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)"
+    ]
+  },
+  "signals": {
+    "fecha": "2026-03-30",
+    "generado_en": "2026-03-30 13:42:33",
+    "senales": {
+      "riesgo_macro": "Alto",
+      "sesgo_mercado": "Risk-off",
+      "presion_inflacionaria": "Alcista",
+      "presion_cop": "Neutral",
+      "conviccion": 6
+    },
+    "interpretacion": {
+      "driver_principal": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
+      "driver_secundario": "Bitcoin registro un avance significativo (+2.8%), lo que parece indicar mayor apetito de riesgo en activos especulativos.",
+      "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La confluencia de presion inflacionaria y riesgo macro elevado sugiere un entorno de estanflacion potencial que podria complicar las decisiones de politica monetaria.",
+      "cierre_ejecutivo": "La sesion registra un entorno de riesgo macro elevado, con senales que sugieren cautela en la exposicion a activos de mayor riesgo. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis."
+    },
+    "scores_internos": {
+      "riesgo_score": 4.2,
+      "sesgo_risk_on": 1.0,
+      "sesgo_risk_off": 3.5,
+      "inflacion_score": 2.0,
+      "cop_score": 1.5,
+      "conviccion_razon": "3 indicador(es) con movimiento significativo, 1 contradiccion(es) detectada(s)"
+    },
+    "factores": {
+      "riesgo": {
+        "gold_safe_haven": 1.5,
+        "btc_up": -0.3,
+        "sp500_down": 1.5,
+        "news_geopolitica_alta": 1.5
+      },
+      "inflacion": {
+        "gold_hedge": 0.8,
+        "silver_down": -0.3,
+        "news_inflacion_alta": 1.0,
+        "news_petroleo_alta": 0.5
+      },
+      "cop": {
+        "sp500_weak": 0.5,
+        "news_colombia_alta": 1.0
+      },
+      "sesgo": {
+        "btc": "Risk-on +1 (BTC +2.8%)",
+        "sp500": "Risk-off +1.5 (SP500 -1.3%)",
+        "gold": "Risk-off +1.5 (Oro +1.7%)",
+        "news": "Risk-off +0.5 (noticias apetito_riesgo)"
+      }
+    },
+    "pesos_noticias": {
+      "inflacion": 3,
+      "dolar": 3,
+      "cripto": 3,
+      "petroleo": 3,
+      "colombia": 3,
+      "apetito_riesgo": 3,
+      "geopolitica": 3
+    },
+    "variaciones_mercado": {
+      "brent": -0.765,
+      "btc": 2.8389,
+      "dxy": 0.1297,
+      "global_inflation_proxy": 0.0,
+      "gold": 1.7058,
+      "silver": -4.3471,
+      "sp500": -1.3371,
+      "usdcop": -0.1443
+    }
+  },
+  "signals_sections_text": "\n=======================================================\nSECCIÓN 5 — SEÑALES ACCIONABLES\nGenerado: 2026-03-30 13:42:33\n=======================================================\n  Riesgo Macro           : Alto\n  Sesgo de Mercado       : Risk-off\n  Presión Inflacionaria  : Alcista\n  Presión COP            : Neutral\n  Convicción             : 6/10\n\n=======================================================\nSECCIÓN 6 — INTERPRETACIÓN CAUSAL\n=======================================================\n\nDriver principal:\n  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.\n\nDriver secundario:\n  Bitcoin registro un avance significativo (+2.8%), lo que parece indicar mayor apetito de riesgo en activos especulativos.\n\nLectura cruzada:\n  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La confluencia de presion inflacionaria y riesgo macro elevado sugiere un entorno de estanflacion potencial que podria complicar las decisiones de politica monetaria.\n\nCierre ejecutivo:\n  La sesion registra un entorno de riesgo macro elevado, con senales que sugieren cautela en la exposicion a activos de mayor riesgo. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis."
+}
