@@ -1,0 +1,414 @@
+{
+  "generado_en": "2026-04-01 07:23:46",
+  "meta": {
+    "fecha_inicio": "2026-02-10",
+    "fecha_fin": "2026-03-28",
+    "n_dias": 37
+  },
+  "strategy": {
+    "capital_strategy": 0.926675,
+    "capital_bah": 0.943675,
+    "random_benchmark": 0.97415,
+    "return_strategy_pct": -7.333,
+    "return_bah_pct": -5.632,
+    "return_random_pct": -2.585,
+    "alpha_vs_bah": -1.7,
+    "max_drawdown_strategy": 0.073325,
+    "max_drawdown_bah": 0.145523,
+    "sharpe_strategy": -1.88,
+    "sharpe_bah": -0.84,
+    "n_trades": 37,
+    "n_long": 14,
+    "n_cash": 23,
+    "n_hold": 0,
+    "wins": 6,
+    "losses": 8,
+    "neutral": 0
+  },
+  "signal_btc_correlation": {
+    "Mixto": {
+      "n": 21,
+      "btc_ret_mean": 0.264,
+      "btc_ret_std": 2.842,
+      "pct_positive": 57.1,
+      "pct_negative": 42.9
+    },
+    "Risk-off": {
+      "n": 11,
+      "btc_ret_mean": -0.658,
+      "btc_ret_std": 1.726,
+      "pct_positive": 36.4,
+      "pct_negative": 63.6
+    },
+    "Risk-on": {
+      "n": 5,
+      "btc_ret_mean": -0.608,
+      "btc_ret_std": 1.757,
+      "pct_positive": 20.0,
+      "pct_negative": 80.0
+    },
+    "alta_conviccion": {
+      "n": 5,
+      "btc_ret_mean": -0.671,
+      "pct_positive": 40.0
+    },
+    "baja_conviccion": {
+      "n": 32,
+      "btc_ret_mean": -0.044,
+      "pct_positive": 46.9
+    }
+  },
+  "prediction_accuracy": {
+    "brent": {
+      "accuracy_global": 54.2,
+      "n": 96,
+      "por_direccion": {
+        "Alcista": {
+          "accuracy": 67.5,
+          "n": 40
+        },
+        "Bajista": {
+          "accuracy": 45.8,
+          "n": 24
+        },
+        "Lateral": {
+          "accuracy": 43.8,
+          "n": 32
+        }
+      }
+    },
+    "btc": {
+      "accuracy_global": 45.5,
+      "n": 99,
+      "por_direccion": {
+        "Alcista": {
+          "accuracy": 32.1,
+          "n": 28
+        },
+        "Bajista": {
+          "accuracy": 54.8,
+          "n": 42
+        },
+        "Lateral": {
+          "accuracy": 44.8,
+          "n": 29
+        }
+      }
+    },
+    "dxy": {
+      "accuracy_global": 90.6,
+      "n": 96,
+      "por_direccion": {
+        "Alcista": {
+          "accuracy": 54.5,
+          "n": 11
+        },
+        "Bajista": {
+          "accuracy": 33.3,
+          "n": 6
+        },
+        "Lateral": {
+          "accuracy": 100.0,
+          "n": 79
+        }
+      }
+    },
+    "gold": {
+      "accuracy_global": 57.3,
+      "n": 96,
+      "por_direccion": {
+        "Alcista": {
+          "accuracy": 50.0,
+          "n": 46
+        },
+        "Bajista": {
+          "accuracy": 60.0,
+          "n": 30
+        },
+        "Lateral": {
+          "accuracy": 70.0,
+          "n": 20
+        }
+      }
+    },
+    "usdcop": {
+      "accuracy_global": 62.6,
+      "n": 99,
+      "por_direccion": {
+        "Alcista": {
+          "accuracy": 23.1,
+          "n": 13
+        },
+        "Bajista": {
+          "accuracy": 14.3,
+          "n": 21
+        },
+        "Lateral": {
+          "accuracy": 86.2,
+          "n": 65
+        }
+      }
+    }
+  },
+  "trades": [
+    {
+      "date": "2026-02-10",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": -2.619,
+      "ret_strat": -2.619
+    },
+    {
+      "date": "2026-02-11",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -1.15,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-12",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 3.981,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-13",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 1.321,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-16",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": -1.959,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-17",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": -1.584,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-18",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": 0.801,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-19",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 1.565,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-20",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": -0.002,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-23",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -0.831,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-24",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 6.055,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-02-25",
+      "sesgo": "Risk-on",
+      "position": "LONG",
+      "ret_btc": -0.745,
+      "ret_strat": -0.745
+    },
+    {
+      "date": "2026-02-26",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": -2.33,
+      "ret_strat": -2.33
+    },
+    {
+      "date": "2026-02-27",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": 1.691,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-02",
+      "sesgo": "Risk-on",
+      "position": "LONG",
+      "ret_btc": -0.701,
+      "ret_strat": -0.701
+    },
+    {
+      "date": "2026-03-03",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": 6.468,
+      "ret_strat": 6.468
+    },
+    {
+      "date": "2026-03-04",
+      "sesgo": "Risk-on",
+      "position": "LONG",
+      "ret_btc": -2.571,
+      "ret_strat": -2.571
+    },
+    {
+      "date": "2026-03-05",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": -3.818,
+      "ret_strat": -3.818
+    },
+    {
+      "date": "2026-03-06",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -1.268,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-09",
+      "sesgo": "Risk-on",
+      "position": "LONG",
+      "ret_btc": 2.229,
+      "ret_strat": 2.229
+    },
+    {
+      "date": "2026-03-10",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": 0.398,
+      "ret_strat": 0.398
+    },
+    {
+      "date": "2026-03-11",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": 0.411,
+      "ret_strat": 0.411
+    },
+    {
+      "date": "2026-03-12",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": 0.674,
+      "ret_strat": 0.674
+    },
+    {
+      "date": "2026-03-13",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": 0.347,
+      "ret_strat": 0.347
+    },
+    {
+      "date": "2026-03-16",
+      "sesgo": "Risk-on",
+      "position": "LONG",
+      "ret_btc": -1.254,
+      "ret_strat": -1.254
+    },
+    {
+      "date": "2026-03-17",
+      "sesgo": "Mixto",
+      "position": "LONG",
+      "ret_btc": -3.621,
+      "ret_strat": -3.621
+    },
+    {
+      "date": "2026-03-18",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -1.871,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-19",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 0.872,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-20",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": -2.568,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-21",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 0.165,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-22",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": 2.929,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-23",
+      "sesgo": "Mixto",
+      "position": "CASH",
+      "ret_btc": -1.144,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-24",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": 1.259,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-25",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -2.117,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-26",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -4.186,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-27",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": -0.146,
+      "ret_strat": 0.0
+    },
+    {
+      "date": "2026-03-28",
+      "sesgo": "Risk-off",
+      "position": "CASH",
+      "ret_btc": 0.573,
+      "ret_strat": 0.0
+    }
+  ]
+}

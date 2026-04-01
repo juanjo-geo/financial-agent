@@ -1,0 +1,97 @@
+BACKTEST — AGENTE FINANCIERO AUTÓNOMO
+Generado: 2026-04-01 07:23:46
+Período evaluado: 2026-02-10 → 2026-03-28  (37 días con señal y precio BTC)
+============================================================
+
+SECCIÓN 1 — RENDIMIENTO ESTRATEGIA vs BENCHMARKS
+------------------------------------------------------------
+  Estrategia señal-driven : -7.33%
+  Buy & Hold BTC          : -5.63%
+  Benchmark aleatorio     : -2.59%
+  Alpha vs B&H            : -1.70%
+  Alpha vs aleatorio      : -4.75%
+
+SECCIÓN 2 — MÉTRICAS DE RIESGO
+------------------------------------------------------------
+  Max Drawdown estrategia : 7.33%
+  Max Drawdown B&H        : 14.55%
+  Sharpe ratio estrategia : -1.88
+  Sharpe ratio B&H        : -0.84
+
+SECCIÓN 3 — ESTADÍSTICAS DE OPERACIONES
+------------------------------------------------------------
+  Días con señal (n)      : 37
+  Días LONG (Risk-on)     : 14
+  Días CASH (Risk-off)    : 23
+  Días HOLD (Mixto)       : 0
+  Win rate (días en LONG) : 42.9%
+  Victorias / Derrotas    : 6 / 8
+
+SECCIÓN 4 — CORRELACIÓN SEÑAL → RETORNO BTC (DÍA SIGUIENTE)
+------------------------------------------------------------
+  Risk-on     : n=  5  BTC_ret_med= -0.608%  % positivos= 20.0%
+  Risk-off    : n= 11  BTC_ret_med= -0.658%  % positivos= 36.4%
+  Mixto       : n= 21  BTC_ret_med= +0.264%  % positivos= 57.1%
+
+  Convicción ≥7            :
+    n=5  BTC_ret_med= -0.671%  % positivos= 40.0%
+  Convicción <7            :
+    n=32  BTC_ret_med= -0.044%  % positivos= 46.9%
+
+SECCIÓN 5 — PRECISIÓN DE PREDICCIONES 24H
+------------------------------------------------------------
+  brent     :  54.2% accuracy  (n=96)
+  btc       :  45.5% accuracy  (n=99)
+  dxy       :  90.6% accuracy  (n=96)
+  gold      :  57.3% accuracy  (n=96)
+  usdcop    :  62.6% accuracy  (n=99)
+
+SECCIÓN 6 — INTERPRETACIÓN
+------------------------------------------------------------
+  La estrategia señal-driven queda por debajo del buy & hold en -1.70%.
+  Esto sugiere que la política de salirse en Risk-off perdió más upside del que protegió.
+  El diferencial de retorno BTC entre Risk-on y Risk-off es +0.050%,
+  diferencial pequeño — las señales aún no discriminan fuertemente entre regímenes.
+  Con convicción ≥7 (n=5), el retorno medio de BTC es -0.671% con 40% de días positivos.
+
+SECCIÓN 7 — OPERACIONES DETALLE
+------------------------------------------------------------
+  Fecha        Señal      Posición    BTC%   Strat%
+  ------------ ---------- -------- ------- --------
+  2026-02-10   Mixto      LONG      -2.619   -2.619
+  2026-02-11   Risk-off   CASH      -1.150   +0.000
+  2026-02-12   Mixto      CASH      +3.981   +0.000
+  2026-02-13   Mixto      CASH      +1.321   +0.000
+  2026-02-16   Mixto      CASH      -1.959   +0.000
+  2026-02-17   Mixto      CASH      -1.584   +0.000
+  2026-02-18   Risk-off   CASH      +0.801   +0.000
+  2026-02-19   Mixto      CASH      +1.565   +0.000
+  2026-02-20   Mixto      CASH      -0.002   +0.000
+  2026-02-23   Risk-off   CASH      -0.831   +0.000
+  2026-02-24   Mixto      CASH      +6.055   +0.000
+  2026-02-25   Risk-on    LONG      -0.745   -0.745
+  2026-02-26   Mixto      LONG      -2.330   -2.330
+  2026-02-27   Risk-off   CASH      +1.691   +0.000
+  2026-03-02   Risk-on    LONG      -0.701   -0.701
+  2026-03-03   Mixto      LONG      +6.468   +6.468
+  2026-03-04   Risk-on    LONG      -2.571   -2.571
+  2026-03-05   Mixto      LONG      -3.818   -3.818
+  2026-03-06   Risk-off   CASH      -1.268   +0.000
+  2026-03-09   Risk-on    LONG      +2.229   +2.229
+  2026-03-10   Mixto      LONG      +0.398   +0.398
+  2026-03-11   Mixto      LONG      +0.411   +0.411
+  2026-03-12   Mixto      LONG      +0.674   +0.674
+  2026-03-13   Mixto      LONG      +0.347   +0.347
+  2026-03-16   Risk-on    LONG      -1.254   -1.254
+  2026-03-17   Mixto      LONG      -3.621   -3.621
+  2026-03-18   Risk-off   CASH      -1.871   +0.000
+  2026-03-19   Mixto      CASH      +0.872   +0.000
+  2026-03-20   Mixto      CASH      -2.568   +0.000
+  2026-03-21   Mixto      CASH      +0.165   +0.000
+  2026-03-22   Mixto      CASH      +2.929   +0.000
+  2026-03-23   Mixto      CASH      -1.144   +0.000
+  2026-03-24   Risk-off   CASH      +1.259   +0.000
+  2026-03-25   Risk-off   CASH      -2.117   +0.000
+  2026-03-26   Risk-off   CASH      -4.186   +0.000
+  2026-03-27   Risk-off   CASH      -0.146   +0.000
+  2026-03-28   Risk-off   CASH      +0.573   +0.000
