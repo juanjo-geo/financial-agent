@@ -1,10 +1,10 @@
 import json
 import os
-import requests
-import xml.etree.ElementTree as ET
 from datetime import datetime
 import pandas as pd
 from dotenv import load_dotenv
+
+from scripts.news_collector import get_headlines
 
 SNAPSHOT_FILE  = "data/processed/latest_snapshot.csv"
 HISTORY_FILE   = "data/historical/market_history.csv"
@@ -12,15 +12,6 @@ REPORTS_DIR    = "reports"
 REPORT_FILE    = os.path.join(REPORTS_DIR, "daily_report.txt")
 SIGNALS_FILE   = "data/signals/daily_signals.json"
 CONTEXT_FILE   = "data/processed/report_context.json"
-
-NEWS_QUERIES = {
-    "brent":                  "brent crude oil price",
-    "btc":                    "bitcoin BTC crypto",
-    "dxy":                    "US dollar DXY index",
-    "usdcop":                 "peso colombiano dolar COP Colombia",
-    "global_inflation_proxy": "global inflation CPI",
-    "gold":                   "gold price XAU USD",
-}
 
 
 def load_snapshot():
@@ -77,47 +68,9 @@ def build_historical_context():
     return "\n".join(lines)
 
 
-def fetch_news_google_rss(query, max_headlines=2):
-    """Busca titulares via Google News RSS (sin API key)."""
-    url = f"https://news.google.com/rss/search?q={requests.utils.quote(query)}&hl=es-CO&gl=CO&ceid=CO:es"
-    try:
-        resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
-        root = ET.fromstring(resp.content)
-        items = root.findall(".//item")[:max_headlines]
-        results = []
-        for item in items:
-            title  = item.findtext("title", "").strip()
-            source = item.findtext("source", "Google News").strip()
-            if title:
-                results.append(f"- {title} ({source})")
-        return results
-    except Exception as e:
-        print(f"  [rss] Error Google News RSS: {e}")
-        return []
-
-
 def fetch_news(indicator, api_key, max_headlines=2):
-    """Retorna titulares para el indicador."""
-    query = NEWS_QUERIES.get(indicator, indicator)
-
-    if indicator == "usdcop":
-        return fetch_news_google_rss("peso colombiano dolar TRM Colombia", max_headlines)
-
-    if api_key:
-        for url, params in [
-            ("https://newsapi.org/v2/top-headlines", {"q": query, "language": "en", "pageSize": max_headlines}),
-            ("https://newsapi.org/v2/everything",    {"q": query, "language": "en", "sortBy": "publishedAt", "pageSize": max_headlines}),
-        ]:
-            try:
-                params["apiKey"] = api_key
-                resp     = requests.get(url, params=params, timeout=10)
-                articles = resp.json().get("articles", [])
-                if articles:
-                    return [f"- {a['title']} ({a['source']['name']})" for a in articles]
-            except Exception as e:
-                print(f"  [news] Error en {url} para {indicator}: {e}")
-
-    return fetch_news_google_rss(query, max_headlines)
+    """Retorna titulares para el indicador usando news_collector centralizado."""
+    return get_headlines(indicator, api_key, max_results=max_headlines)
 
 
 def build_market_context(df, news_api_key):
@@ -208,12 +161,24 @@ def save_report_context(market_context, news_context, historical_context, news_b
     os.makedirs("data/processed", exist_ok=True)
 
     signals_data = {}
+    signals_age_days = None
     if os.path.exists(SIGNALS_FILE):
         try:
             with open(SIGNALS_FILE, encoding="utf-8") as f:
                 signals_data = json.load(f)
-        except Exception:
-            pass
+            # Calcular antigüedad de las señales
+            sig_date_str = signals_data.get("fecha", "")
+            if sig_date_str:
+                sig_date = datetime.strptime(sig_date_str, "%Y-%m-%d")
+                signals_age_days = (datetime.now() - sig_date).days
+                if signals_age_days > 1:
+                    print(f"  [AVISO] Señales del agente tienen {signals_age_days} días de antigüedad ({sig_date_str})")
+        except Exception as e:
+            print(f"  [AVISO] Error leyendo señales: {e}")
+
+    # Conteo de indicadores con/sin noticias
+    news_count = sum(1 for v in news_by_indicator.values() if v)
+    news_total = len(news_by_indicator)
 
     context = {
         "generado_en":          datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -222,7 +187,9 @@ def save_report_context(market_context, news_context, historical_context, news_b
         "historical_context":   historical_context,
         "news_context":         news_context,
         "news_by_indicator":    news_by_indicator,
+        "news_coverage":        f"{news_count}/{news_total} indicadores con noticias",
         "signals":              signals_data,
+        "signals_age_days":     signals_age_days,
         "signals_sections_text": build_signals_sections(),
     }
 

@@ -1,11 +1,18 @@
 import json
 import os
+import sys
 from datetime import datetime
 
 from dotenv import load_dotenv
 from twilio.rest import Client
 
 from scripts.load_config import load_config
+
+# ── Fix encoding para Windows (cp1252 no soporta emojis) ────────────────────
+if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf8"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if sys.stderr.encoding and sys.stderr.encoding.lower() not in ("utf-8", "utf8"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 REPORT_FILE  = "reports/daily_report.txt"
 SIGNALS_FILE = "data/signals/daily_signals.json"
