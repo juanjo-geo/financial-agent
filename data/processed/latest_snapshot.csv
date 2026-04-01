@@ -1,9 +1,9 @@
 indicator,timestamp,value,open_value,change_abs,change_pct,unit,source,status
-brent,2026-03-31,107.85,108.99,-1.14,-1.046,USD/bbl,yfinance,ok
-btc,2026-03-31,66862.8281,66727.5234,135.3047,0.2028,USD,yfinance,ok
-dxy,2026-03-31,100.129,100.585,-0.456,-0.4533,index,yfinance,ok
+brent,2026-04-01,101.74,103.9,-2.16,-2.0789,USD/bbl,yfinance,ok
+btc,2026-04-01,68487.9062,68224.4688,263.4375,0.3861,USD,yfinance,ok
+dxy,2026-04-01,99.355,99.785,-0.43,-0.4309,index,yfinance,ok
 global_inflation_proxy,2026-03-21,3.0,3.0,0.0,0.0,%,manual_proxy,ok
-gold,2026-03-31,4603.7998,4538.8999,64.8999,1.4299,USD/oz,yfinance,ok
+gold,2026-04-01,4766.2998,4698.3999,67.8999,1.4452,USD/oz,yfinance,ok
 silver,2026-03-21,69.664,72.83,-3.166,-4.3471,USD/oz,yfinance,ok
 sp500,2026-03-21,6506.48,6594.6602,-88.1802,-1.3371,USD,yfinance,ok
-usdcop,2026-03-31,3658.3601,3653.6101,4.75,0.13,COP/USD,yfinance,ok
+usdcop,2026-04-01,3692.0,3666.6799,25.3201,0.6905,COP/USD,yfinance,ok
