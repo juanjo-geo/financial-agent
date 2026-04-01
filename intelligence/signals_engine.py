@@ -26,6 +26,7 @@ SNAPSHOT_FILE        = ROOT / "data/processed/latest_snapshot.csv"
 WEIGHTS_FILE         = ROOT / "data/signals/news_weights.json"
 OUTPUT_FILE          = ROOT / "data/signals/signals_engine_output.json"
 SIGNALS_HISTORY_FILE = ROOT / "data/signals/signals_history.csv"
+ADAPTIVE_FILE        = ROOT / "data/signals/adaptive_weights.json"
 
 HISTORY_COLS = [
     "fecha", "riesgo_macro", "sesgo_mercado", "presion_inflacionaria",
@@ -473,9 +474,34 @@ def append_signals_history(
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def _load_adaptive_weights() -> dict[str, float]:
+    """Retorna {indicator: multiplicador} desde adaptive_weights.json."""
+    if not ADAPTIVE_FILE.exists():
+        return {}
+    try:
+        with open(ADAPTIVE_FILE, "rb") as f:
+            raw = f.read().rstrip(b"\x00")
+        data = json.loads(raw.decode("utf-8"))
+        return {k: v["multiplicador"] for k, v in data.get("pesos", {}).items()}
+    except Exception:
+        return {}
+
+
+def _apply_adaptive_weights(
+    changes: dict[str, float],
+    multipliers: dict[str, float],
+) -> dict[str, float]:
+    """Escala las variaciones de precio según los multiplicadores adaptativos."""
+    if not multipliers:
+        return changes
+    return {k: v * multipliers.get(k, 1.0) for k, v in changes.items()}
+
+
 def run_signals_engine() -> dict:
-    changes = _load_changes()
-    nw      = _load_news_weights()
+    changes_raw  = _load_changes()
+    nw           = _load_news_weights()
+    multipliers  = _load_adaptive_weights()
+    changes      = _apply_adaptive_weights(changes_raw, multipliers)
 
     riesgo,    riesgo_score,    riesgo_factors    = compute_riesgo_macro(changes, nw)
     sesgo,     sesgo_detail                       = compute_sesgo_mercado(changes, nw)
@@ -513,8 +539,10 @@ def run_signals_engine() -> dict:
             "cop":       cop_factors,
             "sesgo":     sesgo_detail["details"],
         },
-        "pesos_noticias":      nw,
-        "variaciones_mercado": changes,
+        "pesos_noticias":        nw,
+        "variaciones_mercado":   changes_raw,
+        "variaciones_ajustadas": changes,
+        "multiplicadores_activos": multipliers,
     }
 
 
