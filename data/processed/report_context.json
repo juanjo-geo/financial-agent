@@ -1,0 +1,110 @@
+{
+  "generado_en": "2026-03-31 13:42:35",
+  "fecha": "2026-03-31",
+  "market_context": "Indicador: brent | Valor actual: 107.85 USD/bbl | Apertura: 108.99 USD/bbl | Cambio absoluto: -1.14 | Cambio porcentual: -1.046% | Estado: ok\nIndicador: btc | Valor actual: 66862.8281 USD | Apertura: 66727.5234 USD | Cambio absoluto: 135.3047 | Cambio porcentual: 0.2028% | Estado: ok\nIndicador: dxy | Valor actual: 100.129 index | Apertura: 100.585 index | Cambio absoluto: -0.456 | Cambio porcentual: -0.4533% | Estado: ok\nIndicador: global_inflation_proxy | Valor actual: 3.0 % | Apertura: 3.0 % | Cambio absoluto: 0.0 | Cambio porcentual: 0.0% | Estado: ok\nIndicador: gold | Valor actual: 4603.7998 USD/oz | Apertura: 4538.8999 USD/oz | Cambio absoluto: 64.8999 | Cambio porcentual: 1.4299% | Estado: ok\nIndicador: silver | Valor actual: 69.664 USD/oz | Apertura: 72.83 USD/oz | Cambio absoluto: -3.166 | Cambio porcentual: -4.3471% | Estado: ok\nIndicador: sp500 | Valor actual: 6506.48 USD | Apertura: 6594.6602 USD | Cambio absoluto: -88.1802 | Cambio porcentual: -1.3371% | Estado: ok\nIndicador: usdcop | Valor actual: 3658.3601 COP/USD | Apertura: 3653.6101 COP/USD | Cambio absoluto: 4.75 | Cambio porcentual: 0.13% | Estado: ok",
+  "historical_context": "COMPARACION HISTORICA (valor de cierre):\nIndicador                          Hoy      Hace 7d   Var7d%     Hace 30d  Var30d% Unidad\n-------------------------------------------------------------------------------------\nbrent                           107.85       102.70   +5.01%        72.48  +48.80%  USD/bbl\nbtc                          66,862.83    70,029.72   -4.52%    65,738.10   +1.71%  USD\ndxy                             100.13        99.35   +0.79%        97.61   +2.58%  index\nglobal_inflation_proxy            3.00         3.00   +0.00%         3.00   +0.00%  %\ngold                          4,603.80     4,420.70   +4.14%     5,230.50  -11.98%  USD/oz\nsilver                           69.66        69.66   +0.00%        92.68  -24.84%  USD/oz\nsp500                         6,506.48     6,506.48   +0.00%          N/A      N/A  USD\nusdcop                        3,658.36     3,704.29   -1.24%     3,764.29   -2.81%  COP/USD",
+  "news_context": "BRENT:\n- Brent Crude: Conflict Premium Plummets as Geopolitical Tensions Ease – DBS Analysis - CryptoRank (CryptoRank)\n- Why Alphabet (GOOGL) Shares Are Falling Today - TradingView (TradingView)\nBTC:\n- Se intensifica el sentimiento bajista en criptomonedas a medida que aumentan la volatilidad y la cobertura - CoinDesk (CoinDesk)\n- BTC a USD: valor de precio de Bitcoin hoy en US Dollar - coingecko.com (coingecko.com)\nDXY:\n- Gold Macro Regime (DXY + VIX): indicador de jacobrholland - TradingView (TradingView)\n- Perspectiva del dólar: el DXY sube mientras el euro se debilita por temores de crecimiento; las tensiones refuerzan la demanda de valores refugio - FXEmpire (FXEmpire)\nGLOBAL_INFLATION_PROXY:\n- Preview: Japan’s March Tokyo CPI Forecast to Show Tame Core and Overall Inflation Below BOJ’s 2% Target on Energy Subsidies, Easing Food Markups - TradingView (TradingView)\n- Bitcoin rebota en el IPC plano de EE. UU. mientras el precio del petróleo se enfría con la liberación de 400M de barriles - Binance (Binance)\nGOLD:\n- XAU/EUR Price - Gold CFD Trading - FOREX.com LATAM - FOREX.com (FOREX.com)\n- Will Gold (XAUUSD) hit Week of March 30 2026? Cuotas de apuestas y predicciones (Mar. 27, 2026) - Polymarket (Polymarket)\nSILVER:\n- Adam Silver anuncia cambios en el sistema del draft - ESPN Colombia (ESPN Colombia)\n- Rio Silver capta US$ 3 millones para proyecto María Norte - Rumbo Minero (Rumbo Minero)\nSP500:\n- ¿Qué nos dicen los 100 años de historia del S&P 500 sobre los desplomes? - Estrategias de Inversión (Estrategias de Inversión)\n- S&P 500 Bajo Presión tras Nuevas Señales de Debilidad - DailyForex (DailyForex)\nUSDCOP:\n- Dólar (TRM hoy) en Colombia, [Divisa hoy Actualizada] - mascolombia.com (mascolombia.com)\n- Precio del dólar en Colombia hoy martes 3 de marzo: TRM y cotización en ciudades - Noticias Caracol (Noticias Caracol)",
+  "news_by_indicator": {
+    "brent": [
+      "- Brent Crude: Conflict Premium Plummets as Geopolitical Tensions Ease – DBS Analysis - CryptoRank (CryptoRank)",
+      "- Why Alphabet (GOOGL) Shares Are Falling Today - TradingView (TradingView)"
+    ],
+    "btc": [
+      "- Se intensifica el sentimiento bajista en criptomonedas a medida que aumentan la volatilidad y la cobertura - CoinDesk (CoinDesk)",
+      "- BTC a USD: valor de precio de Bitcoin hoy en US Dollar - coingecko.com (coingecko.com)"
+    ],
+    "dxy": [
+      "- Gold Macro Regime (DXY + VIX): indicador de jacobrholland - TradingView (TradingView)",
+      "- Perspectiva del dólar: el DXY sube mientras el euro se debilita por temores de crecimiento; las tensiones refuerzan la demanda de valores refugio - FXEmpire (FXEmpire)"
+    ],
+    "global_inflation_proxy": [
+      "- Preview: Japan’s March Tokyo CPI Forecast to Show Tame Core and Overall Inflation Below BOJ’s 2% Target on Energy Subsidies, Easing Food Markups - TradingView (TradingView)",
+      "- Bitcoin rebota en el IPC plano de EE. UU. mientras el precio del petróleo se enfría con la liberación de 400M de barriles - Binance (Binance)"
+    ],
+    "gold": [
+      "- XAU/EUR Price - Gold CFD Trading - FOREX.com LATAM - FOREX.com (FOREX.com)",
+      "- Will Gold (XAUUSD) hit Week of March 30 2026? Cuotas de apuestas y predicciones (Mar. 27, 2026) - Polymarket (Polymarket)"
+    ],
+    "silver": [
+      "- Adam Silver anuncia cambios en el sistema del draft - ESPN Colombia (ESPN Colombia)",
+      "- Rio Silver capta US$ 3 millones para proyecto María Norte - Rumbo Minero (Rumbo Minero)"
+    ],
+    "sp500": [
+      "- ¿Qué nos dicen los 100 años de historia del S&P 500 sobre los desplomes? - Estrategias de Inversión (Estrategias de Inversión)",
+      "- S&P 500 Bajo Presión tras Nuevas Señales de Debilidad - DailyForex (DailyForex)"
+    ],
+    "usdcop": [
+      "- Dólar (TRM hoy) en Colombia, [Divisa hoy Actualizada] - mascolombia.com (mascolombia.com)",
+      "- Precio del dólar en Colombia hoy martes 3 de marzo: TRM y cotización en ciudades - Noticias Caracol (Noticias Caracol)"
+    ]
+  },
+  "signals": {
+    "fecha": "2026-03-31",
+    "generado_en": "2026-03-31 13:42:24",
+    "senales": {
+      "riesgo_macro": "Medio",
+      "sesgo_mercado": "Risk-off",
+      "presion_inflacionaria": "Neutral",
+      "presion_cop": "Neutral",
+      "conviccion": 6
+    },
+    "interpretacion": {
+      "driver_principal": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
+      "driver_secundario": "El oro subio moderadamente (+1.4%), con cierta demanda como activo de cobertura.",
+      "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad.",
+      "cierre_ejecutivo": "El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. Sin senales inflacionarias ni cambiarias dominantes, el escenario para Colombia se mantiene en un rango de incertidumbre manejable. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis."
+    },
+    "scores_internos": {
+      "riesgo_score": 3.5,
+      "sesgo_risk_on": 0.0,
+      "sesgo_risk_off": 3.5,
+      "inflacion_score": 0.0,
+      "cop_score": 1.0,
+      "conviccion_razon": "1 indicador(es) con movimiento significativo"
+    },
+    "factores": {
+      "riesgo": {
+        "gold_up": 0.5,
+        "sp500_down": 1.5,
+        "news_geopolitica_alta": 1.5
+      },
+      "inflacion": {
+        "brent_weak": -1.5,
+        "gold_up": 0.3,
+        "silver_down": -0.3,
+        "news_inflacion_alta": 1.0,
+        "news_petroleo_alta": 0.5
+      },
+      "cop": {
+        "dxy_mild_down": -0.5,
+        "sp500_weak": 0.5,
+        "news_colombia_alta": 1.0
+      },
+      "sesgo": {
+        "sp500": "Risk-off +1.5 (SP500 -1.3%)",
+        "gold": "Risk-off +1.5 (Oro +1.4%)",
+        "news": "Risk-off +0.5 (noticias apetito_riesgo)"
+      }
+    },
+    "pesos_noticias": {
+      "petroleo": 3,
+      "dolar": 3,
+      "inflacion": 3,
+      "cripto": 3,
+      "colombia": 3,
+      "apetito_riesgo": 3,
+      "geopolitica": 3
+    },
+    "variaciones_mercado": {
+      "brent": -1.046,
+      "btc": 0.2028,
+      "dxy": -0.4533,
+      "global_inflation_proxy": 0.0,
+      "gold": 1.4299,
+      "silver": -4.3471,
+      "sp500": -1.3371,
+      "usdcop": 0.13
+    }
+  },
+  "signals_sections_text": "\n=======================================================\nSECCIÓN 5 — SEÑALES ACCIONABLES\nGenerado: 2026-03-31 13:42:24\n=======================================================\n  Riesgo Macro           : Medio\n  Sesgo de Mercado       : Risk-off\n  Presión Inflacionaria  : Neutral\n  Presión COP            : Neutral\n  Convicción             : 6/10\n\n=======================================================\nSECCIÓN 6 — INTERPRETACIÓN CAUSAL\n=======================================================\n\nDriver principal:\n  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.\n\nDriver secundario:\n  El oro subio moderadamente (+1.4%), con cierta demanda como activo de cobertura.\n\nLectura cruzada:\n  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad.\n\nCierre ejecutivo:\n  El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. Sin senales inflacionarias ni cambiarias dominantes, el escenario para Colombia se mantiene en un rango de incertidumbre manejable. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis."
+}
