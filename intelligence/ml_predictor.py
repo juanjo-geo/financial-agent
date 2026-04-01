@@ -49,11 +49,13 @@ PREDICTION_FILE  = ROOT / "data/signals/ml_prediction_hoy.json"
 DAILY_SIGNALS    = ROOT / "data/signals/daily_signals.json"
 
 INDICATORS = ["btc", "brent", "gold", "silver", "dxy", "sp500", "usdcop",
-              "global_inflation_proxy"]
+              "eurusd", "nasdaq", "wti"]
+# NOTA: global_inflation_proxy excluido (sin ticker yfinance → datos desde nov-2025 solo)
+# Los indicadores listados tienen 500+ días de historial desde backfill_extended.py
 
 TARGET_THRESHOLD = 0.5   # % mínimo para clasificar como Alcista/Bajista
 LAG_DAYS         = 2     # cuántos días de lags usar
-MIN_TRAIN_ROWS   = 40    # mínimo de filas para entrenar
+MIN_TRAIN_ROWS   = 30    # mínimo de filas para entrenar
 
 
 # ── Feature engineering ───────────────────────────────────────────────────────
