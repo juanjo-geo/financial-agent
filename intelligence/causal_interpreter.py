@@ -345,8 +345,16 @@ def main():
     result = run_causal_interpreter()
 
     DAILY_SIGNALS.parent.mkdir(parents=True, exist_ok=True)
-    with open(DAILY_SIGNALS, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
+
+    # Escritura atómica: escribir en .tmp y luego renombrar para evitar
+    # null-bytes residuales en NTFS cuando el nuevo archivo es más corto.
+    import os
+    tmp_path = DAILY_SIGNALS.with_suffix(".tmp")
+    tmp_path.write_text(
+        json.dumps(result, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    os.replace(tmp_path, DAILY_SIGNALS)
 
     interp = result["interpretacion"]
     print(f"\n  Driver principal  : {interp['driver_principal']}")

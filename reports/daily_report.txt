@@ -1,34 +1,37 @@
 REPORTE DIARIO DE MERCADO
-Generado: 2026-03-29 13:04:48
+Generado: 2026-03-31 13:42:35
+NOTA DE LOG: git pull bloqueado por restricción de red del entorno (HTTP 403); se usaron datos locales sincronizados del pipeline (report_context.json generado a las 13:42 hora local).
 --------------------------------------------------
 
-Hoy los mercados mostraron movimientos mixtos. El petróleo Brent subió con fuerza, alcanzando un nuevo pico, mientras que el bitcoin arrancó bien pero perdió impulso al final. El dólar se mantuvo quieto en Colombia, lo que significa que las importaciones siguen estables, pero no se ve un alivio en el costo de la deuda en dólares. La plata, por su parte, retrocedió, lo que genera preocupación entre los inversionistas.
+La jornada del 31 de marzo arrancó con una lectura mixta pero con sesgo claramente defensivo. El oro se llevó el protagonismo del día subiendo un 1.43% hasta los USD 4,603.80 por onza, comportándose como el activo refugio clásico en medio de un ambiente de aversión al riesgo. En contraste, la plata cedió con fuerza un 4.35% cerrando en USD 69.66, una divergencia llamativa frente a su primo precioso que sugiere que los flujos del día favorecieron la calidad sobre el ciclo. El S&P 500 retrocedió 1.34% hasta los 6,506 puntos, mientras el Brent aflojó un 1.05% a USD 107.85 por barril —posiblemente por la distensión geopolítica que habría eliminado parte de la prima de conflicto. Bitcoin se mantuvo relativamente estable con un avance marginal del 0.20% a USD 66,862, y el dólar estadounidense (DXY) retrocedió 0.45% a 100.13 puntos. El USD/COP se mantuvo prácticamente plano en 3,658.
 
-Los movimientos de hoy parecen ser parte de una tendencia más amplia, donde el petróleo sigue beneficiándose de tensiones geopolíticas, mientras que el bitcoin navega en un ambiente incierto. La reciente volatilidad en las criptomonedas ha mantenido a los inversionistas en alerta, y el oro ha tenido un desempeño irregular en medio de estas circunstancias.
+En el contexto histórico, los movimientos de hoy cobran mayor relevancia. El Brent acumula un alza descomunal del 48.80% en los últimos 30 días, lo que podría estar generando presión inflacionaria latente aunque los indicadores de inflación global sigan neutrales. El oro, pese a su rebote diario, cede un 11.98% frente a hace un mes, lo que sugiere que aún está procesando una corrección desde máximos recientes. La plata, por su parte, acumula una caída del 24.84% en el mismo período, lo que podría indicar debilidad en la demanda industrial global. Bitcoin se mantiene apenas un 1.71% por encima de hace 30 días pero cayó 4.52% frente a la semana pasada, reflejando el sentimiento bajista que se intensifica en el mercado cripto según los titulares del sector.
 
-El clima del mercado sigue siendo tenso, especialmente con la guerra en curso y su impacto en la inflación global. Mantente atento, ya que las próximas semanas podrían traer más sorpresas.
+El panorama general parece reflejar un mercado a la defensiva, donde los inversionistas privilegian activos de resguardo mientras las señales de ciclo —plata, petróleo, renta variable— ceden terreno. Para BTC, el entorno Risk-off con convicción 6/10 no es el más favorable para apuestas alcistas agresivas; el precio podría encontrar soporte técnico en la zona actual, pero la presión del mercado amplio y el sentimiento cripto bajista aconsejan prudencia y esperar confirmación antes de aumentar exposición.
+
+
 =======================================================
 SECCIÓN 5 — SEÑALES ACCIONABLES
-Generado: 2026-03-29 13:04:36
+Generado: 2026-03-31 13:42:24
 =======================================================
-  Riesgo Macro           : Alto
+  Riesgo Macro           : Medio
   Sesgo de Mercado       : Risk-off
-  Presión Inflacionaria  : Alcista
+  Presión Inflacionaria  : Neutral
   Presión COP            : Neutral
-  Convicción             : 8/10
+  Convicción             : 6/10
 
 =======================================================
 SECCIÓN 6 — INTERPRETACIÓN CAUSAL
 =======================================================
 
 Driver principal:
-  El petroleo Brent registro un avance pronunciado (+4.6%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.
+  La plata cedió con fuerza (-4.3%), lo que podría reflejar presión sobre metales industriales y preciosos en un ambiente de menor apetito por activos de ciclo.
 
 Driver secundario:
-  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.
+  El S&P 500 retrocedió -1.34%, señalando aversión al riesgo en la renta variable, mientras el oro avanzó como refugio.
 
 Lectura cruzada:
-  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La confluencia de presion inflacionaria y riesgo macro elevado sugiere un entorno de estanflacion potencial que podria complicar las decisiones de politica monetaria.
+  La divergencia entre oro al alza y plata a la baja en la misma jornada sugiere que los flujos defensivos fueron selectivos: búsqueda de calidad (oro) sin apetito por metales industriales (plata). Bitcoin resistió relativamente bien, pero el contexto macro Risk-off limita el potencial alcista de corto plazo.
 
 Cierre ejecutivo:
-  La sesion registra un entorno de riesgo macro elevado, con senales que sugieren cautela en la exposicion a activos de mayor riesgo. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy.
+  El entorno macro del día parece moderadamente cauteloso, con señales que apuntan a consolidación más que a disrupción. La presión sobre el peso colombiano es neutral hoy, aunque el Brent elevado en perspectiva mensual podría presionar costos de importación. Las señales presentan una convicción 6/10, por lo que la narrativa descrita es orientativa con la información disponible hoy.

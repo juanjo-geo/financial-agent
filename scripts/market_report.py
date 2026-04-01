@@ -164,8 +164,11 @@ def save_report_context(market_context, news_context, historical_context, news_b
     signals_age_days = None
     if os.path.exists(SIGNALS_FILE):
         try:
-            with open(SIGNALS_FILE, encoding="utf-8") as f:
-                signals_data = json.load(f)
+            # Lectura defensiva: strip de null-bytes residuales en NTFS
+            # (ocurre cuando el archivo nuevo es más corto que el anterior)
+            with open(SIGNALS_FILE, "rb") as f:
+                raw = f.read().rstrip(b"\x00")
+            signals_data = json.loads(raw.decode("utf-8"))
             # Calcular antigüedad de las señales
             sig_date_str = signals_data.get("fecha", "")
             if sig_date_str:
@@ -193,8 +196,13 @@ def save_report_context(market_context, news_context, historical_context, news_b
         "signals_sections_text": build_signals_sections(),
     }
 
-    with open(CONTEXT_FILE, "w", encoding="utf-8") as f:
+    # Escritura atómica: evita null-bytes residuales en NTFS
+    from pathlib import Path
+    import tempfile
+    tmp_path = CONTEXT_FILE + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(context, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, CONTEXT_FILE)
 
     print(f"Contexto guardado en: {CONTEXT_FILE}")
     return context
