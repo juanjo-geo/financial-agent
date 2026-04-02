@@ -1,9 +1,10 @@
 SEÑALES DE MERCADO
-Generado: 2026-03-31 13:42:22
+Generado: 2026-04-02 13:23:33
 --------------------------------------------------
 
-- Brent cae 1.05% (movimiento leve relevante). Valor actual: 107.85 USD/bbl
-- DXY cae 0.45% (movimiento leve relevante). Valor actual: 100.13 index
-- Oro (XAU/USD) sube 1.43% (movimiento leve relevante). Valor actual: 4,603.80 USD/oz
+- Brent sube 9.30% (movimiento fuerte). Valor actual: 109.63 USD/bbl
+- Bitcoin cae 3.22% (movimiento relevante). Valor actual: 65,903.22 USD
+- DXY sube 0.62% (movimiento leve relevante). Valor actual: 100.16 index
+- Oro (XAU/USD) cae 3.55% (movimiento fuerte). Valor actual: 4,613.00 USD/oz
 - SILVER cae 4.35% (movimiento fuerte). Valor actual: 69.66 USD/oz
 - SP500 cae 1.34% (movimiento leve relevante). Valor actual: 6,506.48 USD

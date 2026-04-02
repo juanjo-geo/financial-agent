@@ -1,34 +1,34 @@
 {
-  "fecha": "2026-03-31",
-  "generado_en": "2026-03-31 13:42:26",
-  "score": 39,
-  "label": "Visibilidad moderada",
-  "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen INFLACIONARIO pero con senales mixtas (sesgo Risk-off, riesgo Medio). Se recomienda cautela.",
+  "fecha": "2026-04-02",
+  "generado_en": "2026-04-02 13:23:37",
+  "score": 55,
+  "label": "Senales claras",
+  "color": "#2563EB",
+  "narrative": "Las senales son legibles: regimen INFLACIONARIO con sesgo Risk-off. Existen algunas contradicciones entre componentes que moderan la conviccion.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 1.2,
-      "desc": "Regimen INFLACIONARIO (confianza +5pts)",
+      "pts": 2.5,
+      "desc": "Regimen INFLACIONARIO (confianza +10pts)",
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 12.0,
-      "desc": "Conviccion 6/10",
+      "pts": 14.0,
+      "desc": "Conviccion 7/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 13.8,
-      "desc": "Conf. calibrada media 5.5/10 (4 activos)",
+      "pts": 15.0,
+      "desc": "Conf. calibrada media 6.0/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 0.0,
-      "desc": "0 senal(es) compuesta(s) activa(s)",
+      "pts": 10.0,
+      "desc": "2 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 11.6,
-      "desc": "Regime change 23/100 (Estable)",
+      "pts": 13.1,
+      "desc": "Regime change 13/100 (Estable)",
       "max": 15
     }
   }
