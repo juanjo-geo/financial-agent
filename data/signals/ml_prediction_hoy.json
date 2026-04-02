@@ -1,0 +1,15 @@
+{
+  "generado_en": "2026-04-02 17:21:26",
+  "fecha": "2026-04-02",
+  "direccion": "Alcista",
+  "valor_pred": 1,
+  "probabilidades": {
+    "-1": 0.4861,
+    "1": 0.5139
+  },
+  "confianza_ml": 1,
+  "meta_confianza": 1,
+  "meta_prob_correcta": 0.2242,
+  "cv_accuracy": 0.5261,
+  "modelo": "XGBoost-Binary-Tuned"
+}

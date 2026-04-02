@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python -m scripts.market_collector)",
+      "Bash(python -m scripts.processor)",
+      "Bash(python -c \":*)",
+      "Bash(python:*)",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(''''score:'''', d[''''score''''], ''''nivel:'''', d[''''nivel'''']\\)\")"
+    ]
+  }
+}

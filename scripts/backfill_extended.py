@@ -73,7 +73,30 @@ def fetch_indicator(key: str, symbol: str, unit: str, period: str) -> pd.DataFra
         ]].dropna(subset=["timestamp", "value"]).reset_index(drop=True)
 
         print(f"{len(result)} filas  ({result['timestamp'].min()} → {result['timestamp'].max()})")
-        return result
+
+        # Para BTC: guardar también el volumen como indicador separado (btc_volume)
+        if key == "btc" and "Volume" in hist.columns:
+            vol = hist.copy()
+            vol["indicator"]  = "btc_volume"
+            vol["value"]      = pd.to_numeric(hist["Volume"], errors="coerce")
+            vol["open_value"] = vol["value"].shift(1)
+            vol["change_abs"] = vol["value"] - vol["open_value"]
+            vol["change_pct"] = (
+                vol["change_abs"]
+                / vol["open_value"].replace(0, float("nan"))
+                * 100
+            )
+            vol["unit"]   = "BTC"
+            vol["source"] = "yfinance"
+            vol["status"] = "ok"
+            vol_result = vol[[
+                "indicator", "timestamp", "value", "open_value",
+                "change_abs", "change_pct", "unit", "source", "status",
+            ]].dropna(subset=["timestamp", "value"]).reset_index(drop=True)
+            # Retornar tupla (precio, volumen) cuando es BTC
+            return result, vol_result
+
+        return result, None
 
     except Exception as e:
         print(f"ERROR: {e}")
@@ -115,9 +138,11 @@ def main():
         if symbol is None:
             skipped.append(key)
             continue
-        df = fetch_indicator(key, symbol, info["unit"], period)
+        df, vol_df = fetch_indicator(key, symbol, info["unit"], period)
         if df is not None:
             new_frames.append(df)
+        if vol_df is not None:
+            new_frames.append(vol_df)   # btc_volume como indicador separado
 
     if skipped:
         print(f"\n  Omitidos (sin ticker): {skipped}")

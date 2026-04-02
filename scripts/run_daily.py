@@ -5,6 +5,9 @@ from datetime import datetime
 steps = [
     "intelligence.evaluator",           # evalúa predicciones de ayer vs actuals de hoy
     "scripts.backfill_history",         # rellena histórico de indicadores nuevos
+    "scripts.onchain_collector",        # descarga métricas on-chain BTC (blockchain.com)
+    "scripts.feargreed_collector",      # descarga Fear & Greed Index (alternative.me)
+    "scripts.funding_collector",        # descarga Funding Rates BTC (Binance Futures)
     "scripts.market_collector",
     "scripts.processor",
     "scripts.market_signals",

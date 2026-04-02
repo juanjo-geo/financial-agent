@@ -64,5 +64,16 @@
     "silver": -4.3471,
     "sp500": -1.3371,
     "usdcop": 0.13
+  },
+  "ml_prediccion": {
+    "direccion_btc_manana": "Alcista",
+    "confianza_ml": 1,
+    "probabilidades": {
+      "-1": 0.4861,
+      "1": 0.5139
+    },
+    "cv_accuracy_modelo": 52.6,
+    "modelo": "XGBoost-Binary-Tuned",
+    "nota": "Predicción BINARIA de XGBoost-Binary-Tuned (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 52.6% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }

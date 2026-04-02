@@ -1,0 +1,38 @@
+{
+  "generado_en": "2026-04-02 17:21:26",
+  "modelo": "XGBoost-Binary-Tuned",
+  "lag_days": 5,
+  "forward_days": 3,
+  "n_train": 3172,
+  "n_features": 99,
+  "cv_accuracy": 0.5261,
+  "cv_std": 0.0307,
+  "top_features": {
+    "eurusd_chg": 0.0158,
+    "eurusd_chg_lag2": 0.0149,
+    "usdcop_chg_lag2": 0.0143,
+    "usdcop_chg_lag4": 0.0139,
+    "eurusd_chg_lag4": 0.0129,
+    "usdcop_chg_lag3": 0.0125,
+    "eurusd_chg_lag3": 0.0124,
+    "wti_chg_lag5": 0.0122,
+    "gold_chg_lag2": 0.0121,
+    "silver_chg_lag1": 0.012
+  },
+  "target_threshold": 0.5,
+  "distribucion_clases": {
+    "1": 1754,
+    "-1": 1418
+  },
+  "prediccion_hoy": {
+    "direccion": "Alcista",
+    "valor_pred": 1,
+    "probabilidades": {
+      "-1": 0.4861,
+      "1": 0.5139
+    },
+    "confianza_ml": 1,
+    "meta_confianza": 1,
+    "meta_prob_correcta": 0.2242
+  }
+}
