@@ -1,48 +1,50 @@
 {
-  "fecha": "2026-04-01",
-  "generado_en": "2026-04-01 13:43:29",
-  "regime": "LATERAL",
+  "fecha": "2026-04-02",
+  "generado_en": "2026-04-02 13:23:36",
+  "regime": "INFLACIONARIO",
   "scores": {
-    "INFLACIONARIO": 50,
+    "INFLACIONARIO": 90,
     "RISK-ON": 10,
     "CRISIS": 16,
     "LATERAL": 80
   },
-  "confianza": 30,
+  "confianza": 10,
   "drivers": [
-    "4/5 activos sin tendencia definida"
+    "Brent +1.53%/dia",
+    "Oro +0.14%/dia",
+    "DXY +0.12%/dia"
   ],
-  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
+  "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": 0.804,
-      "volatilidad": 3.798,
+      "avg_pct_dia": 1.534,
+      "volatilidad": 4.34,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.125,
-      "volatilidad": 2.046,
+      "avg_pct_dia": -0.221,
+      "volatilidad": 2.154,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.009,
-      "volatilidad": 0.414,
+      "avg_pct_dia": 0.125,
+      "volatilidad": 0.335,
       "n_dias": 14
     },
     "global_inflation_proxy": {
       "avg_pct_dia": 0.0,
       "volatilidad": 0.0,
-      "n_dias": 3
+      "n_dias": 2
     },
     "gold": {
-      "avg_pct_dia": 0.052,
-      "volatilidad": 2.081,
+      "avg_pct_dia": 0.137,
+      "volatilidad": 1.898,
       "n_dias": 14
     },
     "silver": {
-      "avg_pct_dia": -5.013,
-      "volatilidad": 0.942,
-      "n_dias": 3
+      "avg_pct_dia": -4.347,
+      "volatilidad": 0.0,
+      "n_dias": 2
     },
     "sp500": {
       "avg_pct_dia": -1.337,
@@ -50,8 +52,8 @@
       "n_dias": 1
     },
     "usdcop": {
-      "avg_pct_dia": 0.005,
-      "volatilidad": 0.217,
+      "avg_pct_dia": -0.025,
+      "volatilidad": 0.243,
       "n_dias": 14
     }
   },

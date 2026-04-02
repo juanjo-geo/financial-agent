@@ -1,111 +1,117 @@
 {
-  "generado_en": "2026-04-01 13:43:38",
-  "fecha": "2026-04-01",
-  "market_context": "Indicador: brent | Valor actual: 101.74 USD/bbl | Apertura: 103.9 USD/bbl | Cambio absoluto: -2.16 | Cambio porcentual: -2.0789% | Estado: ok\nIndicador: btc | Valor actual: 68487.9062 USD | Apertura: 68224.4688 USD | Cambio absoluto: 263.4375 | Cambio porcentual: 0.3861% | Estado: ok\nIndicador: dxy | Valor actual: 99.355 index | Apertura: 99.785 index | Cambio absoluto: -0.43 | Cambio porcentual: -0.4309% | Estado: ok\nIndicador: global_inflation_proxy | Valor actual: 3.0 % | Apertura: 3.0 % | Cambio absoluto: 0.0 | Cambio porcentual: 0.0% | Estado: ok\nIndicador: gold | Valor actual: 4766.2998 USD/oz | Apertura: 4698.3999 USD/oz | Cambio absoluto: 67.8999 | Cambio porcentual: 1.4452% | Estado: ok\nIndicador: silver | Valor actual: 69.664 USD/oz | Apertura: 72.83 USD/oz | Cambio absoluto: -3.166 | Cambio porcentual: -4.3471% | Estado: ok\nIndicador: sp500 | Valor actual: 6506.48 USD | Apertura: 6594.6602 USD | Cambio absoluto: -88.1802 | Cambio porcentual: -1.3371% | Estado: ok\nIndicador: usdcop | Valor actual: 3692.0 COP/USD | Apertura: 3666.6799 COP/USD | Cambio absoluto: 25.3201 | Cambio porcentual: 0.6905% | Estado: ok",
-  "historical_context": "COMPARACION HISTORICA (valor de cierre):\nIndicador                          Hoy      Hace 7d   Var7d%     Hace 30d  Var30d% Unidad\n-------------------------------------------------------------------------------------\nbrent                           101.74        96.71   +5.20%        77.74  +30.87%  USD/bbl\nbtc                          68,487.91    70,911.32   -3.42%    68,775.85   -0.42%  USD\ndxy                              99.36        99.57   -0.21%        98.38   +0.99%  index\nglobal_inflation_proxy            3.00         3.00   +0.00%         3.00   +0.00%  %\ngold                          4,766.30     4,555.60   +4.63%     5,294.40   -9.97%  USD/oz\nsilver                           69.66        69.66   +0.00%        88.28  -21.09%  USD/oz\nsp500                         6,506.48     6,506.48   +0.00%          N/A      N/A  USD\nusdcop                        3,692.00     3,690.87   +0.03%     3,716.57   -0.66%  COP/USD",
-  "news_context": "BRENT:\n- Oil prices seesaw around $100 in volatile trading after Trump war exit comments - CNBC (CNBC)\n- Oil tumbles and stock markets soar on hopes Middle East war will end soon, as Bank of England warns of ‘substantial negative supply shock’ – business live - The Guardian (The Guardian)\nBTC:\n- Bitcoin fees fall to 14-year low – Why BTC price remains range-bound - AMBCrypto (AMBCrypto)\n- BTC to USD: Bitcoin Price in US Dollar - CoinGecko (CoinGecko)\nDXY:\n- US Dollar Index (DXY) Price Forecast: Potential double top at 100.60 - FXStreet (FXStreet)\n- As US Dollar Index Breaks the 100 Mark, the Global Economy Faces a New Stress Test - Investing.com (Investing.com)\nGLOBAL_INFLATION_PROXY:\n- Global inflation rate 2025 - Statista (Statista)\n- Inflation Had Steadied Before War With Iran - The New York Times (The New York Times)\nGOLD:\n- Gold (XAU/USD) Price Forecast for Today, Tomorrow, Next Week, and the Next 30 Days - LiteFinance (LiteFinance)\n- Gold Price Forecast: XAU/USD rallies further with the $5,000 level on focus - FXStreet (FXStreet)\nSILVER:\n- Silver Price Forecasts: XAG/USD resistance around $75.00 is testing bullish momentum - FXStreet (FXStreet)\n- Silver rises 7.31% in Wednesday trading April 01, 2026 - USA Today (USA Today)\nSP500:\n- Dow surges 1,100 points, S&P 500 posts best day since May as hopes grow for end of Iran war: Live updates - CNBC (CNBC)\n- This Unstoppable Vanguard ETF Is Beating the S&P 500, the Nasdaq-100, and the Dow Jones in 2026 - The Motley Fool (The Motley Fool)\nUSDCOP:\n- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)\n- Precio del dólar en Colombia hoy martes 3 de marzo: TRM y cotización en ciudades - Noticias Caracol (Noticias Caracol)",
+  "generado_en": "2026-04-02 13:23:46",
+  "fecha": "2026-04-02",
+  "market_context": "Indicador: brent | Valor actual: 109.63 USD/bbl | Apertura: 100.3 USD/bbl | Cambio absoluto: 9.33 | Cambio porcentual: 9.3021% | Estado: ok\nIndicador: btc | Valor actual: 65903.2188 USD | Apertura: 68095.2656 USD | Cambio absoluto: -2192.0469 | Cambio porcentual: -3.2191% | Estado: ok\nIndicador: dxy | Valor actual: 100.158 index | Apertura: 99.539 index | Cambio absoluto: 0.619 | Cambio porcentual: 0.6219% | Estado: ok\nIndicador: global_inflation_proxy | Valor actual: 3.0 % | Apertura: 3.0 % | Cambio absoluto: 0.0 | Cambio porcentual: 0.0% | Estado: ok\nIndicador: gold | Valor actual: 4613.0 USD/oz | Apertura: 4783.0 USD/oz | Cambio absoluto: -170.0 | Cambio porcentual: -3.5543% | Estado: ok\nIndicador: silver | Valor actual: 69.664 USD/oz | Apertura: 72.83 USD/oz | Cambio absoluto: -3.166 | Cambio porcentual: -4.3471% | Estado: ok\nIndicador: sp500 | Valor actual: 6506.48 USD | Apertura: 6594.6602 USD | Cambio absoluto: -88.1802 | Cambio porcentual: -1.3371% | Estado: ok\nIndicador: usdcop | Valor actual: 3646.97 COP/USD | Apertura: 3662.3999 COP/USD | Cambio absoluto: -15.4299 | Cambio porcentual: -0.4213% | Estado: ok",
+  "historical_context": "COMPARACION HISTORICA (valor de cierre):\nIndicador                          Hoy      Hace 7d   Var7d%     Hace 30d  Var30d% Unidad\n-------------------------------------------------------------------------------------\nbrent                           109.63       100.82   +8.74%        81.40  +34.68%  USD/bbl\nbtc                          65,903.22    69,410.15   -5.05%    68,293.65   -3.50%  USD\ndxy                             100.16        99.77   +0.39%        99.05   +1.12%  index\nglobal_inflation_proxy            3.00         3.00   +0.00%         3.00   +0.00%  %\ngold                          4,613.00     4,437.20   +3.96%     5,107.40   -9.68%  USD/oz\nsilver                           69.66        69.66   +0.00%        82.92  -15.99%  USD/oz\nsp500                         6,506.48     6,506.48   +0.00%          N/A      N/A  USD\nusdcop                        3,646.97     3,695.76   -1.32%     3,770.80   -3.28%  COP/USD",
+  "news_context": "BRENT:\n- Oil gains with Brent surging more than 8% as Trump's Iran war speech stokes fears of further escalation - CNBC (CNBC)\n- Oil Prices Spike and Stocks Tumble After Trump Vows More Iran Strikes - The New York Times (The New York Times)\nBTC:\n- ETH to BTC: Ethereum Price in Bitcoin - CoinGecko (CoinGecko)\n- Bitcoin Price Prediction as Miners Spend $80,000 to Produce One Bitcoin - 24/7 Wall St. (24/7 Wall St.)\nDXY:\n- US Dollar Index (DXY) rallies beyond 100.00 as hopes of peace in Iran fade - FXStreet (FXStreet)\n- As US Dollar Index Breaks the 100 Mark, the Global Economy Faces a New Stress Test - Investing.com (Investing.com)\nGLOBAL_INFLATION_PROXY:\n- Global inflation rate 2025 - Statista (Statista)\n- Here's the inflation breakdown for February 2026 — in one chart - CNBC (CNBC)\nGOLD:\n- Gold Price Short-term Outlook: XAU/USD Surges 17% into Make-or-Break Resistance - FOREX.com (FOREX.com)\n- Gold (XAU/USD) Price Forecast for Today, Tomorrow, Next Week, and the Next 30 Days - LiteFinance (LiteFinance)\nSILVER:\n- Silver Price Forecasts: XAG/USD dips below $71.00 amid overall US Dollar strength - FXStreet (FXStreet)\n- What is the price of silver on April 02, 2026? - USA Today (USA Today)\nSP500:\n- Dow surges 1,100 points, S&P 500 posts best day since May as hopes grow for end of Iran war: Live updates - CNBC (CNBC)\n- Dow Set to Open Down After Trump's Iran Speech Rattles Markets - Barron's (Barron's)\nUSDCOP:\n- Euro hoy en Colombia, [Divisa hoy actualizada] - mascolombia.com (mascolombia.com)\n- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)",
   "news_by_indicator": {
     "brent": [
-      "- Oil prices seesaw around $100 in volatile trading after Trump war exit comments - CNBC (CNBC)",
-      "- Oil tumbles and stock markets soar on hopes Middle East war will end soon, as Bank of England warns of ‘substantial negative supply shock’ – business live - The Guardian (The Guardian)"
+      "- Oil gains with Brent surging more than 8% as Trump's Iran war speech stokes fears of further escalation - CNBC (CNBC)",
+      "- Oil Prices Spike and Stocks Tumble After Trump Vows More Iran Strikes - The New York Times (The New York Times)"
     ],
     "btc": [
-      "- Bitcoin fees fall to 14-year low – Why BTC price remains range-bound - AMBCrypto (AMBCrypto)",
-      "- BTC to USD: Bitcoin Price in US Dollar - CoinGecko (CoinGecko)"
+      "- ETH to BTC: Ethereum Price in Bitcoin - CoinGecko (CoinGecko)",
+      "- Bitcoin Price Prediction as Miners Spend $80,000 to Produce One Bitcoin - 24/7 Wall St. (24/7 Wall St.)"
     ],
     "dxy": [
-      "- US Dollar Index (DXY) Price Forecast: Potential double top at 100.60 - FXStreet (FXStreet)",
+      "- US Dollar Index (DXY) rallies beyond 100.00 as hopes of peace in Iran fade - FXStreet (FXStreet)",
       "- As US Dollar Index Breaks the 100 Mark, the Global Economy Faces a New Stress Test - Investing.com (Investing.com)"
     ],
     "global_inflation_proxy": [
       "- Global inflation rate 2025 - Statista (Statista)",
-      "- Inflation Had Steadied Before War With Iran - The New York Times (The New York Times)"
+      "- Here's the inflation breakdown for February 2026 — in one chart - CNBC (CNBC)"
     ],
     "gold": [
-      "- Gold (XAU/USD) Price Forecast for Today, Tomorrow, Next Week, and the Next 30 Days - LiteFinance (LiteFinance)",
-      "- Gold Price Forecast: XAU/USD rallies further with the $5,000 level on focus - FXStreet (FXStreet)"
+      "- Gold Price Short-term Outlook: XAU/USD Surges 17% into Make-or-Break Resistance - FOREX.com (FOREX.com)",
+      "- Gold (XAU/USD) Price Forecast for Today, Tomorrow, Next Week, and the Next 30 Days - LiteFinance (LiteFinance)"
     ],
     "silver": [
-      "- Silver Price Forecasts: XAG/USD resistance around $75.00 is testing bullish momentum - FXStreet (FXStreet)",
-      "- Silver rises 7.31% in Wednesday trading April 01, 2026 - USA Today (USA Today)"
+      "- Silver Price Forecasts: XAG/USD dips below $71.00 amid overall US Dollar strength - FXStreet (FXStreet)",
+      "- What is the price of silver on April 02, 2026? - USA Today (USA Today)"
     ],
     "sp500": [
       "- Dow surges 1,100 points, S&P 500 posts best day since May as hopes grow for end of Iran war: Live updates - CNBC (CNBC)",
-      "- This Unstoppable Vanguard ETF Is Beating the S&P 500, the Nasdaq-100, and the Dow Jones in 2026 - The Motley Fool (The Motley Fool)"
+      "- Dow Set to Open Down After Trump's Iran Speech Rattles Markets - Barron's (Barron's)"
     ],
     "usdcop": [
-      "- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)",
-      "- Precio del dólar en Colombia hoy martes 3 de marzo: TRM y cotización en ciudades - Noticias Caracol (Noticias Caracol)"
+      "- Euro hoy en Colombia, [Divisa hoy actualizada] - mascolombia.com (mascolombia.com)",
+      "- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)"
     ]
   },
   "news_coverage": "8/8 indicadores con noticias",
   "signals": {
-    "fecha": "2026-04-01",
-    "generado_en": "2026-04-01 13:43:28",
+    "fecha": "2026-04-02",
+    "generado_en": "2026-04-02 13:23:35",
     "senales": {
-      "riesgo_macro": "Medio",
+      "riesgo_macro": "Alto",
       "sesgo_mercado": "Risk-off",
-      "presion_inflacionaria": "Neutral",
+      "presion_inflacionaria": "Alcista",
       "presion_cop": "Neutral",
-      "conviccion": 6
+      "conviccion": 7
     },
     "interpretacion": {
-      "driver_principal": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
-      "driver_secundario": "El Brent retrocedio levemente (-2.1%), con impacto limitado sobre la dinamica inflacionaria.",
-      "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad.",
-      "cierre_ejecutivo": "El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. Sin senales inflacionarias ni cambiarias dominantes, el escenario para Colombia se mantiene en un rango de incertidumbre manejable. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis."
+      "driver_principal": "El petroleo Brent registro un avance pronunciado (+9.3%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.",
+      "driver_secundario": "La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.",
+      "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La caida simultanea de oro y renta variable es inusual: podria estar reflejando presion de liquidez o ajuste tecnico mas que una tendencia fundamental sostenida. La confluencia de presion inflacionaria y riesgo macro elevado sugiere un entorno de estanflacion potencial que podria complicar las decisiones de politica monetaria.",
+      "cierre_ejecutivo": "La sesion registra un entorno de riesgo macro elevado, con senales que sugieren cautela en la exposicion a activos de mayor riesgo. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 7/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
     },
     "scores_internos": {
-      "riesgo_score": 3.0,
-      "sesgo_risk_on": 0.0,
-      "sesgo_risk_off": 3.5,
-      "inflacion_score": -1.0,
-      "cop_score": 0.8,
-      "conviccion_razon": "3 indicador(es) con movimiento significativo"
+      "riesgo_score": 4.4,
+      "sesgo_risk_on": 0.5,
+      "sesgo_risk_off": 5.0,
+      "inflacion_score": 4.2,
+      "cop_score": 1.5,
+      "conviccion_razon": "4 indicador(es) con movimiento significativo"
     },
     "factores": {
       "riesgo": {
-        "gold_safe_haven": 1.5,
-        "sp500_down": 1.5
+        "brent_surge": 2.0,
+        "gold_down": -0.5,
+        "btc_drop": 1.0,
+        "sp500_down": 1.5,
+        "dxy_up": 0.4
       },
       "inflacion": {
-        "brent_fall": -3.0,
-        "gold_hedge": 0.8,
+        "brent_surge": 4.0,
+        "gold_down": -0.5,
         "silver_down": -0.3,
+        "dxy_deflationary": -0.5,
         "news_inflacion_alta": 1.0,
         "news_petroleo_alta": 0.5
       },
       "cop": {
-        "dxy_down": -1.5,
-        "brent_weak_cop": 0.8,
+        "dxy_up": 1.5,
+        "brent_cop_positive": -1.5,
         "sp500_weak": 0.5,
         "news_colombia_alta": 1.0
       },
       "sesgo": {
+        "btc": "Risk-off +2 (BTC -3.3%)",
         "sp500": "Risk-off +1.5 (SP500 -1.3%)",
-        "gold": "Risk-off +1.5 (Oro +1.7%)",
+        "gold": "Risk-on +0.5 (Oro -4.4%)",
+        "dxy": "Risk-off +1 (DXY +0.9%)",
         "news": "Risk-off +0.5 (noticias apetito_riesgo)"
       }
     },
     "pesos_noticias": {
       "petroleo": 3,
-      "dolar": 3,
       "inflacion": 3,
-      "colombia": 3,
+      "dolar": 3,
       "cripto": 3,
+      "colombia": 3,
       "apetito_riesgo": 3
     },
     "variaciones_mercado": {
-      "brent": -2.0789,
-      "btc": 0.3861,
-      "dxy": -0.4309,
+      "brent": 9.3021,
+      "btc": -3.2191,
+      "dxy": 0.6219,
       "global_inflation_proxy": 0.0,
-      "gold": 1.4452,
+      "gold": -3.5543,
       "silver": -4.3471,
       "sp500": -1.3371,
-      "usdcop": 0.6905
+      "usdcop": -0.4213
     }
   },
   "signals_age_days": 0,
-  "signals_sections_text": "\n=======================================================\nSECCIÓN 5 — SEÑALES ACCIONABLES\nGenerado: 2026-04-01 13:43:28\n=======================================================\n  Riesgo Macro           : Medio\n  Sesgo de Mercado       : Risk-off\n  Presión Inflacionaria  : Neutral\n  Presión COP            : Neutral\n  Convicción             : 6/10\n\n=======================================================\nSECCIÓN 6 — INTERPRETACIÓN CAUSAL\n=======================================================\n\nDriver principal:\n  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.\n\nDriver secundario:\n  El Brent retrocedio levemente (-2.1%), con impacto limitado sobre la dinamica inflacionaria.\n\nLectura cruzada:\n  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad.\n\nCierre ejecutivo:\n  El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. Sin senales inflacionarias ni cambiarias dominantes, el escenario para Colombia se mantiene en un rango de incertidumbre manejable. La conviccion de las senales es moderada (6/10); se recomienda confirmar en la proxima sesion antes de tomar decisiones basadas exclusivamente en este analisis."
+  "signals_sections_text": "\n=======================================================\nSECCIÓN 5 — SEÑALES ACCIONABLES\nGenerado: 2026-04-02 13:23:35\n=======================================================\n  Riesgo Macro           : Alto\n  Sesgo de Mercado       : Risk-off\n  Presión Inflacionaria  : Alcista\n  Presión COP            : Neutral\n  Convicción             : 7/10\n\n=======================================================\nSECCIÓN 6 — INTERPRETACIÓN CAUSAL\n=======================================================\n\nDriver principal:\n  El petroleo Brent registro un avance pronunciado (+9.3%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.\n\nDriver secundario:\n  La plata cedio con fuerza (-4.3%), lo que podria reflejar presion sobre metales industriales y preciosos.\n\nLectura cruzada:\n  El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La combinacion de petroleo al alza y renta variable bajo presion podria estar reflejando preocupacion por el impacto del costo energetico sobre los margenes corporativos. La caida simultanea de oro y renta variable es inusual: podria estar reflejando presion de liquidez o ajuste tecnico mas que una tendencia fundamental sostenida. La confluencia de presion inflacionaria y riesgo macro elevado sugiere un entorno de estanflacion potencial que podria complicar las decisiones de politica monetaria.\n\nCierre ejecutivo:\n  La sesion registra un entorno de riesgo macro elevado, con senales que sugieren cautela en la exposicion a activos de mayor riesgo. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 7/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
 }
