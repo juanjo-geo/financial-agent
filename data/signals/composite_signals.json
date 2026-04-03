@@ -1,28 +1,13 @@
 {
-  "fecha": "2026-04-02",
-  "generado_en": "2026-04-02 13:23:37",
-  "n_activas": 2,
-  "activas": [
-    {
-      "id": "macro_fuerte",
-      "nombre": "Alerta macro fuerte",
-      "descripcion": "Petroleo y dolar suben juntos: señal de tension macro global.",
-      "severidad": "HIGH",
-      "icono": "!"
-    },
-    {
-      "id": "dxy_presion_metales",
-      "nombre": "Fortaleza del dolar presiona metales",
-      "descripcion": "DXY al alza y Oro a la baja: correlacion inversa activa.",
-      "severidad": "LOW",
-      "icono": "~"
-    }
-  ],
+  "fecha": "2026-04-03",
+  "generado_en": "2026-04-03 13:13:48",
+  "n_activas": 0,
+  "activas": [],
   "variaciones": {
-    "brent": 9.3021,
-    "btc": -3.2191,
-    "dxy": 0.6219,
-    "usdcop": -0.4213,
-    "gold": -3.5543
+    "brent": 8.7039,
+    "btc": -0.4809,
+    "dxy": 0.099,
+    "usdcop": 0.0281,
+    "gold": -2.3799
   }
 }
