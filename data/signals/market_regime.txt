@@ -1,15 +1,17 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-04-03 13:13:45
+Generado: 2026-04-04 13:05:20
 
 REGÍMENES DETECTADOS
 ------------------------------
 - Inflation Pressure
+- Mixed Macro
 - Dollar Pressure on COP
 
 EXPLICACIÓN
 ------------------------------
 - El petróleo sube con intensidad, aumentando presión inflacionaria energética.
+- Dólar fuerte y Bitcoin al alza sugieren un entorno macro mixto.
 - La fortaleza del dólar coincide con depreciación del peso colombiano.
 
 SEÑALES BASE
@@ -17,10 +19,10 @@ SEÑALES BASE
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
 - BRENT: 8.70% | up | high
-- BTC: -0.48% | down | none
+- BTC: 0.22% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: 0.10% | up | none
+- DXY: 0.20% | up | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
 - GOLD: -2.38% | down | medium
@@ -33,5 +35,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.03% | up | none
+- USDCOP: 0.05% | up | none
 - WTI: 12.52% | up | high

@@ -1,17 +1,17 @@
 {
-  "fecha": "2026-04-03",
-  "generado_en": "2026-04-03 13:13:47",
+  "fecha": "2026-04-04",
+  "generado_en": "2026-04-04 13:05:22",
   "regime": "INFLACIONARIO",
   "scores": {
     "INFLACIONARIO": 90,
     "RISK-ON": 10,
-    "CRISIS": 44,
-    "LATERAL": 60
+    "CRISIS": 16,
+    "LATERAL": 80
   },
-  "confianza": 30,
+  "confianza": 10,
   "drivers": [
-    "Brent +2.47%/dia",
-    "Oro +0.23%/dia",
+    "Brent +2.87%/dia",
+    "Oro +0.18%/dia",
     "DXY +0.12%/dia"
   ],
   "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
@@ -27,19 +27,19 @@
       "n_dias": 9
     },
     "brent": {
-      "avg_pct_dia": 2.475,
-      "volatilidad": 5.331,
+      "avg_pct_dia": 2.875,
+      "volatilidad": 5.568,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.387,
-      "volatilidad": 2.128,
+      "avg_pct_dia": -0.188,
+      "volatilidad": 2.044,
       "n_dias": 14
     },
     "btc_volume": {
-      "avg_pct_dia": 7.129,
-      "volatilidad": 37.55,
-      "n_dias": 13
+      "avg_pct_dia": 11.464,
+      "volatilidad": 35.823,
+      "n_dias": 12
     },
     "copper": {
       "avg_pct_dia": 0.278,
@@ -47,7 +47,7 @@
       "n_dias": 9
     },
     "dxy": {
-      "avg_pct_dia": 0.124,
+      "avg_pct_dia": 0.123,
       "volatilidad": 0.356,
       "n_dias": 14
     },
@@ -56,14 +56,9 @@
       "volatilidad": 0.135,
       "n_dias": 9
     },
-    "global_inflation_proxy": {
-      "avg_pct_dia": 0.0,
-      "volatilidad": 0.0,
-      "n_dias": 1
-    },
     "gold": {
-      "avg_pct_dia": 0.23,
-      "volatilidad": 1.87,
+      "avg_pct_dia": 0.181,
+      "volatilidad": 1.928,
       "n_dias": 14
     },
     "googl": {
@@ -97,14 +92,14 @@
       "n_dias": 9
     },
     "silver": {
-      "avg_pct_dia": 0.84,
-      "volatilidad": 3.423,
-      "n_dias": 10
+      "avg_pct_dia": 1.416,
+      "volatilidad": 3.114,
+      "n_dias": 9
     },
     "sp500": {
-      "avg_pct_dia": -0.162,
-      "volatilidad": 1.026,
-      "n_dias": 10
+      "avg_pct_dia": -0.032,
+      "volatilidad": 1.0,
+      "n_dias": 9
     },
     "tsla": {
       "avg_pct_dia": -0.108,
@@ -112,8 +107,8 @@
       "n_dias": 9
     },
     "usdcop": {
-      "avg_pct_dia": -0.144,
-      "volatilidad": 0.495,
+      "avg_pct_dia": -0.14,
+      "volatilidad": 0.496,
       "n_dias": 13
     },
     "wti": {
@@ -123,5 +118,5 @@
     }
   },
   "window_dias": 14,
-  "n_indicadores": 21
+  "n_indicadores": 20
 }

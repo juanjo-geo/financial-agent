@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-04-03",
-  "generado_en": "2026-04-03 13:13:46",
+  "fecha": "2026-04-04",
+  "generado_en": "2026-04-04 13:05:21",
   "senales": {
     "riesgo_macro": "Bajo",
     "sesgo_mercado": "Mixto",
@@ -19,7 +19,7 @@
     "sesgo_risk_on": 1.5,
     "sesgo_risk_off": 0.5,
     "inflacion_score": 4.7,
-    "cop_score": -0.5,
+    "cop_score": 0.0,
     "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
@@ -36,12 +36,13 @@
       "news_petroleo_alta": 0.5
     },
     "cop": {
+      "dxy_mild": 0.5,
       "brent_cop_positive": -1.5,
       "news_colombia_alta": 1.0
     },
     "sesgo": {
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-on +0.5 (Oro -3.0%)",
+      "gold": "Risk-on +0.5 (Oro -2.9%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -57,10 +58,10 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": 8.7039,
-    "btc": -0.4809,
+    "btc": 0.2205,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": 0.099,
+    "dxy": 0.2,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
     "gold": -2.3799,
@@ -73,18 +74,18 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": 0.0281,
+    "usdcop": 0.048,
     "wti": 12.515168936486138
   },
   "ml_prediccion": {
-    "direccion_btc_manana": "Alcista",
+    "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.4818,
-      "1": 0.5182
+      "-1": 0.5282,
+      "1": 0.4718
     },
-    "cv_accuracy_modelo": 51.8,
+    "cv_accuracy_modelo": 51.6,
     "modelo": "RandomForest-Binary",
-    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.8% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.6% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }
