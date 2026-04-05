@@ -1,50 +1,50 @@
 {
-  "generado_en": "2026-04-04 13:05:25",
+  "generado_en": "2026-04-05 13:07:22",
   "window_days": 30,
   "center_acc": 0.55,
   "pesos": {
     "brent": {
       "multiplicador": 1.1858,
       "accuracy_reciente": 0.6538,
-      "accuracy_global": 0.5392,
+      "accuracy_global": 0.5437,
       "n_reciente": 26,
-      "n_total": 102,
+      "n_total": 103,
       "fuente": "rolling_30d",
       "estado": "Neutro"
     },
     "btc": {
-      "multiplicador": 1.0863,
-      "accuracy_reciente": 0.5769,
-      "accuracy_global": 0.4476,
+      "multiplicador": 1.1372,
+      "accuracy_reciente": 0.6154,
+      "accuracy_global": 0.4528,
       "n_reciente": 26,
-      "n_total": 105,
+      "n_total": 106,
       "fuente": "rolling_30d",
       "estado": "Neutro"
     },
     "dxy": {
-      "multiplicador": 1.3934,
-      "accuracy_reciente": 0.8846,
-      "accuracy_global": 0.9118,
+      "multiplicador": 1.4133,
+      "accuracy_reciente": 0.9231,
+      "accuracy_global": 0.9126,
       "n_reciente": 26,
-      "n_total": 102,
+      "n_total": 103,
       "fuente": "rolling_30d",
       "estado": "Confiable — peso aumentado"
     },
     "usdcop": {
       "multiplicador": 1.3096,
       "accuracy_reciente": 0.7692,
-      "accuracy_global": 0.6476,
+      "accuracy_global": 0.6509,
       "n_reciente": 26,
-      "n_total": 105,
+      "n_total": 106,
       "fuente": "rolling_30d",
       "estado": "Confiable — peso aumentado"
     },
     "gold": {
       "multiplicador": 1.1858,
       "accuracy_reciente": 0.6538,
-      "accuracy_global": 0.5784,
+      "accuracy_global": 0.5728,
       "n_reciente": 26,
-      "n_total": 102,
+      "n_total": 103,
       "fuente": "rolling_30d",
       "estado": "Neutro"
     }

@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-04-04",
-  "generado_en": "2026-04-04 13:05:22",
-  "score": 21.4,
-  "nivel": "Estable",
-  "tipo_cambio": "Gradual",
+  "fecha": "2026-04-05",
+  "generado_en": "2026-04-05 13:07:19",
+  "score": 34.1,
+  "nivel": "Transicion",
+  "tipo_cambio": "Abrupto",
   "alerta": false,
   "direccion": "Mejora",
   "transiciones": [
@@ -11,8 +11,8 @@
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Medio",
-      "a": "Bajo",
-      "score_parcial": 7.73,
+      "a": "Medio",
+      "score_parcial": 14.09,
       "peso_dimension": 30
     },
     {
@@ -20,7 +20,7 @@
       "dimension_label": "Sesgo de Mercado",
       "de": "Risk-off",
       "a": "Mixto",
-      "score_parcial": 7.27,
+      "score_parcial": 13.64,
       "peso_dimension": 30
     },
     {
@@ -32,22 +32,22 @@
       "peso_dimension": 20
     }
   ],
-  "descripcion": "Se observa una transicion gradual en el regimen macro: Riesgo Macro transita de Medio hacia Bajo. El entorno de riesgo muestra senales de mejora. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
+  "descripcion": "Se detecta un cambio abrupto en el regimen macro: Riesgo Macro muestra cambio desde Medio. El entorno de riesgo muestra senales de mejora. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
   "scores_por_dim": {
-    "sesgo_mercado": 7.27,
-    "riesgo_macro": 7.73,
+    "sesgo_mercado": 13.64,
+    "riesgo_macro": 14.09,
     "presion_inflacionaria": 5.45,
     "presion_cop": 0.91
   },
   "recientes": {
-    "sesgo_mercado": 0.333,
-    "riesgo_macro": 0.667,
+    "sesgo_mercado": 0.0,
+    "riesgo_macro": 0.333,
     "presion_inflacionaria": 1.0,
     "presion_cop": 0.0
   },
   "baselines": {
-    "sesgo_mercado": 0.818,
-    "riesgo_macro": 1.182,
+    "sesgo_mercado": 0.909,
+    "riesgo_macro": 1.273,
     "presion_inflacionaria": 0.455,
     "presion_cop": 0.091
   },
@@ -55,22 +55,21 @@
   "series": {
     "sesgo_mercado": [
       "Mixto",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
+      "Risk-off",
       "Mixto",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
-      "Risk-off",
       "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Medio",
       "Bajo",
       "Medio",
       "Medio",
@@ -83,10 +82,10 @@
       "Medio",
       "Alto",
       "Bajo",
-      "Bajo"
+      "Bajo",
+      "Medio"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Bajista",
       "Alcista",
       "Bajista",
@@ -97,6 +96,7 @@
       "Alcista",
       "Neutral",
       "Neutral",
+      "Alcista",
       "Alcista",
       "Alcista",
       "Alcista"
@@ -104,8 +104,8 @@
     "presion_cop": [
       "Neutral",
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",

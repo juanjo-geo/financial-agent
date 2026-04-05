@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-04-04",
-  "generado_en": "2026-04-04 13:05:22",
+  "fecha": "2026-04-05",
+  "generado_en": "2026-04-05 13:07:20",
   "regime": "INFLACIONARIO",
   "scores": {
     "INFLACIONARIO": 90,
@@ -10,9 +10,9 @@
   },
   "confianza": 10,
   "drivers": [
-    "Brent +2.87%/dia",
+    "Brent +3.28%/dia",
     "Oro +0.18%/dia",
-    "DXY +0.12%/dia"
+    "DXY +0.13%/dia"
   ],
   "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
   "trend_summary": {
@@ -27,19 +27,19 @@
       "n_dias": 9
     },
     "brent": {
-      "avg_pct_dia": 2.875,
-      "volatilidad": 5.568,
+      "avg_pct_dia": 3.277,
+      "volatilidad": 5.769,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.188,
-      "volatilidad": 2.044,
+      "avg_pct_dia": -0.149,
+      "volatilidad": 2.027,
       "n_dias": 14
     },
     "btc_volume": {
-      "avg_pct_dia": 11.464,
-      "volatilidad": 35.823,
-      "n_dias": 12
+      "avg_pct_dia": 8.631,
+      "volatilidad": 36.106,
+      "n_dias": 11
     },
     "copper": {
       "avg_pct_dia": 0.278,
@@ -47,8 +47,8 @@
       "n_dias": 9
     },
     "dxy": {
-      "avg_pct_dia": 0.123,
-      "volatilidad": 0.356,
+      "avg_pct_dia": 0.132,
+      "volatilidad": 0.364,
       "n_dias": 14
     },
     "eurusd": {
@@ -57,8 +57,8 @@
       "n_dias": 9
     },
     "gold": {
-      "avg_pct_dia": 0.181,
-      "volatilidad": 1.928,
+      "avg_pct_dia": 0.183,
+      "volatilidad": 1.926,
       "n_dias": 14
     },
     "googl": {
@@ -107,7 +107,7 @@
       "n_dias": 9
     },
     "usdcop": {
-      "avg_pct_dia": -0.14,
+      "avg_pct_dia": -0.139,
       "volatilidad": 0.496,
       "n_dias": 13
     },

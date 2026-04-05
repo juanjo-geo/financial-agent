@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-04-04",
-  "generado_en": "2026-04-04 13:05:21",
+  "fecha": "2026-04-05",
+  "generado_en": "2026-04-05 13:07:18",
   "senales": {
-    "riesgo_macro": "Bajo",
+    "riesgo_macro": "Medio",
     "sesgo_mercado": "Mixto",
     "presion_inflacionaria": "Alcista",
     "presion_cop": "Neutral",
@@ -12,21 +12,23 @@
     "driver_principal": "El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.",
     "driver_secundario": "El petroleo Brent registro un avance pronunciado (+8.7%), lo que parece indicar tensiones en la oferta energetica global o senales de mayor demanda.",
     "lectura_cruzada": "Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante.",
-    "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
+    "cierre_ejecutivo": "El entorno macro se presenta con un nivel de riesgo moderado, con senales mixtas que aconsejan seguimiento cercano. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
   },
   "scores_internos": {
-    "riesgo_score": 1.2,
+    "riesgo_score": 1.9,
     "sesgo_risk_on": 1.5,
-    "sesgo_risk_off": 0.5,
+    "sesgo_risk_off": 1.5,
     "inflacion_score": 4.7,
-    "cop_score": 0.0,
+    "cop_score": 1.0,
     "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_surge": 2.0,
       "gold_down": -0.5,
-      "sp500_up": -0.3
+      "btc_weak": 0.3,
+      "sp500_up": -0.3,
+      "dxy_up": 0.4
     },
     "inflacion": {
       "brent_surge": 4.0,
@@ -36,13 +38,14 @@
       "news_petroleo_alta": 0.5
     },
     "cop": {
-      "dxy_mild": 0.5,
+      "dxy_up": 1.5,
       "brent_cop_positive": -1.5,
       "news_colombia_alta": 1.0
     },
     "sesgo": {
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-on +0.5 (Oro -2.9%)",
+      "gold": "Risk-on +0.5 (Oro -2.0%)",
+      "dxy": "Risk-off +1 (DXY +0.7%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -57,14 +60,14 @@
   "variaciones_mercado": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": 8.7039,
-    "btc": 0.2205,
+    "brent": 8.7238,
+    "btc": -0.7574,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": 0.2,
+    "dxy": 0.4923,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -2.3799,
+    "gold": -1.6789,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -81,11 +84,11 @@
     "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5282,
-      "1": 0.4718
+      "-1": 0.5495,
+      "1": 0.4505
     },
-    "cv_accuracy_modelo": 51.6,
+    "cv_accuracy_modelo": 51.5,
     "modelo": "RandomForest-Binary",
-    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.6% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.5% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }
