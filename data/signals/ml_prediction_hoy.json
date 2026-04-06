@@ -1,11 +1,11 @@
 {
-  "generado_en": "2026-04-05 13:07:50",
-  "fecha": "2026-04-05",
+  "generado_en": "2026-04-06 13:21:26",
+  "fecha": "2026-04-06",
   "direccion": "Bajista",
   "valor_pred": -1,
   "probabilidades": {
-    "-1": 0.5495,
-    "1": 0.4505
+    "-1": 0.5476,
+    "1": 0.4524
   },
   "confianza_ml": 1,
   "cv_accuracy": 0.5152,
