@@ -1,5 +1,5 @@
 SEÑALES DE MERCADO
-Generado: 2026-04-06 13:20:50
+Generado: 2026-04-07 13:42:14
 --------------------------------------------------
 
 - AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
@@ -8,5 +8,4 @@ Generado: 2026-04-06 13:20:50
 - NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD
 - NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
 - SILVER cae 3.57% (movimiento relevante). Valor actual: 72.46 USD/oz
-- USD/COP cae 0.73% (movimiento leve relevante). Valor actual: 3,639.05 COP/USD
 - WTI sube 12.52% (movimiento fuerte). Valor actual: 111.30 USD/bbl

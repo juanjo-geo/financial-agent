@@ -1,78 +1,77 @@
 {
-  "fecha": "2026-04-06",
-  "generado_en": "2026-04-06 13:20:54",
+  "fecha": "2026-04-07",
+  "generado_en": "2026-04-07 13:42:18",
   "n_dias_ventana": 30,
   "n_dias_baseline": 60,
-  "n_dias_total": 26569,
+  "n_dias_total": 26570,
   "pares": [
     {
       "par": "DXY vs BTC",
       "a": "dxy",
       "b": "btc",
-      "corr_actual": -0.3429,
-      "corr_baseline": -0.1258,
-      "delta": 0.2171,
+      "corr_actual": -0.3381,
+      "corr_baseline": -0.123,
+      "delta": 0.2151,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
-      "n_actual": 27,
-      "n_baseline": 41
+      "n_actual": 28,
+      "n_baseline": 40
     },
     {
       "par": "DXY vs Oro",
       "a": "dxy",
       "b": "gold",
-      "corr_actual": -0.1022,
-      "corr_baseline": -0.4755,
-      "delta": 0.3733,
+      "corr_actual": -0.105,
+      "corr_baseline": -0.4765,
+      "delta": 0.3715,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
-      "n_actual": 27,
-      "n_baseline": 41
+      "n_actual": 28,
+      "n_baseline": 40
     },
     {
       "par": "Brent vs USDCOP",
       "a": "brent",
       "b": "usdcop",
-      "corr_actual": 0.6388,
-      "corr_baseline": 0.2166,
-      "delta": 0.4222,
-      "rota": true,
+      "corr_actual": 0.627,
+      "corr_baseline": 0.2273,
+      "delta": 0.3997,
+      "rota": false,
       "alerta": false,
       "esperada": "positiva",
-      "n_actual": 26,
-      "n_baseline": 41
+      "n_actual": 27,
+      "n_baseline": 40
     },
     {
       "par": "BTC vs Oro",
       "a": "btc",
       "b": "gold",
-      "corr_actual": 0.366,
-      "corr_baseline": 0.1724,
-      "delta": 0.1936,
+      "corr_actual": 0.3627,
+      "corr_baseline": 0.1746,
+      "delta": 0.1881,
       "rota": false,
       "alerta": false,
       "esperada": "variable",
-      "n_actual": 27,
-      "n_baseline": 41
+      "n_actual": 28,
+      "n_baseline": 40
     },
     {
       "par": "Brent vs DXY",
       "a": "brent",
       "b": "dxy",
-      "corr_actual": 0.5812,
-      "corr_baseline": -0.0033,
-      "delta": 0.5845,
+      "corr_actual": 0.5833,
+      "corr_baseline": 0.0019,
+      "delta": 0.5814,
       "rota": true,
       "alerta": true,
       "esperada": "positiva",
-      "n_actual": 27,
-      "n_baseline": 41
+      "n_actual": 28,
+      "n_baseline": 40
     }
   ],
   "alertas": [
-    "Correlacion debilitada: Brent vs USDCOP baseline=0.22 -> actual=0.64",
-    "Correlacion rota: Brent vs DXY cambio de negativa (-0.00) a positiva (0.58)"
+    "Correlacion debilitada: Brent vs DXY baseline=0.00 -> actual=0.58"
   ]
 }
