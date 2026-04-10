@@ -1,24 +1,24 @@
 {
-  "fecha": "2026-04-09",
-  "generado_en": "2026-04-09 13:51:56",
-  "score": 52,
-  "label": "Senales claras",
-  "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen INFLACIONARIO con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "fecha": "2026-04-10",
+  "generado_en": "2026-04-10 13:21:08",
+  "score": 42,
+  "label": "Visibilidad moderada",
+  "color": "#E65100",
+  "narrative": "Visibilidad parcial. Regimen INFLACIONARIO pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 11.5,
-      "desc": "Regimen INFLACIONARIO (confianza +46pts)",
+      "pts": 3.8,
+      "desc": "Regimen INFLACIONARIO (confianza +15pts)",
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 16.0,
-      "desc": "Conviccion 8/10",
+      "pts": 14.0,
+      "desc": "Conviccion 7/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.0,
-      "desc": "Conf. calibrada media 6.0/10 (2 activos)",
+      "pts": 13.3,
+      "desc": "Conf. calibrada media 5.3/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 10.0,
-      "desc": "Regime change 33/100 (Transicion)",
+      "pts": 10.8,
+      "desc": "Regime change 28/100 (Estable)",
       "max": 15
     }
   }

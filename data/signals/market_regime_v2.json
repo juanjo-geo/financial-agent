@@ -1,120 +1,119 @@
 {
-  "fecha": "2026-04-09",
-  "generado_en": "2026-04-09 13:51:54",
+  "fecha": "2026-04-10",
+  "generado_en": "2026-04-10 13:21:07",
   "regime": "INFLACIONARIO",
   "scores": {
-    "INFLACIONARIO": 90,
+    "INFLACIONARIO": 75,
     "RISK-ON": 20,
-    "CRISIS": 44,
-    "LATERAL": 40
+    "CRISIS": 16,
+    "LATERAL": 60
   },
-  "confianza": 46,
+  "confianza": 15,
   "drivers": [
-    "Brent +2.70%/dia",
-    "Oro +0.32%/dia",
-    "DXY +0.06%/dia"
+    "Brent +2.19%/dia",
+    "Oro +0.33%/dia"
   ],
   "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
   "trend_summary": {
     "aapl": {
-      "avg_pct_dia": -0.038,
-      "volatilidad": 1.547,
-      "n_dias": 5
+      "avg_pct_dia": 0.455,
+      "volatilidad": 1.333,
+      "n_dias": 4
     },
     "amzn": {
-      "avg_pct_dia": -0.124,
-      "volatilidad": 1.818,
-      "n_dias": 5
+      "avg_pct_dia": 0.708,
+      "volatilidad": 0.824,
+      "n_dias": 4
     },
     "brent": {
-      "avg_pct_dia": 2.696,
-      "volatilidad": 5.55,
+      "avg_pct_dia": 2.193,
+      "volatilidad": 5.548,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.304,
-      "volatilidad": 1.281,
+      "avg_pct_dia": -0.006,
+      "volatilidad": 0.922,
       "n_dias": 14
     },
     "btc_volume": {
-      "avg_pct_dia": 6.813,
-      "volatilidad": 35.969,
-      "n_dias": 7
+      "avg_pct_dia": 4.731,
+      "volatilidad": 38.459,
+      "n_dias": 6
     },
     "copper": {
-      "avg_pct_dia": 0.515,
-      "volatilidad": 0.993,
-      "n_dias": 5
+      "avg_pct_dia": 0.644,
+      "volatilidad": 1.072,
+      "n_dias": 4
     },
     "dxy": {
-      "avg_pct_dia": 0.057,
-      "volatilidad": 0.316,
+      "avg_pct_dia": 0.022,
+      "volatilidad": 0.317,
       "n_dias": 14
     },
     "eurusd": {
-      "avg_pct_dia": -0.077,
-      "volatilidad": 0.176,
-      "n_dias": 5
+      "avg_pct_dia": -0.095,
+      "volatilidad": 0.192,
+      "n_dias": 4
     },
     "gold": {
-      "avg_pct_dia": 0.317,
-      "volatilidad": 1.866,
+      "avg_pct_dia": 0.327,
+      "volatilidad": 1.865,
       "n_dias": 14
     },
     "googl": {
-      "avg_pct_dia": 1.045,
-      "volatilidad": 1.808,
-      "n_dias": 5
+      "avg_pct_dia": 1.572,
+      "volatilidad": 1.644,
+      "n_dias": 4
     },
     "meta": {
-      "avg_pct_dia": 0.403,
-      "volatilidad": 2.153,
-      "n_dias": 5
+      "avg_pct_dia": 1.17,
+      "volatilidad": 1.69,
+      "n_dias": 4
     },
     "msft": {
-      "avg_pct_dia": -0.165,
-      "volatilidad": 1.188,
-      "n_dias": 5
+      "avg_pct_dia": 0.148,
+      "volatilidad": 1.129,
+      "n_dias": 4
     },
     "nasdaq": {
-      "avg_pct_dia": 0.278,
-      "volatilidad": 1.599,
-      "n_dias": 5
+      "avg_pct_dia": 0.746,
+      "volatilidad": 1.45,
+      "n_dias": 4
     },
     "natgas": {
-      "avg_pct_dia": -0.745,
-      "volatilidad": 3.153,
-      "n_dias": 5
+      "avg_pct_dia": -1.984,
+      "volatilidad": 2.182,
+      "n_dias": 4
     },
     "nvda": {
-      "avg_pct_dia": 0.633,
-      "volatilidad": 2.472,
-      "n_dias": 5
+      "avg_pct_dia": 1.156,
+      "volatilidad": 2.504,
+      "n_dias": 4
     },
     "silver": {
-      "avg_pct_dia": 1.587,
-      "volatilidad": 2.625,
-      "n_dias": 5
+      "avg_pct_dia": 1.245,
+      "volatilidad": 2.833,
+      "n_dias": 4
     },
     "sp500": {
-      "avg_pct_dia": 0.171,
-      "volatilidad": 1.216,
-      "n_dias": 5
+      "avg_pct_dia": 0.543,
+      "volatilidad": 1.075,
+      "n_dias": 4
     },
     "tsla": {
-      "avg_pct_dia": -0.249,
-      "volatilidad": 2.056,
-      "n_dias": 5
+      "avg_pct_dia": 0.22,
+      "volatilidad": 2.045,
+      "n_dias": 4
     },
     "usdcop": {
-      "avg_pct_dia": -0.093,
-      "volatilidad": 0.317,
+      "avg_pct_dia": -0.116,
+      "volatilidad": 0.319,
       "n_dias": 13
     },
     "wti": {
-      "avg_pct_dia": 2.897,
-      "volatilidad": 5.925,
-      "n_dias": 5
+      "avg_pct_dia": 1.926,
+      "volatilidad": 6.259,
+      "n_dias": 4
     }
   },
   "window_dias": 14,
