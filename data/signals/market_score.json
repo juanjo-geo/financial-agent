@@ -1,19 +1,19 @@
 {
-  "fecha": "2026-04-11",
-  "generado_en": "2026-04-11 13:08:03",
-  "score": 42,
+  "fecha": "2026-04-12",
+  "generado_en": "2026-04-12 13:11:08",
+  "score": 49,
   "label": "Visibilidad moderada",
   "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen INFLACIONARIO pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
+  "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Risk-off, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 3.8,
-      "desc": "Regimen INFLACIONARIO (confianza +15pts)",
+      "pts": 7.5,
+      "desc": "Regimen LATERAL (confianza +30pts)",
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 14.0,
-      "desc": "Conviccion 7/10",
+      "pts": 16.0,
+      "desc": "Conviccion 8/10",
       "max": 20
     },
     "coherencia_pred": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.0,
-      "desc": "Regime change 20/100 (Estable)",
+      "pts": 12.8,
+      "desc": "Regime change 15/100 (Estable)",
       "max": 15
     }
   }

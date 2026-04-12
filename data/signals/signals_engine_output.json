@@ -1,21 +1,22 @@
 {
   "senales": {
     "riesgo_macro": "Bajo",
-    "sesgo_mercado": "Mixto",
+    "sesgo_mercado": "Risk-off",
     "presion_inflacionaria": "Neutral",
     "presion_cop": "Neutral",
-    "conviccion": 7
+    "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": -0.3,
+    "riesgo_score": 0.7,
     "sesgo_risk_on": 1.0,
-    "sesgo_risk_off": 1.0,
+    "sesgo_risk_off": 2.5,
     "inflacion_score": -1.3,
     "cop_score": 0.5,
-    "conviccion_razon": "5 indicador(es) con movimiento significativo"
+    "conviccion_razon": "6 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
+      "btc_drop": 1.0,
       "sp500_up": -0.3
     },
     "inflacion": {
@@ -28,8 +29,8 @@
       "news_colombia_alta": 1.0
     },
     "sesgo": {
+      "btc": "Risk-off +2 (BTC -3.1%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-off +0.5 (Oro +0.4%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -45,13 +46,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -1.2243,
-    "btc": -0.1801,
+    "btc": -2.7427,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": -0.2225,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.3371,
+    "gold": -0.0647,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -68,13 +69,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -1.48801422,
-    "btc": -0.20286464,
+    "btc": -3.0893772800000003,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": -0.3150155,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.42319534000000003,
+    "gold": -0.08122438,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -84,14 +85,14 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": -0.44967300000000004,
+    "usdcop": -0.45785250000000005,
     "wti": 12.515168936486138
   },
   "multiplicadores_activos": {
     "brent": 1.2154,
     "btc": 1.1264,
     "dxy": 1.4158,
-    "usdcop": 1.3524,
+    "usdcop": 1.377,
     "gold": 1.2554
   }
 }

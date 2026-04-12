@@ -1,19 +1,18 @@
 {
-  "fecha": "2026-04-11",
-  "generado_en": "2026-04-11 13:08:02",
-  "regime": "INFLACIONARIO",
+  "fecha": "2026-04-12",
+  "generado_en": "2026-04-12 13:11:06",
+  "regime": "LATERAL",
   "scores": {
-    "INFLACIONARIO": 75,
+    "INFLACIONARIO": 50,
     "RISK-ON": 20,
     "CRISIS": 16,
-    "LATERAL": 60
+    "LATERAL": 80
   },
-  "confianza": 15,
+  "confianza": 30,
   "drivers": [
-    "Brent +1.68%/dia",
-    "Oro +0.35%/dia"
+    "4/5 activos sin tendencia definida"
   ],
-  "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
+  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "aapl": {
       "avg_pct_dia": 0.455,
@@ -26,19 +25,19 @@
       "n_dias": 4
     },
     "brent": {
-      "avg_pct_dia": 1.679,
-      "volatilidad": 5.507,
+      "avg_pct_dia": 1.261,
+      "volatilidad": 5.49,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.017,
-      "volatilidad": 0.923,
+      "avg_pct_dia": -0.174,
+      "volatilidad": 1.157,
       "n_dias": 14
     },
     "btc_volume": {
-      "avg_pct_dia": 16.674,
-      "volatilidad": 30.316,
-      "n_dias": 5
+      "avg_pct_dia": 19.981,
+      "volatilidad": 33.078,
+      "n_dias": 4
     },
     "copper": {
       "avg_pct_dia": 0.644,
@@ -46,18 +45,18 @@
       "n_dias": 4
     },
     "dxy": {
-      "avg_pct_dia": -0.014,
-      "volatilidad": 0.314,
+      "avg_pct_dia": -0.05,
+      "volatilidad": 0.307,
       "n_dias": 14
     },
     "eurusd": {
-      "avg_pct_dia": -0.095,
-      "volatilidad": 0.192,
-      "n_dias": 4
+      "avg_pct_dia": -0.127,
+      "volatilidad": 0.212,
+      "n_dias": 3
     },
     "gold": {
-      "avg_pct_dia": 0.351,
-      "volatilidad": 1.863,
+      "avg_pct_dia": 0.097,
+      "volatilidad": 1.648,
       "n_dias": 14
     },
     "googl": {
@@ -106,8 +105,8 @@
       "n_dias": 4
     },
     "usdcop": {
-      "avg_pct_dia": -0.141,
-      "volatilidad": 0.322,
+      "avg_pct_dia": -0.167,
+      "volatilidad": 0.323,
       "n_dias": 13
     },
     "wti": {
