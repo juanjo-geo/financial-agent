@@ -1,118 +1,118 @@
 {
-  "fecha": "2026-04-13",
-  "generado_en": "2026-04-13 13:48:55",
+  "fecha": "2026-04-14",
+  "generado_en": "2026-04-14 13:53:43",
   "regime": "LATERAL",
   "scores": {
     "INFLACIONARIO": 50,
     "RISK-ON": 20,
-    "CRISIS": 16,
-    "LATERAL": 80
+    "CRISIS": 44,
+    "LATERAL": 60
   },
-  "confianza": 30,
+  "confianza": 10,
   "drivers": [
-    "4/5 activos sin tendencia definida"
+    "3 activos laterales"
   ],
   "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "aapl": {
-      "avg_pct_dia": 1.065,
-      "volatilidad": 0.938,
-      "n_dias": 3
+      "avg_pct_dia": 0.411,
+      "volatilidad": 0.199,
+      "n_dias": 2
     },
     "amzn": {
-      "avg_pct_dia": 1.031,
-      "volatilidad": 0.697,
-      "n_dias": 3
+      "avg_pct_dia": 0.712,
+      "volatilidad": 0.65,
+      "n_dias": 2
     },
     "brent": {
-      "avg_pct_dia": 1.624,
-      "volatilidad": 5.37,
+      "avg_pct_dia": 1.321,
+      "volatilidad": 5.394,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.226,
-      "volatilidad": 1.114,
+      "avg_pct_dia": -0.323,
+      "volatilidad": 0.933,
       "n_dias": 14
     },
     "btc_volume": {
-      "avg_pct_dia": 1.927,
-      "volatilidad": 12.453,
-      "n_dias": 3
+      "avg_pct_dia": -4.143,
+      "volatilidad": 11.049,
+      "n_dias": 2
     },
     "copper": {
-      "avg_pct_dia": 0.395,
-      "volatilidad": 1.134,
-      "n_dias": 3
+      "avg_pct_dia": -0.355,
+      "volatilidad": 0.489,
+      "n_dias": 2
     },
     "dxy": {
-      "avg_pct_dia": -0.083,
-      "volatilidad": 0.293,
+      "avg_pct_dia": -0.063,
+      "volatilidad": 0.263,
       "n_dias": 14
     },
     "eurusd": {
-      "avg_pct_dia": -0.2,
-      "volatilidad": 0.227,
-      "n_dias": 2
+      "avg_pct_dia": -0.427,
+      "volatilidad": 0.0,
+      "n_dias": 1
     },
     "gold": {
-      "avg_pct_dia": 0.094,
-      "volatilidad": 1.646,
+      "avg_pct_dia": -0.056,
+      "volatilidad": 1.454,
       "n_dias": 14
     },
     "googl": {
-      "avg_pct_dia": 2.448,
-      "volatilidad": 0.731,
-      "n_dias": 3
+      "avg_pct_dia": 1.959,
+      "volatilidad": 0.293,
+      "n_dias": 2
     },
     "meta": {
-      "avg_pct_dia": 1.56,
-      "volatilidad": 1.789,
-      "n_dias": 3
+      "avg_pct_dia": 0.326,
+      "volatilidad": 0.481,
+      "n_dias": 2
     },
     "msft": {
-      "avg_pct_dia": 0.468,
-      "volatilidad": 1.136,
-      "n_dias": 3
+      "avg_pct_dia": -0.068,
+      "volatilidad": 1.035,
+      "n_dias": 2
     },
     "nasdaq": {
-      "avg_pct_dia": 1.471,
-      "volatilidad": 0.836,
-      "n_dias": 3
+      "avg_pct_dia": 0.957,
+      "volatilidad": 0.506,
+      "n_dias": 2
     },
     "natgas": {
-      "avg_pct_dia": -0.812,
-      "volatilidad": 0.925,
-      "n_dias": 3
+      "avg_pct_dia": -1.166,
+      "volatilidad": 0.952,
+      "n_dias": 2
     },
     "nvda": {
-      "avg_pct_dia": 2.255,
-      "volatilidad": 1.88,
-      "n_dias": 3
+      "avg_pct_dia": 1.157,
+      "volatilidad": 1.299,
+      "n_dias": 2
     },
     "silver": {
-      "avg_pct_dia": 0.472,
-      "volatilidad": 2.884,
-      "n_dias": 3
+      "avg_pct_dia": -0.763,
+      "volatilidad": 2.81,
+      "n_dias": 2
     },
     "sp500": {
-      "avg_pct_dia": 1.034,
-      "volatilidad": 0.758,
-      "n_dias": 3
+      "avg_pct_dia": 0.515,
+      "volatilidad": 0.229,
+      "n_dias": 2
     },
     "tsla": {
-      "avg_pct_dia": 1.257,
-      "volatilidad": 1.129,
-      "n_dias": 3
+      "avg_pct_dia": 0.47,
+      "volatilidad": 0.225,
+      "n_dias": 2
     },
     "usdcop": {
-      "avg_pct_dia": -0.204,
-      "volatilidad": 0.338,
+      "avg_pct_dia": -0.203,
+      "volatilidad": 0.339,
       "n_dias": 13
     },
     "wti": {
-      "avg_pct_dia": 2.477,
-      "volatilidad": 7.142,
-      "n_dias": 3
+      "avg_pct_dia": 5.471,
+      "volatilidad": 7.044,
+      "n_dias": 2
     }
   },
   "window_dias": 14,

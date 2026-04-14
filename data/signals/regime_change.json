@@ -1,25 +1,25 @@
 {
-  "fecha": "2026-04-13",
-  "generado_en": "2026-04-13 13:48:55",
+  "fecha": "2026-04-14",
+  "generado_en": "2026-04-14 13:53:42",
   "score": 8.0,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mejora",
+  "direccion": "Mixto",
   "transiciones": [
     {
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
       "a": "Bajo",
-      "score_parcial": 6.82,
+      "score_parcial": 5.45,
       "peso_dimension": 30
     }
   ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
-    "sesgo_mercado": 0.91,
-    "riesgo_macro": 6.82,
+    "sesgo_mercado": 2.27,
+    "riesgo_macro": 5.45,
     "presion_inflacionaria": 0.3,
     "presion_cop": 0.0
   },
@@ -30,8 +30,8 @@
     "presion_cop": 0.0
   },
   "baselines": {
-    "sesgo_mercado": 0.273,
-    "riesgo_macro": 0.455,
+    "sesgo_mercado": 0.182,
+    "riesgo_macro": 0.364,
     "presion_inflacionaria": 0.364,
     "presion_cop": 0.0
   },
@@ -40,7 +40,6 @@
     "sesgo_mercado": [
       "Risk-off",
       "Risk-off",
-      "Risk-off",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -51,10 +50,10 @@
       "Mixto",
       "Mixto",
       "Risk-off",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Medio",
       "Medio",
       "Alto",
       "Bajo",
@@ -67,10 +66,10 @@
       "Bajo",
       "Bajo",
       "Bajo",
+      "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Neutral",
       "Alcista",
       "Alcista",
@@ -83,7 +82,8 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Alcista"
+      "Alcista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",
