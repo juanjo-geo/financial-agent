@@ -1,14 +1,16 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-04-14 13:53:41
+Generado: 2026-04-15 13:49:51
 
 REGÍMENES DETECTADOS
 ------------------------------
 - Energy Disinflation
+- Mixed Macro
 
 EXPLICACIÓN
 ------------------------------
 - El petróleo cae, reduciendo presión inflacionaria vía energía.
+- Dólar fuerte y Bitcoin al alza sugieren un entorno macro mixto.
 
 SEÑALES BASE
 ------------------------------
@@ -18,10 +20,10 @@ SEÑALES BASE
 - BTC: 0.95% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.34% | down | none
+- DXY: 0.08% | up | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 0.96% | up | low
+- GOLD: -0.31% | down | none
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -31,5 +33,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.00% | flat | none
+- USDCOP: -0.04% | down | none
 - WTI: 12.52% | up | high
