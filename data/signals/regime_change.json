@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-04-16",
-  "generado_en": "2026-04-16 13:57:31",
-  "score": 10.3,
+  "fecha": "2026-04-17",
+  "generado_en": "2026-04-17 13:28:27",
+  "score": 12.7,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mixto",
+  "direccion": "Mejora",
   "transiciones": [
     {
       "dimension": "sesgo_mercado",
@@ -19,7 +19,7 @@
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
-      "a": "Medio",
+      "a": "Bajo",
       "score_parcial": 3.64,
       "peso_dimension": 30
     }
@@ -28,19 +28,19 @@
   "scores_por_dim": {
     "sesgo_mercado": 6.36,
     "riesgo_macro": 3.64,
-    "presion_inflacionaria": 0.3,
+    "presion_inflacionaria": 2.73,
     "presion_cop": 0.0
   },
   "recientes": {
     "sesgo_mercado": -0.333,
     "riesgo_macro": 0.333,
-    "presion_inflacionaria": 0.333,
+    "presion_inflacionaria": 0.0,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.091,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.364,
+    "presion_inflacionaria": 0.273,
     "presion_cop": 0.0
   },
   "n_dias_analizados": 14,
@@ -54,15 +54,14 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-off",
       "Mixto",
       "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Bajo",
       "Medio",
       "Bajo",
@@ -75,10 +74,10 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Medio"
+      "Medio",
+      "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Alcista",
       "Alcista",
       "Neutral",
@@ -91,7 +90,8 @@
       "Alcista",
       "Neutral",
       "Neutral",
-      "Alcista"
+      "Alcista",
+      "Bajista"
     ],
     "presion_cop": [
       "Neutral",
