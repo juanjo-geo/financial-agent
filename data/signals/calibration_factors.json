@@ -1,21 +1,21 @@
 {
-  "fecha": "2026-04-17",
-  "generado_en": "2026-04-17 13:28:30",
-  "total_predicciones": 581,
+  "fecha": "2026-04-18",
+  "generado_en": "2026-04-18 13:11:51",
+  "total_predicciones": 586,
   "bandas": {
     "1-3": {
-      "n": 125,
-      "acierto_real": 0.848,
+      "n": 126,
+      "acierto_real": 0.8492,
       "acierto_esperado": 0.45,
-      "factor": 1.8844,
+      "factor": 1.8871,
       "status": "Subconfiado",
       "suficientes_datos": true
     },
     "4-6": {
-      "n": 335,
-      "acierto_real": 0.5881,
+      "n": 337,
+      "acierto_real": 0.5905,
       "acierto_esperado": 0.55,
-      "factor": 1.0692,
+      "factor": 1.0736,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
@@ -28,10 +28,10 @@
       "suficientes_datos": true
     },
     "9-10": {
-      "n": 30,
-      "acierto_real": 0.7,
+      "n": 32,
+      "acierto_real": 0.7188,
       "acierto_esperado": 0.87,
-      "factor": 0.8046,
+      "factor": 0.8261,
       "status": "Bien calibrado",
       "suficientes_datos": true
     }
