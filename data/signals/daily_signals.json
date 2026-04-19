@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-04-18",
-  "generado_en": "2026-04-18 13:11:48",
+  "fecha": "2026-04-19",
+  "generado_en": "2026-04-19 13:11:11",
   "senales": {
     "riesgo_macro": "Bajo",
-    "sesgo_mercado": "Risk-off",
+    "sesgo_mercado": "Mixto",
     "presion_inflacionaria": "Bajista",
     "presion_cop": "Alcista USD/COP",
     "conviccion": 8
@@ -11,13 +11,13 @@
   "interpretacion": {
     "driver_principal": "El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.",
     "driver_secundario": "El petroleo Brent cedio con fuerza (-8.0%), lo que podria estar reflejando menor demanda o aumento de oferta.",
-    "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La caida del petroleo junto con el avance de las acciones sugiere alivio en costos de produccion que el mercado parece estar descontando positivamente. La preferencia por oro sobre Bitcoin podria estar indicando busqueda de refugio en activos mas tradicionales frente a mayor percepcion de incertidumbre.",
+    "lectura_cruzada": "Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante. La caida del petroleo junto con el avance de las acciones sugiere alivio en costos de produccion que el mercado parece estar descontando positivamente.",
     "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La apreciacion del dolar frente al peso podria generar presion adicional sobre importaciones y deuda externa colombiana. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
   },
   "scores_internos": {
-    "riesgo_score": 1.0,
+    "riesgo_score": 0.7,
     "sesgo_risk_on": 1.0,
-    "sesgo_risk_off": 3.0,
+    "sesgo_risk_off": 2.0,
     "inflacion_score": -3.0,
     "cop_score": 2.5,
     "conviccion_razon": "7 indicador(es) con movimiento significativo"
@@ -26,7 +26,6 @@
     "riesgo": {
       "brent_fall": -0.5,
       "gold_safe_haven": 1.5,
-      "btc_weak": 0.3,
       "sp500_up": -0.3
     },
     "inflacion": {
@@ -40,9 +39,8 @@
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -1.4%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-off +1.5 (Oro +2.2%)",
+      "gold": "Risk-off +1.5 (Oro +1.7%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -58,13 +56,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -8.0102,
-    "btc": -1.2087,
+    "btc": 0.0521,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": -0.0917,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 1.8023,
+    "gold": 1.409,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -81,8 +79,8 @@
     "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5493,
-      "1": 0.4507
+      "-1": 0.5428,
+      "1": 0.4572
     },
     "cv_accuracy_modelo": 51.9,
     "modelo": "RandomForest-Binary",

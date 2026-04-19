@@ -1,6 +1,6 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-04-18 13:11:47
+Generado: 2026-04-19 13:11:10
 
 REGÍMENES DETECTADOS
 ------------------------------
@@ -15,13 +15,13 @@ SEÑALES BASE
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
 - BRENT: -8.01% | down | high
-- BTC: -1.21% | down | none
+- BTC: 0.05% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
 - DXY: -0.09% | down | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 1.80% | up | medium
+- GOLD: 1.41% | up | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
