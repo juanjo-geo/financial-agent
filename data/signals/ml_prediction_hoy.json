@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-04-19 13:11:46",
-  "fecha": "2026-04-19",
+  "generado_en": "2026-04-20 13:52:45",
+  "fecha": "2026-04-20",
   "direccion": "Bajista",
   "valor_pred": -1,
   "probabilidades": {
-    "-1": 0.5428,
-    "1": 0.4572
+    "-1": 0.5626,
+    "1": 0.4374
   },
   "confianza_ml": 1,
-  "cv_accuracy": 0.5187,
+  "cv_accuracy": 0.5197,
   "modelo": "RandomForest-Binary"
 }

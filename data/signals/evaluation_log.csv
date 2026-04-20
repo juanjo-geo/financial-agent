@@ -590,3 +590,8 @@ fecha,indicador,direccion_predicha,cambio_real,acerto,confianza_predicha
 2026-04-19,dxy,Lateral,-0.0917,1,5
 2026-04-19,usdcop,Alcista,0.0,0,4
 2026-04-19,gold,Alcista,1.8023,1,7
+2026-04-20,brent,Bajista,-8.0102,1,9
+2026-04-20,btc,Alcista,0.0521,1,7
+2026-04-20,dxy,Lateral,-0.0917,1,3
+2026-04-20,usdcop,Lateral,0.0,1,4
+2026-04-20,gold,Alcista,1.409,1,6

@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-04-19",
-  "generado_en": "2026-04-19 13:11:12",
-  "score": 24.9,
+  "fecha": "2026-04-20",
+  "generado_en": "2026-04-20 13:52:10",
+  "score": 27.3,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -12,7 +12,7 @@
       "dimension_label": "Presion Inflacionaria",
       "de": "Neutral",
       "a": "Bajista",
-      "score_parcial": 11.82,
+      "score_parcial": 10.91,
       "peso_dimension": 20
     },
     {
@@ -20,7 +20,7 @@
       "dimension_label": "Presion COP",
       "de": "Neutral",
       "a": "Alcista USD/COP",
-      "score_parcial": 6.67,
+      "score_parcial": 10.0,
       "peso_dimension": 20
     },
     {
@@ -36,25 +36,24 @@
   "scores_por_dim": {
     "sesgo_mercado": 5.0,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 11.82,
-    "presion_cop": 6.67
+    "presion_inflacionaria": 10.91,
+    "presion_cop": 10.0
   },
   "recientes": {
     "sesgo_mercado": 0.333,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": -1.0,
-    "presion_cop": 0.667
+    "presion_cop": 1.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.182,
+    "presion_inflacionaria": 0.091,
     "presion_cop": 0.0
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -67,6 +66,7 @@
       "Mixto",
       "Mixto",
       "Risk-off",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
@@ -79,14 +79,13 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Neutral",
       "Bajista",
       "Alcista",
@@ -97,6 +96,7 @@
       "Neutral",
       "Neutral",
       "Alcista",
+      "Bajista",
       "Bajista",
       "Bajista",
       "Bajista"
@@ -113,7 +113,7 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP"
     ]
