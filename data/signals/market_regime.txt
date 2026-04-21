@@ -1,29 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-04-20 13:52:09
+Generado: 2026-04-21 13:52:34
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Risk Appetite
 - Energy Disinflation
 
 EXPLICACIÓN
 ------------------------------
-- Bitcoin sube, señal de apetito por riesgo y demanda especulativa.
 - El petróleo cae, reduciendo presión inflacionaria vía energía.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: -2.70% | down | medium
-- BTC: 1.72% | up | low
+- BRENT: -3.52% | down | medium
+- BTC: -0.03% | down | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.13% | down | none
+- DXY: 0.13% | up | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 0.59% | up | low
+- GOLD: -0.74% | down | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -33,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: -0.29% | down | none
+- USDCOP: -0.31% | down | none
 - WTI: 12.52% | up | high
