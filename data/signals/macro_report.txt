@@ -1,17 +1,17 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-04-21 13:52:34.031855
+Generado: 2026-04-22 13:52:16.704026
 
 AAPL | 0.21% | up | none
 AMZN | 1.36% | up | low
-BRENT | -3.52% | down | medium
-BTC | -0.03% | down | none
+BRENT | 1.42% | up | low
+BTC | 3.05% | up | medium
 BTC_VOLUME | 6.91% | up | high
 COPPER | -0.84% | down | none
-DXY | 0.13% | up | none
+DXY | -0.00% | down | none
 EURUSD | -0.43% | down | none
 GLOBAL_INFLATION_PROXY | 0.00% | flat | none
-GOLD | -0.74% | down | low
+GOLD | 0.65% | up | low
 GOOGL | 1.67% | up | low
 META | 0.81% | up | none
 MSFT | 0.97% | up | none
@@ -21,11 +21,11 @@ NVDA | 2.46% | up | medium
 SILVER | -3.57% | down | medium
 SP500 | 0.74% | up | none
 TSLA | 0.25% | up | none
-USDCOP | -0.31% | down | none
+USDCOP | 0.13% | up | none
 WTI | 12.52% | up | high
 
 INTERPRETACIÓN MACRO
 -------------------------
-- El petróleo cae, reduciendo presiones inflacionarias energéticas.
-- Bitcoin cae, indicando menor apetito por riesgo.
-- El peso colombiano muestra fortaleza relativa.
+- El petróleo sube, lo que puede aumentar presiones inflacionarias globales.
+- Bitcoin muestra demanda especulativa positiva.
+- El peso colombiano se debilita frente al dólar.

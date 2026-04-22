@@ -1,11 +1,12 @@
 SEÑALES DE MERCADO
-Generado: 2026-04-21 13:52:33
+Generado: 2026-04-22 13:52:16
 --------------------------------------------------
 
 - AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
-- Brent cae 3.52% (movimiento relevante). Valor actual: 90.68 USD/bbl
+- Brent sube 1.42% (movimiento leve relevante). Valor actual: 94.92 USD/bbl
+- Bitcoin sube 3.05% (movimiento relevante). Valor actual: 78,668.51 USD
 - BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC
-- Oro (XAU/USD) cae 0.74% (movimiento leve relevante). Valor actual: 4,806.70 USD/oz
+- Oro (XAU/USD) sube 0.65% (movimiento leve relevante). Valor actual: 4,769.30 USD/oz
 - GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
 - NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD
 - NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
