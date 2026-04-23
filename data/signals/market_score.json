@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-04-22",
-  "generado_en": "2026-04-22 13:52:20",
+  "fecha": "2026-04-23",
+  "generado_en": "2026-04-23 13:55:54",
   "score": 50,
   "label": "Visibilidad moderada",
   "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Risk-on, riesgo Bajo). Se recomienda cautela.",
+  "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
       "pts": 4.0,
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.6,
-      "desc": "Regime change 16/100 (Estable)",
+      "pts": 13.0,
+      "desc": "Regime change 14/100 (Estable)",
       "max": 15
     }
   }

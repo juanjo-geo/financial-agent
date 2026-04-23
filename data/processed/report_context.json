@@ -1,102 +1,102 @@
 {
-  "generado_en": "2026-04-22 13:53:09",
-  "fecha": "2026-04-22",
-  "market_context": "Indicador: aapl | Valor actual: 254.67999267578125 USD | Apertura: 254.13999938964844 USD | Cambio absoluto: 0.5399932861328125 | Cambio porcentual: 0.2124786682260483% | Estado: ok\nIndicador: amzn | Valor actual: 209.3643951416016 USD | Apertura: 206.5500030517578 USD | Cambio absoluto: 2.81439208984375 | Cambio porcentual: 1.3625717977542284% | Estado: ok\nIndicador: brent | Valor actual: 94.92 USD/bbl | Apertura: 93.59 USD/bbl | Cambio absoluto: 1.33 | Cambio porcentual: 1.4211% | Estado: ok\nIndicador: btc | Valor actual: 78668.5078 USD | Apertura: 76341.7266 USD | Cambio absoluto: 2326.7812 | Cambio porcentual: 3.0478% | Estado: ok\nIndicador: btc_volume | Valor actual: 38983573504.0 BTC | Apertura: 36465393617.0 BTC | Cambio absoluto: 2518179887.0 | Cambio porcentual: 6.905670382853171% | Estado: ok\nIndicador: copper | Valor actual: 5.578499794006348 USD/lb | Apertura: 5.625999927520752 USD/lb | Cambio absoluto: -0.0475001335144043 | Cambio porcentual: -0.8442967317160367% | Estado: ok\nIndicador: dxy | Valor actual: 98.399 index | Apertura: 98.402 index | Cambio absoluto: -0.003 | Cambio porcentual: -0.003% | Estado: ok\nIndicador: eurusd | Valor actual: 1.1546010971069336 USD | Apertura: 1.1595547199249268 USD | Cambio absoluto: -0.0049536228179931 | Cambio porcentual: -0.4272004358978313% | Estado: ok\nIndicador: global_inflation_proxy | Valor actual: 3.0 % | Apertura: 3.0 % | Cambio absoluto: 0.0 | Cambio porcentual: 0.0% | Estado: ok\nIndicador: gold | Valor actual: 4769.2998 USD/oz | Apertura: 4738.7002 USD/oz | Cambio absoluto: 30.5996 | Cambio porcentual: 0.6457% | Estado: ok\nIndicador: googl | Valor actual: 295.5350036621094 USD | Apertura: 290.69000244140625 USD | Cambio absoluto: 4.845001220703125 | Cambio porcentual: 1.6667244074483507% | Estado: ok\nIndicador: meta | Valor actual: 570.5850219726562 USD | Apertura: 566.0150146484375 USD | Cambio absoluto: 4.57000732421875 | Cambio porcentual: 0.8074003702988811% | Estado: ok\nIndicador: msft | Valor actual: 370.7550048828125 USD | Apertura: 367.2049865722656 USD | Cambio absoluto: 3.550018310546875 | Cambio porcentual: 0.96676745696868% | Estado: ok\nIndicador: nasdaq | Valor actual: 21786.779296875 USD | Apertura: 21472.5234375 USD | Cambio absoluto: 314.255859375 | Cambio porcentual: 1.4635255157117582% | Estado: ok\nIndicador: natgas | Valor actual: 2.806999921798706 USD/MMBtu | Apertura: 2.812999963760376 USD/MMBtu | Cambio absoluto: -0.0060000419616699 | Cambio porcentual: -0.2132969086017746% | Estado: ok\nIndicador: nvda | Valor actual: 176.41000366210938 USD | Apertura: 172.17999267578125 USD | Cambio absoluto: 4.230010986328125 | Cambio porcentual: 2.4567378129079898% | Estado: ok\nIndicador: silver | Valor actual: 72.46499633789062 USD/oz | Apertura: 75.1500015258789 USD/oz | Cambio absoluto: -2.685005187988281 | Cambio porcentual: -3.5728611223828968% | Estado: ok\nIndicador: sp500 | Valor actual: 6561.02001953125 USD | Apertura: 6512.60986328125 USD | Cambio absoluto: 48.41015625 | Cambio porcentual: 0.7433295908440843% | Estado: ok\nIndicador: tsla | Valor actual: 364.9200134277344 USD | Apertura: 364.0273132324219 USD | Cambio absoluto: 0.8927001953125 | Cambio porcentual: 0.2452289053218746% | Estado: ok\nIndicador: usdcop | Valor actual: 3577.22 COP/USD | Apertura: 3572.6201 COP/USD | Cambio absoluto: 4.5999 | Cambio porcentual: 0.1288% | Estado: ok\nIndicador: wti | Valor actual: 111.3000030517578 USD/bbl | Apertura: 98.91999816894533 USD/bbl | Cambio absoluto: 12.3800048828125 | Cambio porcentual: 12.515168936486138% | Estado: ok",
-  "historical_context": "COMPARACION HISTORICA (valor de cierre):\nIndicador                          Hoy      Hace 7d   Var7d%     Hace 30d  Var30d% Unidad\n-------------------------------------------------------------------------------------\naapl                            254.68       254.68   +0.00%       251.49   +1.27%  USD\namzn                            209.36       209.36   +0.00%       210.14   -0.37%  USD\nbrent                            94.92        97.35   -2.50%        99.94   -5.02%  USD/bbl\nbtc                          78,668.51    75,147.04   +4.69%    70,914.86  +10.93%  USD\nbtc_volume                38,983,573,504.00 38,983,573,504.00   +0.00% 51,508,669,357.00  -24.32%  BTC\ncopper                            5.58         5.58   +0.00%         5.44   +2.56%  USD/lb\ndxy                              98.40        98.14   +0.26%        98.95   -0.56%  index\neurusd                            1.15         1.15   +0.00%         1.16   -0.12%  USD\nglobal_inflation_proxy            3.00         3.00   +0.00%         3.00   +0.00%  %\ngold                          4,769.30     4,847.50   -1.61%     4,404.10   +8.29%  USD/oz\ngoogl                           295.54       295.54   +0.00%       302.06   -2.16%  USD\nmeta                            570.59       570.59   +0.00%       604.06   -5.54%  USD\nmsft                            370.76       370.76   +0.00%       383.00   -3.20%  USD\nnasdaq                       21,786.78    21,786.78   +0.00%    21,946.76   -0.73%  USD\nnatgas                            2.81         2.81   +0.00%         2.89   -2.91%  USD/MMBtu\nnvda                            176.41       176.41   +0.00%       175.64   +0.44%  USD\nsilver                           72.46        72.46   +0.00%        69.05   +4.95%  USD/oz\nsp500                         6,561.02     6,561.02   +0.00%     6,581.00   -0.30%  USD\ntsla                            364.92       364.92   +0.00%       380.85   -4.18%  USD\nusdcop                        3,577.22     3,588.54   -0.32%     3,626.28   -1.35%  COP/USD\nwti                             111.30       111.30   +0.00%        88.13  +26.29%  USD/bbl",
-  "news_context": "AAPL:\n- Apple’s Cook to Hand Reins to Ternus After Record-Setting Tenure - Bloomberg.com (Bloomberg.com)\n- Ahead of Earnings, Is Apple Stock a Buy, a Sell, or Fairly Valued? - Morningstar (Morningstar)\nAMZN:\n- Amazon to invest up to another $25 billion in Anthropic as part of AI infrastructure deal - CNBC (CNBC)\n- Amazon (AMZN) Steps Up Weight Loss Push, Knocks HIMS Stock Off the Scale - TipRanks (TipRanks)\nBRENT:\n- Oil prices rise after Trump says Iranian ship seized - BBC (BBC)\n- A timeline of how the Iran war shook oil prices — and what comes next - CNBC (CNBC)\nBTC:\n- Bitcoin Price Forecast: Why is BTC rallying? - FXStreet (FXStreet)\n- BTC price stalls at $78,000 as traders brace for liquidation-driven breakout: Crypto Markets Today - CoinDesk (CoinDesk)\nBTC_VOLUME:\n- Binance BTC Volume Soars: $1.4B Spot Trading Reveals Remarkable Market Resilience - MEXC (MEXC)\n- Bitcoin Long-Term Holders Spend 97K BTC in Largest One-Day Move of 2025 - CoinDesk (CoinDesk)\nCOPPER:\n- Goldman Sachs maintains 2026 copper price, surplus forecasts - Reuters (Reuters)\n- Thousands of feet of copper wire allegedly stolen from Cargill grain terminal in Savage - Bring Me The News (Bring Me The News)\nDXY:\n- US Dollar Index holds firm as US naval blockade undermines Iran ceasefire extension - FXStreet (FXStreet)\n- US Dollar Price Forecast: DXY Dips on Ceasefire – Can GBP/USD and EUR/USD Break Out? - FXEmpire (FXEmpire)\nEURUSD:\n- Euro FX EUR/USD Futures Overview - CME Group (CME Group)\n- EUR/USD recovers slightly after Trump announces ceasefire extension - FXStreet (FXStreet)\nGLOBAL_INFLATION_PROXY:\n- Inflation Surges as Effects of the Iran War Show in Prices - The New York Times (The New York Times)\n- Consumer Prices, OECD - Updated: 7 April 2026 - OECD (OECD)\nGOLD:\n- Gold (XAU/USD) Price Forecast for Today, Tomorrow, Next Week, and the Next 30 Days - LiteFinance (LiteFinance)\n- XAU/USD Analysis 22/04: Bearish Momentum Gains Strength Amid Sustained Buyer Weakness (chart) - DailyForex (DailyForex)\nGOOGL:\n- Google Pushes Agentic AI Toward The Enterprise Mainstream (GOOG) (GOOGL) - Seeking Alpha (Seeking Alpha)\n- 2 Surging Stocks with Impressive Fundamentals and 1 We Turn Down - StockStory (StockStory)\nMETA:\n- Exclusive: Meta to start capturing employee mouse movements, keystrokes for AI training data - Reuters (Reuters)\n- Beijing tightens its grip on AI firms that try to shed their Chinese ties - The Washington Post (The Washington Post)\nMSFT:\n- Microsoft (MSFT) Ordered to Face $2.8B Cloud Licensing Lawsuit in Landmark U.K. Ruling - TipRanks (TipRanks)\n- Microsoft cuts Xbox subscription prices, bucking industry trends - Yahoo Finance (Yahoo Finance)\nNASDAQ:\n- Stock market today: Dow, S&P 500, Nasdaq slide amid US-Iran peace talk uncertainty - Yahoo Finance (Yahoo Finance)\n- Stock market today: Dow, S&P 500, Nasdaq futures rise after Trump extends US-Iran ceasefire - Yahoo Finance (Yahoo Finance)\nNATGAS:\n- Weekly Natural Gas Storage Report - U.S. Energy Information Administration (EIA) (.gov) (U.S. Energy Information Administration (EIA) (.gov))\n- US Natgas Prices Ease - TradingView (TradingView)\nNVDA:\n- Nvidia Stock-Split: 2 Years and $1.5 Trillion Later, Can It Reach $1,200 Again? - The Motley Fool (The Motley Fool)\n- Here’s Nightview Fund’s Views on NVIDIA (NVDA) - Yahoo Finance UK (Yahoo Finance UK)\nSILVER:\n- Silver Forecast: XAG/USD holds above 200-SMA, eyes 23.6% Fibo. breakout - FXStreet (FXStreet)\n- Silver Price Forecast: XAG/USD slips before Warsh Fed hearing - FXStreet (FXStreet)\nSP500:\n- Vanguard challenges the S&P 500 as a one-stop strategy - thestreet.com (thestreet.com)\n- Should You Really Buy Stocks With the S&P 500 Near Its Record High? Historical Data Gives a Clear Answer. - Yahoo Finance (Yahoo Finance)\nTSLA:\n- Tesla (TSLA) Reports Q1: Everything You Need To Know Ahead Of Earnings - Yahoo Finance (Yahoo Finance)\n- 4 stocks to watch on Wednesday: TSLA, BA, ABNB, ABBNY (SP500:) - Seeking Alpha (Seeking Alpha)\nUSDCOP:\n- Dólar (TRM hoy) en Colombia, [Divisa hoy Actualizada] - mascolombia.com (mascolombia.com)\n- Euro hoy en Colombia, [Divisa hoy actualizada] - mascolombia.com (mascolombia.com)\nWTI:\n- Oil prices whipsaw after Trump extends ceasefire with Iran but keeps blockade in place - CNBC (CNBC)\n- Oil Spike Peaked? Hormuz Could Pull WTI To $75 - United States Oil Fund (ARCA:USO) - Benzinga (Benzinga)",
+  "generado_en": "2026-04-23 13:56:39",
+  "fecha": "2026-04-23",
+  "market_context": "Indicador: aapl | Valor actual: 254.67999267578125 USD | Apertura: 254.13999938964844 USD | Cambio absoluto: 0.5399932861328125 | Cambio porcentual: 0.2124786682260483% | Estado: ok\nIndicador: amzn | Valor actual: 209.3643951416016 USD | Apertura: 206.5500030517578 USD | Cambio absoluto: 2.81439208984375 | Cambio porcentual: 1.3625717977542284% | Estado: ok\nIndicador: brent | Valor actual: 103.11 USD/bbl | Apertura: 101.58 USD/bbl | Cambio absoluto: 1.53 | Cambio porcentual: 1.5062% | Estado: ok\nIndicador: btc | Valor actual: 77422.5 USD | Apertura: 78192.9844 USD | Cambio absoluto: -770.4844 | Cambio porcentual: -0.9854% | Estado: ok\nIndicador: btc_volume | Valor actual: 38983573504.0 BTC | Apertura: 36465393617.0 BTC | Cambio absoluto: 2518179887.0 | Cambio porcentual: 6.905670382853171% | Estado: ok\nIndicador: copper | Valor actual: 5.578499794006348 USD/lb | Apertura: 5.625999927520752 USD/lb | Cambio absoluto: -0.0475001335144043 | Cambio porcentual: -0.8442967317160367% | Estado: ok\nIndicador: dxy | Valor actual: 98.71 index | Apertura: 98.616 index | Cambio absoluto: 0.094 | Cambio porcentual: 0.0953% | Estado: ok\nIndicador: eurusd | Valor actual: 1.1546010971069336 USD | Apertura: 1.1595547199249268 USD | Cambio absoluto: -0.0049536228179931 | Cambio porcentual: -0.4272004358978313% | Estado: ok\nIndicador: global_inflation_proxy | Valor actual: 3.0 % | Apertura: 3.0 % | Cambio absoluto: 0.0 | Cambio porcentual: 0.0% | Estado: ok\nIndicador: gold | Valor actual: 4752.1001 USD/oz | Apertura: 4759.2002 USD/oz | Cambio absoluto: -7.1001 | Cambio porcentual: -0.1492% | Estado: ok\nIndicador: googl | Valor actual: 295.5350036621094 USD | Apertura: 290.69000244140625 USD | Cambio absoluto: 4.845001220703125 | Cambio porcentual: 1.6667244074483507% | Estado: ok\nIndicador: meta | Valor actual: 570.5850219726562 USD | Apertura: 566.0150146484375 USD | Cambio absoluto: 4.57000732421875 | Cambio porcentual: 0.8074003702988811% | Estado: ok\nIndicador: msft | Valor actual: 370.7550048828125 USD | Apertura: 367.2049865722656 USD | Cambio absoluto: 3.550018310546875 | Cambio porcentual: 0.96676745696868% | Estado: ok\nIndicador: nasdaq | Valor actual: 21786.779296875 USD | Apertura: 21472.5234375 USD | Cambio absoluto: 314.255859375 | Cambio porcentual: 1.4635255157117582% | Estado: ok\nIndicador: natgas | Valor actual: 2.806999921798706 USD/MMBtu | Apertura: 2.812999963760376 USD/MMBtu | Cambio absoluto: -0.0060000419616699 | Cambio porcentual: -0.2132969086017746% | Estado: ok\nIndicador: nvda | Valor actual: 176.41000366210938 USD | Apertura: 172.17999267578125 USD | Cambio absoluto: 4.230010986328125 | Cambio porcentual: 2.4567378129079898% | Estado: ok\nIndicador: silver | Valor actual: 72.46499633789062 USD/oz | Apertura: 75.1500015258789 USD/oz | Cambio absoluto: -2.685005187988281 | Cambio porcentual: -3.5728611223828968% | Estado: ok\nIndicador: sp500 | Valor actual: 6561.02001953125 USD | Apertura: 6512.60986328125 USD | Cambio absoluto: 48.41015625 | Cambio porcentual: 0.7433295908440843% | Estado: ok\nIndicador: tsla | Valor actual: 364.9200134277344 USD | Apertura: 364.0273132324219 USD | Cambio absoluto: 0.8927001953125 | Cambio porcentual: 0.2452289053218746% | Estado: ok\nIndicador: usdcop | Valor actual: 3562.1899 COP/USD | Apertura: 3565.1201 COP/USD | Cambio absoluto: -2.9302 | Cambio porcentual: -0.0822% | Estado: ok\nIndicador: wti | Valor actual: 111.3000030517578 USD/bbl | Apertura: 98.91999816894533 USD/bbl | Cambio absoluto: 12.3800048828125 | Cambio porcentual: 12.515168936486138% | Estado: ok",
+  "historical_context": "COMPARACION HISTORICA (valor de cierre):\nIndicador                          Hoy      Hace 7d   Var7d%     Hace 30d  Var30d% Unidad\n-------------------------------------------------------------------------------------\naapl                            254.68       254.68   +0.00%       251.64   +1.21%  USD\namzn                            209.36       209.36   +0.00%       207.24   +1.03%  USD\nbrent                           103.11        97.06   +6.23%       104.49   -1.32%  USD/bbl\nbtc                          77,422.50    73,602.43   +5.19%    70,517.86   +9.79%  USD\nbtc_volume                38,983,573,504.00 38,983,573,504.00   +0.00% 40,181,522,399.00   -2.98%  BTC\ncopper                            5.58         5.58   +0.00%         5.42   +2.88%  USD/lb\ndxy                              98.71        98.18   +0.54%        99.43   -0.72%  index\neurusd                            1.15         1.15   +0.00%         1.16   -0.53%  USD\nglobal_inflation_proxy            3.00         3.00   +0.00%         3.00   +0.00%  %\ngold                          4,752.10     4,840.40   -1.82%     4,399.30   +8.02%  USD/oz\ngoogl                           295.54       295.54   +0.00%       290.44   +1.75%  USD\nmeta                            570.59       570.59   +0.00%       592.92   -3.77%  USD\nmsft                            370.76       370.76   +0.00%       372.74   -0.53%  USD\nnasdaq                       21,786.78    21,786.78   +0.00%    21,761.89   +0.11%  USD\nnatgas                            2.81         2.81   +0.00%         2.94   -4.62%  USD/MMBtu\nnvda                            176.41       176.41   +0.00%       175.20   +0.69%  USD\nsilver                           72.46        72.46   +0.00%        69.27   +4.61%  USD/oz\nsp500                         6,561.02     6,561.02   +0.00%     6,556.37   +0.07%  USD\ntsla                            364.92       364.92   +0.00%       383.03   -4.73%  USD\nusdcop                        3,562.19     3,614.20   -1.44%     3,709.57   -3.97%  COP/USD\nwti                             111.30       111.30   +0.00%        92.35  +20.52%  USD/bbl",
+  "news_context": "AAPL:\n- Apple CEO Cook steps down, effective Sept. 1; Ternus named CEO (AAPL:NASDAQ) - Seeking Alpha (Seeking Alpha)\n- Trade Strategy For SPY, QQQ, AAPL, MSFT, NVDA, GOOGL, META, And TSLA - Benzinga (Benzinga)\nAMZN:\n- Amazon Plans to Invest Up to $25 Billion in Anthropic - The New York Times (The New York Times)\n- Stocks making the biggest moves premarket: Amazon, Apple, GE Aerospace, UnitedHealth & more - CNBC (CNBC)\nBRENT:\n- StanChart $95 Per Barrel Is The New Oil Price Equilibrium - Crude Oil Prices Today | OilPrice.com (Crude Oil Prices Today | OilPrice.com)\n- Current price of oil as of April 22, 2026 - Fortune (Fortune)\nBTC:\n- Bitcoin 2026 Prediction: Dollar, Liquidity Volume Signal Downside (Cryptocurrency:BTC-USD) - Seeking Alpha (Seeking Alpha)\n- WLFI Token Dives as Investor Feud Escalates - Investing News Network (Investing News Network)\nBTC_VOLUME:\n- Binance BTC Volume Soars: $1.4B Spot Trading Reveals Remarkable Market Resilience - MEXC (MEXC)\n- Bitcoin Long-Term Holders Spend 97K BTC in Largest One-Day Move of 2025 - CoinDesk (CoinDesk)\nCOPPER:\n- Copper king Chile faces acid supply crunch as China exports dry up - Reuters (Reuters)\n- Copper price: Goldman maintains year-end forecast, Traxys sees $15,000 - Mining.com (Mining.com)\nDXY:\n- US dollar dominance strengthens as Iran war drives safe-haven demand — SWIFT data confirms the shift - MSN (MSN)\n- Dollar Reasserts Itself As Global Tensions Shift Currency Markets - Seeking Alpha (Seeking Alpha)\nEURUSD:\n- Chart EUR/USD Update: Room for lower - Continuum Economics (Continuum Economics)\n- ⚖️The Overbalance series: EURCAD, EURUSD, GBPUSD (April 23, 2026) - XTB.com (XTB.com)\nGLOBAL_INFLATION_PROXY:\n- Inflation Surges as Effects of the Iran War Show in Prices - The New York Times (The New York Times)\n- Consumer Prices, OECD - Updated: 7 April 2026 - OECD (OECD)\nGOLD:\n- Gold Price Forecast: XAU/USD remains pressured below $4,700 amid firm USD - FXStreet (FXStreet)\n- Gold Price Analysis: Bond Market Swings Keep XAU/USD in Focus - FXEmpire (FXEmpire)\nGOOGL:\n- Going Into Earnings, Is Alphabet Stock a Buy, a Sell, or Fairly Valued? - Morningstar (Morningstar)\n- DARPA Pushes Hybrid Quantum Systems, Opening New Path for IBM, GOOGL, and IONQ - TipRanks (TipRanks)\nMETA:\n- Meta is tracking employee keystrokes on Google, LinkedIn, Wikipedia as part of AI training initiative - CNBC (CNBC)\n- Meta will now allow parents to see the topics their child discussed with Meta AI - TechCrunch (TechCrunch)\nMSFT:\n- “We Do Not Have Conflicting Interests…” Microsoft Stock (NASDAQ:MSFT) Gains on New Plan to be the Agentic AI Internet’s Backbone - TipRanks (TipRanks)\n- Microsoft: The Dumbest Sell-Off In Big Tech - Seeking Alpha (Seeking Alpha)\nNASDAQ:\n- Stocks fall, S&P 500 and Nasdaq pull back from all-time highs: Live updates - CNBC (CNBC)\n- Stock market today: Dow, S&P 500, and Nasdaq futures slide as oil rises, Tesla slips after earnings - Yahoo Finance (Yahoo Finance)\nNATGAS:\n- Natural gas inventories at the end of winter heating season were near five-year average - U.S. Energy Information Administration (EIA) (.gov) (U.S. Energy Information Administration (EIA) (.gov))\n- Researchers develop method to make renewable natural gas directly from waste - WSU Insider (WSU Insider)\nNVDA:\n- Nvidia Stock-Split: 2 Years and $1.5 Trillion Later, Can It Reach $1,200 Again? - The Motley Fool (The Motley Fool)\n- Forget Nvidia (NVDA), Focus on This ‘Sold Out’ AI Memory Giant Instead - TipRanks (TipRanks)\nSILVER:\n- Silver Price Forecast: XAG/USD plummets below $76 as oil price posts fresh weekly high - FXStreet (FXStreet)\n- Silver Price Analysis: XAG/USD Faces a Key Test as Yields Swing - FXEmpire (FXEmpire)\nSP500:\n- S&P 500, Nasdaq close at records after U.S. extends Iran ceasefire - CNBC (CNBC)\n- Stock Market Today: Major Indexes Open Lower After S&P 500, Nasdaq Close at Latest Record Highs; ServiceNow, IBM Shares Dive - Investopedia (Investopedia)\nTSLA:\n- Tesla (TSLA) quietly discloses $2 billion AI hardware company acquisition buried in filing - Electrek (Electrek)\n- Tesla (TSLA) Gains Analyst Support as Robotaxi Opportunity Takes Shape - Yahoo Finance (Yahoo Finance)\nUSDCOP:\n- Dólar (TRM hoy) en Colombia, [Divisa hoy Actualizada] - mascolombia.com (mascolombia.com)\n- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)\nWTI:\n- Brent oil rises above $100 after Iran seizes container ships, U.S. maintains naval blockade - CNBC (CNBC)\n- Crude Oil WTI is up by 4.02% - TradingView (TradingView)",
   "news_by_indicator": {
     "aapl": [
-      "- Apple’s Cook to Hand Reins to Ternus After Record-Setting Tenure - Bloomberg.com (Bloomberg.com)",
-      "- Ahead of Earnings, Is Apple Stock a Buy, a Sell, or Fairly Valued? - Morningstar (Morningstar)"
+      "- Apple CEO Cook steps down, effective Sept. 1; Ternus named CEO (AAPL:NASDAQ) - Seeking Alpha (Seeking Alpha)",
+      "- Trade Strategy For SPY, QQQ, AAPL, MSFT, NVDA, GOOGL, META, And TSLA - Benzinga (Benzinga)"
     ],
     "amzn": [
-      "- Amazon to invest up to another $25 billion in Anthropic as part of AI infrastructure deal - CNBC (CNBC)",
-      "- Amazon (AMZN) Steps Up Weight Loss Push, Knocks HIMS Stock Off the Scale - TipRanks (TipRanks)"
+      "- Amazon Plans to Invest Up to $25 Billion in Anthropic - The New York Times (The New York Times)",
+      "- Stocks making the biggest moves premarket: Amazon, Apple, GE Aerospace, UnitedHealth & more - CNBC (CNBC)"
     ],
     "brent": [
-      "- Oil prices rise after Trump says Iranian ship seized - BBC (BBC)",
-      "- A timeline of how the Iran war shook oil prices — and what comes next - CNBC (CNBC)"
+      "- StanChart $95 Per Barrel Is The New Oil Price Equilibrium - Crude Oil Prices Today | OilPrice.com (Crude Oil Prices Today | OilPrice.com)",
+      "- Current price of oil as of April 22, 2026 - Fortune (Fortune)"
     ],
     "btc": [
-      "- Bitcoin Price Forecast: Why is BTC rallying? - FXStreet (FXStreet)",
-      "- BTC price stalls at $78,000 as traders brace for liquidation-driven breakout: Crypto Markets Today - CoinDesk (CoinDesk)"
+      "- Bitcoin 2026 Prediction: Dollar, Liquidity Volume Signal Downside (Cryptocurrency:BTC-USD) - Seeking Alpha (Seeking Alpha)",
+      "- WLFI Token Dives as Investor Feud Escalates - Investing News Network (Investing News Network)"
     ],
     "btc_volume": [
       "- Binance BTC Volume Soars: $1.4B Spot Trading Reveals Remarkable Market Resilience - MEXC (MEXC)",
       "- Bitcoin Long-Term Holders Spend 97K BTC in Largest One-Day Move of 2025 - CoinDesk (CoinDesk)"
     ],
     "copper": [
-      "- Goldman Sachs maintains 2026 copper price, surplus forecasts - Reuters (Reuters)",
-      "- Thousands of feet of copper wire allegedly stolen from Cargill grain terminal in Savage - Bring Me The News (Bring Me The News)"
+      "- Copper king Chile faces acid supply crunch as China exports dry up - Reuters (Reuters)",
+      "- Copper price: Goldman maintains year-end forecast, Traxys sees $15,000 - Mining.com (Mining.com)"
     ],
     "dxy": [
-      "- US Dollar Index holds firm as US naval blockade undermines Iran ceasefire extension - FXStreet (FXStreet)",
-      "- US Dollar Price Forecast: DXY Dips on Ceasefire – Can GBP/USD and EUR/USD Break Out? - FXEmpire (FXEmpire)"
+      "- US dollar dominance strengthens as Iran war drives safe-haven demand — SWIFT data confirms the shift - MSN (MSN)",
+      "- Dollar Reasserts Itself As Global Tensions Shift Currency Markets - Seeking Alpha (Seeking Alpha)"
     ],
     "eurusd": [
-      "- Euro FX EUR/USD Futures Overview - CME Group (CME Group)",
-      "- EUR/USD recovers slightly after Trump announces ceasefire extension - FXStreet (FXStreet)"
+      "- Chart EUR/USD Update: Room for lower - Continuum Economics (Continuum Economics)",
+      "- ⚖️The Overbalance series: EURCAD, EURUSD, GBPUSD (April 23, 2026) - XTB.com (XTB.com)"
     ],
     "global_inflation_proxy": [
       "- Inflation Surges as Effects of the Iran War Show in Prices - The New York Times (The New York Times)",
       "- Consumer Prices, OECD - Updated: 7 April 2026 - OECD (OECD)"
     ],
     "gold": [
-      "- Gold (XAU/USD) Price Forecast for Today, Tomorrow, Next Week, and the Next 30 Days - LiteFinance (LiteFinance)",
-      "- XAU/USD Analysis 22/04: Bearish Momentum Gains Strength Amid Sustained Buyer Weakness (chart) - DailyForex (DailyForex)"
+      "- Gold Price Forecast: XAU/USD remains pressured below $4,700 amid firm USD - FXStreet (FXStreet)",
+      "- Gold Price Analysis: Bond Market Swings Keep XAU/USD in Focus - FXEmpire (FXEmpire)"
     ],
     "googl": [
-      "- Google Pushes Agentic AI Toward The Enterprise Mainstream (GOOG) (GOOGL) - Seeking Alpha (Seeking Alpha)",
-      "- 2 Surging Stocks with Impressive Fundamentals and 1 We Turn Down - StockStory (StockStory)"
+      "- Going Into Earnings, Is Alphabet Stock a Buy, a Sell, or Fairly Valued? - Morningstar (Morningstar)",
+      "- DARPA Pushes Hybrid Quantum Systems, Opening New Path for IBM, GOOGL, and IONQ - TipRanks (TipRanks)"
     ],
     "meta": [
-      "- Exclusive: Meta to start capturing employee mouse movements, keystrokes for AI training data - Reuters (Reuters)",
-      "- Beijing tightens its grip on AI firms that try to shed their Chinese ties - The Washington Post (The Washington Post)"
+      "- Meta is tracking employee keystrokes on Google, LinkedIn, Wikipedia as part of AI training initiative - CNBC (CNBC)",
+      "- Meta will now allow parents to see the topics their child discussed with Meta AI - TechCrunch (TechCrunch)"
     ],
     "msft": [
-      "- Microsoft (MSFT) Ordered to Face $2.8B Cloud Licensing Lawsuit in Landmark U.K. Ruling - TipRanks (TipRanks)",
-      "- Microsoft cuts Xbox subscription prices, bucking industry trends - Yahoo Finance (Yahoo Finance)"
+      "- “We Do Not Have Conflicting Interests…” Microsoft Stock (NASDAQ:MSFT) Gains on New Plan to be the Agentic AI Internet’s Backbone - TipRanks (TipRanks)",
+      "- Microsoft: The Dumbest Sell-Off In Big Tech - Seeking Alpha (Seeking Alpha)"
     ],
     "nasdaq": [
-      "- Stock market today: Dow, S&P 500, Nasdaq slide amid US-Iran peace talk uncertainty - Yahoo Finance (Yahoo Finance)",
-      "- Stock market today: Dow, S&P 500, Nasdaq futures rise after Trump extends US-Iran ceasefire - Yahoo Finance (Yahoo Finance)"
+      "- Stocks fall, S&P 500 and Nasdaq pull back from all-time highs: Live updates - CNBC (CNBC)",
+      "- Stock market today: Dow, S&P 500, and Nasdaq futures slide as oil rises, Tesla slips after earnings - Yahoo Finance (Yahoo Finance)"
     ],
     "natgas": [
-      "- Weekly Natural Gas Storage Report - U.S. Energy Information Administration (EIA) (.gov) (U.S. Energy Information Administration (EIA) (.gov))",
-      "- US Natgas Prices Ease - TradingView (TradingView)"
+      "- Natural gas inventories at the end of winter heating season were near five-year average - U.S. Energy Information Administration (EIA) (.gov) (U.S. Energy Information Administration (EIA) (.gov))",
+      "- Researchers develop method to make renewable natural gas directly from waste - WSU Insider (WSU Insider)"
     ],
     "nvda": [
       "- Nvidia Stock-Split: 2 Years and $1.5 Trillion Later, Can It Reach $1,200 Again? - The Motley Fool (The Motley Fool)",
-      "- Here’s Nightview Fund’s Views on NVIDIA (NVDA) - Yahoo Finance UK (Yahoo Finance UK)"
+      "- Forget Nvidia (NVDA), Focus on This ‘Sold Out’ AI Memory Giant Instead - TipRanks (TipRanks)"
     ],
     "silver": [
-      "- Silver Forecast: XAG/USD holds above 200-SMA, eyes 23.6% Fibo. breakout - FXStreet (FXStreet)",
-      "- Silver Price Forecast: XAG/USD slips before Warsh Fed hearing - FXStreet (FXStreet)"
+      "- Silver Price Forecast: XAG/USD plummets below $76 as oil price posts fresh weekly high - FXStreet (FXStreet)",
+      "- Silver Price Analysis: XAG/USD Faces a Key Test as Yields Swing - FXEmpire (FXEmpire)"
     ],
     "sp500": [
-      "- Vanguard challenges the S&P 500 as a one-stop strategy - thestreet.com (thestreet.com)",
-      "- Should You Really Buy Stocks With the S&P 500 Near Its Record High? Historical Data Gives a Clear Answer. - Yahoo Finance (Yahoo Finance)"
+      "- S&P 500, Nasdaq close at records after U.S. extends Iran ceasefire - CNBC (CNBC)",
+      "- Stock Market Today: Major Indexes Open Lower After S&P 500, Nasdaq Close at Latest Record Highs; ServiceNow, IBM Shares Dive - Investopedia (Investopedia)"
     ],
     "tsla": [
-      "- Tesla (TSLA) Reports Q1: Everything You Need To Know Ahead Of Earnings - Yahoo Finance (Yahoo Finance)",
-      "- 4 stocks to watch on Wednesday: TSLA, BA, ABNB, ABBNY (SP500:) - Seeking Alpha (Seeking Alpha)"
+      "- Tesla (TSLA) quietly discloses $2 billion AI hardware company acquisition buried in filing - Electrek (Electrek)",
+      "- Tesla (TSLA) Gains Analyst Support as Robotaxi Opportunity Takes Shape - Yahoo Finance (Yahoo Finance)"
     ],
     "usdcop": [
       "- Dólar (TRM hoy) en Colombia, [Divisa hoy Actualizada] - mascolombia.com (mascolombia.com)",
-      "- Euro hoy en Colombia, [Divisa hoy actualizada] - mascolombia.com (mascolombia.com)"
+      "- El precio del dólar en Colombia, en picada: la divisa ya se negoció a menos de 3.700 pesos - Portafolio.co (Portafolio.co)"
     ],
     "wti": [
-      "- Oil prices whipsaw after Trump extends ceasefire with Iran but keeps blockade in place - CNBC (CNBC)",
-      "- Oil Spike Peaked? Hormuz Could Pull WTI To $75 - United States Oil Fund (ARCA:USO) - Benzinga (Benzinga)"
+      "- Brent oil rises above $100 after Iran seizes container ships, U.S. maintains naval blockade - CNBC (CNBC)",
+      "- Crude Oil WTI is up by 4.02% - TradingView (TradingView)"
     ]
   },
   "news_coverage": "21/21 indicadores con noticias",
   "signals": {
-    "fecha": "2026-04-22",
-    "generado_en": "2026-04-22 13:52:18",
+    "fecha": "2026-04-23",
+    "generado_en": "2026-04-23 13:55:51",
     "senales": {
       "riesgo_macro": "Bajo",
-      "sesgo_mercado": "Risk-on",
+      "sesgo_mercado": "Mixto",
       "presion_inflacionaria": "Alcista",
       "presion_cop": "Neutral",
       "conviccion": 8
@@ -104,26 +104,24 @@
     "interpretacion": {
       "driver_principal": "El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.",
       "driver_secundario": "BTC_VOLUME registro un avance de +6.9% en la sesion.",
-      "lectura_cruzada": "La sesion sugiere apetito por activos de riesgo, con dinamicas positivas en los principales indicadores de confianza.",
+      "lectura_cruzada": "Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante.",
       "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
     },
     "scores_internos": {
-      "riesgo_score": -0.8,
-      "sesgo_risk_on": 3.0,
-      "sesgo_risk_off": 1.0,
-      "inflacion_score": 2.0,
+      "riesgo_score": 0.0,
+      "sesgo_risk_on": 1.0,
+      "sesgo_risk_off": 1.5,
+      "inflacion_score": 1.7,
       "cop_score": 0.2,
-      "conviccion_razon": "7 indicador(es) con movimiento significativo"
+      "conviccion_razon": "6 indicador(es) con movimiento significativo"
     },
     "factores": {
       "riesgo": {
-        "gold_up": 0.5,
-        "btc_rally": -1.0,
+        "btc_weak": 0.3,
         "sp500_up": -0.3
       },
       "inflacion": {
         "brent_mild": 1.5,
-        "gold_up": 0.3,
         "silver_down": -0.3,
         "news_petroleo_alta": 0.5
       },
@@ -132,9 +130,8 @@
         "news_colombia_alta": 1.0
       },
       "sesgo": {
-        "btc": "Risk-on +2 (BTC +3.4%)",
+        "btc": "Risk-off +1 (BTC -1.1%)",
         "sp500": "Risk-on +1 (SP500 +0.7%)",
-        "gold": "Risk-off +0.5 (Oro +0.8%)",
         "news": "Risk-off +0.5 (noticias apetito_riesgo)"
       }
     },
@@ -149,14 +146,14 @@
     "variaciones_mercado": {
       "aapl": 0.2124786682260483,
       "amzn": 1.3625717977542284,
-      "brent": 1.4211,
-      "btc": 3.0478,
+      "brent": 1.5062,
+      "btc": -0.9854,
       "btc_volume": 6.905670382853171,
       "copper": -0.8442967317160367,
-      "dxy": -0.003,
+      "dxy": 0.0953,
       "eurusd": -0.4272004358978313,
       "global_inflation_proxy": 0.0,
-      "gold": 0.6457,
+      "gold": -0.1492,
       "googl": 1.6667244074483507,
       "meta": 0.8074003702988811,
       "msft": 0.96676745696868,
@@ -166,21 +163,21 @@
       "silver": -3.5728611223828968,
       "sp500": 0.7433295908440843,
       "tsla": 0.2452289053218746,
-      "usdcop": 0.1288,
+      "usdcop": -0.0822,
       "wti": 12.515168936486138
     },
     "ml_prediccion": {
       "direccion_btc_manana": "Bajista",
       "confianza_ml": 1,
       "probabilidades": {
-        "-1": 0.5304,
-        "1": 0.4696
+        "-1": 0.5363,
+        "1": 0.4637
       },
-      "cv_accuracy_modelo": 51.2,
+      "cv_accuracy_modelo": 51.3,
       "modelo": "RandomForest-Binary",
-      "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.2% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+      "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.3% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
     }
   },
   "signals_age_days": 0,
-  "signals_sections_text": "\n=======================================================\nSECCIÓN 5 — SEÑALES ACCIONABLES\nGenerado: 2026-04-22 13:52:18\n=======================================================\n  Riesgo Macro           : Bajo\n  Sesgo de Mercado       : Risk-on\n  Presión Inflacionaria  : Alcista\n  Presión COP            : Neutral\n  Convicción             : 8/10\n\n=======================================================\nSECCIÓN 6 — INTERPRETACIÓN CAUSAL\n=======================================================\n\nDriver principal:\n  El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.\n\nDriver secundario:\n  BTC_VOLUME registro un avance de +6.9% en la sesion.\n\nLectura cruzada:\n  La sesion sugiere apetito por activos de riesgo, con dinamicas positivas en los principales indicadores de confianza.\n\nCierre ejecutivo:\n  El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
+  "signals_sections_text": "\n=======================================================\nSECCIÓN 5 — SEÑALES ACCIONABLES\nGenerado: 2026-04-23 13:55:51\n=======================================================\n  Riesgo Macro           : Bajo\n  Sesgo de Mercado       : Mixto\n  Presión Inflacionaria  : Alcista\n  Presión COP            : Neutral\n  Convicción             : 8/10\n\n=======================================================\nSECCIÓN 6 — INTERPRETACIÓN CAUSAL\n=======================================================\n\nDriver principal:\n  El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.\n\nDriver secundario:\n  BTC_VOLUME registro un avance de +6.9% en la sesion.\n\nLectura cruzada:\n  Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante.\n\nCierre ejecutivo:\n  El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La presion inflacionaria sugiere que los bancos centrales podrian mantener una postura restrictiva por mas tiempo del esperado. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
 }
