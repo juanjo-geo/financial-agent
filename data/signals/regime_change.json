@@ -1,18 +1,18 @@
 {
-  "fecha": "2026-04-29",
-  "generado_en": "2026-04-29 14:08:38",
-  "score": 20.4,
+  "fecha": "2026-04-30",
+  "generado_en": "2026-04-30 14:07:13",
+  "score": 12.4,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Deterioro",
+  "direccion": "Mixto",
   "transiciones": [
     {
       "dimension": "presion_inflacionaria",
       "dimension_label": "Presion Inflacionaria",
       "de": "Bajista",
-      "a": "Alcista",
-      "score_parcial": 13.64,
+      "a": "Bajista",
+      "score_parcial": 6.97,
       "peso_dimension": 20
     },
     {
@@ -24,29 +24,28 @@
       "peso_dimension": 20
     }
   ],
-  "descripcion": "Se observa una transicion gradual en el regimen macro: Presion Inflacionaria transita de Bajista hacia Alcista. El entorno de riesgo parece estar deteriorandose. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
+  "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
-    "riesgo_macro": 1.36,
-    "presion_inflacionaria": 13.64,
+    "riesgo_macro": 0.0,
+    "presion_inflacionaria": 6.97,
     "presion_cop": 5.45
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 1.0,
+    "presion_inflacionaria": 0.333,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
-    "riesgo_macro": 0.091,
+    "riesgo_macro": 0.0,
     "presion_inflacionaria": -0.364,
     "presion_cop": 0.545
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Mixto",
       "Risk-off",
       "Mixto",
@@ -59,10 +58,11 @@
       "Mixto",
       "Mixto",
       "Mixto",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -78,7 +78,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Bajista",
       "Bajista",
       "Bajista",
@@ -91,11 +90,11 @@
       "Bajista",
       "Alcista",
       "Alcista",
-      "Alcista"
+      "Alcista",
+      "Bajista"
     ],
     "presion_cop": [
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -105,6 +104,7 @@
       "Alcista USD/COP",
       "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral"
