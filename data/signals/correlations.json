@@ -1,77 +1,77 @@
 {
-  "fecha": "2026-04-30",
-  "generado_en": "2026-04-30 14:07:15",
+  "fecha": "2026-05-01",
+  "generado_en": "2026-05-01 13:27:37",
   "n_dias_ventana": 30,
   "n_dias_baseline": 60,
-  "n_dias_total": 26593,
+  "n_dias_total": 26594,
   "pares": [
     {
       "par": "DXY vs BTC",
       "a": "dxy",
       "b": "btc",
-      "corr_actual": -0.2516,
-      "corr_baseline": -0.2155,
-      "delta": 0.0361,
+      "corr_actual": -0.2595,
+      "corr_baseline": -0.2146,
+      "delta": 0.0449,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
       "n_actual": 29,
-      "n_baseline": 45
+      "n_baseline": 46
     },
     {
       "par": "DXY vs Oro",
       "a": "dxy",
       "b": "gold",
-      "corr_actual": -0.6085,
-      "corr_baseline": -0.1911,
-      "delta": 0.4174,
+      "corr_actual": -0.6212,
+      "corr_baseline": -0.2017,
+      "delta": 0.4195,
       "rota": true,
       "alerta": false,
       "esperada": "negativa",
       "n_actual": 30,
-      "n_baseline": 45
+      "n_baseline": 46
     },
     {
       "par": "Brent vs USDCOP",
       "a": "brent",
       "b": "usdcop",
-      "corr_actual": 0.4662,
-      "corr_baseline": 0.5108,
-      "delta": 0.0446,
+      "corr_actual": 0.4722,
+      "corr_baseline": 0.4931,
+      "delta": 0.0209,
       "rota": false,
       "alerta": false,
       "esperada": "positiva",
       "n_actual": 28,
-      "n_baseline": 45
+      "n_baseline": 46
     },
     {
       "par": "BTC vs Oro",
       "a": "btc",
       "b": "gold",
-      "corr_actual": 0.3393,
-      "corr_baseline": 0.2892,
-      "delta": 0.0501,
+      "corr_actual": 0.2906,
+      "corr_baseline": 0.2833,
+      "delta": 0.0073,
       "rota": false,
       "alerta": false,
       "esperada": "variable",
       "n_actual": 29,
-      "n_baseline": 45
+      "n_baseline": 46
     },
     {
       "par": "Brent vs DXY",
       "a": "brent",
       "b": "dxy",
-      "corr_actual": 0.5433,
-      "corr_baseline": 0.4145,
-      "delta": 0.1288,
+      "corr_actual": 0.5424,
+      "corr_baseline": 0.4201,
+      "delta": 0.1223,
       "rota": false,
       "alerta": false,
       "esperada": "positiva",
       "n_actual": 29,
-      "n_baseline": 45
+      "n_baseline": 46
     }
   ],
   "alertas": [
-    "Correlacion debilitada: DXY vs Oro baseline=-0.19 -> actual=-0.61"
+    "Correlacion debilitada: DXY vs Oro baseline=-0.20 -> actual=-0.62"
   ]
 }

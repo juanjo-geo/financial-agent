@@ -1,22 +1,22 @@
 timestamp_generated,indicator,value,change_pct,unit,direction,severity,message
-2026-04-30 14:07:11,aapl,254.67999267578125,0.2124786682260483,USD,up,none,Sin señal relevante en AAPL.
-2026-04-30 14:07:11,amzn,209.3643951416016,1.3625717977542284,USD,up,low,AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
-2026-04-30 14:07:11,brent,109.67,-2.2723,USD/bbl,down,low,Brent cae 2.27% (movimiento leve relevante). Valor actual: 109.67 USD/bbl
-2026-04-30 14:07:11,btc,76514.8438,1.0069,USD,up,none,Sin señal relevante en Bitcoin.
-2026-04-30 14:07:11,btc_volume,38983573504.0,6.905670382853171,BTC,up,high,"BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC"
-2026-04-30 14:07:11,copper,5.578499794006348,-0.8442967317160367,USD/lb,down,none,Sin señal relevante en COPPER.
-2026-04-30 14:07:11,dxy,98.461,-0.3945,index,down,none,Sin señal relevante en DXY.
-2026-04-30 14:07:11,eurusd,1.1546010971069336,-0.4272004358978313,USD,down,none,Sin señal relevante en EURUSD.
-2026-04-30 14:07:11,global_inflation_proxy,3.0,0.0,%,flat,none,Sin señal relevante en inflación global proxy.
-2026-04-30 14:07:11,gold,4625.1001,1.4944,USD/oz,up,low,"Oro (XAU/USD) sube 1.49% (movimiento leve relevante). Valor actual: 4,625.10 USD/oz"
-2026-04-30 14:07:11,googl,295.5350036621094,1.6667244074483507,USD,up,low,GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
-2026-04-30 14:07:11,meta,570.5850219726562,0.8074003702988811,USD,up,none,Sin señal relevante en META.
-2026-04-30 14:07:11,msft,370.7550048828125,0.96676745696868,USD,up,none,Sin señal relevante en MSFT.
-2026-04-30 14:07:11,nasdaq,21786.779296875,1.4635255157117582,USD,up,low,"NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD"
-2026-04-30 14:07:11,natgas,2.806999921798706,-0.2132969086017746,USD/MMBtu,down,none,Sin señal relevante en NATGAS.
-2026-04-30 14:07:11,nvda,176.41000366210938,2.4567378129079898,USD,up,medium,NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
-2026-04-30 14:07:11,silver,72.46499633789062,-3.5728611223828968,USD/oz,down,medium,SILVER cae 3.57% (movimiento relevante). Valor actual: 72.46 USD/oz
-2026-04-30 14:07:11,sp500,6561.02001953125,0.7433295908440843,USD,up,none,Sin señal relevante en SP500.
-2026-04-30 14:07:11,tsla,364.9200134277344,0.2452289053218746,USD,up,none,Sin señal relevante en TSLA.
-2026-04-30 14:07:11,usdcop,3629.78,0.2159,COP/USD,up,none,Sin señal relevante en USD/COP.
-2026-04-30 14:07:11,wti,111.3000030517578,12.515168936486138,USD/bbl,up,high,WTI sube 12.52% (movimiento fuerte). Valor actual: 111.30 USD/bbl
+2026-05-01 13:27:33,aapl,254.67999267578125,0.2124786682260483,USD,up,none,Sin señal relevante en AAPL.
+2026-05-01 13:27:33,amzn,209.3643951416016,1.3625717977542284,USD,up,low,AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
+2026-05-01 13:27:33,brent,110.18,-0.7477,USD/bbl,down,none,Sin señal relevante en Brent.
+2026-05-01 13:27:33,btc,78319.3906,2.6378,USD,up,low,"Bitcoin sube 2.64% (movimiento leve relevante). Valor actual: 78,319.39 USD"
+2026-05-01 13:27:33,btc_volume,38983573504.0,6.905670382853171,BTC,up,high,"BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC"
+2026-05-01 13:27:33,copper,5.578499794006348,-0.8442967317160367,USD/lb,down,none,Sin señal relevante en COPPER.
+2026-05-01 13:27:33,dxy,97.918,-0.214,index,down,none,Sin señal relevante en DXY.
+2026-05-01 13:27:33,eurusd,1.1546010971069336,-0.4272004358978313,USD,down,none,Sin señal relevante en EURUSD.
+2026-05-01 13:27:33,global_inflation_proxy,3.0,0.0,%,flat,none,Sin señal relevante en inflación global proxy.
+2026-05-01 13:27:33,gold,4599.8999,-0.7979,USD/oz,down,low,"Oro (XAU/USD) cae 0.80% (movimiento leve relevante). Valor actual: 4,599.90 USD/oz"
+2026-05-01 13:27:33,googl,295.5350036621094,1.6667244074483507,USD,up,low,GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
+2026-05-01 13:27:33,meta,570.5850219726562,0.8074003702988811,USD,up,none,Sin señal relevante en META.
+2026-05-01 13:27:33,msft,370.7550048828125,0.96676745696868,USD,up,none,Sin señal relevante en MSFT.
+2026-05-01 13:27:33,nasdaq,21786.779296875,1.4635255157117582,USD,up,low,"NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD"
+2026-05-01 13:27:33,natgas,2.806999921798706,-0.2132969086017746,USD/MMBtu,down,none,Sin señal relevante en NATGAS.
+2026-05-01 13:27:33,nvda,176.41000366210938,2.4567378129079898,USD,up,medium,NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
+2026-05-01 13:27:33,silver,72.46499633789062,-3.5728611223828968,USD/oz,down,medium,SILVER cae 3.57% (movimiento relevante). Valor actual: 72.46 USD/oz
+2026-05-01 13:27:33,sp500,6561.02001953125,0.7433295908440843,USD,up,none,Sin señal relevante en SP500.
+2026-05-01 13:27:33,tsla,364.9200134277344,0.2452289053218746,USD,up,none,Sin señal relevante en TSLA.
+2026-05-01 13:27:33,usdcop,3654.6399,0.0183,COP/USD,up,none,Sin señal relevante en USD/COP.
+2026-05-01 13:27:33,wti,111.3000030517578,12.515168936486138,USD/bbl,up,high,WTI sube 12.52% (movimiento fuerte). Valor actual: 111.30 USD/bbl
