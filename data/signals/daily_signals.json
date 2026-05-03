@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-05-02",
-  "generado_en": "2026-05-02 13:21:53",
+  "fecha": "2026-05-03",
+  "generado_en": "2026-05-03 13:20:37",
   "senales": {
     "riesgo_macro": "Bajo",
     "sesgo_mercado": "Mixto",
@@ -52,13 +52,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -2.5583,
-    "btc": 0.1395,
+    "btc": 0.0127,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.0815,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -0.1467,
+    "gold": 0.1639,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -75,11 +75,11 @@
     "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5598,
-      "1": 0.4402
+      "-1": 0.5353,
+      "1": 0.4647
     },
-    "cv_accuracy_modelo": 51.0,
+    "cv_accuracy_modelo": 51.9,
     "modelo": "RandomForest-Binary",
-    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.0% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.9% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }

@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-05-02",
-  "generado_en": "2026-05-02 13:21:55",
-  "score": 46,
+  "fecha": "2026-05-03",
+  "generado_en": "2026-05-03 13:20:40",
+  "score": 48,
   "label": "Visibilidad moderada",
   "color": "#E65100",
   "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 13.3,
-      "desc": "Conf. calibrada media 5.3/10 (3 activos)",
+      "pts": 15.0,
+      "desc": "Conf. calibrada media 6.0/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.8,
-      "desc": "Regime change 15/100 (Estable)",
+      "pts": 12.5,
+      "desc": "Regime change 17/100 (Estable)",
       "max": 15
     }
   }

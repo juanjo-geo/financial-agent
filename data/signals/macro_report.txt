@@ -1,17 +1,17 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-05-02 13:21:51.834570
+Generado: 2026-05-03 13:20:36.124699
 
 AAPL | 0.21% | up | none
 AMZN | 1.36% | up | low
 BRENT | -2.56% | down | medium
-BTC | 0.14% | up | none
+BTC | 0.01% | up | none
 BTC_VOLUME | 6.91% | up | high
 COPPER | -0.84% | down | none
 DXY | 0.08% | up | none
 EURUSD | -0.43% | down | none
 GLOBAL_INFLATION_PROXY | 0.00% | flat | none
-GOLD | -0.15% | down | none
+GOLD | 0.16% | up | none
 GOOGL | 1.67% | up | low
 META | 0.81% | up | none
 MSFT | 0.97% | up | none
