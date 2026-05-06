@@ -2,45 +2,43 @@
   "senales": {
     "riesgo_macro": "Bajo",
     "sesgo_mercado": "Mixto",
-    "presion_inflacionaria": "Alcista",
-    "presion_cop": "Neutral",
+    "presion_inflacionaria": "Bajista",
+    "presion_cop": "Alcista USD/COP",
     "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": 0.2,
-    "sesgo_risk_on": 1.5,
-    "sesgo_risk_off": 0.5,
-    "inflacion_score": 3.7,
-    "cop_score": 1.0,
-    "conviccion_razon": "8 indicador(es) con movimiento significativo"
+    "riesgo_score": 0.7,
+    "sesgo_risk_on": 1.0,
+    "sesgo_risk_off": 2.0,
+    "inflacion_score": -3.0,
+    "cop_score": 2.0,
+    "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
-      "brent_up": 1.0,
-      "gold_down": -0.5,
+      "brent_fall": -0.5,
+      "gold_safe_haven": 1.5,
       "sp500_up": -0.3
     },
     "inflacion": {
-      "brent_up": 3.0,
-      "gold_down": -0.5,
+      "brent_crash": -4.0,
+      "gold_hedge": 0.8,
       "silver_down": -0.3,
-      "news_inflacion_alta": 1.0,
       "news_petroleo_alta": 0.5
     },
     "cop": {
-      "dxy_mild": 0.5,
-      "brent_cop_positive": -1.5,
-      "usdcop_up": 1.0,
+      "dxy_mild_down": -0.5,
+      "brent_cop_negative": 1.5,
       "news_colombia_alta": 1.0
     },
     "sesgo": {
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-on +0.5 (Oro -1.9%)",
+      "gold": "Risk-off +1.5 (Oro +4.3%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
   "pesos_noticias": {
-    "inflacion": 3,
+    "inflacion": 1,
     "dolar": 3,
     "petroleo": 3,
     "cripto": 3,
@@ -50,14 +48,14 @@
   "variaciones_mercado": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": 3.1364,
-    "btc": 0.159,
+    "brent": -7.7682,
+    "btc": 0.8051,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": 0.2315,
+    "dxy": -0.3326,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -1.4664,
+    "gold": 3.3419,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -67,20 +65,20 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": 1.1011,
+    "usdcop": -0.2994,
     "wti": 12.515168936486138
   },
   "variaciones_ajustadas": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": 3.8888223600000003,
-    "btc": 0.177603,
+    "brent": -9.332715480000001,
+    "btc": 0.8992967000000001,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": 0.33412395,
+    "dxy": -0.48004158,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -1.8699532799999998,
+    "gold": 4.261590879999999,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -90,14 +88,14 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": 1.5613598,
+    "usdcop": -0.41969892,
     "wti": 12.515168936486138
   },
   "multiplicadores_activos": {
-    "brent": 1.2399,
+    "brent": 1.2014,
     "btc": 1.117,
     "dxy": 1.4433,
-    "usdcop": 1.418,
+    "usdcop": 1.4018,
     "gold": 1.2752
   }
 }
