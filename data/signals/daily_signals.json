@@ -1,25 +1,25 @@
 {
-  "fecha": "2026-05-07",
-  "generado_en": "2026-05-07 14:24:38",
+  "fecha": "2026-05-08",
+  "generado_en": "2026-05-08 14:00:05",
   "senales": {
     "riesgo_macro": "Bajo",
-    "sesgo_mercado": "Risk-off",
+    "sesgo_mercado": "Mixto",
     "presion_inflacionaria": "Bajista",
-    "presion_cop": "Alcista USD/COP",
-    "conviccion": 9
+    "presion_cop": "Neutral",
+    "conviccion": 8
   },
   "interpretacion": {
     "driver_principal": "El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.",
     "driver_secundario": "BTC_VOLUME registro un avance de +6.9% en la sesion.",
-    "lectura_cruzada": "El entorno de la sesion parece inclinarse hacia aversion al riesgo, con senales de cautela en activos de mayor volatilidad. La caida del petroleo junto con el avance de las acciones sugiere alivio en costos de produccion que el mercado parece estar descontando positivamente. La preferencia por oro sobre Bitcoin podria estar indicando busqueda de refugio en activos mas tradicionales frente a mayor percepcion de incertidumbre.",
-    "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La apreciacion del dolar frente al peso podria generar presion adicional sobre importaciones y deuda externa colombiana. Las senales presentan una conviccion 9/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
+    "lectura_cruzada": "Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante. La caida del petroleo junto con el avance de las acciones sugiere alivio en costos de produccion que el mercado parece estar descontando positivamente. La preferencia por oro sobre Bitcoin podria estar indicando busqueda de refugio en activos mas tradicionales frente a mayor percepcion de incertidumbre.",
+    "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La desinflacion energetica ofrece cierto alivio para la politica monetaria, aunque no garantiza un ciclo de recortes inmediato. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
   },
   "scores_internos": {
     "riesgo_score": 1.0,
     "sesgo_risk_on": 1.0,
-    "sesgo_risk_off": 3.0,
+    "sesgo_risk_off": 2.0,
     "inflacion_score": -3.0,
-    "cop_score": 3.0,
+    "cop_score": 1.0,
     "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
@@ -36,15 +36,13 @@
       "news_petroleo_alta": 0.5
     },
     "cop": {
-      "dxy_mild_down": -0.5,
+      "dxy_down": -1.5,
       "brent_cop_negative": 1.5,
-      "usdcop_up": 1.0,
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -1.3%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-off +1.5 (Oro +1.7%)",
+      "gold": "Risk-off +1.5 (Oro +1.9%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -59,14 +57,14 @@
   "variaciones_mercado": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": -5.0231,
-    "btc": -1.2126,
+    "brent": -3.4376,
+    "btc": -0.5424,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": -0.1489,
+    "dxy": -0.3929,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 1.2973,
+    "gold": 1.4565,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -76,15 +74,15 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": 1.0091,
+    "usdcop": 0.4725,
     "wti": 12.515168936486138
   },
   "ml_prediccion": {
     "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5342,
-      "1": 0.4658
+      "-1": 0.5322,
+      "1": 0.4678
     },
     "cv_accuracy_modelo": 51.7,
     "modelo": "RandomForest-Binary",
