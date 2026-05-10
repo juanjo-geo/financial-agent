@@ -1,25 +1,27 @@
 {
   "senales": {
     "riesgo_macro": "Bajo",
-    "sesgo_mercado": "Risk-on",
+    "sesgo_mercado": "Mixto",
     "presion_inflacionaria": "Bajista",
     "presion_cop": "Neutral",
     "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": -0.3,
+    "riesgo_score": 0.2,
     "sesgo_risk_on": 2.0,
-    "sesgo_risk_off": 0.5,
-    "inflacion_score": -2.8,
+    "sesgo_risk_off": 2.0,
+    "inflacion_score": -2.5,
     "cop_score": 0.3,
     "conviccion_razon": "6 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
+      "gold_up": 0.5,
       "sp500_up": -0.3
     },
     "inflacion": {
       "brent_fall": -3.0,
+      "gold_up": 0.3,
       "silver_down": -0.3,
       "news_petroleo_alta": 0.5
     },
@@ -30,6 +32,7 @@
     },
     "sesgo": {
       "sp500": "Risk-on +1 (SP500 +0.7%)",
+      "gold": "Risk-off +1.5 (Oro +1.4%)",
       "dxy": "Risk-on +1 (DXY -0.6%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
@@ -46,13 +49,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -2.192,
-    "btc": 0.2066,
+    "btc": 0.4132,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": -0.4173,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.1273,
+    "gold": 1.0294,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -69,13 +72,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -2.5694624,
-    "btc": 0.21294262,
+    "btc": 0.42588524,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": -0.60228909,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.1685452,
+    "gold": 1.3921605600000002,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -93,6 +96,6 @@
     "btc": 1.0307,
     "dxy": 1.4433,
     "usdcop": 1.377,
-    "gold": 1.324
+    "gold": 1.3524
   }
 }
