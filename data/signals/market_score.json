@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-05-10",
-  "generado_en": "2026-05-10 13:28:15",
-  "score": 55,
+  "fecha": "2026-05-11",
+  "generado_en": "2026-05-11 15:20:28",
+  "score": 51,
   "label": "Senales claras",
   "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Risk-off. Existen algunas contradicciones entre componentes que moderan la conviccion.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 9.0,
-      "desc": "Regimen LATERAL (confianza +36pts)",
+      "pts": 4.0,
+      "desc": "Regimen LATERAL (confianza +16pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -18,7 +18,7 @@
     },
     "coherencia_pred": {
       "pts": 17.5,
-      "desc": "Conf. calibrada media 7.0/10 (2 activos)",
+      "desc": "Conf. calibrada media 7.0/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.5,
-      "desc": "Regime change 17/100 (Estable)",
+      "pts": 13.9,
+      "desc": "Regime change 8/100 (Estable)",
       "max": 15
     }
   }
