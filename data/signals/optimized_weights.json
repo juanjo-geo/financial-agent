@@ -1,20 +1,20 @@
 {
-  "fecha": "2026-05-14",
-  "generado_en": "2026-05-14 14:25:01",
-  "n_evaluaciones": 548,
+  "fecha": "2026-05-15",
+  "generado_en": "2026-05-15 14:16:37",
+  "n_evaluaciones": 551,
   "weights": {
+    "trend": 0.4387,
+    "momentum": 0.3067,
+    "signals": 0.2546
+  },
+  "hit_rates": {
+    "trend": 0.3866,
+    "momentum": 0.2704,
+    "signals": 0.2269
+  },
+  "pesos_anteriores": {
     "trend": 0.4392,
     "momentum": 0.307,
     "signals": 0.2538
-  },
-  "hit_rates": {
-    "trend": 0.3869,
-    "momentum": 0.2701,
-    "signals": 0.2263
-  },
-  "pesos_anteriores": {
-    "trend": 0.4397,
-    "momentum": 0.3075,
-    "signals": 0.2528
   }
 }
