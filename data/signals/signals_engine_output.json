@@ -7,18 +7,17 @@
     "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": 0.9,
+    "riesgo_score": 0.6,
     "sesgo_risk_on": 1.5,
-    "sesgo_risk_off": 1.5,
+    "sesgo_risk_off": 0.5,
     "inflacion_score": 3.7,
     "cop_score": 0.0,
-    "conviccion_razon": "8 indicador(es) con movimiento significativo"
+    "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_up": 1.0,
       "gold_down": -0.5,
-      "btc_weak": 0.3,
       "sp500_up": -0.3,
       "dxy_up": 0.4
     },
@@ -35,9 +34,8 @@
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -1.7%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-on +0.5 (Oro -1.7%)",
+      "gold": "Risk-on +0.5 (Oro -2.7%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -53,13 +51,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": 2.5242,
-    "btc": -1.543,
+    "btc": 0.2186,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.3437,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -1.2871,
+    "gold": -1.9895,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -75,14 +73,14 @@
   "variaciones_ajustadas": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": 3.06791268,
-    "btc": -1.6647427,
+    "brent": 3.16888068,
+    "btc": 0.23584754,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.49606221,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -1.74067404,
+    "gold": -2.6905998,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -96,7 +94,7 @@
     "wti": 12.515168936486138
   },
   "multiplicadores_activos": {
-    "brent": 1.2154,
+    "brent": 1.2554,
     "btc": 1.0789,
     "dxy": 1.4433,
     "usdcop": 1.377,
