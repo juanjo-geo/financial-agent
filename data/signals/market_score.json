@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-05-17",
-  "generado_en": "2026-05-17 13:39:54",
-  "score": 53,
+  "fecha": "2026-05-18",
+  "generado_en": "2026-05-18 15:41:33",
+  "score": 52,
   "label": "Senales claras",
   "color": "#2563EB",
   "narrative": "Las senales son legibles: regimen CRISIS con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 16.9,
-      "desc": "Conf. calibrada media 6.8/10 (4 activos)",
+      "pts": 15.6,
+      "desc": "Conf. calibrada media 6.2/10 (4 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 11.7,
-      "desc": "Regime change 22/100 (Estable)",
+      "pts": 12.6,
+      "desc": "Regime change 16/100 (Estable)",
       "max": 15
     }
   }
