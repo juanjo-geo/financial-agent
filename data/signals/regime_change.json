@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-05-21",
-  "generado_en": "2026-05-21 15:37:38",
-  "score": 7.0,
+  "fecha": "2026-05-22",
+  "generado_en": "2026-05-22 14:47:49",
+  "score": 7.3,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -11,31 +11,31 @@
   "scores_por_dim": {
     "sesgo_mercado": 1.36,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 1.82,
-    "presion_cop": 2.42
+    "presion_inflacionaria": 2.73,
+    "presion_cop": 1.82
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": 0.0,
-    "presion_cop": 0.333
+    "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": -0.091,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.182,
-    "presion_cop": 0.091
+    "presion_inflacionaria": 0.273,
+    "presion_cop": 0.182
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Risk-on",
       "Mixto",
       "Risk-off",
       "Mixto",
       "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -51,8 +51,8 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -63,7 +63,6 @@
     "presion_inflacionaria": [
       "Bajista",
       "Bajista",
-      "Bajista",
       "Neutral",
       "Alcista",
       "Neutral",
@@ -74,14 +73,14 @@
       "Alcista",
       "Neutral",
       "Bajista",
-      "Alcista"
+      "Alcista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
@@ -89,6 +88,7 @@
       "Neutral",
       "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral",
       "Neutral"
     ]
