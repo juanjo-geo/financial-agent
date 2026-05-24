@@ -1,29 +1,29 @@
 {
-  "fecha": "2026-05-23",
-  "generado_en": "2026-05-23 13:45:04",
-  "total_predicciones": 751,
+  "fecha": "2026-05-24",
+  "generado_en": "2026-05-24 13:44:26",
+  "total_predicciones": 756,
   "bandas": {
     "1-3": {
-      "n": 151,
-      "acierto_real": 0.8742,
+      "n": 152,
+      "acierto_real": 0.875,
       "acierto_esperado": 0.45,
-      "factor": 1.9426,
+      "factor": 1.9444,
       "status": "Subconfiado",
       "suficientes_datos": true
     },
     "4-6": {
-      "n": 418,
-      "acierto_real": 0.6172,
+      "n": 421,
+      "acierto_real": 0.62,
       "acierto_esperado": 0.55,
-      "factor": 1.1222,
+      "factor": 1.1272,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
     "7-8": {
-      "n": 128,
-      "acierto_real": 0.6016,
+      "n": 129,
+      "acierto_real": 0.6047,
       "acierto_esperado": 0.7,
-      "factor": 0.8594,
+      "factor": 0.8638,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
