@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-05-28",
-  "generado_en": "2026-05-28 16:08:09",
-  "score": 9.2,
+  "fecha": "2026-05-29",
+  "generado_en": "2026-05-29 15:46:43",
+  "score": 11.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -11,28 +11,28 @@
       "dimension": "presion_inflacionaria",
       "dimension_label": "Presion Inflacionaria",
       "de": "Alcista",
-      "a": "Neutral",
-      "score_parcial": 6.97,
+      "a": "Bajista",
+      "score_parcial": 9.39,
       "peso_dimension": 20
     }
   ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
-    "riesgo_macro": 1.36,
-    "presion_inflacionaria": 6.97,
-    "presion_cop": 0.91
+    "riesgo_macro": 0.0,
+    "presion_inflacionaria": 9.39,
+    "presion_cop": 2.42
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": -0.333,
-    "presion_cop": 0.0
+    "presion_inflacionaria": -0.667,
+    "presion_cop": 0.333
   },
   "baselines": {
     "sesgo_mercado": 0.0,
-    "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.364,
+    "riesgo_macro": 0.0,
+    "presion_inflacionaria": 0.273,
     "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
@@ -54,7 +54,7 @@
       "Mixto"
     ],
     "riesgo_macro": [
-      "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -73,7 +73,6 @@
       "Alcista",
       "Alcista",
       "Alcista",
-      "Alcista",
       "Neutral",
       "Bajista",
       "Alcista",
@@ -83,10 +82,10 @@
       "Alcista",
       "Neutral",
       "Bajista",
-      "Neutral"
+      "Neutral",
+      "Bajista"
     ],
     "presion_cop": [
-      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
@@ -99,7 +98,8 @@
       "Favorable COP",
       "Neutral",
       "Neutral",
-      "Neutral"
+      "Neutral",
+      "Alcista USD/COP"
     ]
   }
 }
