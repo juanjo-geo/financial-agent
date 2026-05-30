@@ -1,18 +1,26 @@
 {
-  "fecha": "2026-05-29",
-  "generado_en": "2026-05-29 15:46:43",
-  "score": 11.8,
+  "fecha": "2026-05-30",
+  "generado_en": "2026-05-30 13:47:30",
+  "score": 10.0,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mejora",
+  "direccion": "Mixto",
   "transiciones": [
+    {
+      "dimension": "presion_cop",
+      "dimension_label": "Presion COP",
+      "de": "Neutral",
+      "a": "Alcista USD/COP",
+      "score_parcial": 5.76,
+      "peso_dimension": 20
+    },
     {
       "dimension": "presion_inflacionaria",
       "dimension_label": "Presion Inflacionaria",
       "de": "Alcista",
-      "a": "Bajista",
-      "score_parcial": 9.39,
+      "a": "Neutral",
+      "score_parcial": 4.24,
       "peso_dimension": 20
     }
   ],
@@ -20,19 +28,19 @@
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 9.39,
-    "presion_cop": 2.42
+    "presion_inflacionaria": 4.24,
+    "presion_cop": 5.76
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": -0.667,
-    "presion_cop": 0.333
+    "presion_inflacionaria": -0.333,
+    "presion_cop": 0.667
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.273,
+    "presion_inflacionaria": 0.091,
     "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
@@ -72,7 +80,6 @@
     "presion_inflacionaria": [
       "Alcista",
       "Alcista",
-      "Alcista",
       "Neutral",
       "Bajista",
       "Alcista",
@@ -83,10 +90,10 @@
       "Neutral",
       "Bajista",
       "Neutral",
-      "Bajista"
+      "Bajista",
+      "Neutral"
     ],
     "presion_cop": [
-      "Neutral",
       "Neutral",
       "Neutral",
       "Alcista USD/COP",
@@ -99,6 +106,7 @@
       "Neutral",
       "Neutral",
       "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP"
     ]
   }
