@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-05-30",
-  "generado_en": "2026-05-30 13:47:30",
-  "score": 10.0,
+  "fecha": "2026-05-31",
+  "generado_en": "2026-05-31 13:53:09",
+  "score": 15.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -12,35 +12,35 @@
       "dimension_label": "Presion COP",
       "de": "Neutral",
       "a": "Alcista USD/COP",
-      "score_parcial": 5.76,
+      "score_parcial": 9.09,
       "peso_dimension": 20
     },
     {
       "dimension": "presion_inflacionaria",
       "dimension_label": "Presion Inflacionaria",
-      "de": "Alcista",
-      "a": "Neutral",
-      "score_parcial": 4.24,
+      "de": "Neutral",
+      "a": "Bajista",
+      "score_parcial": 6.67,
       "peso_dimension": 20
     }
   ],
-  "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
+  "descripcion": "Se observa una transicion gradual en el regimen macro: Presion COP transita de Neutral hacia Alcista USD/COP. Las senales presentan direcciones contradictorias. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 4.24,
-    "presion_cop": 5.76
+    "presion_inflacionaria": 6.67,
+    "presion_cop": 9.09
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": -0.333,
-    "presion_cop": 0.667
+    "presion_inflacionaria": -0.667,
+    "presion_cop": 1.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.091,
+    "presion_inflacionaria": 0.0,
     "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
@@ -79,7 +79,6 @@
     ],
     "presion_inflacionaria": [
       "Alcista",
-      "Alcista",
       "Neutral",
       "Bajista",
       "Alcista",
@@ -91,10 +90,10 @@
       "Bajista",
       "Neutral",
       "Bajista",
-      "Neutral"
+      "Neutral",
+      "Bajista"
     ],
     "presion_cop": [
-      "Neutral",
       "Neutral",
       "Alcista USD/COP",
       "Neutral",
@@ -106,6 +105,7 @@
       "Neutral",
       "Neutral",
       "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP"
     ]
