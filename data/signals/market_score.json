@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-05-31",
-  "generado_en": "2026-05-31 13:53:12",
-  "score": 47,
-  "label": "Visibilidad moderada",
-  "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
+  "fecha": "2026-06-01",
+  "generado_en": "2026-06-01 17:49:59",
+  "score": 60,
+  "label": "Senales claras",
+  "color": "#2563EB",
+  "narrative": "Las senales son legibles: regimen CRISIS con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 3.0,
-      "desc": "Regimen CRISIS (confianza +12pts)",
+      "pts": 8.0,
+      "desc": "Regimen CRISIS (confianza +32pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -17,18 +17,18 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.0,
-      "desc": "Conf. calibrada media 6.0/10 (2 activos)",
+      "pts": 16.7,
+      "desc": "Conf. calibrada media 6.7/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 0.0,
-      "desc": "0 senal(es) compuesta(s) activa(s)",
+      "pts": 5.0,
+      "desc": "1 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.6,
-      "desc": "Regime change 16/100 (Estable)",
+      "pts": 13.8,
+      "desc": "Regime change 8/100 (Estable)",
       "max": 15
     }
   }
