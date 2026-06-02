@@ -1,21 +1,13 @@
 {
-  "fecha": "2026-06-01",
-  "generado_en": "2026-06-01 17:49:59",
-  "n_activas": 1,
-  "activas": [
-    {
-      "id": "aversion_generalizada",
-      "nombre": "Sesion de aversion generalizada",
-      "descripcion": "Multiples activos en rojo simultaneamente: posible desapalancamiento.",
-      "severidad": "HIGH",
-      "icono": "!"
-    }
-  ],
+  "fecha": "2026-06-02",
+  "generado_en": "2026-06-02 16:41:12",
+  "n_activas": 0,
+  "activas": [],
   "variaciones": {
-    "brent": 3.0408,
-    "btc": -2.6865,
-    "dxy": 0.2274,
-    "usdcop": -3.5876,
-    "gold": -1.3661
+    "brent": 0.4298,
+    "btc": -5.3667,
+    "dxy": 0.0373,
+    "usdcop": 0.4084,
+    "gold": 0.0687
   }
 }
