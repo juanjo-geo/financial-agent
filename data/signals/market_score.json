@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-06-03",
-  "generado_en": "2026-06-03 16:57:17",
-  "score": 54,
-  "label": "Senales claras",
-  "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "fecha": "2026-06-04",
+  "generado_en": "2026-06-04 15:24:11",
+  "score": 50,
+  "label": "Visibilidad moderada",
+  "color": "#E65100",
+  "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 9.0,
-      "desc": "Regimen LATERAL (confianza +36pts)",
+      "pts": 3.0,
+      "desc": "Regimen CRISIS (confianza +12pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 18.8,
-      "desc": "Conf. calibrada media 7.5/10 (2 activos)",
+      "pts": 18.3,
+      "desc": "Conf. calibrada media 7.3/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 10.6,
-      "desc": "Regime change 30/100 (Estable)",
+      "pts": 13.2,
+      "desc": "Regime change 12/100 (Estable)",
       "max": 15
     }
   }
