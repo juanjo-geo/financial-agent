@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-06-05",
-  "generado_en": "2026-06-05 14:59:26",
-  "score": 53,
-  "label": "Senales claras",
-  "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen CRISIS con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "fecha": "2026-06-06",
+  "generado_en": "2026-06-06 13:52:43",
+  "score": 76,
+  "label": "Alta conviccion",
+  "color": "#00C896",
+  "narrative": "El sistema cuenta hoy con alta conviccion: regimen CRISIS, sesgo Mixto, riesgo macro Bajo. Las senales apuntan en direccion coherente.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 3.0,
-      "desc": "Regimen CRISIS (confianza +12pts)",
+      "pts": 15.0,
+      "desc": "Regimen CRISIS (confianza +60pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -17,18 +17,18 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 13.8,
-      "desc": "Conf. calibrada media 5.5/10 (2 activos)",
+      "pts": 16.2,
+      "desc": "Conf. calibrada media 6.5/10 (2 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 5.0,
-      "desc": "1 senal(es) compuesta(s) activa(s)",
+      "pts": 15.0,
+      "desc": "3 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 13.5,
-      "desc": "Regime change 10/100 (Estable)",
+      "pts": 11.9,
+      "desc": "Regime change 21/100 (Estable)",
       "max": 15
     }
   }
