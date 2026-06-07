@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-06-06 13:53:21",
+  "generado_en": "2026-06-07 14:03:02",
   "modelo": "RandomForest-Binary",
   "lag_days": 5,
   "forward_days": 2,
@@ -8,16 +8,16 @@
   "cv_accuracy": 0.5214,
   "cv_std": 0.0134,
   "top_features": {
-    "onchain_active_addr_chg": 0.0229,
-    "btc_rsi14": 0.0199,
-    "eurusd_chg_lag2": 0.019,
-    "nasdaq_chg_lag3": 0.0189,
-    "btc_vol10": 0.0186,
-    "dxy_chg_lag5": 0.0182,
-    "wti_chg_lag5": 0.0164,
-    "eurusd_chg_lag1": 0.0164,
-    "dxy_chg": 0.0163,
-    "nasdaq_chg_lag2": 0.0162
+    "onchain_active_addr_chg": 0.0232,
+    "btc_vol10": 0.0195,
+    "eurusd_chg_lag2": 0.0194,
+    "btc_rsi14": 0.0193,
+    "nasdaq_chg_lag3": 0.0181,
+    "eurusd_chg_lag1": 0.0174,
+    "dxy_chg_lag5": 0.0173,
+    "wti_chg_lag5": 0.0163,
+    "sp500_chg_lag2": 0.0162,
+    "wti_chg_lag1": 0.0158
   },
   "target_threshold": 0.5,
   "distribucion_clases": {
@@ -28,8 +28,8 @@
     "direccion": "Bajista",
     "valor_pred": -1,
     "probabilidades": {
-      "-1": 0.5414,
-      "1": 0.4586
+      "-1": 0.5335,
+      "1": 0.4665
     },
     "confianza_ml": 1
   }

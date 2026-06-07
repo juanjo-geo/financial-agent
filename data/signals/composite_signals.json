@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-06-06",
-  "generado_en": "2026-06-06 13:52:43",
-  "n_activas": 3,
+  "fecha": "2026-06-07",
+  "generado_en": "2026-06-07 14:02:22",
+  "n_activas": 2,
   "activas": [
     {
       "id": "desinflacion_real",
@@ -16,20 +16,13 @@
       "descripcion": "DXY al alza y Oro a la baja: correlacion inversa activa.",
       "severidad": "LOW",
       "icono": "~"
-    },
-    {
-      "id": "cop_debilidad",
-      "nombre": "Debilidad del COP",
-      "descripcion": "USDCOP sube junto al DXY: presion cambiaria desde contexto global.",
-      "severidad": "MED",
-      "icono": "!"
     }
   ],
   "variaciones": {
     "brent": -2.0827,
-    "btc": -0.4779,
+    "btc": 1.4028,
     "dxy": 0.6437,
-    "usdcop": 0.8131,
-    "gold": -3.023
+    "usdcop": 0.0,
+    "gold": -3.058
   }
 }

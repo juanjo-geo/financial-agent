@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-06-06",
-  "generado_en": "2026-06-06 13:52:43",
-  "score": 76,
+  "fecha": "2026-06-07",
+  "generado_en": "2026-06-07 14:02:23",
+  "score": 72,
   "label": "Alta conviccion",
   "color": "#00C896",
   "narrative": "El sistema cuenta hoy con alta conviccion: regimen CRISIS, sesgo Mixto, riesgo macro Bajo. Las senales apuntan en direccion coherente.",
@@ -17,13 +17,13 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 16.2,
-      "desc": "Conf. calibrada media 6.5/10 (2 activos)",
+      "pts": 17.5,
+      "desc": "Conf. calibrada media 7.0/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 15.0,
-      "desc": "3 senal(es) compuesta(s) activa(s)",
+      "pts": 10.0,
+      "desc": "2 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
