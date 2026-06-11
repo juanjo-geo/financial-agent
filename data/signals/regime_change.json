@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-06-10",
-  "generado_en": "2026-06-10 15:44:42",
+  "fecha": "2026-06-11",
+  "generado_en": "2026-06-11 16:10:02",
   "score": 12.9,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
@@ -11,7 +11,7 @@
       "dimension": "sesgo_mercado",
       "dimension_label": "Sesgo de Mercado",
       "de": "Mixto",
-      "a": "Risk-on",
+      "a": "Mixto",
       "score_parcial": 6.36,
       "peso_dimension": 30
     },
@@ -50,7 +50,6 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-off",
       "Mixto",
       "Mixto",
@@ -59,18 +58,19 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Risk-on"
+      "Risk-on",
+      "Mixto"
     ],
     "riesgo_macro": [
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
       "Medio",
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -78,7 +78,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Bajista",
       "Neutral",
       "Bajista",
@@ -91,10 +90,10 @@
       "Bajista",
       "Neutral",
       "Bajista",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -107,6 +106,7 @@
       "Alcista USD/COP",
       "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral"
     ]
   }
