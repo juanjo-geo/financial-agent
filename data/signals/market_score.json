@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-06-12",
-  "generado_en": "2026-06-12 15:24:10",
-  "score": 58,
+  "fecha": "2026-06-13",
+  "generado_en": "2026-06-13 14:08:07",
+  "score": 60,
   "label": "Senales claras",
   "color": "#2563EB",
   "narrative": "Las senales son legibles: regimen CRISIS con sesgo Risk-on. Existen algunas contradicciones entre componentes que moderan la conviccion.",
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.0,
-      "desc": "Conf. calibrada media 6.0/10 (4 activos)",
+      "pts": 16.9,
+      "desc": "Conf. calibrada media 6.8/10 (4 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 11.8,
-      "desc": "Regime change 21/100 (Estable)",
+      "pts": 11.7,
+      "desc": "Regime change 22/100 (Estable)",
       "max": 15
     }
   }
