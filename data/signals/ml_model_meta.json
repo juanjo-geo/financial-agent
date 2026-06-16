@@ -1,35 +1,35 @@
 {
-  "generado_en": "2026-06-15 17:21:59",
+  "generado_en": "2026-06-16 17:03:05",
   "modelo": "RandomForest-Binary",
   "lag_days": 5,
   "forward_days": 2,
-  "n_train": 2989,
+  "n_train": 2988,
   "n_features": 102,
-  "cv_accuracy": 0.5169,
-  "cv_std": 0.0236,
+  "cv_accuracy": 0.5193,
+  "cv_std": 0.0346,
   "top_features": {
-    "onchain_active_addr_chg": 0.0228,
-    "dxy_chg_lag5": 0.0204,
-    "btc_rsi14": 0.0203,
-    "dxy_chg": 0.02,
-    "wti_chg_lag5": 0.0195,
-    "nasdaq_chg_lag3": 0.0191,
-    "btc_vol10": 0.019,
-    "eurusd_chg_lag2": 0.0176,
-    "sp500_chg_lag2": 0.0172,
-    "btc_vol_rel20": 0.0171
+    "btc_rsi14": 0.0213,
+    "dxy_chg_lag5": 0.02,
+    "btc_vol10": 0.0198,
+    "onchain_active_addr_chg": 0.0196,
+    "wti_chg_lag5": 0.0196,
+    "nasdaq_chg_lag3": 0.019,
+    "sp500_chg_lag2": 0.0179,
+    "nasdaq_chg_lag2": 0.0178,
+    "eurusd_chg_lag2": 0.0175,
+    "btc_bb_pct": 0.0161
   },
   "target_threshold": 0.5,
   "distribucion_clases": {
     "1": 1642,
-    "-1": 1347
+    "-1": 1346
   },
   "prediccion_hoy": {
     "direccion": "Bajista",
     "valor_pred": -1,
     "probabilidades": {
-      "-1": 0.5388,
-      "1": 0.4612
+      "-1": 0.5228,
+      "1": 0.4772
     },
     "confianza_ml": 1
   }

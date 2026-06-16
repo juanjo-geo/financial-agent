@@ -1,44 +1,44 @@
 {
-  "fecha": "2026-06-15",
-  "generado_en": "2026-06-15 17:21:15",
+  "fecha": "2026-06-16",
+  "generado_en": "2026-06-16 17:02:24",
   "regime": "CRISIS",
   "scores": {
     "INFLACIONARIO": 15,
     "RISK-ON": 0,
-    "CRISIS": 100,
-    "LATERAL": 40
+    "CRISIS": 84,
+    "LATERAL": 60
   },
-  "confianza": 60,
+  "confianza": 24,
   "drivers": [
-    "BRENT, BTC, GOLD en caida",
-    "Volatilidad alta en BTC, GOLD",
+    "BRENT, GOLD en caida",
+    "Volatilidad alta en BRENT, BTC, GOLD",
     "Fuga hacia el dolar (DXY al alza)"
   ],
   "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -1.401,
-      "volatilidad": 1.305,
+      "avg_pct_dia": -1.854,
+      "volatilidad": 1.647,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.442,
-      "volatilidad": 2.213,
+      "avg_pct_dia": -0.058,
+      "volatilidad": 1.741,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.119,
-      "volatilidad": 0.265,
+      "avg_pct_dia": 0.108,
+      "volatilidad": 0.272,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": -0.765,
-      "volatilidad": 1.509,
+      "avg_pct_dia": -0.712,
+      "volatilidad": 1.549,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": -0.012,
-      "volatilidad": 0.545,
+      "avg_pct_dia": -0.175,
+      "volatilidad": 0.711,
       "n_dias": 14
     }
   },
