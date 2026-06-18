@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-06-17",
-  "generado_en": "2026-06-17 15:43:12",
+  "fecha": "2026-06-18",
+  "generado_en": "2026-06-18 15:34:40",
   "score": 50,
   "label": "Visibilidad moderada",
   "color": "#E65100",
@@ -12,13 +12,13 @@
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 14.0,
-      "desc": "Conviccion 7/10",
+      "pts": 16.0,
+      "desc": "Conviccion 8/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 16.2,
-      "desc": "Conf. calibrada media 6.5/10 (4 activos)",
+      "pts": 14.4,
+      "desc": "Conf. calibrada media 5.8/10 (4 activos)",
       "max": 25
     },
     "senales_compuestas": {
