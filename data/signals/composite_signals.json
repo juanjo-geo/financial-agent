@@ -1,21 +1,13 @@
 {
-  "fecha": "2026-06-21",
-  "generado_en": "2026-06-21 14:20:04",
-  "n_activas": 1,
-  "activas": [
-    {
-      "id": "dxy_presion_metales",
-      "nombre": "Fortaleza del dolar presiona metales",
-      "descripcion": "DXY al alza y Oro a la baja: correlacion inversa activa.",
-      "severidad": "LOW",
-      "icono": "~"
-    }
-  ],
+  "fecha": "2026-06-22",
+  "generado_en": "2026-06-22 17:04:21",
+  "n_activas": 0,
+  "activas": [],
   "variaciones": {
-    "brent": 1.5755,
-    "btc": -0.4289,
-    "dxy": 0.5083,
-    "usdcop": 0.0,
-    "gold": -1.3779
+    "brent": -5.2305,
+    "btc": 2.2178,
+    "dxy": 0.1607,
+    "usdcop": -0.9577,
+    "gold": 0.9919
   }
 }
