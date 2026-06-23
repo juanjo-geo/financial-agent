@@ -1,18 +1,18 @@
 {
-  "fecha": "2026-06-22",
-  "generado_en": "2026-06-22 17:04:19",
-  "score": 13.5,
+  "fecha": "2026-06-23",
+  "generado_en": "2026-06-23 14:57:43",
+  "score": 9.2,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Deterioro",
   "transiciones": [
     {
-      "dimension": "presion_inflacionaria",
-      "dimension_label": "Presion Inflacionaria",
-      "de": "Bajista",
-      "a": "Bajista",
-      "score_parcial": 8.79,
+      "dimension": "presion_cop",
+      "dimension_label": "Presion COP",
+      "de": "Neutral",
+      "a": "Alcista USD/COP",
+      "score_parcial": 4.85,
       "peso_dimension": 20
     },
     {
@@ -28,29 +28,29 @@
   "scores_por_dim": {
     "sesgo_mercado": 4.09,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 8.79,
-    "presion_cop": 0.61
+    "presion_inflacionaria": 0.3,
+    "presion_cop": 4.85
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.333,
-    "presion_cop": 0.333
+    "presion_inflacionaria": -0.333,
+    "presion_cop": 0.667
   },
   "baselines": {
     "sesgo_mercado": -0.273,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": -0.545,
-    "presion_cop": 0.273
+    "presion_inflacionaria": -0.364,
+    "presion_cop": 0.182
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Risk-on",
       "Mixto",
       "Risk-on",
       "Risk-on",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -78,7 +78,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Bajista",
       "Neutral",
       "Neutral",
       "Bajista",
@@ -91,10 +90,10 @@
       "Neutral",
       "Alcista",
       "Alcista",
+      "Bajista",
       "Bajista"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Neutral",
@@ -107,6 +106,7 @@
       "Neutral",
       "Neutral",
       "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP"
     ]
   }
