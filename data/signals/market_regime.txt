@@ -1,29 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-06-24 14:39:45
+Generado: 2026-06-25 14:40:37
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Energy Disinflation
-- Dollar Pressure on COP
+- Neutral
 
 EXPLICACIÓN
 ------------------------------
-- El petróleo cae, reduciendo presión inflacionaria vía energía.
-- La fortaleza del dólar coincide con depreciación del peso colombiano.
+- No se detecta un régimen macro dominante en esta sesión.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: -4.25% | down | high
-- BTC: -2.31% | down | low
+- BRENT: 1.89% | up | low
+- BTC: -2.16% | down | low
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: 0.27% | up | none
+- DXY: -0.15% | down | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: -2.11% | down | medium
+- GOLD: 0.54% | up | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -33,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.32% | up | none
+- USDCOP: 0.26% | up | none
 - WTI: 12.52% | up | high
