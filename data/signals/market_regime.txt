@@ -1,27 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-06-25 14:40:37
+Generado: 2026-06-26 14:33:36
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Neutral
+- Energy Disinflation
 
 EXPLICACIÓN
 ------------------------------
-- No se detecta un régimen macro dominante en esta sesión.
+- El petróleo cae, reduciendo presión inflacionaria vía energía.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: 1.89% | up | low
-- BTC: -2.16% | down | low
+- BRENT: -3.19% | down | medium
+- BTC: 0.23% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.15% | down | none
+- DXY: -0.43% | down | low
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 0.54% | up | low
+- GOLD: 1.52% | up | medium
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -31,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.26% | up | none
+- USDCOP: -0.11% | down | none
 - WTI: 12.52% | up | high
