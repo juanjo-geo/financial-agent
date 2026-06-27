@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-06-26",
-  "generado_en": "2026-06-26 14:33:38",
-  "score": 7.0,
+  "fecha": "2026-06-27",
+  "generado_en": "2026-06-27 13:51:13",
+  "score": 6.5,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Deterioro",
+  "direccion": "Mixto",
   "transiciones": [
     {
       "dimension": "riesgo_macro",
@@ -18,10 +18,10 @@
   ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
-    "sesgo_mercado": 1.36,
+    "sesgo_mercado": 0.0,
     "riesgo_macro": 5.0,
     "presion_inflacionaria": 0.3,
-    "presion_cop": 0.3
+    "presion_cop": 1.21
   },
   "recientes": {
     "sesgo_mercado": 0.0,
@@ -30,15 +30,15 @@
     "presion_cop": 0.333
   },
   "baselines": {
-    "sesgo_mercado": -0.091,
+    "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": -0.364,
-    "presion_cop": 0.364
+    "presion_cop": 0.455
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Risk-on",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -65,15 +65,14 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
       "Bajista",
       "Bajista",
       "Bajista",
-      "Bajista",
       "Alcista",
       "Bajista",
       "Neutral",
@@ -83,11 +82,11 @@
       "Bajista",
       "Bajista",
       "Alcista",
+      "Bajista",
       "Bajista"
     ],
     "presion_cop": [
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
@@ -99,7 +98,8 @@
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Neutral",
-      "Neutral"
+      "Neutral",
+      "Alcista USD/COP"
     ]
   }
 }

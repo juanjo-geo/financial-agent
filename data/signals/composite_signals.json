@@ -1,13 +1,13 @@
 {
-  "fecha": "2026-06-26",
-  "generado_en": "2026-06-26 14:33:40",
+  "fecha": "2026-06-27",
+  "generado_en": "2026-06-27 13:51:15",
   "n_activas": 0,
   "activas": [],
   "variaciones": {
-    "brent": -3.1858,
-    "btc": 0.2259,
-    "dxy": -0.4256,
-    "usdcop": -0.1084,
-    "gold": 1.5206
+    "brent": -3.9365,
+    "btc": 0.7437,
+    "dxy": -0.1379,
+    "usdcop": 0.0,
+    "gold": 0.0
   }
 }
