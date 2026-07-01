@@ -1,30 +1,47 @@
 {
-  "fecha": "2026-06-30",
-  "generado_en": "2026-06-30 14:27:27",
-  "score": 4.4,
+  "fecha": "2026-07-01",
+  "generado_en": "2026-07-01 14:44:59",
+  "score": 10.4,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Mixto",
-  "transiciones": [],
+  "transiciones": [
+    {
+      "dimension": "presion_cop",
+      "dimension_label": "Presion COP",
+      "de": "Alcista USD/COP",
+      "a": "Neutral",
+      "score_parcial": 5.45,
+      "peso_dimension": 20
+    },
+    {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Bajista",
+      "a": "Bajista",
+      "score_parcial": 3.64,
+      "peso_dimension": 20
+    }
+  ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 1.82,
-    "presion_cop": 1.21
+    "presion_inflacionaria": 3.64,
+    "presion_cop": 5.45
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": 0.0,
-    "presion_cop": 0.333
+    "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": -0.182,
-    "presion_cop": 0.455
+    "presion_inflacionaria": -0.364,
+    "presion_cop": 0.545
   },
   "n_dias_analizados": 14,
   "series": {
@@ -52,8 +69,8 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -61,7 +78,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Bajista",
       "Neutral",
       "Alcista",
@@ -74,10 +90,10 @@
       "Bajista",
       "Bajista",
       "Neutral",
-      "Alcista"
+      "Alcista",
+      "Bajista"
     ],
     "presion_cop": [
-      "Neutral",
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
@@ -89,6 +105,7 @@
       "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral",
       "Neutral"
     ]
