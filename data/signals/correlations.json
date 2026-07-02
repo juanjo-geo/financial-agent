@@ -1,17 +1,17 @@
 {
-  "fecha": "2026-07-01",
-  "generado_en": "2026-07-01 14:45:00",
+  "fecha": "2026-07-02",
+  "generado_en": "2026-07-02 14:10:28",
   "n_dias_ventana": 30,
   "n_dias_baseline": 60,
-  "n_dias_total": 26654,
+  "n_dias_total": 26655,
   "pares": [
     {
       "par": "DXY vs BTC",
       "a": "dxy",
       "b": "btc",
-      "corr_actual": -0.1437,
-      "corr_baseline": -0.3245,
-      "delta": 0.1808,
+      "corr_actual": -0.3214,
+      "corr_baseline": -0.2794,
+      "delta": 0.042,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
@@ -22,9 +22,9 @@
       "par": "DXY vs Oro",
       "a": "dxy",
       "b": "gold",
-      "corr_actual": -0.5314,
-      "corr_baseline": -0.6986,
-      "delta": 0.1672,
+      "corr_actual": -0.601,
+      "corr_baseline": -0.6824,
+      "delta": 0.0814,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
@@ -35,22 +35,22 @@
       "par": "Brent vs USDCOP",
       "a": "brent",
       "b": "usdcop",
-      "corr_actual": 0.3738,
-      "corr_baseline": 0.0777,
-      "delta": 0.2961,
+      "corr_actual": 0.335,
+      "corr_baseline": 0.0802,
+      "delta": 0.2548,
       "rota": false,
       "alerta": false,
       "esperada": "positiva",
       "n_actual": 30,
-      "n_baseline": 58
+      "n_baseline": 59
     },
     {
       "par": "BTC vs Oro",
       "a": "btc",
       "b": "gold",
-      "corr_actual": 0.2738,
-      "corr_baseline": 0.3419,
-      "delta": 0.0681,
+      "corr_actual": 0.4321,
+      "corr_baseline": 0.2753,
+      "delta": 0.1568,
       "rota": false,
       "alerta": false,
       "esperada": "variable",
@@ -61,9 +61,9 @@
       "par": "Brent vs DXY",
       "a": "brent",
       "b": "dxy",
-      "corr_actual": 0.1023,
-      "corr_baseline": 0.536,
-      "delta": 0.4337,
+      "corr_actual": 0.0432,
+      "corr_baseline": 0.5076,
+      "delta": 0.4644,
       "rota": true,
       "alerta": false,
       "esperada": "positiva",
@@ -72,6 +72,6 @@
     }
   ],
   "alertas": [
-    "Correlacion debilitada: Brent vs DXY baseline=0.54 -> actual=0.10"
+    "Correlacion debilitada: Brent vs DXY baseline=0.51 -> actual=0.04"
   ]
 }

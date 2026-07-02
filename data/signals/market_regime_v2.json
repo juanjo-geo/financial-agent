@@ -1,43 +1,42 @@
 {
-  "fecha": "2026-07-01",
-  "generado_en": "2026-07-01 14:44:59",
-  "regime": "CRISIS",
+  "fecha": "2026-07-02",
+  "generado_en": "2026-07-02 14:10:27",
+  "regime": "LATERAL",
   "scores": {
     "INFLACIONARIO": 0,
     "RISK-ON": 0,
-    "CRISIS": 72,
-    "LATERAL": 60
+    "CRISIS": 44,
+    "LATERAL": 80
   },
-  "confianza": 12,
+  "confianza": 36,
   "drivers": [
-    "BRENT, BTC en caida",
-    "Volatilidad alta en BRENT"
+    "4/5 activos sin tendencia definida"
   ],
-  "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
+  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -1.327,
-      "volatilidad": 2.374,
+      "avg_pct_dia": -1.198,
+      "volatilidad": 2.381,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.439,
-      "volatilidad": 1.488,
+      "avg_pct_dia": -0.069,
+      "volatilidad": 1.676,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.047,
-      "volatilidad": 0.243,
+      "avg_pct_dia": -0.022,
+      "volatilidad": 0.294,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": -0.183,
-      "volatilidad": 1.357,
+      "avg_pct_dia": 0.019,
+      "volatilidad": 1.522,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": 0.055,
-      "volatilidad": 0.357,
+      "avg_pct_dia": 0.006,
+      "volatilidad": 0.385,
       "n_dias": 14
     }
   },
