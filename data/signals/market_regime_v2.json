@@ -1,42 +1,42 @@
 {
-  "fecha": "2026-07-03",
-  "generado_en": "2026-07-03 14:15:32",
+  "fecha": "2026-07-04",
+  "generado_en": "2026-07-04 13:41:33",
   "regime": "LATERAL",
   "scores": {
     "INFLACIONARIO": 25,
     "RISK-ON": 0,
     "CRISIS": 44,
-    "LATERAL": 80
+    "LATERAL": 60
   },
-  "confianza": 36,
+  "confianza": 16,
   "drivers": [
-    "4/5 activos sin tendencia definida"
+    "3 activos laterales"
   ],
   "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -1.225,
-      "volatilidad": 2.356,
+      "avg_pct_dia": -1.282,
+      "volatilidad": 2.296,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.062,
-      "volatilidad": 1.677,
+      "avg_pct_dia": -0.031,
+      "volatilidad": 1.674,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": -0.024,
+      "avg_pct_dia": -0.03,
       "volatilidad": 0.294,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.194,
-      "volatilidad": 1.482,
+      "avg_pct_dia": 0.377,
+      "volatilidad": 1.434,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": -0.047,
-      "volatilidad": 0.443,
+      "avg_pct_dia": -0.105,
+      "volatilidad": 0.49,
       "n_dias": 14
     }
   },
