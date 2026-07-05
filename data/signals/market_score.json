@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-07-04",
-  "generado_en": "2026-07-04 13:41:35",
-  "score": 43,
+  "fecha": "2026-07-05",
+  "generado_en": "2026-07-05 13:48:43",
+  "score": 44,
   "label": "Visibilidad moderada",
   "color": "#E65100",
   "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 11.3,
-      "desc": "Regime change 25/100 (Estable)",
+      "pts": 11.9,
+      "desc": "Regime change 21/100 (Estable)",
       "max": 15
     }
   }
