@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-07-07",
-  "generado_en": "2026-07-07 14:44:56",
-  "score": 15.5,
+  "fecha": "2026-07-08",
+  "generado_en": "2026-07-08 14:22:51",
+  "score": 12.7,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -12,16 +12,16 @@
       "dimension_label": "Presion Inflacionaria",
       "de": "Alcista",
       "a": "Alcista",
-      "score_parcial": 10.0,
+      "score_parcial": 8.18,
       "peso_dimension": 20
     }
   ],
-  "descripcion": "Se observa una transicion gradual en el regimen macro: Presion Inflacionaria muestra cambio desde Alcista. El entorno de riesgo parece estar deteriorandose. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
+  "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 1.36,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 10.0,
-    "presion_cop": 2.73
+    "presion_inflacionaria": 8.18,
+    "presion_cop": 1.82
   },
   "recientes": {
     "sesgo_mercado": 0.0,
@@ -32,13 +32,12 @@
   "baselines": {
     "sesgo_mercado": -0.091,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.0,
-    "presion_cop": 0.273
+    "presion_inflacionaria": 0.182,
+    "presion_cop": 0.182
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -51,11 +50,12 @@
       "Mixto",
       "Mixto",
       "Mixto",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -70,7 +70,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Bajista",
       "Alcista",
       "Bajista",
       "Bajista",
@@ -78,6 +77,7 @@
       "Neutral",
       "Alcista",
       "Bajista",
+      "Alcista",
       "Alcista",
       "Alcista",
       "Alcista",
@@ -86,11 +86,11 @@
       "Alcista"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
