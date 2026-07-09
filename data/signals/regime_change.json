@@ -1,37 +1,28 @@
 {
-  "fecha": "2026-07-08",
-  "generado_en": "2026-07-08 14:22:51",
-  "score": 12.7,
+  "fecha": "2026-07-09",
+  "generado_en": "2026-07-09 15:18:01",
+  "score": 4.7,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Deterioro",
-  "transiciones": [
-    {
-      "dimension": "presion_inflacionaria",
-      "dimension_label": "Presion Inflacionaria",
-      "de": "Alcista",
-      "a": "Alcista",
-      "score_parcial": 8.18,
-      "peso_dimension": 20
-    }
-  ],
+  "direccion": "Mixto",
+  "transiciones": [],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 1.36,
-    "riesgo_macro": 1.36,
-    "presion_inflacionaria": 8.18,
+    "riesgo_macro": 0.0,
+    "presion_inflacionaria": 1.52,
     "presion_cop": 1.82
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 1.0,
+    "presion_inflacionaria": 0.333,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": -0.091,
-    "riesgo_macro": 0.091,
+    "riesgo_macro": 0.0,
     "presion_inflacionaria": 0.182,
     "presion_cop": 0.182
   },
@@ -44,8 +35,8 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -54,7 +45,7 @@
       "Mixto"
     ],
     "riesgo_macro": [
-      "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -70,7 +61,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Bajista",
       "Bajista",
       "Bajista",
@@ -83,13 +73,14 @@
       "Alcista",
       "Alcista",
       "Alcista",
-      "Alcista"
+      "Alcista",
+      "Bajista"
     ],
     "presion_cop": [
       "Neutral",
+      "Alcista USD/COP",
+      "Alcista USD/COP",
       "Neutral",
-      "Alcista USD/COP",
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Neutral",
