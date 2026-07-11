@@ -1,17 +1,17 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-07-10 14:35:46.363312
+Generado: 2026-07-11 13:27:38.068390
 
 AAPL | 0.21% | up | none
 AMZN | 1.36% | up | low
-BRENT | 0.30% | up | none
-BTC | 1.21% | up | none
+BRENT | 0.05% | up | none
+BTC | 0.04% | up | none
 BTC_VOLUME | 6.91% | up | high
 COPPER | -0.84% | down | none
-DXY | -0.01% | down | none
+DXY | 0.06% | up | none
 EURUSD | -0.43% | down | none
 GLOBAL_INFLATION_PROXY | 0.00% | flat | none
-GOLD | -0.58% | down | low
+GOLD | -0.44% | down | none
 GOOGL | 1.67% | up | low
 META | 0.81% | up | none
 MSFT | 0.97% | up | none
@@ -21,7 +21,7 @@ NVDA | 2.46% | up | medium
 SILVER | -3.57% | down | medium
 SP500 | 0.74% | up | none
 TSLA | 0.25% | up | none
-USDCOP | -0.87% | down | low
+USDCOP | -1.30% | down | medium
 WTI | 12.52% | up | high
 
 INTERPRETACIÓN MACRO
