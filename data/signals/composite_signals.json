@@ -1,21 +1,13 @@
 {
-  "fecha": "2026-07-14",
-  "generado_en": "2026-07-14 13:52:20",
-  "n_activas": 1,
-  "activas": [
-    {
-      "id": "risk_on_fuerte",
-      "nombre": "Risk-on fuerte",
-      "descripcion": "Cripto al alza y dolar debil: apetito por riesgo dominante.",
-      "severidad": "MED",
-      "icono": "+"
-    }
-  ],
+  "fecha": "2026-07-15",
+  "generado_en": "2026-07-15 13:50:25",
+  "n_activas": 0,
+  "activas": [],
   "variaciones": {
-    "brent": 3.0256,
-    "btc": 2.4473,
-    "dxy": -0.5737,
-    "usdcop": 0.0083,
-    "gold": 2.1668
+    "brent": -0.2582,
+    "btc": -0.2083,
+    "dxy": -0.0614,
+    "usdcop": -0.4141,
+    "gold": 0.2241
   }
 }

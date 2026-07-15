@@ -1,30 +1,30 @@
 {
-  "fecha": "2026-07-14",
-  "generado_en": "2026-07-14 13:52:19",
+  "fecha": "2026-07-15",
+  "generado_en": "2026-07-15 13:50:24",
   "n_dias_ventana": 30,
   "n_dias_baseline": 60,
-  "n_dias_total": 26667,
+  "n_dias_total": 26668,
   "pares": [
     {
       "par": "DXY vs BTC",
       "a": "dxy",
       "b": "btc",
-      "corr_actual": -0.5114,
-      "corr_baseline": -0.2213,
-      "delta": 0.2901,
+      "corr_actual": -0.5362,
+      "corr_baseline": -0.2155,
+      "delta": 0.3207,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
       "n_actual": 30,
-      "n_baseline": 59
+      "n_baseline": 60
     },
     {
       "par": "DXY vs Oro",
       "a": "dxy",
       "b": "gold",
-      "corr_actual": -0.588,
-      "corr_baseline": -0.6758,
-      "delta": 0.0878,
+      "corr_actual": -0.61,
+      "corr_baseline": -0.6646,
+      "delta": 0.0546,
       "rota": false,
       "alerta": false,
       "esperada": "negativa",
@@ -35,40 +35,40 @@
       "par": "Brent vs USDCOP",
       "a": "brent",
       "b": "usdcop",
-      "corr_actual": 0.2232,
-      "corr_baseline": 0.0337,
-      "delta": 0.1895,
+      "corr_actual": 0.2866,
+      "corr_baseline": 0.0271,
+      "delta": 0.2595,
       "rota": false,
       "alerta": false,
       "esperada": "positiva",
       "n_actual": 30,
-      "n_baseline": 59
+      "n_baseline": 60
     },
     {
       "par": "BTC vs Oro",
       "a": "btc",
       "b": "gold",
-      "corr_actual": 0.6247,
-      "corr_baseline": 0.2614,
-      "delta": 0.3633,
+      "corr_actual": 0.6081,
+      "corr_baseline": 0.2811,
+      "delta": 0.327,
       "rota": false,
       "alerta": false,
       "esperada": "variable",
       "n_actual": 30,
-      "n_baseline": 59
+      "n_baseline": 60
     },
     {
       "par": "Brent vs DXY",
       "a": "brent",
       "b": "dxy",
-      "corr_actual": -0.0739,
-      "corr_baseline": 0.4227,
-      "delta": 0.4966,
+      "corr_actual": -0.0688,
+      "corr_baseline": 0.4219,
+      "delta": 0.4907,
       "rota": true,
       "alerta": false,
       "esperada": "positiva",
       "n_actual": 30,
-      "n_baseline": 59
+      "n_baseline": 60
     }
   ],
   "alertas": [
