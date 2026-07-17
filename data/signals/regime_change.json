@@ -1,39 +1,30 @@
 {
-  "fecha": "2026-07-16",
-  "generado_en": "2026-07-16 14:01:43",
-  "score": 6.8,
+  "fecha": "2026-07-17",
+  "generado_en": "2026-07-17 13:46:19",
+  "score": 4.4,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Mixto",
-  "transiciones": [
-    {
-      "dimension": "presion_cop",
-      "dimension_label": "Presion COP",
-      "de": "Neutral",
-      "a": "Neutral",
-      "score_parcial": 3.33,
-      "peso_dimension": 20
-    }
-  ],
+  "transiciones": [],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 1.36,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": 2.12,
-    "presion_cop": 3.33
+    "presion_cop": 0.91
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": 0.333,
-    "presion_cop": -0.333
+    "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": -0.091,
     "riesgo_macro": 0.0,
     "presion_inflacionaria": 0.545,
-    "presion_cop": 0.0
+    "presion_cop": -0.091
   },
   "n_dias_analizados": 14,
   "series": {
@@ -44,8 +35,8 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -75,7 +66,6 @@
       "Alcista",
       "Alcista",
       "Alcista",
-      "Alcista",
       "Bajista",
       "Neutral",
       "Neutral",
@@ -83,7 +73,8 @@
       "Alcista",
       "Alcista",
       "Neutral",
-      "Neutral"
+      "Neutral",
+      "Alcista"
     ],
     "presion_cop": [
       "Neutral",
@@ -96,8 +87,8 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
       "Favorable COP",
+      "Neutral",
       "Neutral",
       "Neutral"
     ]
