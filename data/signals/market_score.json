@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-07-17",
-  "generado_en": "2026-07-17 13:46:21",
+  "fecha": "2026-07-18",
+  "generado_en": "2026-07-18 13:23:28",
   "score": 56,
   "label": "Senales claras",
   "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen INFLACIONARIO con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 1.5,
-      "desc": "Regimen INFLACIONARIO (confianza +6pts)",
+      "pts": 2.5,
+      "desc": "Regimen LATERAL (confianza +10pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 14.3,
-      "desc": "Regime change 4/100 (Estable)",
+      "pts": 13.6,
+      "desc": "Regime change 9/100 (Estable)",
       "max": 15
     }
   }
