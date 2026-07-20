@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-07-19",
-  "generado_en": "2026-07-19 13:25:03",
-  "score": 18.6,
+  "fecha": "2026-07-20",
+  "generado_en": "2026-07-20 14:13:27",
+  "score": 15.3,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -11,7 +11,7 @@
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
-      "a": "Medio",
+      "a": "Bajo",
       "score_parcial": 10.0,
       "peso_dimension": 30
     },
@@ -19,22 +19,22 @@
       "dimension": "presion_inflacionaria",
       "dimension_label": "Presion Inflacionaria",
       "de": "Alcista",
-      "a": "Alcista",
-      "score_parcial": 6.36,
+      "a": "Neutral",
+      "score_parcial": 3.03,
       "peso_dimension": 20
     }
   ],
-  "descripcion": "Se observa una transicion gradual en el regimen macro: Riesgo Macro transita de Bajo hacia Medio. El entorno de riesgo parece estar deteriorandose. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
+  "descripcion": "Se observa una transicion gradual en el regimen macro: Riesgo Macro muestra cambio desde Bajo. El entorno de riesgo parece estar deteriorandose. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
   "scores_por_dim": {
     "sesgo_mercado": 1.36,
     "riesgo_macro": 10.0,
-    "presion_inflacionaria": 6.36,
+    "presion_inflacionaria": 3.03,
     "presion_cop": 0.91
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.667,
-    "presion_inflacionaria": 1.0,
+    "presion_inflacionaria": 0.667,
     "presion_cop": 0.0
   },
   "baselines": {
@@ -49,8 +49,8 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -73,12 +73,11 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
-      "Medio"
+      "Medio",
+      "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Alcista",
       "Alcista",
       "Bajista",
@@ -91,7 +90,8 @@
       "Neutral",
       "Alcista",
       "Alcista",
-      "Alcista"
+      "Alcista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",
@@ -101,8 +101,8 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
       "Favorable COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
