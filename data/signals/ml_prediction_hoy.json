@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-07-21 14:01:35",
-  "fecha": "2026-07-21",
+  "generado_en": "2026-07-22 14:04:47",
+  "fecha": "2026-07-22",
   "direccion": "Bajista",
   "valor_pred": -1,
   "probabilidades": {
-    "-1": 0.5507,
-    "1": 0.4493
+    "-1": 0.535,
+    "1": 0.465
   },
   "confianza_ml": 1,
-  "cv_accuracy": 0.5211,
+  "cv_accuracy": 0.5248,
   "modelo": "RandomForest-Binary"
 }
