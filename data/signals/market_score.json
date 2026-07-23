@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-07-22",
-  "generado_en": "2026-07-22 14:04:02",
-  "score": 60,
-  "label": "Senales claras",
-  "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "fecha": "2026-07-23",
+  "generado_en": "2026-07-23 14:09:28",
+  "score": 77,
+  "label": "Alta conviccion",
+  "color": "#00C896",
+  "narrative": "El sistema cuenta hoy con alta conviccion: regimen LATERAL, sesgo Mixto, riesgo macro Bajo. Las senales apuntan en direccion coherente.",
   "componentes": {
     "claridad_regimen": {
       "pts": 7.5,
@@ -12,8 +12,8 @@
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 16.0,
-      "desc": "Conviccion 8/10",
+      "pts": 18.0,
+      "desc": "Conviccion 9/10",
       "max": 20
     },
     "coherencia_pred": {
@@ -22,13 +22,13 @@
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 0.0,
-      "desc": "0 senal(es) compuesta(s) activa(s)",
+      "pts": 15.0,
+      "desc": "3 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 13.9,
-      "desc": "Regime change 8/100 (Estable)",
+      "pts": 13.6,
+      "desc": "Regime change 9/100 (Estable)",
       "max": 15
     }
   }
