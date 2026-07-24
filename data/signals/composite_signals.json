@@ -1,35 +1,13 @@
 {
-  "fecha": "2026-07-23",
-  "generado_en": "2026-07-23 14:09:28",
-  "n_activas": 3,
-  "activas": [
-    {
-      "id": "aversion_generalizada",
-      "nombre": "Sesion de aversion generalizada",
-      "descripcion": "Multiples activos en rojo simultaneamente: posible desapalancamiento.",
-      "severidad": "HIGH",
-      "icono": "!"
-    },
-    {
-      "id": "desinflacion_real",
-      "nombre": "Desinflacion de activos reales",
-      "descripcion": "Petroleo y Oro bajan juntos: presiones deflacionarias en commodities.",
-      "severidad": "MED",
-      "icono": "v"
-    },
-    {
-      "id": "cop_debilidad",
-      "nombre": "Debilidad del COP",
-      "descripcion": "USDCOP sube junto al DXY: presion cambiaria desde contexto global.",
-      "severidad": "MED",
-      "icono": "!"
-    }
-  ],
+  "fecha": "2026-07-24",
+  "generado_en": "2026-07-24 13:52:08",
+  "n_activas": 0,
+  "activas": [],
   "variaciones": {
-    "brent": -8.7358,
-    "btc": -1.8532,
-    "dxy": 0.3194,
-    "usdcop": 0.8802,
-    "gold": -1.8735
+    "brent": -3.2009,
+    "btc": -1.4114,
+    "dxy": 0.0227,
+    "usdcop": 0.0,
+    "gold": 0.0666
   }
 }

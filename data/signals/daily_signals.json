@@ -1,51 +1,45 @@
 {
-  "fecha": "2026-07-23",
-  "generado_en": "2026-07-23 14:09:26",
+  "fecha": "2026-07-24",
+  "generado_en": "2026-07-24 13:52:05",
   "senales": {
     "riesgo_macro": "Bajo",
     "sesgo_mercado": "Mixto",
     "presion_inflacionaria": "Bajista",
     "presion_cop": "Alcista USD/COP",
-    "conviccion": 9
+    "conviccion": 8
   },
   "interpretacion": {
     "driver_principal": "El WTI avanzo +12.5%, en linea con presiones en el mercado de crudo liviano.",
-    "driver_secundario": "El petroleo Brent cedio con fuerza (-8.7%), lo que podria estar reflejando menor demanda o aumento de oferta.",
-    "lectura_cruzada": "Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante. La caida del petroleo junto con el avance de las acciones sugiere alivio en costos de produccion que el mercado parece estar descontando positivamente. La fortaleza del dolar a nivel global parece trasladarse al tipo de cambio colombiano, lo que podria presionar la inflacion importada en Colombia.",
-    "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La apreciacion del dolar frente al peso podria generar presion adicional sobre importaciones y deuda externa colombiana. Las senales presentan una conviccion 9/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
+    "driver_secundario": "BTC_VOLUME registro un avance de +6.9% en la sesion.",
+    "lectura_cruzada": "Las senales del dia presentan un cuadro mixto, sin un sesgo de riesgo claramente dominante. La caida del petroleo junto con el avance de las acciones sugiere alivio en costos de produccion que el mercado parece estar descontando positivamente.",
+    "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La apreciacion del dolar frente al peso podria generar presion adicional sobre importaciones y deuda externa colombiana. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
   },
   "scores_internos": {
-    "riesgo_score": -0.6,
-    "sesgo_risk_on": 1.5,
+    "riesgo_score": -0.5,
+    "sesgo_risk_on": 1.0,
     "sesgo_risk_off": 1.5,
-    "inflacion_score": -4.3,
-    "cop_score": 4.0,
-    "conviccion_razon": "8 indicador(es) con movimiento significativo"
+    "inflacion_score": -3.8,
+    "cop_score": 2.5,
+    "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_fall": -0.5,
-      "gold_down": -0.5,
       "btc_weak": 0.3,
-      "sp500_up": -0.3,
-      "dxy_up": 0.4
+      "sp500_up": -0.3
     },
     "inflacion": {
       "brent_crash": -4.0,
-      "gold_down": -0.5,
       "silver_down": -0.3,
       "news_petroleo_alta": 0.5
     },
     "cop": {
-      "dxy_mild": 0.5,
       "brent_cop_negative": 1.5,
-      "usdcop_up": 1.0,
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -1.9%)",
+      "btc": "Risk-off +1 (BTC -1.5%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-on +0.5 (Oro -2.3%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -60,14 +54,14 @@
   "variaciones_mercado": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": -8.7358,
-    "btc": -1.8532,
+    "brent": -3.2009,
+    "btc": -1.4114,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": 0.3194,
+    "dxy": 0.0227,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -1.8735,
+    "gold": 0.0666,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -77,18 +71,18 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": 0.8802,
+    "usdcop": 0.0,
     "wti": 12.515168936486138
   },
   "ml_prediccion": {
     "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5291,
-      "1": 0.4709
+      "-1": 0.5602,
+      "1": 0.4398
     },
-    "cv_accuracy_modelo": 52.4,
+    "cv_accuracy_modelo": 51.7,
     "modelo": "RandomForest-Binary",
-    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 52.4% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.7% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }
