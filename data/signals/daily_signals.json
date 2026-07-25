@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-07-24",
-  "generado_en": "2026-07-24 13:52:05",
+  "fecha": "2026-07-25",
+  "generado_en": "2026-07-25 13:42:32",
   "senales": {
     "riesgo_macro": "Bajo",
     "sesgo_mercado": "Mixto",
@@ -15,17 +15,16 @@
     "cierre_ejecutivo": "El entorno macro parece moderadamente estable en esta sesion, sin senales que apunten a una disrupcion significativa en los mercados. La apreciacion del dolar frente al peso podria generar presion adicional sobre importaciones y deuda externa colombiana. Las senales presentan una conviccion 8/10, por lo que la narrativa descrita parece robusta con la informacion disponible hoy."
   },
   "scores_internos": {
-    "riesgo_score": -0.5,
+    "riesgo_score": -0.8,
     "sesgo_risk_on": 1.0,
-    "sesgo_risk_off": 1.5,
+    "sesgo_risk_off": 0.5,
     "inflacion_score": -3.8,
     "cop_score": 2.5,
-    "conviccion_razon": "7 indicador(es) con movimiento significativo"
+    "conviccion_razon": "6 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_fall": -0.5,
-      "btc_weak": 0.3,
       "sp500_up": -0.3
     },
     "inflacion": {
@@ -38,7 +37,6 @@
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -1.5%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
@@ -54,14 +52,14 @@
   "variaciones_mercado": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": -3.2009,
-    "btc": -1.4114,
+    "brent": -4.0928,
+    "btc": 0.0396,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": 0.0227,
+    "dxy": 0.0296,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.0666,
+    "gold": 0.0,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -78,11 +76,11 @@
     "direccion_btc_manana": "Bajista",
     "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5602,
-      "1": 0.4398
+      "-1": 0.5379,
+      "1": 0.4621
     },
-    "cv_accuracy_modelo": 51.7,
+    "cv_accuracy_modelo": 52.6,
     "modelo": "RandomForest-Binary",
-    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.7% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 52.6% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }

@@ -1,21 +1,21 @@
 {
-  "fecha": "2026-07-24",
-  "generado_en": "2026-07-24 13:52:08",
-  "total_predicciones": 1061,
+  "fecha": "2026-07-25",
+  "generado_en": "2026-07-25 13:42:35",
+  "total_predicciones": 1066,
   "bandas": {
     "1-3": {
-      "n": 219,
-      "acierto_real": 0.9132,
+      "n": 220,
+      "acierto_real": 0.9136,
       "acierto_esperado": 0.45,
-      "factor": 2.0294,
+      "factor": 2.0303,
       "status": "Subconfiado",
       "suficientes_datos": true
     },
     "4-6": {
-      "n": 561,
-      "acierto_real": 0.6132,
+      "n": 565,
+      "acierto_real": 0.6124,
       "acierto_esperado": 0.55,
-      "factor": 1.1149,
+      "factor": 1.1134,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
