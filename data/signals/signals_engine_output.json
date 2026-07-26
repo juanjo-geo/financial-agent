@@ -7,20 +7,22 @@
     "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": -0.8,
+    "riesgo_score": -0.3,
     "sesgo_risk_on": 1.0,
-    "sesgo_risk_off": 0.5,
-    "inflacion_score": -3.8,
+    "sesgo_risk_off": 1.0,
+    "inflacion_score": -3.5,
     "cop_score": 2.5,
     "conviccion_razon": "6 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "brent_fall": -0.5,
+      "gold_up": 0.5,
       "sp500_up": -0.3
     },
     "inflacion": {
       "brent_crash": -4.0,
+      "gold_up": 0.3,
       "silver_down": -0.3,
       "news_petroleo_alta": 0.5
     },
@@ -30,6 +32,7 @@
     },
     "sesgo": {
       "sp500": "Risk-on +1 (SP500 +0.7%)",
+      "gold": "Risk-off +0.5 (Oro +0.5%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -45,13 +48,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": -4.0928,
-    "btc": 0.0396,
+    "btc": 0.1747,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.0296,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.0,
+    "gold": 0.4293,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -67,14 +70,14 @@
   "variaciones_ajustadas": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": -5.570300800000001,
-    "btc": 0.04068900000000001,
+    "brent": -5.467162240000001,
+    "btc": 0.1717301,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.042721680000000005,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.0,
+    "gold": 0.51576102,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -88,8 +91,8 @@
     "wti": 12.515168936486138
   },
   "multiplicadores_activos": {
-    "brent": 1.361,
-    "btc": 1.0275,
+    "brent": 1.3358,
+    "btc": 0.983,
     "dxy": 1.4433,
     "usdcop": 1.361,
     "gold": 1.2014
