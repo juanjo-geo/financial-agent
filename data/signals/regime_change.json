@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-07-26",
-  "generado_en": "2026-07-26 13:37:15",
-  "score": 29.5,
+  "fecha": "2026-07-27",
+  "generado_en": "2026-07-27 14:43:56",
+  "score": 26.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -12,7 +12,7 @@
       "dimension_label": "Presion Inflacionaria",
       "de": "Alcista",
       "a": "Bajista",
-      "score_parcial": 15.45,
+      "score_parcial": 13.64,
       "peso_dimension": 20
     },
     {
@@ -20,7 +20,7 @@
       "dimension_label": "Presion COP",
       "de": "Neutral",
       "a": "Alcista USD/COP",
-      "score_parcial": 10.0,
+      "score_parcial": 9.09,
       "peso_dimension": 20
     },
     {
@@ -36,8 +36,8 @@
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 4.09,
-    "presion_inflacionaria": 15.45,
-    "presion_cop": 10.0
+    "presion_inflacionaria": 13.64,
+    "presion_cop": 9.09
   },
   "recientes": {
     "sesgo_mercado": 0.0,
@@ -48,8 +48,8 @@
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.273,
-    "presion_inflacionaria": 0.545,
-    "presion_cop": 0.0
+    "presion_inflacionaria": 0.364,
+    "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
   "series": {
@@ -74,12 +74,12 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
       "Medio",
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -87,7 +87,6 @@
     ],
     "presion_inflacionaria": [
       "Alcista",
-      "Alcista",
       "Neutral",
       "Neutral",
       "Alcista",
@@ -96,13 +95,13 @@
       "Neutral",
       "Alcista",
       "Alcista",
+      "Bajista",
       "Bajista",
       "Bajista",
       "Bajista",
       "Bajista"
     ],
     "presion_cop": [
-      "Neutral",
       "Favorable COP",
       "Neutral",
       "Neutral",
@@ -112,6 +111,7 @@
       "Neutral",
       "Neutral",
       "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",

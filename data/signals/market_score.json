@@ -1,24 +1,24 @@
 {
-  "fecha": "2026-07-26",
-  "generado_en": "2026-07-26 13:37:18",
-  "score": 41,
+  "fecha": "2026-07-27",
+  "generado_en": "2026-07-27 14:43:59",
+  "score": 47,
   "label": "Visibilidad moderada",
   "color": "#E65100",
-  "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
+  "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 9.0,
-      "desc": "Regimen LATERAL (confianza +36pts)",
+      "pts": 3.0,
+      "desc": "Regimen CRISIS (confianza +12pts)",
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 16.0,
-      "desc": "Conviccion 8/10",
+      "pts": 18.0,
+      "desc": "Conviccion 9/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 5.0,
-      "desc": "Solo predicciones laterales",
+      "pts": 15.0,
+      "desc": "Conf. calibrada media 6.0/10 (1 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 10.6,
-      "desc": "Regime change 30/100 (Estable)",
+      "pts": 11.0,
+      "desc": "Regime change 27/100 (Estable)",
       "max": 15
     }
   }
