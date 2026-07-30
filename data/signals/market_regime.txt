@@ -1,27 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-07-29 14:18:11
+Generado: 2026-07-30 14:10:27
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Inflation Pressure
+- EM FX Relief
 
 EXPLICACIÓN
 ------------------------------
-- El petróleo sube con intensidad, aumentando presión inflacionaria energética.
+- USD/COP cae, señal de alivio relativo para la moneda colombiana.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: 5.60% | up | high
-- BTC: 0.65% | up | none
+- BRENT: -0.92% | down | none
+- BTC: 1.23% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.06% | down | none
+- DXY: -0.74% | down | low
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 0.99% | up | low
+- GOLD: 1.07% | up | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -31,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.24% | up | none
+- USDCOP: -1.84% | down | medium
 - WTI: 12.52% | up | high
