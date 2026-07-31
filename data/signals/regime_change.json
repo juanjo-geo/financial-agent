@@ -1,18 +1,26 @@
 {
-  "fecha": "2026-07-30",
-  "generado_en": "2026-07-30 14:10:28",
-  "score": 8.8,
+  "fecha": "2026-07-31",
+  "generado_en": "2026-07-31 14:15:09",
+  "score": 10.6,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mejora",
+  "direccion": "Mixto",
   "transiciones": [
+    {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Bajista",
+      "a": "Neutral",
+      "score_parcial": 5.15,
+      "peso_dimension": 20
+    },
     {
       "dimension": "presion_cop",
       "dimension_label": "Presion COP",
       "de": "Neutral",
-      "a": "Favorable COP",
-      "score_parcial": 7.88,
+      "a": "Alcista USD/COP",
+      "score_parcial": 4.55,
       "peso_dimension": 20
     }
   ],
@@ -20,19 +28,19 @@
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.91,
-    "presion_inflacionaria": 0.0,
-    "presion_cop": 7.88
+    "presion_inflacionaria": 5.15,
+    "presion_cop": 4.55
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.333,
-    "presion_inflacionaria": 0.0,
-    "presion_cop": -0.333
+    "presion_inflacionaria": 0.333,
+    "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.273,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": -0.182,
     "presion_cop": 0.455
   },
   "n_dias_analizados": 14,
@@ -54,7 +62,6 @@
       "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Medio",
       "Medio",
       "Bajo",
@@ -67,10 +74,10 @@
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Alcista",
       "Alcista",
       "Neutral",
@@ -83,6 +90,7 @@
       "Bajista",
       "Bajista",
       "Alcista",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
@@ -91,7 +99,6 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -99,7 +106,8 @@
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
-      "Favorable COP"
+      "Favorable COP",
+      "Alcista USD/COP"
     ]
   }
 }

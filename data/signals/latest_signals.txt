@@ -1,14 +1,13 @@
 SEÑALES DE MERCADO
-Generado: 2026-07-30 14:10:26
+Generado: 2026-07-31 14:15:07
 --------------------------------------------------
 
 - AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
+- Bitcoin cae 3.27% (movimiento relevante). Valor actual: 62,604.96 USD
 - BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC
-- DXY cae 0.74% (movimiento leve relevante). Valor actual: 100.07 index
-- Oro (XAU/USD) sube 1.07% (movimiento leve relevante). Valor actual: 4,170.70 USD/oz
+- Oro (XAU/USD) cae 1.84% (movimiento relevante). Valor actual: 4,087.20 USD/oz
 - GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
 - NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD
 - NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
 - SILVER cae 3.57% (movimiento relevante). Valor actual: 72.46 USD/oz
-- USD/COP cae 1.84% (movimiento relevante). Valor actual: 3,131.64 COP/USD
 - WTI sube 12.52% (movimiento fuerte). Valor actual: 111.30 USD/bbl
