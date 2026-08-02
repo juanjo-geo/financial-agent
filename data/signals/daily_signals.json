@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-08-01",
-  "generado_en": "2026-08-01 13:28:33",
+  "fecha": "2026-08-02",
+  "generado_en": "2026-08-02 13:29:24",
   "senales": {
     "riesgo_macro": "Bajo",
     "sesgo_mercado": "Mixto",
@@ -39,7 +39,7 @@
     },
     "sesgo": {
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-on +0.5 (Oro -1.7%)",
+      "gold": "Risk-on +0.5 (Oro -1.8%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -55,13 +55,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": 0.8279,
-    "btc": 0.3214,
+    "btc": 0.4461,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": -0.2199,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": -1.2992,
+    "gold": -1.3665,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -76,13 +76,13 @@
   },
   "ml_prediccion": {
     "direccion_btc_manana": "Bajista",
-    "confianza_ml": 2,
+    "confianza_ml": 1,
     "probabilidades": {
-      "-1": 0.5777,
-      "1": 0.4223
+      "-1": 0.5562,
+      "1": 0.4438
     },
-    "cv_accuracy_modelo": 51.6,
+    "cv_accuracy_modelo": 52.4,
     "modelo": "RandomForest-Binary",
-    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 51.6% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
+    "nota": "Predicción BINARIA de RandomForest-Binary (Alcista vs Bajista). Entrenado con macro + técnicos + on-chain + volumen BTC. CV accuracy: 52.4% (baseline aleatorio = 50%). Usar como referencia, no como señal absoluta."
   }
 }
