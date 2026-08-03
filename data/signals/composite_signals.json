@@ -1,13 +1,21 @@
 {
-  "fecha": "2026-08-02",
-  "generado_en": "2026-08-02 13:29:27",
-  "n_activas": 0,
-  "activas": [],
+  "fecha": "2026-08-03",
+  "generado_en": "2026-08-03 14:47:13",
+  "n_activas": 1,
+  "activas": [
+    {
+      "id": "desinflacion_real",
+      "nombre": "Desinflacion de activos reales",
+      "descripcion": "Petroleo y Oro bajan juntos: presiones deflacionarias en commodities.",
+      "severidad": "MED",
+      "icono": "v"
+    }
+  ],
   "variaciones": {
-    "brent": 0.8279,
-    "btc": 0.4461,
-    "dxy": -0.2199,
-    "usdcop": 0.0,
-    "gold": -1.3665
+    "brent": -6.6682,
+    "btc": 0.308,
+    "dxy": 0.1465,
+    "usdcop": 2.3802,
+    "gold": -1.0931
   }
 }
