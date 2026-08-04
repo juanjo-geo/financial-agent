@@ -1,29 +1,38 @@
 {
-  "fecha": "2026-08-03",
-  "generado_en": "2026-08-03 14:47:11",
-  "score": 4.5,
+  "fecha": "2026-08-04",
+  "generado_en": "2026-08-04 14:23:26",
+  "score": 7.9,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Mixto",
-  "transiciones": [],
+  "transiciones": [
+    {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Bajista",
+      "a": "Bajista",
+      "score_parcial": 3.03,
+      "peso_dimension": 20
+    }
+  ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 2.73,
-    "presion_inflacionaria": 0.61,
-    "presion_cop": 1.21
+    "presion_inflacionaria": 3.03,
+    "presion_cop": 2.12
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": -0.333,
-    "presion_cop": 0.333
+    "presion_inflacionaria": -0.667,
+    "presion_cop": 0.667
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.182,
-    "presion_inflacionaria": -0.273,
+    "presion_inflacionaria": -0.364,
     "presion_cop": 0.455
   },
   "n_dias_analizados": 14,
@@ -45,7 +54,6 @@
       "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Medio",
       "Bajo",
       "Bajo",
@@ -54,6 +62,7 @@
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -62,7 +71,6 @@
     ],
     "presion_inflacionaria": [
       "Alcista",
-      "Alcista",
       "Bajista",
       "Bajista",
       "Bajista",
@@ -74,10 +82,10 @@
       "Neutral",
       "Neutral",
       "Neutral",
+      "Bajista",
       "Bajista"
     ],
     "presion_cop": [
-      "Neutral",
       "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -90,6 +98,7 @@
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP"
     ]
   }
