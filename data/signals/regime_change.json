@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-08-05",
-  "generado_en": "2026-08-05 14:16:55",
-  "score": 5.6,
+  "fecha": "2026-08-06",
+  "generado_en": "2026-08-06 14:21:00",
+  "score": 3.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -11,14 +11,14 @@
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 2.12,
-    "presion_cop": 2.12
+    "presion_inflacionaria": 1.21,
+    "presion_cop": 1.21
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": -0.667,
-    "presion_cop": 0.667
+    "presion_inflacionaria": -0.333,
+    "presion_cop": 0.333
   },
   "baselines": {
     "sesgo_mercado": 0.0,
@@ -50,8 +50,8 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -66,7 +66,6 @@
       "Bajista",
       "Bajista",
       "Bajista",
-      "Bajista",
       "Alcista",
       "Neutral",
       "Neutral",
@@ -74,10 +73,10 @@
       "Neutral",
       "Bajista",
       "Bajista",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -90,6 +89,7 @@
       "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral"
     ]
   }
