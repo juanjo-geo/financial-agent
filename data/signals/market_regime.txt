@@ -1,27 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-08-07 13:11:34
+Generado: 2026-08-08 12:54:59
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Inflation Pressure
+- Neutral
 
 EXPLICACIÓN
 ------------------------------
-- El petróleo sube con intensidad, aumentando presión inflacionaria energética.
+- No se detecta un régimen macro dominante en esta sesión.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: 2.77% | up | medium
-- BTC: 1.45% | up | none
+- BRENT: 0.26% | up | none
+- BTC: 0.15% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.48% | down | low
+- DXY: -0.34% | down | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 2.85% | up | medium
+- GOLD: 1.49% | up | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -31,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.25% | up | none
+- USDCOP: 0.04% | up | none
 - WTI: 12.52% | up | high
