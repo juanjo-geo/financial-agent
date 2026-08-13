@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-08-12",
-  "generado_en": "2026-08-12 13:17:33",
-  "score": 48,
+  "fecha": "2026-08-13",
+  "generado_en": "2026-08-13 13:18:57",
+  "score": 50,
   "label": "Visibilidad moderada",
   "color": "#E65100",
   "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 13.8,
-      "desc": "Conf. calibrada media 5.5/10 (4 activos)",
+      "pts": 15.8,
+      "desc": "Conf. calibrada media 6.3/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
