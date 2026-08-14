@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-08-13",
-  "generado_en": "2026-08-13 13:18:57",
+  "fecha": "2026-08-14",
+  "generado_en": "2026-08-14 13:13:50",
   "score": 50,
   "label": "Visibilidad moderada",
   "color": "#E65100",
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.8,
-      "desc": "Conf. calibrada media 6.3/10 (3 activos)",
+      "pts": 16.2,
+      "desc": "Conf. calibrada media 6.5/10 (2 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,7 +27,7 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 14.0,
+      "pts": 14.2,
       "desc": "Regime change 6/100 (Estable)",
       "max": 15
     }

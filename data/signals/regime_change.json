@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-08-13",
-  "generado_en": "2026-08-13 13:18:55",
-  "score": 6.5,
+  "fecha": "2026-08-14",
+  "generado_en": "2026-08-14 13:13:48",
+  "score": 5.6,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -11,7 +11,7 @@
       "dimension": "presion_inflacionaria",
       "dimension_label": "Presion Inflacionaria",
       "de": "Neutral",
-      "a": "Bajista",
+      "a": "Neutral",
       "score_parcial": 3.33,
       "peso_dimension": 20
     }
@@ -21,7 +21,7 @@
     "sesgo_mercado": 0.0,
     "riesgo_macro": 1.36,
     "presion_inflacionaria": 3.33,
-    "presion_cop": 1.82
+    "presion_cop": 0.91
   },
   "recientes": {
     "sesgo_mercado": 0.0,
@@ -33,7 +33,7 @@
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
     "presion_inflacionaria": 0.0,
-    "presion_cop": 0.182
+    "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
   "series": {
@@ -60,8 +60,8 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -72,7 +72,6 @@
     "presion_inflacionaria": [
       "Neutral",
       "Neutral",
-      "Neutral",
       "Bajista",
       "Bajista",
       "Neutral",
@@ -83,10 +82,10 @@
       "Alcista",
       "Neutral",
       "Neutral",
-      "Bajista"
+      "Bajista",
+      "Neutral"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Alcista USD/COP",
@@ -94,6 +93,7 @@
       "Neutral",
       "Neutral",
       "Favorable COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
