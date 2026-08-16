@@ -1,29 +1,38 @@
 {
-  "fecha": "2026-08-15",
-  "generado_en": "2026-08-15 12:42:48",
-  "score": 2.3,
+  "fecha": "2026-08-16",
+  "generado_en": "2026-08-16 12:45:22",
+  "score": 9.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Mixto",
-  "transiciones": [],
+  "transiciones": [
+    {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Neutral",
+      "a": "Alcista",
+      "score_parcial": 7.58,
+      "peso_dimension": 20
+    }
+  ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": 7.58,
     "presion_cop": 0.91
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": 0.667,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": -0.091,
     "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
@@ -49,8 +58,8 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -61,7 +70,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Bajista",
       "Bajista",
       "Neutral",
@@ -74,15 +82,16 @@
       "Neutral",
       "Bajista",
       "Neutral",
+      "Alcista",
       "Alcista"
     ],
     "presion_cop": [
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Favorable COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
