@@ -1,25 +1,17 @@
 {
-  "fecha": "2026-08-17",
-  "generado_en": "2026-08-17 12:50:46",
-  "score": 13.0,
+  "fecha": "2026-08-18",
+  "generado_en": "2026-08-18 12:53:20",
+  "score": 8.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mixto",
+  "direccion": "Mejora",
   "transiciones": [
-    {
-      "dimension": "presion_inflacionaria",
-      "dimension_label": "Presion Inflacionaria",
-      "de": "Neutral",
-      "a": "Neutral",
-      "score_parcial": 6.67,
-      "peso_dimension": 20
-    },
     {
       "dimension": "sesgo_mercado",
       "dimension_label": "Sesgo de Mercado",
       "de": "Mixto",
-      "a": "Risk-on",
+      "a": "Mixto",
       "score_parcial": 5.0,
       "peso_dimension": 30
     }
@@ -28,20 +20,20 @@
   "scores_por_dim": {
     "sesgo_mercado": 5.0,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 6.67,
-    "presion_cop": 0.0
+    "presion_inflacionaria": 1.52,
+    "presion_cop": 0.91
   },
   "recientes": {
     "sesgo_mercado": -0.333,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.667,
+    "presion_inflacionaria": 0.333,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.0,
-    "presion_cop": 0.0
+    "presion_inflacionaria": 0.182,
+    "presion_cop": -0.091
   },
   "n_dias_analizados": 14,
   "series": {
@@ -58,11 +50,10 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
-      "Risk-on"
+      "Risk-on",
+      "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Bajo",
       "Bajo",
       "Medio",
@@ -75,10 +66,10 @@
       "Bajo",
       "Bajo",
       "Bajo",
+      "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Bajista",
       "Neutral",
       "Neutral",
       "Alcista",
@@ -91,13 +82,14 @@
       "Neutral",
       "Alcista",
       "Alcista",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Favorable COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
