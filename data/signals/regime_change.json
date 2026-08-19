@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-08-18",
-  "generado_en": "2026-08-18 12:53:20",
-  "score": 8.8,
+  "fecha": "2026-08-19",
+  "generado_en": "2026-08-19 12:53:35",
+  "score": 10.0,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -20,19 +20,19 @@
   "scores_por_dim": {
     "sesgo_mercado": 5.0,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 1.52,
+    "presion_inflacionaria": 2.73,
     "presion_cop": 0.91
   },
   "recientes": {
     "sesgo_mercado": -0.333,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.333,
+    "presion_inflacionaria": 0.0,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.182,
+    "presion_inflacionaria": 0.273,
     "presion_cop": -0.091
   },
   "n_dias_analizados": 14,
@@ -49,14 +49,14 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -71,7 +71,6 @@
     ],
     "presion_inflacionaria": [
       "Neutral",
-      "Neutral",
       "Alcista",
       "Neutral",
       "Neutral",
@@ -83,12 +82,13 @@
       "Alcista",
       "Alcista",
       "Neutral",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
       "Neutral",
-      "Neutral",
       "Favorable COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",

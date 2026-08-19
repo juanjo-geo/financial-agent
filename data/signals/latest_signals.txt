@@ -1,10 +1,11 @@
 SEÑALES DE MERCADO
-Generado: 2026-08-18 12:53:18
+Generado: 2026-08-19 12:53:32
 --------------------------------------------------
 
 - AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
 - BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC
-- Oro (XAU/USD) cae 0.57% (movimiento leve relevante). Valor actual: 4,447.90 USD/oz
+- DXY cae 0.44% (movimiento leve relevante). Valor actual: 99.23 index
+- Oro (XAU/USD) sube 1.76% (movimiento relevante). Valor actual: 4,468.80 USD/oz
 - GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
 - NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD
 - NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
