@@ -1,37 +1,39 @@
 {
-  "fecha": "2026-08-19",
-  "generado_en": "2026-08-19 12:53:35",
-  "regime": "LATERAL",
+  "fecha": "2026-08-20",
+  "generado_en": "2026-08-20 12:55:43",
+  "regime": "RISK-ON",
   "scores": {
     "INFLACIONARIO": 55,
-    "RISK-ON": 40,
+    "RISK-ON": 70,
     "CRISIS": 0,
-    "LATERAL": 60
+    "LATERAL": 40
   },
-  "confianza": 5,
+  "confianza": 15,
   "drivers": [
-    "3 activos laterales"
+    "BTC +0.44%/dia",
+    "DXY -0.19%/dia (debil)",
+    "Brent +0.57%/dia"
   ],
-  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
+  "descripcion": "El mercado se encuentra en modo risk-on. Los activos especulativos lideran el alza mientras el dolar cede terreno, indicando apetito por riesgo en los mercados globales.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": 0.38,
-      "volatilidad": 1.218,
+      "avg_pct_dia": 0.567,
+      "volatilidad": 1.375,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": 0.196,
-      "volatilidad": 0.64,
+      "avg_pct_dia": 0.438,
+      "volatilidad": 1.099,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": -0.178,
-      "volatilidad": 0.2,
+      "avg_pct_dia": -0.19,
+      "volatilidad": 0.19,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.835,
-      "volatilidad": 1.014,
+      "avg_pct_dia": 0.721,
+      "volatilidad": 1.147,
       "n_dias": 14
     },
     "usdcop": {

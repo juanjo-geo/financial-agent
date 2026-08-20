@@ -1,27 +1,29 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-08-19 12:53:33
+Generado: 2026-08-20 12:55:41
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Neutral
+- Risk Appetite
+- Inflation Pressure
 
 EXPLICACIÓN
 ------------------------------
-- No se detecta un régimen macro dominante en esta sesión.
+- Bitcoin sube, señal de apetito por riesgo y demanda especulativa.
+- El petróleo sube con intensidad, aumentando presión inflacionaria energética.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: -0.49% | down | none
-- BTC: 0.23% | up | none
+- BRENT: 2.87% | up | medium
+- BTC: 3.66% | up | medium
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.44% | down | low
+- DXY: -0.08% | down | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 1.76% | up | medium
+- GOLD: -1.28% | down | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -31,5 +33,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: -0.16% | down | none
+- USDCOP: 0.04% | up | none
 - WTI: 12.52% | up | high
