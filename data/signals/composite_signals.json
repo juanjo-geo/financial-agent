@@ -1,13 +1,21 @@
 {
-  "fecha": "2026-08-20",
-  "generado_en": "2026-08-20 12:55:44",
-  "n_activas": 0,
-  "activas": [],
+  "fecha": "2026-08-21",
+  "generado_en": "2026-08-21 12:54:44",
+  "n_activas": 1,
+  "activas": [
+    {
+      "id": "activos_alternativos",
+      "nombre": "Apetito por activos alternativos",
+      "descripcion": "BTC y Oro suben juntos: busqueda de reservas de valor.",
+      "severidad": "MED",
+      "icono": "+"
+    }
+  ],
   "variaciones": {
-    "brent": 2.874,
-    "btc": 3.6612,
-    "dxy": -0.0799,
-    "usdcop": 0.0381,
-    "gold": -1.2795
+    "brent": 0.7179,
+    "btc": 5.832,
+    "dxy": -0.0698,
+    "usdcop": 0.098,
+    "gold": 1.1929
   }
 }

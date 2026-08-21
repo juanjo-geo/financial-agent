@@ -1,44 +1,44 @@
 {
-  "fecha": "2026-08-20",
-  "generado_en": "2026-08-20 12:55:43",
+  "fecha": "2026-08-21",
+  "generado_en": "2026-08-21 12:54:42",
   "regime": "RISK-ON",
   "scores": {
     "INFLACIONARIO": 55,
     "RISK-ON": 70,
-    "CRISIS": 0,
+    "CRISIS": 16,
     "LATERAL": 40
   },
   "confianza": 15,
   "drivers": [
-    "BTC +0.44%/dia",
-    "DXY -0.19%/dia (debil)",
-    "Brent +0.57%/dia"
+    "BTC +0.75%/dia",
+    "DXY -0.16%/dia (debil)",
+    "Brent +0.42%/dia"
   ],
   "descripcion": "El mercado se encuentra en modo risk-on. Los activos especulativos lideran el alza mientras el dolar cede terreno, indicando apetito por riesgo en los mercados globales.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": 0.567,
-      "volatilidad": 1.375,
+      "avg_pct_dia": 0.42,
+      "volatilidad": 1.235,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": 0.438,
-      "volatilidad": 1.099,
+      "avg_pct_dia": 0.751,
+      "volatilidad": 1.765,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": -0.19,
-      "volatilidad": 0.19,
+      "avg_pct_dia": -0.161,
+      "volatilidad": 0.174,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.721,
-      "volatilidad": 1.147,
+      "avg_pct_dia": 0.603,
+      "volatilidad": 0.996,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": -0.081,
-      "volatilidad": 0.218,
+      "avg_pct_dia": -0.091,
+      "volatilidad": 0.205,
       "n_dias": 14
     }
   },
