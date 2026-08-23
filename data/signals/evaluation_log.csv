@@ -1205,3 +1205,8 @@ fecha,indicador,direccion_predicha,cambio_real,acerto,confianza_predicha
 2026-08-22,dxy,Lateral,-0.0698,1,3
 2026-08-22,usdcop,Bajista,0.098,0,5
 2026-08-22,gold,Alcista,1.1929,1,6
+2026-08-23,brent,Alcista,1.1358,1,9
+2026-08-23,btc,Alcista,-1.2604,0,6
+2026-08-23,dxy,Lateral,0.0,1,4
+2026-08-23,usdcop,Lateral,0.0,1,4
+2026-08-23,gold,Alcista,1.4057,1,9

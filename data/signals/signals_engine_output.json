@@ -1,23 +1,22 @@
 {
   "senales": {
-    "riesgo_macro": "Medio",
-    "sesgo_mercado": "Risk-off",
+    "riesgo_macro": "Bajo",
+    "sesgo_mercado": "Mixto",
     "presion_inflacionaria": "Alcista",
     "presion_cop": "Neutral",
     "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": 1.5,
+    "riesgo_score": 1.2,
     "sesgo_risk_on": 1.0,
-    "sesgo_risk_off": 3.0,
+    "sesgo_risk_off": 2.0,
     "inflacion_score": 2.5,
     "cop_score": 1.0,
-    "conviccion_razon": "7 indicador(es) con movimiento significativo"
+    "conviccion_razon": "6 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
       "gold_safe_haven": 1.5,
-      "btc_weak": 0.3,
       "sp500_up": -0.3
     },
     "inflacion": {
@@ -30,9 +29,8 @@
       "news_colombia_alta": 1.0
     },
     "sesgo": {
-      "btc": "Risk-off +1 (BTC -1.7%)",
       "sp500": "Risk-on +1 (SP500 +0.7%)",
-      "gold": "Risk-off +1.5 (Oro +1.8%)",
+      "gold": "Risk-off +1.5 (Oro +2.9%)",
       "news": "Risk-off +0.5 (noticias apetito_riesgo)"
     }
   },
@@ -48,13 +46,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": 1.1358,
-    "btc": -1.2604,
+    "btc": 0.1805,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.0,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 1.4057,
+    "gold": 2.2635,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -71,13 +69,13 @@
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
     "brent": 1.1164914,
-    "btc": -1.7154044,
+    "btc": 0.24566049999999998,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
     "dxy": 0.0,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 1.7925486399999997,
+    "gold": 2.8864151999999996,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -94,7 +92,7 @@
     "brent": 0.983,
     "btc": 1.361,
     "dxy": 1.4433,
-    "usdcop": 1.3358,
+    "usdcop": 1.3073,
     "gold": 1.2752
   }
 }

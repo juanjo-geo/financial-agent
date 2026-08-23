@@ -1,17 +1,25 @@
 {
-  "fecha": "2026-08-22",
-  "generado_en": "2026-08-22 12:44:52",
-  "score": 11.2,
+  "fecha": "2026-08-23",
+  "generado_en": "2026-08-23 12:47:03",
+  "score": 16.7,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Deterioro",
   "transiciones": [
     {
+      "dimension": "sesgo_mercado",
+      "dimension_label": "Sesgo de Mercado",
+      "de": "Mixto",
+      "a": "Mixto",
+      "score_parcial": 7.73,
+      "peso_dimension": 30
+    },
+    {
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
-      "a": "Medio",
+      "a": "Bajo",
       "score_parcial": 5.0,
       "peso_dimension": 30
     },
@@ -20,27 +28,27 @@
       "dimension_label": "Presion Inflacionaria",
       "de": "Neutral",
       "a": "Alcista",
-      "score_parcial": 4.85,
+      "score_parcial": 3.94,
       "peso_dimension": 20
     }
   ],
-  "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
+  "descripcion": "Se observa una transicion gradual en el regimen macro: Sesgo de Mercado muestra cambio desde Mixto. El entorno de riesgo parece estar deteriorandose. El movimiento es moderado; seguimiento recomendado en proximas sesiones.",
   "scores_por_dim": {
-    "sesgo_mercado": 1.36,
+    "sesgo_mercado": 7.73,
     "riesgo_macro": 5.0,
-    "presion_inflacionaria": 4.85,
+    "presion_inflacionaria": 3.94,
     "presion_cop": 0.0
   },
   "recientes": {
-    "sesgo_mercado": 0.0,
+    "sesgo_mercado": 0.333,
     "riesgo_macro": 0.333,
     "presion_inflacionaria": 0.667,
     "presion_cop": 0.0
   },
   "baselines": {
-    "sesgo_mercado": -0.091,
+    "sesgo_mercado": -0.182,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.182,
+    "presion_inflacionaria": 0.273,
     "presion_cop": 0.0
   },
   "n_dias_analizados": 14,
@@ -53,13 +61,13 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
       "Mixto",
       "Mixto",
       "Risk-on",
       "Mixto",
-      "Risk-off"
+      "Risk-off",
+      "Mixto"
     ],
     "riesgo_macro": [
       "Bajo",
@@ -74,11 +82,10 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
-      "Medio"
+      "Medio",
+      "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Alcista",
       "Neutral",
       "Neutral",
@@ -91,6 +98,7 @@
       "Neutral",
       "Alcista",
       "Neutral",
+      "Alcista",
       "Alcista"
     ],
     "presion_cop": [
