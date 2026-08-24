@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-08-23",
-  "generado_en": "2026-08-23 12:47:06",
-  "score": 53,
-  "label": "Senales claras",
-  "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen RISK-ON con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "fecha": "2026-08-24",
+  "generado_en": "2026-08-24 12:56:20",
+  "score": 49,
+  "label": "Visibilidad moderada",
+  "color": "#E65100",
+  "narrative": "Visibilidad parcial. Regimen RISK-ON pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
       "pts": 3.8,
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 20.8,
-      "desc": "Conf. calibrada media 8.3/10 (3 activos)",
+      "pts": 16.9,
+      "desc": "Conf. calibrada media 6.8/10 (4 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.5,
-      "desc": "Regime change 17/100 (Estable)",
+      "pts": 12.4,
+      "desc": "Regime change 18/100 (Estable)",
       "max": 15
     }
   }
