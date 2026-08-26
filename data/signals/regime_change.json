@@ -1,17 +1,25 @@
 {
-  "fecha": "2026-08-25",
-  "generado_en": "2026-08-25 12:53:25",
-  "score": 8.8,
+  "fecha": "2026-08-26",
+  "generado_en": "2026-08-26 12:59:01",
+  "score": 13.0,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Mixto",
   "transiciones": [
     {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Alcista",
+      "a": "Neutral",
+      "score_parcial": 6.97,
+      "peso_dimension": 20
+    },
+    {
       "dimension": "presion_cop",
       "dimension_label": "Presion COP",
       "de": "Neutral",
-      "a": "Alcista USD/COP",
+      "a": "Neutral",
       "score_parcial": 3.33,
       "peso_dimension": 20
     }
@@ -20,25 +28,24 @@
   "scores_por_dim": {
     "sesgo_mercado": 1.36,
     "riesgo_macro": 1.36,
-    "presion_inflacionaria": 2.73,
+    "presion_inflacionaria": 6.97,
     "presion_cop": 3.33
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": -0.333,
     "presion_cop": 0.333
   },
   "baselines": {
     "sesgo_mercado": -0.091,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.273,
+    "presion_inflacionaria": 0.364,
     "presion_cop": 0.0
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -49,6 +56,7 @@
       "Risk-on",
       "Mixto",
       "Risk-off",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto"
@@ -63,14 +71,13 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Bajista",
       "Neutral",
       "Alcista",
@@ -83,7 +90,8 @@
       "Alcista",
       "Alcista",
       "Neutral",
-      "Bajista"
+      "Bajista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",
@@ -98,8 +106,8 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
-      "Alcista USD/COP"
+      "Alcista USD/COP",
+      "Neutral"
     ]
   }
 }
