@@ -1,23 +1,23 @@
 {
-  "generado_en": "2026-08-26 12:59:57",
+  "generado_en": "2026-08-27 22:01:35",
   "modelo": "RandomForest-Binary",
   "lag_days": 5,
   "forward_days": 2,
   "n_train": 2924,
   "n_features": 102,
-  "cv_accuracy": 0.5281,
-  "cv_std": 0.035,
+  "cv_accuracy": 0.5273,
+  "cv_std": 0.0341,
   "top_features": {
-    "dxy_chg_lag5": 0.0224,
-    "sp500_chg_lag2": 0.0182,
-    "onchain_active_addr_chg": 0.018,
-    "btc_rsi14": 0.0175,
-    "nasdaq_chg_lag3": 0.0173,
-    "wti_chg_lag1": 0.0172,
-    "wti_chg_lag5": 0.0164,
-    "nasdaq_chg_lag1": 0.0161,
-    "btc_vol10": 0.016,
-    "eurusd_chg_lag2": 0.0159
+    "dxy_chg_lag5": 0.0226,
+    "sp500_chg_lag2": 0.0191,
+    "onchain_active_addr_chg": 0.0174,
+    "onchain_mempool_size_chg_lag1": 0.0173,
+    "nasdaq_chg_lag3": 0.0169,
+    "btc_rsi14": 0.0168,
+    "eurusd_chg_lag2": 0.0166,
+    "wti_chg_lag1": 0.0165,
+    "btc_vol10": 0.0162,
+    "wti_chg_lag5": 0.0157
   },
   "target_threshold": 0.5,
   "distribucion_clases": {
@@ -28,8 +28,8 @@
     "direccion": "Bajista",
     "valor_pred": -1,
     "probabilidades": {
-      "-1": 0.5358,
-      "1": 0.4642
+      "-1": 0.5476,
+      "1": 0.4524
     },
     "confianza_ml": 1
   }
