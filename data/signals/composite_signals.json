@@ -1,19 +1,21 @@
 {
-  "fecha": "2026-08-29",
-  "generado_en": "2026-08-29 16:27:28",
+  "fecha": "2026-08-30",
+  "generado_en": "2026-08-30 16:20:45",
   "n_activas": 1,
   "activas": [
     {
-      "id": "cop_debilidad",
-      "nombre": "Debilidad del COP",
-      "descripcion": "USDCOP sube junto al DXY: presion cambiaria desde contexto global.",
-      "severidad": "MED",
-      "icono": "!"
+      "id": "dxy_presion_metales",
+      "nombre": "Fortaleza del dolar presiona metales",
+      "descripcion": "DXY al alza y Oro a la baja: correlacion inversa activa.",
+      "severidad": "LOW",
+      "icono": "~"
     }
   ],
   "variaciones": {
-    "btc": 0.113,
+    "brent": -0.5643,
+    "btc": 1.1154,
     "dxy": 0.5953,
-    "usdcop": 1.6467
+    "usdcop": -0.0181,
+    "gold": -2.7083
   }
 }
