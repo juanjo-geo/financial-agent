@@ -1,13 +1,28 @@
 {
-  "fecha": "2026-09-02",
-  "generado_en": "2026-09-02 16:14:55",
-  "n_activas": 0,
-  "activas": [],
+  "fecha": "2026-09-03",
+  "generado_en": "2026-09-03 16:04:39",
+  "n_activas": 2,
+  "activas": [
+    {
+      "id": "risk_on_fuerte",
+      "nombre": "Risk-on fuerte",
+      "descripcion": "Cripto al alza y dolar debil: apetito por riesgo dominante.",
+      "severidad": "MED",
+      "icono": "+"
+    },
+    {
+      "id": "activos_alternativos",
+      "nombre": "Apetito por activos alternativos",
+      "descripcion": "BTC y Oro suben juntos: busqueda de reservas de valor.",
+      "severidad": "MED",
+      "icono": "+"
+    }
+  ],
   "variaciones": {
-    "brent": 0.3045,
-    "btc": -0.0614,
-    "dxy": -0.1214,
-    "usdcop": -0.405,
-    "gold": 0.9778
+    "brent": 0.3986,
+    "btc": 4.8232,
+    "dxy": -0.5884,
+    "usdcop": -0.5704,
+    "gold": 2.2811
   }
 }
