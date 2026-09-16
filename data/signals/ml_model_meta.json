@@ -1,27 +1,27 @@
 {
-  "generado_en": "2026-09-15 16:36:30",
+  "generado_en": "2026-09-16 16:28:49",
   "modelo": "RandomForest-Binary",
   "lag_days": 5,
   "forward_days": 2,
-  "n_train": 2908,
+  "n_train": 2907,
   "n_features": 102,
-  "cv_accuracy": 0.5244,
-  "cv_std": 0.0254,
+  "cv_accuracy": 0.5318,
+  "cv_std": 0.0233,
   "top_features": {
-    "onchain_active_addr_chg": 0.0254,
-    "dxy_chg_lag5": 0.0233,
-    "btc_vol10": 0.0198,
-    "nasdaq_chg_lag3": 0.0186,
-    "wti_chg_lag1": 0.0181,
-    "sp500_chg_lag2": 0.0176,
-    "onchain_mempool_size_chg_lag1": 0.017,
-    "eurusd_chg_lag2": 0.0158,
-    "btc_vol_rel20": 0.0157,
-    "onchain_active_addr_chg_lag1": 0.0154
+    "onchain_active_addr_chg": 0.0263,
+    "btc_vol10": 0.0207,
+    "btc_rsi14": 0.0192,
+    "nasdaq_chg_lag3": 0.019,
+    "sp500_chg_lag2": 0.0179,
+    "silver_chg_lag2": 0.0177,
+    "eurusd_chg_lag2": 0.017,
+    "dxy_chg_lag5": 0.0168,
+    "nasdaq_chg_lag1": 0.0161,
+    "nasdaq_chg_lag2": 0.0158
   },
   "target_threshold": 0.5,
   "distribucion_clases": {
-    "1": 1607,
+    "1": 1606,
     "-1": 1301
   },
   "prediccion_hoy": {
