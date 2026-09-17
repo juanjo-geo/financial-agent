@@ -1,12 +1,20 @@
 {
-  "fecha": "2026-09-16",
-  "generado_en": "2026-09-16 16:27:50",
-  "score": 7.6,
+  "fecha": "2026-09-17",
+  "generado_en": "2026-09-17 16:34:22",
+  "score": 11.1,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
-  "direccion": "Mixto",
+  "direccion": "Deterioro",
   "transiciones": [
+    {
+      "dimension": "sesgo_mercado",
+      "dimension_label": "Sesgo de Mercado",
+      "de": "Mixto",
+      "a": "Mixto",
+      "score_parcial": 5.0,
+      "peso_dimension": 30
+    },
     {
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
@@ -14,39 +22,30 @@
       "a": "Bajo",
       "score_parcial": 3.64,
       "peso_dimension": 30
-    },
-    {
-      "dimension": "presion_inflacionaria",
-      "dimension_label": "Presion Inflacionaria",
-      "de": "Neutral",
-      "a": "Bajista",
-      "score_parcial": 3.33,
-      "peso_dimension": 20
     }
   ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
-    "sesgo_mercado": 0.0,
+    "sesgo_mercado": 5.0,
     "riesgo_macro": 3.64,
-    "presion_inflacionaria": 3.33,
+    "presion_inflacionaria": 1.82,
     "presion_cop": 0.61
   },
   "recientes": {
-    "sesgo_mercado": 0.0,
+    "sesgo_mercado": 0.333,
     "riesgo_macro": 0.333,
-    "presion_inflacionaria": -0.333,
+    "presion_inflacionaria": 0.0,
     "presion_cop": 0.333
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": -0.182,
     "presion_cop": 0.273
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Risk-on",
       "Risk-off",
       "Mixto",
       "Mixto",
@@ -59,6 +58,7 @@
       "Mixto",
       "Risk-on",
       "Risk-off",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
@@ -68,17 +68,16 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
       "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Neutral",
       "Neutral",
       "Neutral",
@@ -91,7 +90,8 @@
       "Bajista",
       "Bajista",
       "Alcista",
-      "Bajista"
+      "Bajista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",
@@ -101,13 +101,13 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Neutral",
       "Neutral",
-      "Alcista USD/COP"
+      "Alcista USD/COP",
+      "Neutral"
     ]
   }
 }
