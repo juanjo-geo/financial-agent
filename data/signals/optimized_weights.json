@@ -1,20 +1,20 @@
 {
-  "fecha": "2026-09-17",
-  "generado_en": "2026-09-17 16:35:08",
-  "n_evaluaciones": 1069,
+  "fecha": "2026-09-18",
+  "generado_en": "2026-09-18 16:05:15",
+  "n_evaluaciones": 1073,
   "weights": {
+    "trend": 0.3893,
+    "momentum": 0.314,
+    "signals": 0.2967
+  },
+  "hit_rates": {
+    "trend": 0.4091,
+    "momentum": 0.3318,
+    "signals": 0.3141
+  },
+  "pesos_anteriores": {
     "trend": 0.39,
     "momentum": 0.3138,
     "signals": 0.2962
-  },
-  "hit_rates": {
-    "trend": 0.4097,
-    "momentum": 0.3312,
-    "signals": 0.3143
-  },
-  "pesos_anteriores": {
-    "trend": 0.3908,
-    "momentum": 0.3138,
-    "signals": 0.2954
   }
 }

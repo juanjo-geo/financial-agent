@@ -1,42 +1,44 @@
 {
-  "fecha": "2026-09-17",
-  "generado_en": "2026-09-17 16:34:22",
-  "regime": "LATERAL",
+  "fecha": "2026-09-18",
+  "generado_en": "2026-09-18 16:04:51",
+  "regime": "INFLACIONARIO",
   "scores": {
-    "INFLACIONARIO": 25,
+    "INFLACIONARIO": 50,
     "RISK-ON": 0,
     "CRISIS": 44,
-    "LATERAL": 80
+    "LATERAL": 40
   },
-  "confianza": 36,
+  "confianza": 6,
   "drivers": [
-    "4/5 activos sin tendencia definida"
+    "Oro +0.31%/dia",
+    "DXY +0.06%/dia",
+    "USDCOP +0.15%/dia"
   ],
-  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
+  "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -0.658,
-      "volatilidad": 2.471,
+      "avg_pct_dia": -0.91,
+      "volatilidad": 2.616,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.216,
-      "volatilidad": 1.407,
+      "avg_pct_dia": 0.357,
+      "volatilidad": 1.971,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.049,
-      "volatilidad": 0.132,
+      "avg_pct_dia": 0.058,
+      "volatilidad": 0.136,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.247,
-      "volatilidad": 0.989,
+      "avg_pct_dia": 0.313,
+      "volatilidad": 0.955,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": 0.007,
-      "volatilidad": 0.475,
+      "avg_pct_dia": 0.146,
+      "volatilidad": 0.494,
       "n_dias": 14
     }
   },

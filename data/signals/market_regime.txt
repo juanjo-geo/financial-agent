@@ -1,29 +1,35 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-09-17 16:34:20
+Generado: 2026-09-18 16:04:49
 
 REGÍMENES DETECTADOS
 ------------------------------
+- Risk Appetite
 - Energy Disinflation
 - EM FX Pressure
+- Mixed Macro
+- Dollar Pressure on COP
 
 EXPLICACIÓN
 ------------------------------
+- Bitcoin sube, señal de apetito por riesgo y demanda especulativa.
 - El petróleo cae, reduciendo presión inflacionaria vía energía.
 - USD/COP sube, señal de presión sobre la moneda colombiana.
+- Dólar fuerte y Bitcoin al alza sugieren un entorno macro mixto.
+- La fortaleza del dólar coincide con depreciación del peso colombiano.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: -1.55% | down | low
-- BTC: 0.55% | up | none
+- BRENT: -4.01% | down | high
+- BTC: 5.74% | up | high
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.04% | down | none
+- DXY: 0.17% | up | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 2.46% | up | medium
+- GOLD: 0.24% | up | none
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -33,5 +39,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 0.76% | up | low
+- USDCOP: 1.12% | up | medium
 - WTI: 12.52% | up | high
