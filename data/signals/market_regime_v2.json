@@ -1,44 +1,43 @@
 {
-  "fecha": "2026-09-18",
-  "generado_en": "2026-09-18 16:04:51",
-  "regime": "INFLACIONARIO",
+  "fecha": "2026-09-19",
+  "generado_en": "2026-09-19 15:38:03",
+  "regime": "CRISIS",
   "scores": {
-    "INFLACIONARIO": 50,
-    "RISK-ON": 0,
+    "INFLACIONARIO": 35,
+    "RISK-ON": 30,
     "CRISIS": 44,
     "LATERAL": 40
   },
-  "confianza": 6,
+  "confianza": 4,
   "drivers": [
-    "Oro +0.31%/dia",
-    "DXY +0.06%/dia",
-    "USDCOP +0.15%/dia"
+    "BRENT en caida",
+    "Volatilidad alta en BRENT, BTC"
   ],
-  "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
+  "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -0.91,
-      "volatilidad": 2.616,
+      "avg_pct_dia": -0.955,
+      "volatilidad": 2.598,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": 0.357,
-      "volatilidad": 1.971,
+      "avg_pct_dia": 0.418,
+      "volatilidad": 1.975,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.058,
+      "avg_pct_dia": 0.047,
       "volatilidad": 0.136,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.313,
-      "volatilidad": 0.955,
+      "avg_pct_dia": 0.384,
+      "volatilidad": 0.965,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": 0.146,
-      "volatilidad": 0.494,
+      "avg_pct_dia": 0.183,
+      "volatilidad": 0.501,
       "n_dias": 14
     }
   },
