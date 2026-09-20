@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-09-19",
-  "generado_en": "2026-09-19 15:38:02",
+  "fecha": "2026-09-20",
+  "generado_en": "2026-09-20 15:43:36",
   "score": 9.6,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
@@ -45,25 +45,25 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
       "Risk-off",
       "Mixto",
       "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
       "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -72,7 +72,6 @@
     "presion_inflacionaria": [
       "Neutral",
       "Neutral",
-      "Neutral",
       "Alcista",
       "Alcista",
       "Bajista",
@@ -83,6 +82,7 @@
       "Bajista",
       "Neutral",
       "Bajista",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
@@ -90,7 +90,6 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -99,6 +98,7 @@
       "Alcista USD/COP",
       "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral"
     ]
   }

@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-09-19",
-  "generado_en": "2026-09-19 15:38:04",
-  "score": 50,
+  "fecha": "2026-09-20",
+  "generado_en": "2026-09-20 15:43:38",
+  "score": 45,
   "label": "Visibilidad moderada",
   "color": "#E65100",
   "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 21.2,
-      "desc": "Conf. calibrada media 8.5/10 (4 activos)",
+      "pts": 16.2,
+      "desc": "Conf. calibrada media 6.5/10 (2 activos)",
       "max": 25
     },
     "senales_compuestas": {
