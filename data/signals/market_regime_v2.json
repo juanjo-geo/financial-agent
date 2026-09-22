@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-09-21",
-  "generado_en": "2026-09-21 18:03:01",
+  "fecha": "2026-09-22",
+  "generado_en": "2026-09-22 16:35:58",
   "regime": "INFLACIONARIO",
   "scores": {
     "INFLACIONARIO": 50,
@@ -10,35 +10,35 @@
   },
   "confianza": 6,
   "drivers": [
-    "Oro +0.46%/dia",
-    "DXY +0.07%/dia",
-    "USDCOP +0.23%/dia"
+    "Oro +0.48%/dia",
+    "DXY +0.08%/dia",
+    "USDCOP +0.30%/dia"
   ],
   "descripcion": "El mercado muestra señales de presion inflacionaria. El petroleo y los metales preciosos registran tendencias alcistas que suelen preceder incrementos en expectativas de inflacion.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -1.234,
-      "volatilidad": 2.683,
+      "avg_pct_dia": -0.934,
+      "volatilidad": 3.06,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": 0.938,
-      "volatilidad": 2.339,
+      "avg_pct_dia": 0.947,
+      "volatilidad": 2.334,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.067,
-      "volatilidad": 0.106,
+      "avg_pct_dia": 0.085,
+      "volatilidad": 0.117,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.46,
-      "volatilidad": 0.947,
+      "avg_pct_dia": 0.476,
+      "volatilidad": 0.93,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": 0.227,
-      "volatilidad": 0.501,
+      "avg_pct_dia": 0.298,
+      "volatilidad": 0.476,
       "n_dias": 14
     }
   },
