@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-09-23",
-  "generado_en": "2026-09-23 16:25:50",
-  "score": 57,
+  "fecha": "2026-09-24",
+  "generado_en": "2026-09-24 16:47:53",
+  "score": 52,
   "label": "Senales claras",
   "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen INFLACIONARIO con sesgo Risk-off. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "narrative": "Las senales son legibles: regimen INFLACIONARIO con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
   "componentes": {
     "claridad_regimen": {
       "pts": 1.5,
@@ -17,18 +17,18 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.0,
-      "desc": "Conf. calibrada media 6.0/10 (2 activos)",
+      "pts": 18.5,
+      "desc": "Conf. calibrada media 7.4/10 (5 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 10.0,
-      "desc": "2 senal(es) compuesta(s) activa(s)",
+      "pts": 5.0,
+      "desc": "1 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 14.1,
-      "desc": "Regime change 6/100 (Estable)",
+      "pts": 10.9,
+      "desc": "Regime change 27/100 (Estable)",
       "max": 15
     }
   }
