@@ -7,27 +7,25 @@
     "conviccion": 8
   },
   "scores_internos": {
-    "riesgo_score": -0.5,
+    "riesgo_score": -0.3,
     "sesgo_risk_on": 1.0,
     "sesgo_risk_off": 1.0,
-    "inflacion_score": -3.8,
-    "cop_score": 0.0,
+    "inflacion_score": -2.8,
+    "cop_score": -0.7,
     "conviccion_razon": "7 indicador(es) con movimiento significativo"
   },
   "factores": {
     "riesgo": {
-      "brent_fall": -0.5,
-      "btc_weak": 0.3,
       "sp500_up": -0.3
     },
     "inflacion": {
-      "brent_crash": -4.0,
+      "brent_fall": -3.0,
       "silver_down": -0.3,
       "news_petroleo_alta": 0.5
     },
     "cop": {
       "dxy_mild_down": -0.5,
-      "brent_cop_negative": 1.5,
+      "brent_weak_cop": 0.8,
       "usdcop_direct_down": -2.0,
       "news_colombia_alta": 1.0
     },
@@ -48,14 +46,14 @@
   "variaciones_mercado": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": -8.7965,
-    "btc": -0.671,
+    "brent": -2.0653,
+    "btc": 0.0274,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": -0.2607,
+    "dxy": -0.2962,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.2622,
+    "gold": 0.2715,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -65,20 +63,20 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": -1.8496,
+    "usdcop": -1.7306,
     "wti": 12.515168936486138
   },
   "variaciones_ajustadas": {
     "aapl": 0.2124786682260483,
     "amzn": 1.3625717977542284,
-    "brent": -10.90678035,
-    "btc": -0.8771983,
+    "brent": -2.56076547,
+    "btc": 0.03582002,
     "btc_volume": 6.905670382853171,
     "copper": -0.8442967317160367,
-    "dxy": -0.37626831,
+    "dxy": -0.42750546000000006,
     "eurusd": -0.4272004358978313,
     "global_inflation_proxy": 0.0,
-    "gold": 0.32510178,
+    "gold": 0.3462168,
     "googl": 1.6667244074483507,
     "meta": 0.8074003702988811,
     "msft": 0.96676745696868,
@@ -88,7 +86,7 @@
     "silver": -3.5728611223828968,
     "sp500": 0.7433295908440843,
     "tsla": 0.2452289053218746,
-    "usdcop": -2.55781184,
+    "usdcop": -2.39324674,
     "wti": 12.515168936486138
   },
   "multiplicadores_activos": {
@@ -96,6 +94,6 @@
     "btc": 1.3073,
     "dxy": 1.4433,
     "usdcop": 1.3829,
-    "gold": 1.2399
+    "gold": 1.2752
   }
 }
