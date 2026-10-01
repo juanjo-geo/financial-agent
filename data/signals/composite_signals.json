@@ -1,13 +1,28 @@
 {
-  "fecha": "2026-09-30",
-  "generado_en": "2026-09-30 17:48:04",
-  "n_activas": 0,
-  "activas": [],
+  "fecha": "2026-10-01",
+  "generado_en": "2026-10-01 18:14:37",
+  "n_activas": 2,
+  "activas": [
+    {
+      "id": "macro_fuerte",
+      "nombre": "Alerta macro fuerte",
+      "descripcion": "Petroleo y dolar suben juntos: señal de tension macro global.",
+      "severidad": "HIGH",
+      "icono": "!"
+    },
+    {
+      "id": "presion_colombia",
+      "nombre": "Presion importadora Colombia",
+      "descripcion": "Petroleo y USDCOP suben: costo de importaciones en Colombia aumenta.",
+      "severidad": "HIGH",
+      "icono": "!"
+    }
+  ],
   "variaciones": {
-    "brent": 2.5743,
-    "btc": 0.539,
-    "dxy": -0.003,
-    "usdcop": -0.5332,
-    "gold": -0.7827
+    "brent": 4.7162,
+    "btc": 1.622,
+    "dxy": 0.7037,
+    "usdcop": 0.6324,
+    "gold": 0.2482
   }
 }
