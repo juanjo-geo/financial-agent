@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-02",
-  "generado_en": "2026-10-02 17:39:58",
-  "score": 48,
+  "fecha": "2026-10-03",
+  "generado_en": "2026-10-03 15:57:45",
+  "score": 49,
   "label": "Visibilidad moderada",
   "color": "#E65100",
   "narrative": "Visibilidad parcial. Regimen CRISIS pero con senales mixtas (sesgo Mixto, riesgo Bajo). Se recomienda cautela.",
@@ -12,13 +12,13 @@
       "max": 25
     },
     "conviccion_senales": {
-      "pts": 16.0,
-      "desc": "Conviccion 8/10",
+      "pts": 14.0,
+      "desc": "Conviccion 7/10",
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.8,
-      "desc": "Conf. calibrada media 6.3/10 (3 activos)",
+      "pts": 18.3,
+      "desc": "Conf. calibrada media 7.3/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.9,
-      "desc": "Regime change 14/100 (Estable)",
+      "pts": 13.6,
+      "desc": "Regime change 10/100 (Estable)",
       "max": 15
     }
   }

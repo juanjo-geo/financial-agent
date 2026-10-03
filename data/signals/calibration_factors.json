@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-02",
-  "generado_en": "2026-10-02 17:39:59",
-  "total_predicciones": 1411,
+  "fecha": "2026-10-03",
+  "generado_en": "2026-10-03 15:57:46",
+  "total_predicciones": 1416,
   "bandas": {
     "1-3": {
       "n": 280,
@@ -12,10 +12,10 @@
       "suficientes_datos": true
     },
     "4-6": {
-      "n": 762,
-      "acierto_real": 0.6391,
+      "n": 766,
+      "acierto_real": 0.6397,
       "acierto_esperado": 0.55,
-      "factor": 1.162,
+      "factor": 1.1631,
       "status": "Bien calibrado",
       "suficientes_datos": true
     },
@@ -28,10 +28,10 @@
       "suficientes_datos": true
     },
     "9-10": {
-      "n": 131,
-      "acierto_real": 0.9313,
+      "n": 132,
+      "acierto_real": 0.9318,
       "acierto_esperado": 0.87,
-      "factor": 1.0705,
+      "factor": 1.0711,
       "status": "Bien calibrado",
       "suficientes_datos": true
     }
