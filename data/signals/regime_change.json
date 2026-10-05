@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-04",
-  "generado_en": "2026-10-04 16:40:30",
-  "score": 11.4,
+  "fecha": "2026-10-05",
+  "generado_en": "2026-10-05 20:29:48",
+  "score": 12.4,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -10,9 +10,9 @@
     {
       "dimension": "presion_cop",
       "dimension_label": "Presion COP",
-      "de": "Alcista USD/COP",
+      "de": "Neutral",
       "a": "Neutral",
-      "score_parcial": 5.45,
+      "score_parcial": 4.55,
       "peso_dimension": 20
     },
     {
@@ -26,29 +26,29 @@
   ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
-    "sesgo_mercado": 0.0,
+    "sesgo_mercado": 1.36,
     "riesgo_macro": 4.09,
-    "presion_inflacionaria": 1.82,
-    "presion_cop": 5.45
+    "presion_inflacionaria": 2.42,
+    "presion_cop": 4.55
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": -0.333,
     "presion_cop": 0.0
   },
   "baselines": {
-    "sesgo_mercado": 0.0,
+    "sesgo_mercado": 0.091,
     "riesgo_macro": 0.273,
-    "presion_inflacionaria": -0.182,
-    "presion_cop": 0.545
+    "presion_inflacionaria": -0.091,
+    "presion_cop": 0.455
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Risk-on",
       "Mixto",
       "Risk-off",
+      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -62,7 +62,6 @@
       "Mixto"
     ],
     "riesgo_macro": [
-      "Bajo",
       "Medio",
       "Bajo",
       "Medio",
@@ -73,12 +72,12 @@
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Bajista",
       "Alcista",
       "Bajista",
       "Alcista",
@@ -91,10 +90,10 @@
       "Alcista",
       "Neutral",
       "Neutral",
-      "Neutral"
+      "Neutral",
+      "Bajista"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Neutral",
       "Alcista USD/COP",
       "Neutral",
@@ -105,6 +104,7 @@
       "Alcista USD/COP",
       "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral",
       "Neutral",
       "Neutral"
