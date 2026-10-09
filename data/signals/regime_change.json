@@ -1,17 +1,25 @@
 {
-  "fecha": "2026-10-08",
-  "generado_en": "2026-10-08 18:38:54",
-  "score": 6.7,
+  "fecha": "2026-10-09",
+  "generado_en": "2026-10-09 18:09:57",
+  "score": 9.1,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Deterioro",
   "transiciones": [
     {
+      "dimension": "presion_inflacionaria",
+      "dimension_label": "Presion Inflacionaria",
+      "de": "Neutral",
+      "a": "Alcista",
+      "score_parcial": 5.15,
+      "peso_dimension": 20
+    },
+    {
       "dimension": "riesgo_macro",
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
-      "a": "Medio",
+      "a": "Bajo",
       "score_parcial": 3.64,
       "peso_dimension": 30
     }
@@ -20,19 +28,19 @@
   "scores_por_dim": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 3.64,
-    "presion_inflacionaria": 2.73,
+    "presion_inflacionaria": 5.15,
     "presion_cop": 0.3
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.333,
-    "presion_inflacionaria": 0.0,
+    "presion_inflacionaria": 0.333,
     "presion_cop": 0.333
   },
   "baselines": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.091,
-    "presion_inflacionaria": -0.273,
+    "presion_inflacionaria": -0.182,
     "presion_cop": 0.364
   },
   "n_dias_analizados": 14,
@@ -59,7 +67,6 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Bajo",
       "Medio",
       "Bajo",
       "Bajo",
@@ -67,12 +74,12 @@
       "Bajo",
       "Bajo",
       "Bajo",
-      "Medio"
+      "Medio",
+      "Bajo"
     ],
     "presion_inflacionaria": [
       "Bajista",
       "Bajista",
-      "Bajista",
       "Neutral",
       "Bajista",
       "Alcista",
@@ -83,11 +90,11 @@
       "Bajista",
       "Neutral",
       "Bajista",
+      "Alcista",
       "Alcista"
     ],
     "presion_cop": [
       "Neutral",
-      "Neutral",
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
@@ -99,6 +106,7 @@
       "Neutral",
       "Neutral",
       "Alcista USD/COP",
+      "Neutral",
       "Neutral"
     ]
   }
