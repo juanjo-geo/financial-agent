@@ -1,43 +1,42 @@
 {
-  "fecha": "2026-10-09",
-  "generado_en": "2026-10-09 18:09:58",
-  "regime": "CRISIS",
+  "fecha": "2026-10-10",
+  "generado_en": "2026-10-10 17:09:11",
+  "regime": "LATERAL",
   "scores": {
     "INFLACIONARIO": 15,
     "RISK-ON": 0,
-    "CRISIS": 72,
-    "LATERAL": 60
+    "CRISIS": 16,
+    "LATERAL": 100
   },
-  "confianza": 12,
+  "confianza": 84,
   "drivers": [
-    "BRENT, GOLD en caida",
-    "Volatilidad alta en BRENT"
+    "5/5 activos sin tendencia definida"
   ],
-  "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
+  "descripcion": "El mercado no muestra una direccion clara. Los movimientos de precio son contenidos y sin tendencia definida, lo que indica consolidacion o espera de un catalizador.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -0.424,
-      "volatilidad": 2.991,
+      "avg_pct_dia": -0.22,
+      "volatilidad": 2.97,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.226,
-      "volatilidad": 1.163,
+      "avg_pct_dia": -0.191,
+      "volatilidad": 1.177,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.052,
-      "volatilidad": 0.282,
+      "avg_pct_dia": 0.079,
+      "volatilidad": 0.265,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": -0.357,
-      "volatilidad": 1.161,
+      "avg_pct_dia": -0.279,
+      "volatilidad": 1.235,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": -0.278,
-      "volatilidad": 1.048,
+      "avg_pct_dia": -0.157,
+      "volatilidad": 0.968,
       "n_dias": 14
     }
   },
