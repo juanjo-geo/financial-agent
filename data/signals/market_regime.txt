@@ -1,6 +1,6 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-10-10 17:09:09
+Generado: 2026-10-11 17:32:05
 
 REGÍMENES DETECTADOS
 ------------------------------
@@ -15,7 +15,7 @@ SEÑALES BASE
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
 - BRENT: 0.79% | up | none
-- BTC: 0.52% | up | none
+- BTC: 1.17% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
 - DXY: 0.08% | up | none
