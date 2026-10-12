@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-10-11",
-  "generado_en": "2026-10-11 17:32:08",
+  "fecha": "2026-10-12",
+  "generado_en": "2026-10-12 21:05:40",
   "score": 54,
   "label": "Senales claras",
   "color": "#2563EB",
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.5,
-      "desc": "Regime change 16/100 (Estable)",
+      "pts": 12.8,
+      "desc": "Regime change 15/100 (Estable)",
       "max": 15
     }
   }
