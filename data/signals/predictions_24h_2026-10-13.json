@@ -1,0 +1,106 @@
+{
+  "fecha": "2026-10-13",
+  "generado_en": "2026-10-13 19:05:09",
+  "predicciones": {
+    "brent": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 7,
+      "confianza_calibrada": 7,
+      "razon": "La tendencia de 7d (+0.77%/dia) es positiva y apunta a continuacion alcista.",
+      "_slope_pct_dia": 0.7687,
+      "_momentum_pct": -0.3393,
+      "_trend_score": 1.537,
+      "_momentum_score": -0.17,
+      "_signal_score": 0.8,
+      "_total_score": 0.777,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 0.9524,
+      "_weights_used": {
+        "trend": 0.3834,
+        "momentum": 0.3148,
+        "signals": 0.3018
+      }
+    },
+    "btc": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 6,
+      "confianza_calibrada": 7,
+      "razon": "El sesgo de mercado (Risk-on) y el riesgo macro (Bajo) sugieren continuacion alcista para activos especulativos.",
+      "_slope_pct_dia": -0.1742,
+      "_momentum_pct": 1.7101,
+      "_trend_score": -0.348,
+      "_momentum_score": 0.855,
+      "_signal_score": 2.6,
+      "_total_score": 0.92,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1646,
+      "_weights_used": {
+        "trend": 0.3834,
+        "momentum": 0.3148,
+        "signals": 0.3018
+      }
+    },
+    "dxy": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "confianza_calibrada": 6,
+      "razon": "Las senales del dia (sesgo Risk-on, riesgo Bajo) podrian reflejar movimiento lateral o consolidacion.",
+      "_slope_pct_dia": 0.048,
+      "_momentum_pct": -0.388,
+      "_trend_score": 0.096,
+      "_momentum_score": -0.194,
+      "_signal_score": -0.6,
+      "_total_score": -0.205,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1646,
+      "_weights_used": {
+        "trend": 0.3834,
+        "momentum": 0.3148,
+        "signals": 0.3018
+      }
+    },
+    "usdcop": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 7,
+      "confianza_calibrada": 7,
+      "razon": "La tendencia de 7d (-0.25%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -0.2516,
+      "_momentum_pct": -0.1998,
+      "_trend_score": -0.503,
+      "_momentum_score": -0.1,
+      "_signal_score": -0.8,
+      "_total_score": -0.466,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 0.9524,
+      "_weights_used": {
+        "trend": 0.3834,
+        "momentum": 0.3148,
+        "signals": 0.3018
+      }
+    },
+    "gold": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "confianza_calibrada": 6,
+      "razon": "Las condiciones macro (riesgo Bajo, inflacion Neutral) podrian respaldar movimiento lateral o consolidacion en metales preciosos.",
+      "_slope_pct_dia": 0.1247,
+      "_momentum_pct": -0.2121,
+      "_trend_score": 0.249,
+      "_momentum_score": -0.106,
+      "_signal_score": -1.0,
+      "_total_score": -0.24,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1646,
+      "_weights_used": {
+        "trend": 0.3834,
+        "momentum": 0.3148,
+        "signals": 0.3018
+      }
+    }
+  }
+}
