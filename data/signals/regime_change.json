@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-14",
-  "generado_en": "2026-10-14 16:49:49",
-  "score": 9.9,
+  "fecha": "2026-10-15",
+  "generado_en": "2026-10-15 16:35:37",
+  "score": 11.5,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -19,21 +19,21 @@
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 5.0,
-    "riesgo_macro": 2.73,
-    "presion_inflacionaria": 0.61,
-    "presion_cop": 1.52
+    "riesgo_macro": 1.36,
+    "presion_inflacionaria": 2.73,
+    "presion_cop": 2.42
   },
   "recientes": {
     "sesgo_mercado": -0.333,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.333,
+    "presion_inflacionaria": 0.0,
     "presion_cop": 0.333
   },
   "baselines": {
     "sesgo_mercado": 0.0,
-    "riesgo_macro": 0.182,
+    "riesgo_macro": 0.091,
     "presion_inflacionaria": 0.273,
-    "presion_cop": 0.182
+    "presion_cop": 0.091
   },
   "n_dias_analizados": 14,
   "series": {
@@ -49,12 +49,11 @@
       "Mixto",
       "Mixto",
       "Mixto",
-      "Mixto",
       "Risk-on",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
-      "Medio",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -62,6 +61,7 @@
       "Bajo",
       "Bajo",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -70,7 +70,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Neutral",
       "Neutral",
       "Neutral",
@@ -82,11 +81,11 @@
       "Alcista",
       "Alcista",
       "Alcista",
+      "Neutral",
       "Neutral",
       "Neutral"
     ],
     "presion_cop": [
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Neutral",
@@ -99,7 +98,8 @@
       "Neutral",
       "Neutral",
       "Neutral",
-      "Alcista USD/COP"
+      "Alcista USD/COP",
+      "Neutral"
     ]
   }
 }
