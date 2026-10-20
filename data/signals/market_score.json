@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-10-19",
-  "generado_en": "2026-10-19 18:32:18",
-  "score": 54,
-  "label": "Senales claras",
-  "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "fecha": "2026-10-20",
+  "generado_en": "2026-10-20 16:35:21",
+  "score": 50,
+  "label": "Visibilidad moderada",
+  "color": "#E65100",
+  "narrative": "Visibilidad parcial. Regimen LATERAL pero con senales mixtas (sesgo Risk-on, riesgo Bajo). Se recomienda cautela.",
   "componentes": {
     "claridad_regimen": {
       "pts": 7.5,
@@ -17,8 +17,8 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 20.0,
-      "desc": "Conf. calibrada media 8.0/10 (2 activos)",
+      "pts": 15.0,
+      "desc": "Conf. calibrada media 6.0/10 (1 activos)",
       "max": 25
     },
     "senales_compuestas": {
@@ -27,8 +27,8 @@
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.9,
-      "desc": "Regime change 14/100 (Estable)",
+      "pts": 13.5,
+      "desc": "Regime change 10/100 (Estable)",
       "max": 15
     }
   }
