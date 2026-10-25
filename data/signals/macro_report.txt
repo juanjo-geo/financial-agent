@@ -1,11 +1,11 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-10-24 15:38:04.298322
+Generado: 2026-10-25 15:48:41.735039
 
 AAPL | 0.21% | up | none
 AMZN | 1.36% | up | low
-BRENT | 3.51% | up | medium
-BTC | -2.07% | down | low
+BRENT | 3.12% | up | medium
+BTC | -0.26% | down | none
 BTC_VOLUME | 6.91% | up | high
 COPPER | -0.84% | down | none
 DXY | 0.24% | up | none
@@ -21,10 +21,11 @@ NVDA | 2.46% | up | medium
 SILVER | -3.57% | down | medium
 SP500 | 0.74% | up | none
 TSLA | 0.25% | up | none
-USDCOP | 0.00% | flat | none
+USDCOP | -0.44% | down | none
 WTI | 12.52% | up | high
 
 INTERPRETACIÓN MACRO
 -------------------------
 - El petróleo sube, lo que puede aumentar presiones inflacionarias globales.
 - Bitcoin cae, indicando menor apetito por riesgo.
+- El peso colombiano muestra fortaleza relativa.
