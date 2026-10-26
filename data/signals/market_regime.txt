@@ -1,27 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-10-25 15:48:42
+Generado: 2026-10-26 18:28:39
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Inflation Pressure
+- Mixed Macro
 
 EXPLICACIÓN
 ------------------------------
-- El petróleo sube con intensidad, aumentando presión inflacionaria energética.
+- Dólar fuerte y Bitcoin al alza sugieren un entorno macro mixto.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: 3.12% | up | medium
-- BTC: -0.26% | down | none
+- BRENT: -0.25% | down | none
+- BTC: 0.08% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: 0.24% | up | none
+- DXY: 0.14% | up | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: -0.85% | down | low
+- GOLD: 0.54% | up | low
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -31,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: -0.44% | down | none
+- USDCOP: -0.23% | down | none
 - WTI: 12.52% | up | high
