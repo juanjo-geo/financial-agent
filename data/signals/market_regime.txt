@@ -1,29 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-10-27 17:43:20
+Generado: 2026-10-28 18:05:41
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Mixed Macro
-- Dollar Pressure on COP
+- Neutral
 
 EXPLICACIÓN
 ------------------------------
-- Dólar fuerte y Bitcoin al alza sugieren un entorno macro mixto.
-- La fortaleza del dólar coincide con depreciación del peso colombiano.
+- No se detecta un régimen macro dominante en esta sesión.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: -0.86% | down | none
-- BTC: 0.69% | up | none
+- BRENT: 1.75% | up | low
+- BTC: 0.14% | up | none
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: 0.25% | up | none
+- DXY: -0.02% | down | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: 1.09% | up | low
+- GOLD: -0.49% | down | none
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
