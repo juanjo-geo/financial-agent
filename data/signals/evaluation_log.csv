@@ -1540,3 +1540,8 @@ fecha,indicador,direccion_predicha,cambio_real,acerto,confianza_predicha
 2026-10-28,dxy,Lateral,0.2499,1,3
 2026-10-28,usdcop,Lateral,0.3496,1,5
 2026-10-28,gold,Lateral,1.0861,0,6
+2026-10-29,brent,Alcista,1.7523,1,7
+2026-10-29,btc,Lateral,0.1423,1,4
+2026-10-29,dxy,Lateral,-0.0244,1,3
+2026-10-29,usdcop,Lateral,0.3541,1,3
+2026-10-29,gold,Lateral,-0.4861,1,5

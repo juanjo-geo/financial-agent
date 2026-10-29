@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-10-28",
-  "generado_en": "2026-10-28 18:05:43",
+  "fecha": "2026-10-29",
+  "generado_en": "2026-10-29 18:14:17",
   "score": 10.8,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
@@ -42,9 +42,9 @@
       "Mixto",
       "Mixto",
       "Mixto",
+      "Risk-on",
+      "Risk-on",
       "Mixto",
-      "Risk-on",
-      "Risk-on",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -55,7 +55,6 @@
     ],
     "riesgo_macro": [
       "Bajo",
-      "Bajo",
       "Medio",
       "Medio",
       "Bajo",
@@ -65,12 +64,12 @@
       "Bajo",
       "Medio",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Neutral",
       "Alcista",
       "Alcista",
       "Alcista",
@@ -83,7 +82,8 @@
       "Alcista",
       "Neutral",
       "Neutral",
-      "Alcista"
+      "Alcista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",
