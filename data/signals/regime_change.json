@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-30",
-  "generado_en": "2026-10-30 17:52:10",
-  "score": 12.6,
+  "fecha": "2026-10-31",
+  "generado_en": "2026-10-31 17:01:03",
+  "score": 8.5,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
@@ -12,34 +12,26 @@
       "dimension_label": "Riesgo Macro",
       "de": "Bajo",
       "a": "Bajo",
-      "score_parcial": 6.82,
+      "score_parcial": 5.45,
       "peso_dimension": 30
-    },
-    {
-      "dimension": "presion_inflacionaria",
-      "dimension_label": "Presion Inflacionaria",
-      "de": "Alcista",
-      "a": "Alcista",
-      "score_parcial": 3.03,
-      "peso_dimension": 20
     }
   ],
   "descripcion": "El mercado se encuentra en un regimen estable. Las senales macro no muestran cambios significativos en los ultimos 14 dias.",
   "scores_por_dim": {
     "sesgo_mercado": 2.73,
-    "riesgo_macro": 6.82,
-    "presion_inflacionaria": 3.03,
+    "riesgo_macro": 5.45,
+    "presion_inflacionaria": 0.3,
     "presion_cop": 0.0
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.667,
+    "presion_inflacionaria": 0.333,
     "presion_cop": 0.0
   },
   "baselines": {
     "sesgo_mercado": -0.182,
-    "riesgo_macro": 0.455,
+    "riesgo_macro": 0.364,
     "presion_inflacionaria": 0.364,
     "presion_cop": 0.0
   },
@@ -48,9 +40,9 @@
     "sesgo_mercado": [
       "Mixto",
       "Mixto",
+      "Risk-on",
+      "Risk-on",
       "Mixto",
-      "Risk-on",
-      "Risk-on",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -63,7 +55,6 @@
     ],
     "riesgo_macro": [
       "Medio",
-      "Medio",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -71,6 +62,7 @@
       "Bajo",
       "Medio",
       "Medio",
+      "Bajo",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -78,7 +70,6 @@
       "Bajo"
     ],
     "presion_inflacionaria": [
-      "Alcista",
       "Alcista",
       "Neutral",
       "Neutral",
@@ -91,7 +82,8 @@
       "Neutral",
       "Alcista",
       "Neutral",
-      "Alcista"
+      "Alcista",
+      "Neutral"
     ],
     "presion_cop": [
       "Neutral",

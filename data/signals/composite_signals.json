@@ -1,21 +1,13 @@
 {
-  "fecha": "2026-10-30",
-  "generado_en": "2026-10-30 17:52:12",
-  "n_activas": 1,
-  "activas": [
-    {
-      "id": "presion_colombia",
-      "nombre": "Presion importadora Colombia",
-      "descripcion": "Petroleo y USDCOP suben: costo de importaciones en Colombia aumenta.",
-      "severidad": "HIGH",
-      "icono": "!"
-    }
-  ],
+  "fecha": "2026-10-31",
+  "generado_en": "2026-10-31 17:01:05",
+  "n_activas": 0,
+  "activas": [],
   "variaciones": {
-    "brent": 2.3994,
-    "btc": -0.9781,
-    "dxy": 0.0893,
-    "usdcop": 1.0797,
-    "gold": -3.4684
+    "brent": 1.5626,
+    "btc": 0.3263,
+    "dxy": 0.0,
+    "usdcop": 0.075,
+    "gold": -3.3395
   }
 }
