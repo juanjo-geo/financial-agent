@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-04",
-  "generado_en": "2026-11-04 19:32:28",
-  "score": 58,
+  "fecha": "2026-11-05",
+  "generado_en": "2026-11-05 19:42:49",
+  "score": 63,
   "label": "Senales claras",
   "color": "#2563EB",
-  "narrative": "Las senales son legibles: regimen LATERAL con sesgo Mixto. Existen algunas contradicciones entre componentes que moderan la conviccion.",
+  "narrative": "Las senales son legibles: regimen CRISIS con sesgo Risk-off. Existen algunas contradicciones entre componentes que moderan la conviccion.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 9.0,
-      "desc": "Regimen LATERAL (confianza +36pts)",
+      "pts": 15.0,
+      "desc": "Regimen CRISIS (confianza +60pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -17,18 +17,18 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 15.8,
-      "desc": "Conf. calibrada media 6.3/10 (3 activos)",
+      "pts": 20.0,
+      "desc": "Conf. calibrada media 8.0/10 (3 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 5.0,
-      "desc": "1 senal(es) compuesta(s) activa(s)",
+      "pts": 0.0,
+      "desc": "0 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 11.7,
-      "desc": "Regime change 22/100 (Estable)",
+      "pts": 11.9,
+      "desc": "Regime change 21/100 (Estable)",
       "max": 15
     }
   }
