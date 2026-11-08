@@ -1,11 +1,11 @@
 MACRO MARKET REPORT
 -------------------------
-Generado: 2026-11-07 17:37:04.363834
+Generado: 2026-11-08 17:47:12.187729
 
 AAPL | 0.21% | up | none
 AMZN | 1.36% | up | low
 BRENT | -0.93% | down | none
-BTC | -0.04% | down | none
+BTC | -0.12% | down | none
 BTC_VOLUME | 6.91% | up | high
 COPPER | -0.84% | down | none
 DXY | 0.74% | up | low

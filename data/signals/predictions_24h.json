@@ -1,25 +1,25 @@
 {
-  "fecha": "2026-11-07",
-  "generado_en": "2026-11-07 17:37:38",
+  "fecha": "2026-11-08",
+  "generado_en": "2026-11-08 17:47:56",
   "predicciones": {
     "brent": {
       "direccion_24h": "Bajista",
       "magnitud_esperada": "Significativa",
       "confianza": 8,
       "confianza_calibrada": 8,
-      "razon": "La tendencia de 7d (-2.76%/dia) es negativa y apunta a presion bajista.",
-      "_slope_pct_dia": -2.7572,
+      "razon": "La tendencia de 7d (-1.75%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -1.7481,
       "_momentum_pct": -0.927,
       "_trend_score": -3.0,
       "_momentum_score": -0.464,
       "_signal_score": -0.9,
       "_total_score": -1.565,
       "_n_puntos_7d": 8,
-      "_calibration_factor": 0.9593,
+      "_calibration_factor": 0.9576,
       "_weights_used": {
-        "trend": 0.3815,
-        "momentum": 0.3119,
-        "signals": 0.3066
+        "trend": 0.3813,
+        "momentum": 0.3115,
+        "signals": 0.3072
       }
     },
     "btc": {
@@ -27,19 +27,19 @@
       "magnitud_esperada": "Leve",
       "confianza": 4,
       "confianza_calibrada": 5,
-      "razon": "La tendencia de 7d (-0.34%/dia) es negativa y apunta a movimiento lateral o consolidacion.",
-      "_slope_pct_dia": -0.3427,
-      "_momentum_pct": -0.041,
-      "_trend_score": -0.685,
-      "_momentum_score": -0.021,
+      "razon": "La tendencia de 7d (-0.47%/dia) es negativa y apunta a movimiento lateral o consolidacion.",
+      "_slope_pct_dia": -0.4665,
+      "_momentum_pct": -0.1203,
+      "_trend_score": -0.933,
+      "_momentum_score": -0.06,
       "_signal_score": 0.8,
-      "_total_score": -0.023,
+      "_total_score": -0.129,
       "_n_puntos_7d": 8,
-      "_calibration_factor": 1.1943,
+      "_calibration_factor": 1.1958,
       "_weights_used": {
-        "trend": 0.3815,
-        "momentum": 0.3119,
-        "signals": 0.3066
+        "trend": 0.3813,
+        "momentum": 0.3115,
+        "signals": 0.3072
       }
     },
     "dxy": {
@@ -48,38 +48,38 @@
       "confianza": 3,
       "confianza_calibrada": 6,
       "razon": "El movimiento de hoy (+0.7%) no sugiere una ruptura de rango clara en las proximas 24h.",
-      "_slope_pct_dia": 0.0456,
+      "_slope_pct_dia": 0.0801,
       "_momentum_pct": 0.7386,
-      "_trend_score": 0.091,
+      "_trend_score": 0.16,
       "_momentum_score": 0.369,
       "_signal_score": 0.0,
-      "_total_score": 0.15,
+      "_total_score": 0.176,
       "_n_puntos_7d": 8,
-      "_calibration_factor": 2.0886,
+      "_calibration_factor": 2.089,
       "_weights_used": {
-        "trend": 0.3815,
-        "momentum": 0.3119,
-        "signals": 0.3066
+        "trend": 0.3813,
+        "momentum": 0.3115,
+        "signals": 0.3072
       }
     },
     "usdcop": {
       "direccion_24h": "Alcista",
       "magnitud_esperada": "Moderada",
-      "confianza": 7,
-      "confianza_calibrada": 7,
+      "confianza": 5,
+      "confianza_calibrada": 6,
       "razon": "La presion COP (Alcista USD/COP) junto al sesgo (Mixto) sugieren continuacion alcista en el par.",
-      "_slope_pct_dia": 0.18,
+      "_slope_pct_dia": 0.0481,
       "_momentum_pct": 0.0,
-      "_trend_score": 0.36,
+      "_trend_score": 0.096,
       "_momentum_score": 0.0,
       "_signal_score": 1.5,
-      "_total_score": 0.597,
+      "_total_score": 0.497,
       "_n_puntos_7d": 8,
-      "_calibration_factor": 0.9593,
+      "_calibration_factor": 1.1958,
       "_weights_used": {
-        "trend": 0.3815,
-        "momentum": 0.3119,
-        "signals": 0.3066
+        "trend": 0.3813,
+        "momentum": 0.3115,
+        "signals": 0.3072
       }
     },
     "gold": {
@@ -87,19 +87,19 @@
       "magnitud_esperada": "Leve",
       "confianza": 4,
       "confianza_calibrada": 5,
-      "razon": "La tendencia de 7d (+0.82%/dia) es positiva y apunta a movimiento lateral o consolidacion.",
-      "_slope_pct_dia": 0.8209,
+      "razon": "La tendencia de 7d (+0.68%/dia) es positiva y apunta a movimiento lateral o consolidacion.",
+      "_slope_pct_dia": 0.6839,
       "_momentum_pct": -0.5758,
-      "_trend_score": 1.642,
+      "_trend_score": 1.368,
       "_momentum_score": -0.288,
       "_signal_score": -0.8,
-      "_total_score": 0.291,
+      "_total_score": 0.186,
       "_n_puntos_7d": 8,
-      "_calibration_factor": 1.1943,
+      "_calibration_factor": 1.1958,
       "_weights_used": {
-        "trend": 0.3815,
-        "momentum": 0.3119,
-        "signals": 0.3066
+        "trend": 0.3813,
+        "momentum": 0.3115,
+        "signals": 0.3072
       }
     }
   }
