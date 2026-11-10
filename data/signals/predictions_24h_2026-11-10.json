@@ -1,0 +1,106 @@
+{
+  "fecha": "2026-11-10",
+  "generado_en": "2026-11-10 19:30:38",
+  "predicciones": {
+    "brent": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Significativa",
+      "confianza": 9,
+      "confianza_calibrada": 10,
+      "razon": "La tendencia de 7d (-1.22%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -1.2154,
+      "_momentum_pct": -1.3421,
+      "_trend_score": -2.431,
+      "_momentum_score": -0.671,
+      "_signal_score": -1.4,
+      "_total_score": -1.566,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0809,
+      "_weights_used": {
+        "trend": 0.381,
+        "momentum": 0.3108,
+        "signals": 0.3082
+      }
+    },
+    "btc": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 9,
+      "confianza_calibrada": 10,
+      "razon": "La tendencia de 7d (-0.89%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -0.894,
+      "_momentum_pct": -2.6034,
+      "_trend_score": -1.788,
+      "_momentum_score": -1.302,
+      "_signal_score": -1.0,
+      "_total_score": -1.394,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0809,
+      "_weights_used": {
+        "trend": 0.381,
+        "momentum": 0.3108,
+        "signals": 0.3082
+      }
+    },
+    "dxy": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 5,
+      "confianza_calibrada": 6,
+      "razon": "Las senales del dia (sesgo Risk-off, riesgo Bajo) podrian reflejar continuacion alcista.",
+      "_slope_pct_dia": 0.0673,
+      "_momentum_pct": 0.526,
+      "_trend_score": 0.135,
+      "_momentum_score": 0.263,
+      "_signal_score": 1.0,
+      "_total_score": 0.441,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1973,
+      "_weights_used": {
+        "trend": 0.381,
+        "momentum": 0.3108,
+        "signals": 0.3082
+      }
+    },
+    "usdcop": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 9,
+      "confianza_calibrada": 10,
+      "razon": "La presion COP (Alcista USD/COP) junto al sesgo (Risk-off) sugieren continuacion alcista en el par.",
+      "_slope_pct_dia": 0.2545,
+      "_momentum_pct": 1.0157,
+      "_trend_score": 0.509,
+      "_momentum_score": 0.508,
+      "_signal_score": 2.3,
+      "_total_score": 1.061,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.0809,
+      "_weights_used": {
+        "trend": 0.381,
+        "momentum": 0.3108,
+        "signals": 0.3082
+      }
+    },
+    "gold": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 4,
+      "confianza_calibrada": 5,
+      "razon": "El movimiento de hoy (-2.7%) no sugiere una ruptura de rango clara en las proximas 24h.",
+      "_slope_pct_dia": 0.2864,
+      "_momentum_pct": -2.685,
+      "_trend_score": 0.573,
+      "_momentum_score": -1.343,
+      "_signal_score": 0.2,
+      "_total_score": -0.137,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1973,
+      "_weights_used": {
+        "trend": 0.381,
+        "momentum": 0.3108,
+        "signals": 0.3082
+      }
+    }
+  }
+}

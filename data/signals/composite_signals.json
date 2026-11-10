@@ -1,13 +1,35 @@
 {
-  "fecha": "2026-11-09",
-  "generado_en": "2026-11-09 22:05:38",
-  "n_activas": 0,
-  "activas": [],
+  "fecha": "2026-11-10",
+  "generado_en": "2026-11-10 19:29:43",
+  "n_activas": 3,
+  "activas": [
+    {
+      "id": "aversion_generalizada",
+      "nombre": "Sesion de aversion generalizada",
+      "descripcion": "Multiples activos en rojo simultaneamente: posible desapalancamiento.",
+      "severidad": "HIGH",
+      "icono": "!"
+    },
+    {
+      "id": "dxy_presion_metales",
+      "nombre": "Fortaleza del dolar presiona metales",
+      "descripcion": "DXY al alza y Oro a la baja: correlacion inversa activa.",
+      "severidad": "LOW",
+      "icono": "~"
+    },
+    {
+      "id": "cop_debilidad",
+      "nombre": "Debilidad del COP",
+      "descripcion": "USDCOP sube junto al DXY: presion cambiaria desde contexto global.",
+      "severidad": "MED",
+      "icono": "!"
+    }
+  ],
   "variaciones": {
-    "brent": -6.0779,
-    "btc": 0.2218,
-    "dxy": -0.5585,
-    "usdcop": 1.0801,
-    "gold": 1.858
+    "brent": -1.3421,
+    "btc": -2.6034,
+    "dxy": 0.526,
+    "usdcop": 1.0157,
+    "gold": -2.685
   }
 }
