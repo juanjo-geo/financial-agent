@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-10",
-  "generado_en": "2026-11-10 19:29:43",
-  "score": 82,
+  "fecha": "2026-11-11",
+  "generado_en": "2026-11-11 19:24:46",
+  "score": 72,
   "label": "Alta conviccion",
   "color": "#00C896",
-  "narrative": "El sistema cuenta hoy con alta conviccion: regimen CRISIS, sesgo Risk-off, riesgo macro Bajo. Las senales apuntan en direccion coherente.",
+  "narrative": "El sistema cuenta hoy con alta conviccion: regimen CRISIS, sesgo Mixto, riesgo macro Bajo. Las senales apuntan en direccion coherente.",
   "componentes": {
     "claridad_regimen": {
-      "pts": 18.8,
-      "desc": "Regimen CRISIS (confianza +75pts)",
+      "pts": 15.0,
+      "desc": "Regimen CRISIS (confianza +60pts)",
       "max": 25
     },
     "conviccion_senales": {
@@ -17,18 +17,18 @@
       "max": 20
     },
     "coherencia_pred": {
-      "pts": 20.0,
-      "desc": "Conf. calibrada media 8.0/10 (3 activos)",
+      "pts": 22.5,
+      "desc": "Conf. calibrada media 9.0/10 (4 activos)",
       "max": 25
     },
     "senales_compuestas": {
-      "pts": 15.0,
-      "desc": "3 senal(es) compuesta(s) activa(s)",
+      "pts": 5.0,
+      "desc": "1 senal(es) compuesta(s) activa(s)",
       "max": 15
     },
     "estabilidad_macro": {
-      "pts": 12.1,
-      "desc": "Regime change 19/100 (Estable)",
+      "pts": 13.1,
+      "desc": "Regime change 13/100 (Estable)",
       "max": 15
     }
   }
