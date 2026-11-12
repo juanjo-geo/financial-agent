@@ -1,0 +1,106 @@
+{
+  "fecha": "2026-11-12",
+  "generado_en": "2026-11-12 19:43:47",
+  "predicciones": {
+    "brent": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Leve",
+      "confianza": 6,
+      "confianza_calibrada": 7,
+      "razon": "La tendencia de 7d (-0.84%/dia) es negativa y apunta a continuacion alcista.",
+      "_slope_pct_dia": -0.8383,
+      "_momentum_pct": 3.6537,
+      "_trend_score": -1.677,
+      "_momentum_score": 1.827,
+      "_signal_score": 1.2,
+      "_total_score": 0.301,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1938,
+      "_weights_used": {
+        "trend": 0.3801,
+        "momentum": 0.3108,
+        "signals": 0.3091
+      }
+    },
+    "btc": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 7,
+      "confianza_calibrada": 7,
+      "razon": "La tendencia de 7d (-0.79%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -0.7867,
+      "_momentum_pct": -3.4305,
+      "_trend_score": -1.573,
+      "_momentum_score": -1.715,
+      "_signal_score": -0.3,
+      "_total_score": -1.224,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 0.9575,
+      "_weights_used": {
+        "trend": 0.3801,
+        "momentum": 0.3108,
+        "signals": 0.3091
+      }
+    },
+    "dxy": {
+      "direccion_24h": "Lateral",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "confianza_calibrada": 6,
+      "razon": "La tendencia de 7d (+0.16%/dia) es positiva y apunta a movimiento lateral o consolidacion.",
+      "_slope_pct_dia": 0.1628,
+      "_momentum_pct": 0.3208,
+      "_trend_score": 0.326,
+      "_momentum_score": 0.16,
+      "_signal_score": 0.3,
+      "_total_score": 0.266,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1938,
+      "_weights_used": {
+        "trend": 0.3801,
+        "momentum": 0.3108,
+        "signals": 0.3091
+      }
+    },
+    "usdcop": {
+      "direccion_24h": "Alcista",
+      "magnitud_esperada": "Leve",
+      "confianza": 5,
+      "confianza_calibrada": 6,
+      "razon": "La tendencia de 7d (+0.33%/dia) es positiva y apunta a continuacion alcista.",
+      "_slope_pct_dia": 0.3252,
+      "_momentum_pct": 0.5872,
+      "_trend_score": 0.65,
+      "_momentum_score": 0.294,
+      "_signal_score": 0.0,
+      "_total_score": 0.338,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1938,
+      "_weights_used": {
+        "trend": 0.3801,
+        "momentum": 0.3108,
+        "signals": 0.3091
+      }
+    },
+    "gold": {
+      "direccion_24h": "Bajista",
+      "magnitud_esperada": "Moderada",
+      "confianza": 6,
+      "confianza_calibrada": 7,
+      "razon": "La tendencia de 7d (-0.61%/dia) es negativa y apunta a presion bajista.",
+      "_slope_pct_dia": -0.6087,
+      "_momentum_pct": -2.7717,
+      "_trend_score": -1.217,
+      "_momentum_score": -1.386,
+      "_signal_score": 0.5,
+      "_total_score": -0.739,
+      "_n_puntos_7d": 8,
+      "_calibration_factor": 1.1938,
+      "_weights_used": {
+        "trend": 0.3801,
+        "momentum": 0.3108,
+        "signals": 0.3091
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
 SEÑALES DE MERCADO
-Generado: 2026-11-11 19:24:42
+Generado: 2026-11-12 19:42:47
 --------------------------------------------------
 
 - AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
-- Brent sube 1.09% (movimiento leve relevante). Valor actual: 93.40 USD/bbl
+- Brent sube 3.65% (movimiento relevante). Valor actual: 95.89 USD/bbl
+- Bitcoin cae 3.43% (movimiento relevante). Valor actual: 71,389.16 USD
 - BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC
-- DXY sube 0.69% (movimiento leve relevante). Valor actual: 102.92 index
-- Oro (XAU/USD) cae 1.23% (movimiento leve relevante). Valor actual: 3,994.10 USD/oz
+- Oro (XAU/USD) cae 2.77% (movimiento relevante). Valor actual: 3,883.30 USD/oz
 - GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
 - NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD
 - NVDA sube 2.46% (movimiento relevante). Valor actual: 176.41 USD
 - SILVER cae 3.57% (movimiento relevante). Valor actual: 72.46 USD/oz
-- USD/COP cae 0.66% (movimiento leve relevante). Valor actual: 3,274.73 COP/USD
+- USD/COP sube 0.59% (movimiento leve relevante). Valor actual: 3,299.50 COP/USD
 - WTI sube 12.52% (movimiento fuerte). Valor actual: 111.30 USD/bbl

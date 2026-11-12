@@ -1,21 +1,21 @@
 {
-  "fecha": "2026-11-11",
-  "generado_en": "2026-11-11 19:24:46",
+  "fecha": "2026-11-12",
+  "generado_en": "2026-11-12 19:42:51",
   "n_activas": 1,
   "activas": [
     {
-      "id": "dxy_presion_metales",
-      "nombre": "Fortaleza del dolar presiona metales",
-      "descripcion": "DXY al alza y Oro a la baja: correlacion inversa activa.",
-      "severidad": "LOW",
-      "icono": "~"
+      "id": "presion_colombia",
+      "nombre": "Presion importadora Colombia",
+      "descripcion": "Petroleo y USDCOP suben: costo de importaciones en Colombia aumenta.",
+      "severidad": "HIGH",
+      "icono": "!"
     }
   ],
   "variaciones": {
-    "brent": 1.0932,
-    "btc": 0.6427,
-    "dxy": 0.6858,
-    "usdcop": -0.6577,
-    "gold": -1.2266
+    "brent": 3.6537,
+    "btc": -3.4305,
+    "dxy": 0.3208,
+    "usdcop": 0.5872,
+    "gold": -2.7717
   }
 }
