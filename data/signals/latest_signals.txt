@@ -1,9 +1,9 @@
 SEÑALES DE MERCADO
-Generado: 2026-11-13 19:23:47
+Generado: 2026-11-14 17:47:58
 --------------------------------------------------
 
 - AMZN sube 1.36% (movimiento leve relevante). Valor actual: 209.36 USD
-- Bitcoin cae 3.44% (movimiento relevante). Valor actual: 68,915.51 USD
+- Bitcoin cae 3.59% (movimiento relevante). Valor actual: 65,786.91 USD
 - BTC_VOLUME sube 6.91% (movimiento fuerte). Valor actual: 38,983,573,504.00 BTC
 - GOOGL sube 1.67% (movimiento leve relevante). Valor actual: 295.54 USD
 - NASDAQ sube 1.46% (movimiento leve relevante). Valor actual: 21,786.78 USD
