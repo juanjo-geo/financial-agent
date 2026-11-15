@@ -1625,3 +1625,8 @@ fecha,indicador,direccion_predicha,cambio_real,acerto,confianza_predicha
 2026-11-14,dxy,Alcista,0.1482,1,7
 2026-11-14,usdcop,Alcista,0.4208,1,7
 2026-11-14,gold,Bajista,-0.0206,1,4
+2026-11-15,brent,Bajista,-0.0521,1,7
+2026-11-15,btc,Bajista,-3.5923,1,9
+2026-11-15,dxy,Alcista,0.1744,1,7
+2026-11-15,usdcop,Alcista,0.0,0,7
+2026-11-15,gold,Bajista,0.0773,0,4
