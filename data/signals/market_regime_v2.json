@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-16",
-  "generado_en": "2026-11-16 21:47:33",
+  "fecha": "2026-11-17",
+  "generado_en": "2026-11-17 20:38:44",
   "regime": "CRISIS",
   "scores": {
     "INFLACIONARIO": 25,
@@ -17,28 +17,28 @@
   "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -1.87,
-      "volatilidad": 3.257,
+      "avg_pct_dia": -1.749,
+      "volatilidad": 3.324,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -0.912,
-      "volatilidad": 2.312,
+      "avg_pct_dia": -1.073,
+      "volatilidad": 2.253,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.277,
-      "volatilidad": 0.367,
+      "avg_pct_dia": 0.264,
+      "volatilidad": 0.376,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": 0.04,
-      "volatilidad": 1.898,
+      "avg_pct_dia": 0.069,
+      "volatilidad": 1.891,
       "n_dias": 14
     },
     "usdcop": {
-      "avg_pct_dia": 0.216,
-      "volatilidad": 0.47,
+      "avg_pct_dia": 0.157,
+      "volatilidad": 0.498,
       "n_dias": 14
     }
   },
