@@ -1,13 +1,28 @@
 {
-  "fecha": "2026-11-17",
-  "generado_en": "2026-11-17 20:38:46",
-  "n_activas": 0,
-  "activas": [],
+  "fecha": "2026-11-18",
+  "generado_en": "2026-11-18 20:11:19",
+  "n_activas": 2,
+  "activas": [
+    {
+      "id": "aversion_generalizada",
+      "nombre": "Sesion de aversion generalizada",
+      "descripcion": "Multiples activos en rojo simultaneamente: posible desapalancamiento.",
+      "severidad": "HIGH",
+      "icono": "!"
+    },
+    {
+      "id": "desinflacion_real",
+      "nombre": "Desinflacion de activos reales",
+      "descripcion": "Petroleo y Oro bajan juntos: presiones deflacionarias en commodities.",
+      "severidad": "MED",
+      "icono": "v"
+    }
+  ],
   "variaciones": {
-    "brent": 0.8583,
-    "btc": -1.2802,
-    "dxy": -0.0936,
-    "usdcop": -0.4567,
-    "gold": -0.184
+    "brent": -4.6113,
+    "btc": -3.3381,
+    "dxy": 0.1968,
+    "usdcop": 1.6076,
+    "gold": -3.4136
   }
 }
