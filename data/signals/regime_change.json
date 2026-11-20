@@ -1,17 +1,17 @@
 {
-  "fecha": "2026-11-19",
-  "generado_en": "2026-11-19 20:13:20",
-  "score": 11.7,
+  "fecha": "2026-11-20",
+  "generado_en": "2026-11-20 19:47:41",
+  "score": 12.0,
   "nivel": "Estable",
   "tipo_cambio": "Gradual",
   "alerta": false,
   "direccion": "Mixto",
   "transiciones": [
     {
-      "dimension": "presion_inflacionaria",
-      "dimension_label": "Presion Inflacionaria",
-      "de": "Bajista",
-      "a": "Neutral",
+      "dimension": "presion_cop",
+      "dimension_label": "Presion COP",
+      "de": "Alcista USD/COP",
+      "a": "Alcista USD/COP",
       "score_parcial": 4.55,
       "peso_dimension": 20
     },
@@ -28,25 +28,24 @@
   "scores_por_dim": {
     "sesgo_mercado": 2.73,
     "riesgo_macro": 4.09,
-    "presion_inflacionaria": 4.55,
-    "presion_cop": 0.3
+    "presion_inflacionaria": 0.61,
+    "presion_cop": 4.55
   },
   "recientes": {
     "sesgo_mercado": 0.0,
     "riesgo_macro": 0.0,
-    "presion_inflacionaria": 0.0,
-    "presion_cop": 0.667
+    "presion_inflacionaria": -0.333,
+    "presion_cop": 1.0
   },
   "baselines": {
     "sesgo_mercado": 0.182,
     "riesgo_macro": 0.273,
-    "presion_inflacionaria": -0.455,
-    "presion_cop": 0.636
+    "presion_inflacionaria": -0.273,
+    "presion_cop": 0.545
   },
   "n_dias_analizados": 14,
   "series": {
     "sesgo_mercado": [
-      "Mixto",
       "Mixto",
       "Mixto",
       "Mixto",
@@ -59,6 +58,7 @@
       "Mixto",
       "Mixto",
       "Mixto",
+      "Mixto",
       "Mixto"
     ],
     "riesgo_macro": [
@@ -67,10 +67,10 @@
       "Bajo",
       "Bajo",
       "Bajo",
+      "Medio",
+      "Medio",
+      "Medio",
       "Bajo",
-      "Medio",
-      "Medio",
-      "Medio",
       "Bajo",
       "Bajo",
       "Bajo",
@@ -82,7 +82,6 @@
       "Bajista",
       "Bajista",
       "Bajista",
-      "Bajista",
       "Neutral",
       "Alcista",
       "Neutral",
@@ -91,6 +90,7 @@
       "Bajista",
       "Alcista",
       "Bajista",
+      "Neutral",
       "Neutral"
     ],
     "presion_cop": [
@@ -99,13 +99,13 @@
       "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP",
-      "Alcista USD/COP",
       "Neutral",
       "Neutral",
       "Neutral",
       "Neutral",
       "Alcista USD/COP",
       "Neutral",
+      "Alcista USD/COP",
       "Alcista USD/COP",
       "Alcista USD/COP"
     ]
