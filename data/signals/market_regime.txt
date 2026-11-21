@@ -1,29 +1,27 @@
 MARKET REGIME REPORT
 ------------------------------
-Generado: 2026-11-20 19:47:39
+Generado: 2026-11-21 18:53:09
 
 REGÍMENES DETECTADOS
 ------------------------------
-- Risk Off
-- EM FX Pressure
+- Risk Appetite
 
 EXPLICACIÓN
 ------------------------------
-- Bitcoin cae con fuerza, indicando menor apetito por riesgo.
-- USD/COP sube, señal de presión sobre la moneda colombiana.
+- Bitcoin sube, señal de apetito por riesgo y demanda especulativa.
 
 SEÑALES BASE
 ------------------------------
 - AAPL: 0.21% | up | none
 - AMZN: 1.36% | up | low
-- BRENT: -0.50% | down | none
-- BTC: -5.34% | down | high
+- BRENT: 0.05% | up | none
+- BTC: 2.04% | up | low
 - BTC_VOLUME: 6.91% | up | high
 - COPPER: -0.84% | down | none
-- DXY: -0.05% | down | none
+- DXY: -0.08% | down | none
 - EURUSD: -0.43% | down | none
 - GLOBAL_INFLATION_PROXY: 0.00% | flat | none
-- GOLD: -3.16% | down | high
+- GOLD: -3.26% | down | high
 - GOOGL: 1.67% | up | low
 - META: 0.81% | up | none
 - MSFT: 0.97% | up | none
@@ -33,5 +31,5 @@ SEÑALES BASE
 - SILVER: -3.57% | down | medium
 - SP500: 0.74% | up | none
 - TSLA: 0.25% | up | none
-- USDCOP: 2.37% | up | high
+- USDCOP: 0.00% | up | none
 - WTI: 12.52% | up | high

@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-20",
-  "generado_en": "2026-11-20 19:47:42",
+  "fecha": "2026-11-21",
+  "generado_en": "2026-11-21 18:53:11",
   "regime": "CRISIS",
   "scores": {
     "INFLACIONARIO": 25,
@@ -11,34 +11,34 @@
   "confianza": 75,
   "drivers": [
     "BRENT, BTC, GOLD en caida",
-    "Volatilidad alta en BRENT, BTC",
+    "Volatilidad alta en BRENT, BTC, GOLD",
     "Fuga hacia el dolar (DXY al alza)"
   ],
   "descripcion": "El mercado exhibe comportamiento de aversion al riesgo generalizada. Multiples activos registran caidas simultaneas, lo que sugiere un episodio de desapalancamiento o shock de liquidez.",
   "trend_summary": {
     "brent": {
-      "avg_pct_dia": -0.843,
-      "volatilidad": 2.46,
+      "avg_pct_dia": -0.773,
+      "volatilidad": 2.471,
       "n_dias": 14
     },
     "btc": {
-      "avg_pct_dia": -1.66,
-      "volatilidad": 1.874,
+      "avg_pct_dia": -1.512,
+      "volatilidad": 2.07,
       "n_dias": 14
     },
     "dxy": {
-      "avg_pct_dia": 0.232,
-      "volatilidad": 0.345,
+      "avg_pct_dia": 0.174,
+      "volatilidad": 0.323,
       "n_dias": 14
     },
     "gold": {
-      "avg_pct_dia": -1.044,
-      "volatilidad": 1.464,
+      "avg_pct_dia": -1.235,
+      "volatilidad": 1.562,
       "n_dias": 14
     },
     "usdcop": {
       "avg_pct_dia": 0.577,
-      "volatilidad": 0.863,
+      "volatilidad": 0.862,
       "n_dias": 14
     }
   },
