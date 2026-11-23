@@ -1665,3 +1665,8 @@ fecha,indicador,direccion_predicha,cambio_real,acerto,confianza_predicha
 2026-11-22,dxy,Lateral,-0.077,1,5
 2026-11-22,usdcop,Alcista,0.0032,1,4
 2026-11-22,gold,Bajista,-3.2583,1,9
+2026-11-23,brent,Lateral,-0.0778,1,4
+2026-11-23,btc,Lateral,0.9284,1,4
+2026-11-23,dxy,Lateral,-0.077,1,5
+2026-11-23,usdcop,Alcista,0.0003,1,4
+2026-11-23,gold,Bajista,-3.2583,1,9
